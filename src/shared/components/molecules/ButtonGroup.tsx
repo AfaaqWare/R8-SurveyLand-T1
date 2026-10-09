@@ -1,0 +1,35 @@
+import React from "react";
+import Button from "../atoms/Button";
+import { cn } from "@/lib/cn";
+
+interface ButtonProps {
+  variant: "primary" | "secondary" | "outline" | "outline1" | "ghost" | "primary200" | "disabled";
+  children: React.ReactNode;
+  size?: "sm" | "md" | "lg";
+}
+
+interface ButtonGroupProps {
+  button1: ButtonProps;
+  button2: ButtonProps;
+  gap?: number;
+  className?: string;
+}
+
+export default function ButtonGroup({ button1, button2, gap = 4, className = "" }: ButtonGroupProps) {
+  const gapClasses: Record<number, string> = {
+    2: "gap-2",
+    4: "gap-4",
+    6: "gap-6",
+    8: "gap-8",
+  };
+  return (
+    <div className={cn("flex items-center", gapClasses[gap] || "gap-4", className)}>
+      <Button variant={button1.variant} size={button1.size || "md"}>
+        {button1.children}
+      </Button>
+      <Button variant={button2.variant} size={button2.size || "md"}>
+        {button2.children}
+      </Button>
+    </div>
+  );
+}

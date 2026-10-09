@@ -1,0 +1,39 @@
+{
+  "routes": {
+    "item1": "Home",
+    "item2": "About",
+    "item3": "Faqs",
+    "item4": "Contact Us",
+    "item5": "Pricing",
+    "item6": "dashboard",
+    "item7": "settings",
+    "btn": "Login"
+  },
+
+  "publicPages": {
+    "home": {
+      "hero-section": {
+        "title": "",
+        "description": "",
+        "create-btn": ""
+      }
+    }
+  },
+
+  "ui-state": {
+    "loading": "Loading...",
+    "notFound": {
+      "title": "404 - Page Not Found",
+      "description": "It looks like you entered a route that does not exist.",
+      "backToHome": "Back to Home"
+    },
+    "error": {
+      "default": "An unexpected error occurred.",
+      "retry": "Try Again"
+    },
+    "empty": {
+      "default": "No data available to display."
+    }
+  },
+  "common": { "ok": "ok" }
+}
