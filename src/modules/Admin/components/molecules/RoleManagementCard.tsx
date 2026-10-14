@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "@/assets/icons/icons";
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader } from "@/shared/components/atoms/Card";
 import Text from "@/shared/components/atoms/Text";
