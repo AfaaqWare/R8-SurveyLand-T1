@@ -1,6 +1,6 @@
 import { Avatar } from "@/assets/images/images";
 import { User, SquareUserRound, UserRoundCog } from "@/assets/icons/icons";
-import type { UserDetails, UserRole } from "./RoleType";
+import type { UserDetails, UserRole } from "../types/RoleType";
 
 export const UserInfo: UserDetails = {
   name: "Ahmed Mohamed",

@@ -4,7 +4,7 @@ import UserInfoCard from "../molecules/UserInfoCard";
 import RoleManagementCard from "../molecules/RoleManagementCard";
 import FormActions from "../molecules/FormActions";
 import { useTranslations } from "next-intl";
-import { UserRole } from "../../utils/RoleType";
+import { UserRole } from "../../types/RoleType";
 import DashboardTitle from "../molecules/DashboardTitle";
 import { UserInfo } from "../../utils/RoleData";
 const EditRole = () => {

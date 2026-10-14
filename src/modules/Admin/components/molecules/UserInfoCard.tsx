@@ -3,13 +3,13 @@ import AppImage from "@/shared/components/atoms/Image";
 import { useTranslations } from "next-intl";
 import React from "react";
 import Title from "@/shared/components/atoms/Title";
-import { UserInfoCardProps } from "../../utils/RoleType";
+import { UserInfoCardProps } from "../../types/RoleType";
 import InfoRow from "./InfoRow";
 
 const UserInfoCard = ({ user }: UserInfoCardProps) => {
   const t = useTranslations("dashboard.editRole");
   return (
-    <Card className="ds-border-card min-h-78.5 min-w-0 p-4 shadow-none max-w-104.5">
+    <Card className="ds-border-card min-h-78.5 max-w-104.5 min-w-0 p-4 shadow-none">
       <CardHeader className="p-0">
         <Title size="sm">{t("userInfo")}</Title>
       </CardHeader>

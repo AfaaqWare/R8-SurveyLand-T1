@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader } from "@/shared/components/atoms/Card";
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
-import type { UserRole } from "../../utils/RoleType";
+import type { UserRole } from "../../types/RoleType";
 import { ROLE_OPTIONS } from "../../utils/RoleData";
 import Button from "@/shared/components/atoms/Button";
 import RoleOptionItem from "./RoleOptionItem";
