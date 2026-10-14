@@ -6,5 +6,5 @@
   },
   "files.eol": "\n",
   "eslint.validate": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
-  "cSpell.words": ["إشتراك"]
+  "cSpell.words": ["Userimgage", "إشتراك"]
 }
