@@ -1,4 +1,4 @@
-import type { Question } from "../survey-overview/components/SurveyQuestion";
+import type { Question } from "../components/SurveyQuestion";
 
 export const mockQuestions: Question[] = [
   {

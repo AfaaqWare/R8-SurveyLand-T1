@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import { CalendarDays, ClipboardList, Clock3 } from "@/assets/icons/icons";
-import bgContact from '../../../assets/images/img-contact.png'
+import { CalendarDays, Clock3 } from "@/assets/icons/icons";
+import bgSurveyPreview from '@/assets/images/img-survey-preview.png'
 export default function Surveyheader() {
   return (
     <>
@@ -9,7 +9,7 @@ export default function Surveyheader() {
         {/* img */}
         <div className="h-44 w-full  overflow-hidden rounded-2xl  sm:h-60 lg:h-72 ">
             <Image
-               src={bgContact} 
+               src={bgSurveyPreview} 
                alt="SurveyImg"
                className=' object-cover h-full w-full'
                width={500}
