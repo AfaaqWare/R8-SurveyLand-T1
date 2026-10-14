@@ -1,7 +1,7 @@
 import Surveyheader from "./Surveyheader";
-import InfoCart from "./InfoCart";
+import InfoCart from "./SurveyInfoCart";
 import QuestionsCard from "./SurveyQuestion";
-import { mockQuestions } from "./Mockquestions";
+import { mockQuestions } from "../../data/Mockquestions";
 
 export default function SurveyForm() {
   return (
