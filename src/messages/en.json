@@ -54,6 +54,38 @@
       "default": "No data available to display."
     }
   },
+
+  "dashboard": {
+    "common": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "editRole": {
+      "title": "Edit User Role",
+      "subtitle": "Update the role and permissions for this user.",
+      "userInfo": "User Information",
+      "name": "Full Name",
+      "email": "Email",
+      "status": "Status",
+      "date": "Date",
+      "roleManagement": "Role Management",
+      "currentRole": "Current Role",
+      "roles": {
+        "USER": {
+          "title": "User",
+          "description": "Basic access to create and manage own surveys"
+        },
+        "EDITOR": {
+          "title": "Editor",
+          "description": "Can manage surveys and view responses"
+        },
+        "ADMIN": {
+          "title": "Admin",
+          "description": "Full access to all features and user management"
+        }
+      }
+    }
+  },
   "common": { "ok": "ok" },
   "pricing": {
     "headingPrefix": "Plans &",

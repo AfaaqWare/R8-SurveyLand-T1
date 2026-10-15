@@ -12,5 +12,6 @@
  *
  *   export { heroImage, card1 };
  */
+import Avatar from "./Avatar.jpg";
 
-export {};
+export { Avatar };
