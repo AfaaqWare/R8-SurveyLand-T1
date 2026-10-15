@@ -13,9 +13,28 @@
   "publicPages": {
     "home": {
       "hero-section": {
-        "title": "",
-        "description": "",
-        "create-btn": ""
+        "title": "Turn <highlight>Questions</highlight> into Clarity and Transform <highlight>Responses</highlight> into Valuable Insights",
+        "description": "Effortlessly build surveys that deliver the answers you need to grow, improve, and connect with your audience.",
+        "create-btn": "Create Your Survey",
+        "how-it-works-btn": "See How It Works",
+        "image-alt": "People building a survey on a laptop"
+      },
+      "how-it-works": {
+        "title": "How It",
+        "highlight": "Works",
+        "description": "Get started in just 3 simple steps",
+        "create": {
+          "title": "Create Your Survey",
+          "description": "Choose a template or start from scratch using our easy-to-use builder"
+        },
+        "share": {
+          "title": "Share With Your Audience",
+          "description": "Send your survey via email, social media, or embed it in your website"
+        },
+        "analyze": {
+          "title": "Analyze Responses",
+          "description": "Get instant insights with clean charts and downloadable reports"
+        }
       }
     }
   },
