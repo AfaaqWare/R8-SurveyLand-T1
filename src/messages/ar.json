@@ -13,9 +13,28 @@
   "publicPages": {
     "home": {
       "hero-section": {
-        "title": "",
-        "description": "",
-        "create-btn": ""
+        "title": "حوّل <highlight>الأسئلة</highlight> إلى وضوح وحوّل <highlight>الردود</highlight> إلى رؤى قيّمة",
+        "description": "أنشئ استبيانات بسهولة تمنحك الإجابات التي تحتاجها لتنمو، وتتحسن، وتتواصل مع جمهورك.",
+        "create-btn": "أنشئ استبيانك",
+        "how-it-works-btn": "شاهد كيف يعمل",
+        "image-alt": "أشخاص يبنون استبياناً على حاسوب محمول"
+      },
+      "how-it-works": {
+        "title": "كيف",
+        "highlight": "يعمل",
+        "description": "ابدأ خلال 3 خطوات بسيطة",
+        "create": {
+          "title": "أنشئ استبيانك",
+          "description": "اختر قالباً أو ابدأ من الصفر باستخدام منشئنا السهل الاستخدام"
+        },
+        "share": {
+          "title": "شارك مع جمهورك",
+          "description": "أرسل استبيانك عبر البريد الإلكتروني أو وسائل التواصل، أو ضمّنه في موقعك"
+        },
+        "analyze": {
+          "title": "حلّل الردود",
+          "description": "احصل على رؤى فورية من خلال مخططات واضحة وتقارير قابلة للتنزيل"
+        }
       }
     }
   },
@@ -66,5 +85,58 @@
       }
     }
   },
-  "common": { "ok": "حسنا" }
+  "common": { "ok": "حسنا" },
+  "pricing": {
+    "headingPrefix": "الخطط و",
+    "headingAccent": "الأسعار",
+    "subtitle": "اكتشف الخطط المناسبة لك واستفد من المزيد من المميزات",
+    "billingLabel": "دورية الدفع",
+    "monthly": "شهريًا",
+    "yearly": "سنويًا",
+    "perMonth": "/ شهريًا",
+    "perYear": "/ سنويًا",
+    "includedTitle": "تشمل الخطة",
+    "choosePlan": "اختر الخطة",
+    "selected": "تم اختيار الخطة",
+    "selectedMessage": "لقد اخترت خطة {plan}.",
+    "choosePlanLabel": "اختر خطة {plan}",
+    "priceLabel": "{price} دولار لكل {period}",
+    "features": {
+      "responses100": "100 استجابة",
+      "user1": "مستخدم واحد",
+      "unlimitedSurveys": "استبيانات غير محدودة",
+      "unlimitedQuestions": "أسئلة غير محدودة",
+      "responses1000": "1,000 استجابة",
+      "users3": "3 مستخدمين",
+      "everythingBasic": "كل مميزات الخطة الأساسية",
+      "dropOffRates": "معدلات الانسحاب",
+      "responses10000": "10,000 استجابة",
+      "users5": "5 مستخدمين",
+      "everythingPlus": "كل مميزات خطة بلس",
+      "conversionTracking": "تتبع التحويلات"
+    },
+    "plans": {
+      "basic": {
+        "name": "الأساسية",
+        "description": "أنشئ نماذج تفاعلية تتصل بسير العمل لديك",
+        "monthlyPrice": "25",
+        "yearlyPrice": "250",
+        "features": ["100 استجابة", "مستخدم واحد", "استبيانات غير محدودة", "أسئلة غير محدودة"]
+      },
+      "plus": {
+        "name": "بلس",
+        "description": "اجعل نماذجك أكثر جمالًا ومتوافقة مع هويتك",
+        "monthlyPrice": "50",
+        "yearlyPrice": "500",
+        "features": ["1,000 استجابة", "3 مستخدمين", "كل مميزات الخطة الأساسية", "معدلات الانسحاب"]
+      },
+      "business": {
+        "name": "الأعمال",
+        "description": "حلّل الأداء واستفد أكثر من بياناتك",
+        "monthlyPrice": "83",
+        "yearlyPrice": "830",
+        "features": ["10,000 استجابة", "5 مستخدمين", "كل مميزات خطة بلس", "تتبع التحويلات"]
+      }
+    }
+  }
 }
