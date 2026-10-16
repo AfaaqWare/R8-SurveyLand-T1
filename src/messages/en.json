@@ -139,5 +139,16 @@
         "features": ["10,000 responses", "5 users", "Everything in Plus", "Conversion tracking"]
       }
     }
+  },
+  "forgotPassword": {
+    "title": "Forgot Password?",
+    "subtitle": "Don't worry, we'll help you reset it.",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Enter a valid email",
+    "submit": "Reset Password",
+    "backToSignIn": "Back to sign in",
+    "success": "A verification code has been sent to your email",
+    "somethingWrong": "Something went wrong, please try again"
   }
 }
