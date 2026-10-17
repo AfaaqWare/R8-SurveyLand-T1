@@ -140,5 +140,28 @@
         "features": ["10,000 responses", "5 users", "Everything in Plus", "Conversion tracking"]
       }
     }
+  },
+  "surveyPreview": {
+    "header": {
+      "title": "Frontend Training Survey",
+      "description": "Help us improve the training experience",
+      "deadline": "Deadline: {date}",
+      "duration": "Takes {time} minutes",
+      "imageAlt": "Survey cover image"
+    },
+    "info": {
+      "title": "Your Information",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Ammar Hassan",
+      "email": "Email Address",
+      "emailPlaceholder": "ammar@gmail.com",
+      "confidential": "Your information will be kept confidential."
+    },
+    "questions": {
+      "title": "Survey Questions",
+      "total": "Total Questions",
+      "required": "Required",
+      "submit": "Submit Response"
+    }
   }
 }
