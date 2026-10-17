@@ -149,5 +149,28 @@
     "backToSignIn": "العودة لتسجيل الدخول",
     "success": "تم إرسال رمز التحقق إلى بريدك الإلكتروني",
     "somethingWrong": "حدث خطأ، حاول مرة أخرى"
+  },
+  "surveyPreview": {
+    "header": {
+      "title": "استبيان تدريب الفرونت إند",
+      "description": "ساعدنا في تحسين تجربة التدريب",
+      "deadline": "الموعد النهائي: {date}",
+      "duration": "يستغرق {time} دقائق",
+      "imageAlt": "صورة غلاف الاستبيان"
+    },
+    "info": {
+      "title": "معلوماتك",
+      "fullName": "الاسم الكامل",
+      "fullNamePlaceholder": "عمار حسن",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "ammar@gmail.com",
+      "confidential": "ستبقى معلوماتك سرية."
+    },
+    "questions": {
+      "title": "أسئلة الاستبيان",
+      "total": "إجمالي الأسئلة",
+      "required": "مطلوب",
+      "submit": "إرسال الإجابات"
+    }
   }
 }
