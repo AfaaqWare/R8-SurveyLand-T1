@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ClipboardList, FileText, Send } from "@/assets/icons/icons";
+import { useTranslations } from "next-intl";
 
 export type Question =
   | { id: string; type: "radio"; label: string; options: string[]; required?: boolean }
@@ -80,12 +81,16 @@ function StatCard({
 export default function QuestionsCard({ questions }: { questions: Question[] }) {
   const requiredCount = questions.filter((q) => q.required).length;
 
+  const t =  useTranslations ("surveyPreview.questions")
+
   return (
     <section className="overflow-hidden rounded-2xl  bg-white dark:bg-black">
       {/* title */}
       <div className="flex items-center gap-2 px-6 pt-5">
         <ClipboardList className="size-5 text-[#00a9b1]" />
-        <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Survey Questions</h2>
+        <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
+          {t('title')}
+          </h2>
       </div>
 
       {/* main */}
@@ -110,13 +115,13 @@ export default function QuestionsCard({ questions }: { questions: Question[] }) 
         <div className="flex gap-3">
           <StatCard
             icon={<ClipboardList className="size-6 text-[#00a9b1]" />}
-            label="Total Questions"
+            label={t('total')}
             value={questions.length}
             valueClass="text-[#00a9b1]"
           />
           <StatCard
             icon={<FileText className="size-5 text-amber-600" />}
-            label="Required"
+            label={t('required')}
             value={requiredCount}
             valueClass="text-amber-600"
           />
@@ -127,7 +132,7 @@ export default function QuestionsCard({ questions }: { questions: Question[] }) 
           className="flex h-12 items-center justify-center gap-3 rounded-xl bg-[#00a9b1] px-10 text-sm font-semibold text-white transition hover:bg-[#008f96] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00a9b1] sm:min-w-64"
         >
           <Send className="size-5 rtl:-scale-x-100" />
-          Submit Response
+          {t('submit')}
         </button>
       </div>
     </section>
