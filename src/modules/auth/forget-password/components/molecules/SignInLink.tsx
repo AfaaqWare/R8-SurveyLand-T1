@@ -1,7 +1,6 @@
 import Icon from "@/shared/components/atoms/Icon";
 import Link from "@/shared/components/atoms/Link";
 import { ArrowLeft } from "@/assets/icons/icons";
-import React from "react";
 
 type Props = {
   text: string;

@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import ForgetPasswordTitle from "../molecules/ForgetPasswordTitle";
 import { useTranslations } from "next-intl";
 import { Mail, Loader } from "@/assets/icons/icons";

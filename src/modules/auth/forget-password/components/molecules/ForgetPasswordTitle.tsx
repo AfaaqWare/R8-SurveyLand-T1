@@ -1,7 +1,6 @@
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
 import { useTranslations } from "next-intl";
-import React from "react";
 
 const ForgetPasswordTitle = () => {
   const t = useTranslations("forgotPassword");

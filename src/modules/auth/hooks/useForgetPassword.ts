@@ -32,12 +32,12 @@ const useForgetPassword = () => {
   const { mutate, isPending } = useApiMutation<string, ForgotPasswordResponse>({
     mutationFn: forgetPasswordApi,
     options: {
-      onSuccess: (response, email) => {
+      onSuccess: async(response, email) => {
         OtpService.setEmail(email);
         if (response.data.otp) {
           OtpService.setOtp(response.data.otp);
         }
-        showAlert("success", t("success"));
+        await showAlert("success", t("success"));
         router.push("/verify-otp");
       },
       onError: error => {
