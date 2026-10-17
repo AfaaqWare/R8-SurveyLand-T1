@@ -1,6 +1,6 @@
 import Button from "@/shared/components/atoms/Button";
 import { useTranslations } from "next-intl";
-import React from "react";
+
 
 interface Props {
   onSave: () => void;
