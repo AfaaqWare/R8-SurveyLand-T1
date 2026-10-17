@@ -1,6 +1,6 @@
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
-import React from "react";
+
 
 interface Props {
   title: string;

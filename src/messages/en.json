@@ -70,6 +70,7 @@
       "date": "Date",
       "roleManagement": "Role Management",
       "currentRole": "Current Role",
+      "saved": "Role updated successfully",
       "roles": {
         "USER": {
           "title": "User",

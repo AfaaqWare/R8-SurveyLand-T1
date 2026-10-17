@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/shared/components/atoms/Card";
 import AppImage from "@/shared/components/atoms/Image";
 import { useTranslations } from "next-intl";
-import React from "react";
 import Title from "@/shared/components/atoms/Title";
 import { UserInfoCardProps } from "../../types/RoleType";
 import InfoRow from "./InfoRow";

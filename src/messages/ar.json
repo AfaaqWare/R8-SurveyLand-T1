@@ -69,6 +69,7 @@
       "date": "التاريخ",
       "roleManagement": "إدارة الأدوار",
       "currentRole": "الدور الحالي",
+      "saved": "تم تحديث الدور بنجاح",
       "roles": {
         "USER": {
           "title": "مستخدم",
