@@ -9,6 +9,28 @@
  *     { id: 1, img: card1, alt: "Card", title: "Title", text: "Text" },
  *   ];
  */
+import BuildImg from "@/assets/images/Frame 11 (1).png";
+import card1 from "@/assets/images/Frame 14.png";
+import card2 from "@/assets/images/Frame 14 (3).png";
+import card3 from "@/assets/images/Frame 14 (2).png";
+import card4 from "@/assets/images/Frame 14@2x.png";
+
+import card5 from "@/assets/images/Frame 14.png";
+import card6 from "@/assets/images/Frame 14 (3).png";
+
+import card7 from "@/assets/images/Frame 14 (4).png";
+import card8 from "@/assets/images/Frame 14 (5).png";
+
+import card9 from "@/assets/images/Frame 7.png";
+import card10 from "@/assets/images/Frame 2.png";
+
+
+import card13 from "@/assets/images/Frame 3.png";
+import card14 from "@/assets/images/Frame 5.png";
+
+import card15 from "@/assets/images/Frame 4.png";
+import card16 from "@/assets/images/Frame 1.png";
+import card17 from "@/assets/images/Frame 8.png";
 
 export type PlanId = "basic" | "plus" | "business";
 export type BillingCycle = "monthly" | "yearly";
@@ -41,4 +63,163 @@ export const plans: Plan[] = [
     yearlyPrice: 66,
     features: ["responses10000", "users5", "everythingPlus", "conversionTracking"],
   },
+];
+
+
+export const feedbackCards = [
+  {
+    id: 1,
+    btn: "Use Template",
+    titletext: "Course Evaluation Survey",
+    title: "Course Evaluation Survey",
+    text: "Assesses course content and delivery.",
+    image: card1,
+  },
+  {
+    id: 2,
+    btn: "Use Template",
+    title: "Learning Outcomes Survey",
+
+    text: "Gathers feedback on pricing acceptability.",
+    image: card2,
+  },
+  {
+    id: 3,
+    btn: "Use Template",
+    title: "Student Satisfaction Survey",
+    text: "Measures overall educational experience",
+    image:  card7,
+  },
+  {
+    id: 4,
+    btn: "Use Template",
+    title: "Instructor Feedback",
+    text: "Evaluates teacher or trainer performance",
+    image: card8,
+  },
+];
+
+
+export const marketCards = [
+  {
+    id: 5,
+    btn: "Use Template",
+    title: "Brand Awareness Survey",
+    text: "Measures how familiar people are with your brand",
+    image: card10,
+  },
+  {
+    id: 6,
+    btn: "Use Template",
+    title: "Product Pricing Survey",
+    text: "Gathers feedback on pricing acceptability",
+    image: card9,
+  },
+  {
+    id: 7,
+    btn: "Use Template",
+    title: "Consumer Preferences Survey",
+    text: "Identifies customer needs and wants",
+    image: card3,
+  },
+  {
+    id: 8,
+    btn: "Use Template",
+    title: "Competitor Analysis Survey",
+    text: "Compares your brand to competitors",
+    image: card17,
+  },
+];
+
+
+export const Education = [
+  {
+    id: 9,
+    btn: "Use Template",
+    title: "Course Evaluation Survey",
+    text: "Assesses course content...",
+    image: card10,
+  },
+  {
+    id: 10,
+    btn: "Use Template",
+    title: "Learning Outcomes Survey",
+    text: "Gathers feedback on pricing...",
+    image: card9,
+  },
+  {
+    id: 11,
+    btn: "Use Template",
+    title: "Student Satisfaction Survey",
+    text: "Measures overall...",
+    image: card3,
+  },
+  {
+    id: 12,
+    btn: "Use Template",
+    title: "Instructor Feedback",
+    text: "Evaluates teacher...",
+    image: card4,
+  },
+];
+
+
+export const eventFeedback = [
+  {
+    id: 13,
+    btn: "Use Template",
+    title: "Course Evaluation Survey",
+    text: "Assesses course content...",
+    image: card13,
+  },
+  {
+    id: 14,
+    btn: "Use Template",
+    title: "Learning Outcomes Survey",
+    text: "Gathers feedback on pricing...",
+    image: card14,
+  },
+  {
+    id: 15,
+    btn: "Use Template",
+    title: "Student Satisfaction Survey",
+    text: "Measures overall...",
+    image: card15,
+  },
+  {
+    id: 16,
+    btn: "Use Template",
+    title: "Instructor Feedback",
+    text: "Evaluates teacher...",
+    image: card16,
+  },
+];
+export const dataCard = [
+  {
+    id: 1,
+    title: "1. Customer Feedback",
+    highlightWord: "Surveys",
+    cards: feedbackCards, 
+  },
+  {
+    id: 2,
+    title: "2. Market",
+    highlightWord: "Research",
+    cards: marketCards,
+  },
+   {
+    id: 3,
+    title: "3. Education",
+    highlightWord: "Training",
+    cards: Education,
+  },
+    {
+    id: 4,
+    title: "4.Event",
+    highlightWord: "Feedback",
+    cards: eventFeedback,
+  }
+
+
+ 
 ];
