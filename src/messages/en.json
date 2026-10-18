@@ -35,5 +35,131 @@
       "default": "No data available to display."
     }
   },
-  "common": { "ok": "ok" }
+  "common": { "ok": "ok" },
+
+  "dashboard": {
+    "common": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "editRole": {
+      "title": "Edit User Role",
+      "subtitle": "Update the role and permissions for this user.",
+      "userInfo": "User Information",
+      "name": "Full Name",
+      "email": "Email",
+      "status": "Status",
+      "date": "Date",
+      "roleManagement": "Role Management",
+      "currentRole": "Current Role",
+      "roles": {
+        "USER": {
+          "title": "User",
+          "description": "Basic access to create and manage own surveys"
+        },
+        "EDITOR": {
+          "title": "Editor",
+          "description": "Can manage surveys and view responses"
+        },
+        "ADMIN": {
+          "title": "Admin",
+          "description": "Full access to all features and user management"
+        }
+      }
+    }
+  },
+  "common": { "ok": "ok" },
+  "pricing": {
+    "headingPrefix": "Plans &",
+    "headingAccent": "Pricing",
+    "subtitle": "Looking for advanced features? Check out our latest plans",
+    "billingLabel": "Billing frequency",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "perMonth": "/ month",
+    "perYear": "/ year",
+    "includedTitle": "What's included",
+    "choosePlan": "Choose plan",
+    "selected": "Plan selected",
+    "selectedMessage": "You selected the {plan} plan.",
+    "choosePlanLabel": "Choose the {plan} plan",
+    "priceLabel": "{price} dollars per {period}",
+    "features": {
+      "responses100": "100 responses",
+      "user1": "1 user",
+      "unlimitedSurveys": "Unlimited surveys",
+      "unlimitedQuestions": "Unlimited questions",
+      "responses1000": "1,000 responses",
+      "users3": "3 users",
+      "everythingBasic": "Everything in Basic",
+      "dropOffRates": "Drop-off rates",
+      "responses10000": "10,000 responses",
+      "users5": "5 users",
+      "everythingPlus": "Everything in Plus",
+      "conversionTracking": "Conversion tracking"
+    },
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "description": "Create interactive forms that connect to your workflow",
+        "monthlyPrice": "25",
+        "yearlyPrice": "250",
+        "features": ["100 responses", "1 user", "Unlimited surveys", "Unlimited questions"]
+      },
+      "plus": {
+        "name": "Plus",
+        "description": "Make your forms more beautiful and on-brand",
+        "monthlyPrice": "50",
+        "yearlyPrice": "500",
+        "features": ["1,000 responses", "3 users", "Everything in Basic", "Drop-off rates"]
+      },
+      "business": {
+        "name": "Business",
+        "description": "Analyze performance and do more with your data",
+        "monthlyPrice": "83",
+        "yearlyPrice": "830",
+        "features": ["10,000 responses", "5 users", "Everything in Plus", "Conversion tracking"]
+      }
+    }
+  },
+
+  "signup": {
+    "haveAccount": "Already have an account?",
+    "applyNow": "Apply Now",
+    "title": "Create Account",
+    "welcomeDescription": "Create your account and start your journey with us.",
+    "googleSignup": "Sign up with Google",
+    "githubSignup": "Sign up with GitHub",
+    "orRegister": "Or register using your email address",
+    "name": "Name",
+    "email": "E-mail",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "agreeWith": "Agree with",
+    "terms": "Terms & Conditions",
+    "submit": "SIGN UP",
+    "passwordMismatch": "Passwords do not match.",
+    "successMessage": "Account created successfully! Welcome aboard.",
+    "errorMessage": "Failed to create account, please try again."
+  },
+  "signin": {
+    "title": "Sign In",
+    "welcomeDescription": "Welcome back, please enter your details to continue.",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember Me",
+    "forgotPassword": "Forgot Password?",
+    "submit": "Sign In",
+    "noAccount": "Don't have an account?",
+    "registerNow": "Register Now",
+    "orLogin": "Or login with",
+    "googleSignin": "Login with Google",
+    "githubSignin": "Login with GitHub",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "successMessage": "Welcome back! You have been signed in successfully.",
+    "errorMessage": "Sign in failed, please check your details."
+  }
 }
