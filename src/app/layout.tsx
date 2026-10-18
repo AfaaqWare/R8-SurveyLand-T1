@@ -6,6 +6,7 @@ import AppProviders from "@/providers/AppProviders";
 import { changeLocaleAction } from "@/i18n/locale";
 import { NextIntlClientProvider } from "next-intl";
 import LocaleSwitcher from "@/shared/components/atoms/LocalSwitcher";
+import ThemeToggle from "@/shared/components/atoms/ThemeToggle";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,7 +41,10 @@ export default async function RootLayout({
           <AppProviders>
             {children}
 
-            <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
+            <div className="flex items-center justify-center gap-3 my-6">
+  <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
+  <ThemeToggle />
+</div>
           </AppProviders>
         </NextIntlClientProvider>
       </body>
