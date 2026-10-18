@@ -18,7 +18,9 @@ import {
   ListMinus,
   X,
   Eye,
+  Menu,
   EyeOff,
+  ArrowLeft,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -64,7 +66,9 @@ import {
   FileSpreadsheet,
   Copy,
   Funnel,
-
+  SquareUserRound,
+  UserRoundCog,
+  Loader,
 } from "lucide-react";
 import { IconLayoutSidebarLeftCollapse } from "@tabler/icons-react";
 
@@ -134,5 +138,10 @@ export {
   FileSpreadsheet,
   Copy,
   Funnel,
+  Menu,
   IconLayoutSidebarLeftCollapse,
+  SquareUserRound,
+  UserRoundCog,
+  ArrowLeft,
+  Loader,
 };

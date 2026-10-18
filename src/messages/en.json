@@ -13,10 +13,42 @@
   "publicPages": {
     "home": {
       "hero-section": {
-        "title": "",
-        "description": "",
-        "create-btn": ""
+        "title": "Turn <highlight>Questions</highlight> into Clarity and Transform <highlight>Responses</highlight> into Valuable Insights",
+        "description": "Effortlessly build surveys that deliver the answers you need to grow, improve, and connect with your audience.",
+        "create-btn": "Create Your Survey",
+        "how-it-works-btn": "See How It Works",
+        "image-alt": "People building a survey on a laptop"
+      },
+      "how-it-works": {
+        "title": "How It",
+        "highlight": "Works",
+        "description": "Get started in just 3 simple steps",
+        "create": {
+          "title": "Create Your Survey",
+          "description": "Choose a template or start from scratch using our easy-to-use builder"
+        },
+        "share": {
+          "title": "Share With Your Audience",
+          "description": "Send your survey via email, social media, or embed it in your website"
+        },
+        "analyze": {
+          "title": "Analyze Responses",
+          "description": "Get instant insights with clean charts and downloadable reports"
+        }
       }
+    },
+    "sign-in": {
+      "title": "Sign in",
+      "google": "Sign in with Google",
+      "github": "Sign in with GitHub",
+      "email-hint": "Or register using your email address",
+      "email": "E-mail",
+      "password": "Password",
+      "show-password": "Show password",
+      "hide-password": "Hide password",
+      "remember": "Remember me?",
+      "forget-password": "Forget password?",
+      "submit": "Sign in"
     }
   },
 
@@ -52,6 +84,7 @@
       "date": "Date",
       "roleManagement": "Role Management",
       "currentRole": "Current Role",
+      "saved": "Role updated successfully",
       "roles": {
         "USER": {
           "title": "User",
@@ -161,5 +194,38 @@
     "hidePassword": "Hide password",
     "successMessage": "Welcome back! You have been signed in successfully.",
     "errorMessage": "Sign in failed, please check your details."
+  "forgotPassword": {
+    "title": "Forgot Password?",
+    "subtitle": "Don't worry, we'll help you reset it.",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Enter a valid email",
+    "submit": "Reset Password",
+    "backToSignIn": "Back to sign in",
+    "success": "A verification code has been sent to your email",
+    "somethingWrong": "Something went wrong, please try again"
+  },
+  "surveyPreview": {
+    "header": {
+      "title": "Frontend Training Survey",
+      "description": "Help us improve the training experience",
+      "deadline": "Deadline: {date}",
+      "duration": "Takes {time} minutes",
+      "imageAlt": "Survey cover image"
+    },
+    "info": {
+      "title": "Your Information",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Ammar Hassan",
+      "email": "Email Address",
+      "emailPlaceholder": "ammar@gmail.com",
+      "confidential": "Your information will be kept confidential."
+    },
+    "questions": {
+      "title": "Survey Questions",
+      "total": "Total Questions",
+      "required": "Required",
+      "submit": "Submit Response"
+    }
   }
 }

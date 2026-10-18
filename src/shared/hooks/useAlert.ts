@@ -5,7 +5,7 @@ export function useAlert() {
   const t = useTranslations("common");
 
   const showAlert = (icon: "success" | "error", title: string) => {
-    void Swal.fire({
+    return Swal.fire({
       icon,
       title,
       confirmButtonText: t("ok"),
