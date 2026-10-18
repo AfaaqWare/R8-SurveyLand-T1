@@ -9,7 +9,6 @@
     "item7": "settings",
     "btn": "Login"
   },
-
   "publicPages": {
     "home": {
       "hero-section": {
@@ -51,7 +50,6 @@
       "submit": "Sign in"
     }
   },
-
   "ui-state": {
     "loading": "Loading...",
     "notFound": {
@@ -67,7 +65,6 @@
       "default": "No data available to display."
     }
   },
-
   "dashboard": {
     "common": {
       "cancel": "Cancel",
@@ -100,7 +97,9 @@
       }
     }
   },
-  "common": { "ok": "ok" },
+  "common": {
+    "ok": "ok"
+  },
   "pricing": {
     "headingPrefix": "Plans &",
     "headingAccent": "Pricing",
@@ -186,6 +185,28 @@
       "total": "Total Questions",
       "required": "Required",
       "submit": "Submit Response"
+    }
+  },
+  "auth": {
+    "header": {
+      "signIn": {
+        "prefix": "Don't have an account?",
+        "apply": "Apply Now"
+      },
+      "signUp": {
+        "prefix": "Already have an account?",
+        "apply": "Log in now"
+      },
+      "loginBtn": "Login",
+      "signUpBtn": "Sign Up",
+      "home": "Home"
+    },
+    "sheets": {
+      "signIn": {
+        "title": "New to SurveyLand? Sign up here!",
+        "subtitle": "Become part of our community",
+        "cta": "SIGN UP"
+      }
     }
   }
 }
