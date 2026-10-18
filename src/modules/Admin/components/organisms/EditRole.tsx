@@ -7,9 +7,15 @@ import { useTranslations } from "next-intl";
 import { UserRole } from "../../types/RoleType";
 import DashboardTitle from "../molecules/DashboardTitle";
 import { UserInfo } from "../../utils/RoleData";
+import { useAlert } from "@/shared/hooks/useAlert";
 const EditRole = () => {
   const [role, setRole] = useState<UserRole>("USER");
   const t = useTranslations("dashboard.editRole");
+  const { showAlert } = useAlert();
+
+  const handleSave = () => {
+    showAlert("success", t("saved"));
+  };
 
   return (
     <form className="flex w-full max-w-225 flex-col gap-8">
@@ -20,7 +26,7 @@ const EditRole = () => {
         <RoleManagementCard role={role} onRoleChange={setRole} />
       </div>
 
-      <FormActions />
+      <FormActions onSave={handleSave} />
     </form>
   );
 };

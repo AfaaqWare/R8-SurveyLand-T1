@@ -1,5 +1,5 @@
 import AdminSidebar from "@/shared/components/organisms/AdminSidebar";
-import React from "react";
+
 
 const AdminTemplate = ({ children }: { children: React.ReactNode }) => {
   return (
