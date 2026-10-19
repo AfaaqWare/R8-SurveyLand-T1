@@ -187,6 +187,20 @@
       "submit": "Submit Response"
     }
   },
+  "otp": {
+    "title": "Verify Your OTP for Register",
+    "description": "We've sent a 6-digit code to your email, Please enter it below to verify your account",
+    "expire": "This code will expire in {seconds} seconds",
+    "expired": "This code has expired. Request a new code to continue.",
+    "verify": "Verify",
+    "verifying": "Verifying...",
+    "resend": "Send again",
+    "resendSuccess": "A new verification code has been sent.",
+    "errors": {
+      "verifyFailed": "We couldn't verify your code. Please try again.",
+      "resendFailed": "We couldn't send a new code. Please try again.",
+      "invalidOtp": "Enter a valid 6-digit verification code."
+    },
   "auth": {
     "header": {
       "signIn": {
@@ -209,4 +223,4 @@
       }
     }
   }
-}
+}}
