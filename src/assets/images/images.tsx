@@ -13,4 +13,6 @@
  *   export { heroImage, card1 };
  */
 
-export {};
+import syrveyDone from "./SyrveyDone.png"
+
+export { syrveyDone };
