@@ -27,7 +27,7 @@ const StateItems = ({ stats, isError = false, onRetry }: StatsGridProps) => {
         <CircleAlert className="ds-text-danger size-8" />
 
         <Text className="ds-text-sm ds-text-danger">{t("error")}</Text>
-        <Button type="button" variant="outline" size="sm" onClick={onRetry}>
+        <Button variant="outline" size="sm" onClick={onRetry}>
           {t("retry")}
         </Button>
       </Card>

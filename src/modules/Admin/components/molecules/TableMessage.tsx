@@ -33,7 +33,7 @@ const TableMessage = ({
           </Text>
 
           {isError && onRetry && (
-            <Button type="button" variant="outline" size="sm" onClick={onRetry}>
+            <Button variant="outline" size="sm" onClick={onRetry}>
               {retryLabel}
             </Button>
           )}
