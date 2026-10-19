@@ -9,28 +9,22 @@
  *     { id: 1, img: card1, alt: "Card", title: "Title", text: "Text" },
  *   ];
  */
-import BuildImg from "@/assets/images/Frame 11 (1).png";
-import card1 from "@/assets/images/Frame 14.png";
-import card2 from "@/assets/images/Frame 14 (3).png";
-import card3 from "@/assets/images/Frame 14 (2).png";
-import card4 from "@/assets/images/Frame 14@2x.png";
-
-import card5 from "@/assets/images/Frame 14.png";
-import card6 from "@/assets/images/Frame 14 (3).png";
-
-import card7 from "@/assets/images/Frame 14 (4).png";
-import card8 from "@/assets/images/Frame 14 (5).png";
-
-import card9 from "@/assets/images/Frame 7.png";
-import card10 from "@/assets/images/Frame 2.png";
-
-
-import card13 from "@/assets/images/Frame 3.png";
-import card14 from "@/assets/images/Frame 5.png";
-
-import card15 from "@/assets/images/Frame 4.png";
-import card16 from "@/assets/images/Frame 1.png";
-import card17 from "@/assets/images/Frame 8.png";
+// import BuildImg from "@/assets/images/Frame 11 (1).png";
+// import card1 from "@/assets/images/Frame 14.png";
+// import card2 from "@/assets/images/Frame 14 (3).png";
+// import card3 from "@/assets/images/Frame 14 (2).png";
+// import card4 from "@/assets/images/Frame 14@2x.png";
+// import card5 from "@/assets/images/Frame 14.png";
+// import card6 from "@/assets/images/Frame 14 (3).png";
+// import card7 from "@/assets/images/Frame 14 (4).png";
+// import card8 from "@/assets/images/Frame 14 (5).png";
+// import card9 from "@/assets/images/Frame 7.png";
+// import card10 from "@/assets/images/Frame 2.png";
+// import card13 from "@/assets/images/Frame 3.png";
+// import card14 from "@/assets/images/Frame 5.png";
+// import card15 from "@/assets/images/Frame 4.png";
+// import card16 from "@/assets/images/Frame 1.png";
+// import card17 from "@/assets/images/Frame 8.png";
 
 export type PlanId = "basic" | "plus" | "business";
 export type BillingCycle = "monthly" | "yearly";
@@ -73,7 +67,7 @@ export const feedbackCards = [
     titletext: "Course Evaluation Survey",
     title: "Course Evaluation Survey",
     text: "Assesses course content and delivery.",
-    image: card1,
+    image:"/images/Frame 14.png",
   },
   {
     id: 2,
@@ -81,21 +75,21 @@ export const feedbackCards = [
     title: "Learning Outcomes Survey",
 
     text: "Gathers feedback on pricing acceptability.",
-    image: card2,
+    image: "/images/Frame 14 (3).png",
   },
   {
     id: 3,
     btn: "Use Template",
     title: "Student Satisfaction Survey",
     text: "Measures overall educational experience",
-    image:  card7,
+    image: "/images/Frame 14 (4).png",
   },
   {
     id: 4,
     btn: "Use Template",
     title: "Instructor Feedback",
     text: "Evaluates teacher or trainer performance",
-    image: card8,
+    image: "/images/Frame 14 (5).png",
   },
 ];
 
@@ -106,28 +100,28 @@ export const marketCards = [
     btn: "Use Template",
     title: "Brand Awareness Survey",
     text: "Measures how familiar people are with your brand",
-    image: card10,
+    image:"/images/Frame 2.png",
   },
   {
     id: 6,
     btn: "Use Template",
     title: "Product Pricing Survey",
     text: "Gathers feedback on pricing acceptability",
-    image: card9,
+    image: "/images/Frame 7.png",
   },
   {
     id: 7,
     btn: "Use Template",
     title: "Consumer Preferences Survey",
     text: "Identifies customer needs and wants",
-    image: card3,
+    image: "/images/Frame 14 (2).png",
   },
   {
     id: 8,
     btn: "Use Template",
     title: "Competitor Analysis Survey",
     text: "Compares your brand to competitors",
-    image: card17,
+    image:"/images/Frame 8.png",
   },
 ];
 
@@ -138,28 +132,28 @@ export const Education = [
     btn: "Use Template",
     title: "Course Evaluation Survey",
     text: "Assesses course content...",
-    image: card10,
+    image: "/images/Frame 2.png",
   },
   {
     id: 10,
     btn: "Use Template",
     title: "Learning Outcomes Survey",
     text: "Gathers feedback on pricing...",
-    image: card9,
+    image: "/images/Frame 7.png",
   },
   {
     id: 11,
     btn: "Use Template",
     title: "Student Satisfaction Survey",
     text: "Measures overall...",
-    image: card3,
+    image: "/images/Frame 14 (2).png",
   },
   {
     id: 12,
     btn: "Use Template",
     title: "Instructor Feedback",
     text: "Evaluates teacher...",
-    image: card4,
+    image: "/images/Frame 14@2x.png",
   },
 ];
 
@@ -170,28 +164,28 @@ export const eventFeedback = [
     btn: "Use Template",
     title: "Course Evaluation Survey",
     text: "Assesses course content...",
-    image: card13,
+    image: "/images/Frame 3.png",
   },
   {
     id: 14,
     btn: "Use Template",
     title: "Learning Outcomes Survey",
     text: "Gathers feedback on pricing...",
-    image: card14,
+    image: "/images/Frame 5.png",
   },
   {
     id: 15,
     btn: "Use Template",
     title: "Student Satisfaction Survey",
     text: "Measures overall...",
-    image: card15,
+    image: "/images/Frame 4.png",
   },
   {
     id: 16,
     btn: "Use Template",
     title: "Instructor Feedback",
     text: "Evaluates teacher...",
-    image: card16,
+    image: "/images/Frame 1.png",
   },
 ];
 export const dataCard = [
