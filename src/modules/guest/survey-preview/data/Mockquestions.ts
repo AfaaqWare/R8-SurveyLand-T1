@@ -1,13 +1,15 @@
 import type { Question } from "../components/SurveyQuestion";
 
-export const mockQuestions: Question[] = [
+type Translate = (key: string) => string;
+
+export const getMockQuestions = (t: Translate): Question[] => [
   {
     id: "q1",
     type: "radio",
-    label: "What’s your favorite language?",
-    options: ["JavaScript", "Python", "Go"],
+    label: t("q1"),
+    options: [t("q1o1"), t("q1o2"), t("q1o3")],
     required: true,
   },
-  { id: "q2", type: "text", label: "ما اسمك ؟", maxLength: 500, required: true },
-  { id: "q3", type: "text", label: "ما رايك في التدريب ؟", maxLength: 500, required: true },
+  { id: "q2", type: "text", label: t("q2"), maxLength: 500, required: true },
+  { id: "q3", type: "text", label: t("q3"), maxLength: 500, required: true },
 ];
