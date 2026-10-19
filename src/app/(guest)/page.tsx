@@ -9,7 +9,7 @@ export default function HomePage() {
     <PublicLayout>
       <HeroSection />
       <HowItWorks />
-      < SectionPopular/>
+      <SectionPopular />
     </PublicLayout>
   );
 }
