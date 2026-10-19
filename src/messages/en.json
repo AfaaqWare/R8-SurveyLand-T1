@@ -9,7 +9,6 @@
     "item7": "settings",
     "btn": "Login"
   },
-
   "publicPages": {
     "home": {
       "hero-section": {
@@ -36,9 +35,21 @@
           "description": "Get instant insights with clean charts and downloadable reports"
         }
       }
+    },
+    "sign-in": {
+      "title": "Sign in",
+      "google": "Sign in with Google",
+      "github": "Sign in with GitHub",
+      "email-hint": "Or register using your email address",
+      "email": "E-mail",
+      "password": "Password",
+      "show-password": "Show password",
+      "hide-password": "Hide password",
+      "remember": "Remember me?",
+      "forget-password": "Forget password?",
+      "submit": "Sign in"
     }
   },
-
   "ui-state": {
     "loading": "Loading...",
     "notFound": {
@@ -54,7 +65,6 @@
       "default": "No data available to display."
     }
   },
-
   "dashboard": {
     "common": {
       "cancel": "Cancel",
@@ -70,6 +80,7 @@
       "date": "Date",
       "roleManagement": "Role Management",
       "currentRole": "Current Role",
+      "saved": "Role updated successfully",
       "roles": {
         "USER": {
           "title": "User",
@@ -86,7 +97,9 @@
       }
     }
   },
-  "common": { "ok": "ok" },
+  "common": {
+    "ok": "ok"
+  },
   "pricing": {
     "headingPrefix": "Plans &",
     "headingAccent": "Pricing",
@@ -140,6 +153,17 @@
       }
     }
   },
+  "forgotPassword": {
+    "title": "Forgot Password?",
+    "subtitle": "Don't worry, we'll help you reset it.",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Enter a valid email",
+    "submit": "Reset Password",
+    "backToSignIn": "Back to sign in",
+    "success": "A verification code has been sent to your email",
+    "somethingWrong": "Something went wrong, please try again"
+  },
   "surveyPreview": {
     "header": {
       "title": "Frontend Training Survey",
@@ -176,6 +200,27 @@
       "verifyFailed": "We couldn't verify your code. Please try again.",
       "resendFailed": "We couldn't send a new code. Please try again.",
       "invalidOtp": "Enter a valid 6-digit verification code."
+    },
+  "auth": {
+    "header": {
+      "signIn": {
+        "prefix": "Don't have an account?",
+        "apply": "Apply Now"
+      },
+      "signUp": {
+        "prefix": "Already have an account?",
+        "apply": "Log in now"
+      },
+      "loginBtn": "Login",
+      "signUpBtn": "Sign Up",
+      "home": "Home"
+    },
+    "sheets": {
+      "signIn": {
+        "title": "New to SurveyLand? Sign up here!",
+        "subtitle": "Become part of our community",
+        "cta": "SIGN UP"
+      }
     }
   }
-}
+}}
