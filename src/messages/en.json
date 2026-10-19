@@ -185,6 +185,14 @@
       "total": "Total Questions",
       "required": "Required",
       "submit": "Submit Response"
+    },
+    "mock": {
+      "q1": "What's your favorite language?",
+      "q1o1": "JavaScript",
+      "q1o2": "Python",
+      "q1o3": "Go",
+      "q2": "What is your name?",
+      "q3": "What do you think of the training?"
     }
   },
   "auth": {

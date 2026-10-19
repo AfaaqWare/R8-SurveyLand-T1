@@ -39,7 +39,7 @@ export default function Surveyheader() {
         <ul className=" flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-400 dark:text-white/35  ">
            <li className='flex items-center gap-1.5'>
             <CalendarDays className=' size-3.5' />
-            {t('deadline' , {data:'10 May 2026'})}
+            {t('deadline', { date: '10 May 2026' })}
                 
            </li>
            <li className='flex items-center gap-1.5 text-gray-400 '>
@@ -48,7 +48,7 @@ export default function Surveyheader() {
 
            <li className='flex items-center gap-1.5'>
             <Clock3 className=' size-3.5' />
-            {t('duration' , {time:'5-7'})}
+            {t('duration', { time: '5-7' })}
            </li>
 
         </ul>
