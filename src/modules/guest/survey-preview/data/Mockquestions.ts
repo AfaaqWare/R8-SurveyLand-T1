@@ -1,6 +1,7 @@
+import type { useTranslations } from "next-intl";
 import type { Question } from "../components/SurveyQuestion";
 
-type Translate = (key: string) => string;
+type Translate = ReturnType<typeof useTranslations>;
 
 export const getMockQuestions = (t: Translate): Question[] => [
   {
