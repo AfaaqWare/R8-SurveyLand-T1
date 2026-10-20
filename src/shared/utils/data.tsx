@@ -215,5 +215,38 @@ export const dataCard = [
   }
 
 
+
+
+
+
  
+];
+
+  export const plansData = [
+  {
+    id: "basic",
+    title: "Basic",
+    price: "Free forever",
+    features: "100 responses",
+    buttonText: "Get Started",
+    isPopular: false,
+  },
+  {
+    id: "plus",
+    title: "Plus",
+    price: "$50",
+    priceSubtext: "/month",
+    features: "1,000 responses",
+    buttonText: "Choose Plus",
+    isPopular: true,
+  },
+  {
+    id: "business",
+    title: "Business",
+    price: "$83",
+    priceSubtext: "/month",
+    features: "10,000 responses",
+    buttonText: "Go Business",
+    isPopular: false,
+  },
 ];
