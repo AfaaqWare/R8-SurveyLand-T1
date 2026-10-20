@@ -48,6 +48,15 @@
       "remember": "Remember me?",
       "forget-password": "Forget password?",
       "submit": "Sign in"
+    },
+    "navbar": {
+      "home": "Home",
+      "about": "About Us",
+      "contact": "Contact Us",
+      "faqs": "FAQs",
+      "pricing": "Pricing",
+      "login": "Login",
+      "signup": "Sign Up"
     }
   },
   "ui-state": {
@@ -209,26 +218,108 @@
       "resendFailed": "We couldn't send a new code. Please try again.",
       "invalidOtp": "Enter a valid 6-digit verification code."
     },
-  "auth": {
-    "header": {
-      "signIn": {
-        "prefix": "Don't have an account?",
-        "apply": "Apply Now"
+    "auth": {
+      "header": {
+        "signIn": {
+          "prefix": "Don't have an account?",
+          "apply": "Apply Now"
+        },
+        "signUp": {
+          "prefix": "Already have an account?",
+          "apply": "Log in now"
+        },
+        "loginBtn": "Login",
+        "signUpBtn": "Sign Up",
+        "home": "Home"
       },
-      "signUp": {
-        "prefix": "Already have an account?",
-        "apply": "Log in now"
-      },
-      "loginBtn": "Login",
-      "signUpBtn": "Sign Up",
-      "home": "Home"
-    },
-    "sheets": {
-      "signIn": {
-        "title": "New to SurveyLand? Sign up here!",
-        "subtitle": "Become part of our community",
-        "cta": "SIGN UP"
+      "sheets": {
+        "signIn": {
+          "title": "New to SurveyLand? Sign up here!",
+          "subtitle": "Become part of our community",
+          "cta": "SIGN UP"
+        }
       }
     }
+  },
+  "signup": {
+    "title": "Create your account",
+    "welcomeDescription": "Sign up to get started.",
+    "haveAccount": "Already have an account?",
+    "logIn": "Log in",
+    "googleSignup": "Sign up with Google",
+    "githubSignup": "Sign up with GitHub",
+    "orRegister": "or sign up with email",
+    "nameRequired": "Full name",
+    "emailRequired": "Email address",
+    "passwordRequired": "Password",
+    "confirmPasswordRequired": "Confirm password",
+    "passwordHint": "At least 8 characters, with an uppercase letter, a lowercase letter and a number.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "agreeWith": "I agree to the",
+    "terms": "Terms and Conditions",
+    "submit": "Create account",
+    "submitting": "Creating account...",
+    "errors": {
+      "nameMin": "Name must be at least 2 characters.",
+      "nameMax": "Name must be 60 characters or fewer.",
+      "emailRequired": "Enter your email address.",
+      "emailInvalid": "Enter a valid email address.",
+      "passwordMin": "Password must be at least 8 characters.",
+      "passwordMax": "Password must be 72 characters or fewer.",
+      "passwordLower": "Add at least one lowercase letter.",
+      "passwordUpper": "Add at least one uppercase letter.",
+      "passwordNumber": "Add at least one number.",
+      "confirmRequired": "Confirm your password.",
+      "passwordMismatch": "Passwords don't match.",
+      "termsRequired": "You must accept the terms to continue.",
+      "invalidField": "Check this field and try again.",
+      "emailExists": "An account with this email already exists. Try logging in.",
+      "tooManyRequests": "Too many attempts. Wait a few minutes and try again.",
+      "networkError": "Can't reach the server. Check your connection and try again.",
+      "genericError": "Something went wrong. Try again in a moment."
+    }
+  },
+  "Footer": {
+    "ariaLabel": "Site footer",
+    "brand": {
+      "first": "Survey",
+      "second": "Land",
+      "ariaLabel": "SurveyLand home"
+    },
+    "tagline": "Make smarter decisions with better data. Create surveys, gather feedback, and grow.",
+    "newsletter": {
+      "label": "Email address",
+      "placeholder": "Stay informed by entering your email",
+      "submit": "Enter",
+      "loading": "Sending...",
+      "invalid": "Enter a valid email address.",
+      "error": "Something went wrong. Try again.",
+      "success": "You're subscribed."
+    },
+    "columns": {
+      "product": "Product",
+      "support": "Support"
+    },
+    "links": {
+      "home": "Home",
+      "templates": "Templates",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "helpCenter": "Help Center",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "refund": "Refund Policy",
+      "faqs": "FAQs"
+    },
+    "contact": {
+      "title": "E-mail us at"
+    },
+    "social": {
+      "title": "Follow us",
+      "x": "Follow us on X",
+      "linkedin": "Follow us on LinkedIn"
+    },
+    "copyright": "©{year} SurveyLand. All rights reserved"
   }
-}}
+}
