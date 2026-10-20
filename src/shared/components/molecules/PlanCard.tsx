@@ -1,6 +1,7 @@
 
 import Title from "../atoms/Title";
 import Text from "../atoms/Text";
+import Button from "../atoms/Button";
 import { cn } from "@/lib/cn";
 
 interface Props {
@@ -30,15 +31,12 @@ export default function PlanCard({
     <div
       className={cn(
      
-        "rounded-2xl flex flex-col items-center justify-between px-6 text-center transition-all duration-300 ease-in-out cursor-pointer",
-        
-       
-        "hover:-translate-y-2 hover:shadow-lg",
+        "flex flex-col items-center justify-between px-6 ds-rounded-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:ds-shadow-md",
         
     
         isPopular 
-          ? "bg-[#e0f7fa] border-none shadow-md py-20 scale-105" 
-          : "bg-white border border-gray-100 shadow-sm py-14",
+          ? "ds-bg-teal-soft ds-shadow-sm py-16 scale-105 border-none" 
+          : "ds-bg-alt ds-shadow-sm py-14 ds-border-sm",
           
         className
       )}
@@ -53,14 +51,14 @@ export default function PlanCard({
        
           <span className={cn(
             isFree 
-              ? "text-lg text-gray-500 font-medium" 
-              : "text-4xl text-gray-900 font-bold"  
+              ? "ds-text-secondary ds-text-lg ds-font-regular" 
+              : "ds-text-primary ds-title-sm ds-font-bold"  
           )}>
             {price}
           </span>
           
           {priceSubtext && (
-            <span className="text-sm font-medium text-gray-600">
+            <span className="ds-text-secondary ds-text-sm ds-font-regular">
               {priceSubtext}
             </span>
           )}
@@ -71,15 +69,9 @@ export default function PlanCard({
         </Text>
       </div>
 
-      {/* <button 
-        className={cn(
-          "w-full py-3 px-4 rounded-full font-medium text-white transition-colors bg-teal-400 hover:bg-teal-500"
-        )}
-      >
-        {buttonText}
-      </button> */}
+    
 
-          <button 
+          {/* <button 
         className={cn(
           "w-full py-3 px-4 rounded-full font-semibold transition-colors duration-300",
           isPopular 
@@ -88,7 +80,11 @@ export default function PlanCard({
         )}
       >
         {buttonText}
-      </button>
+      </button> */}
+
+      <Button variant="primary" size="md" isRounded className="px-8">
+        {buttonText}
+      </Button>
     </div>
   );
 }

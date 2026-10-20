@@ -1,14 +1,19 @@
 import React from "react";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
+import Button from "@/shared/components/atoms/Button";
 import PlanCard from "@/shared/components/molecules/PlanCard";
 import { plansData } from "@/shared/utils/data";
 
 export default function SectionPlan() {
   return (
     <div>
-      <section className="my-15">
-        <Title size="xl" className="mb-4 text-center font-extrabold text-gray-800">
+      <section className="ds-container py-20">
+
+
+
+  
+        <Title size="xl"   isCenter className="mb-4 ds-text-primary ">
           {"A Plan for Every Team's Journey"}
         </Title>
 
@@ -16,7 +21,7 @@ export default function SectionPlan() {
           size="md"
           variant="secondary"
           isCenter
-          className="mb-12 leading-relaxed text-gray-500"
+          className="mb-12 "
         >
           No hidden fees. Choose the plan that fits your needs
         </Text>
@@ -32,15 +37,17 @@ export default function SectionPlan() {
                 features={plan.features}
                 buttonText={plan.buttonText}
                 isPopular={plan.isPopular}
-                className={
-                  plan.id === "plus"
-                    ? "scale-105 transform border-cyan-200 bg-cyan-100 shadow-md"
-                    : "bg-white"
-                }
+             
               />
             );
           })}
         </div>
+
+           <div className="flex justify-center">
+        <Button variant="primary" size="lg" className="px-8">
+          Not Sure? See All Pricing Options
+        </Button>
+      </div>
       </section>
     </div>
   );
