@@ -208,7 +208,8 @@
       "verifyFailed": "We couldn't verify your code. Please try again.",
       "resendFailed": "We couldn't send a new code. Please try again.",
       "invalidOtp": "Enter a valid 6-digit verification code."
-    },
+    }
+  },
   "auth": {
     "header": {
       "signIn": {
@@ -231,4 +232,4 @@
       }
     }
   }
-}}
+}

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import Text from "@/shared/components/atoms/Text";
-import { ROLE_OPTIONS } from "../../utils/RoleData";
+import { ROLE_OPTIONS } from "../../../utils/RoleData";
 import RoleIconBox from "./RoleIconBox";
 
 interface RoleOptionItemProps {

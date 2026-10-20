@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "@/shared/components/atoms/Card";
 import AppImage from "@/shared/components/atoms/Image";
 import { useTranslations } from "next-intl";
 import Title from "@/shared/components/atoms/Title";
-import { UserInfoCardProps } from "../../types/RoleType";
+import { UserInfoCardProps } from "../../../types/RoleType";
 import InfoRow from "./InfoRow";
 
 const UserInfoCard = ({ user }: UserInfoCardProps) => {
