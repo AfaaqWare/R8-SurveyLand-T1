@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
 import Link from "@/shared/components/atoms/Link";
 import Button from "@/shared/components/atoms/Button";
+import DropdownProfile from "@/shared/components/organisms/DropdownProfile";
+import { TokenService } from "@/services/tokenService";
 import { Menu, X } from "@/assets/icons/icons";
 
 type NavbarProps = {
@@ -31,6 +33,13 @@ const linkClass =
 export default function Navbar({ controls }: NavbarProps) {
   const t = useTranslations("publicPages.navbar");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    setIsLoggedIn(TokenService.hasToken());
+  }, []);
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -78,22 +87,28 @@ export default function Navbar({ controls }: NavbarProps) {
         <div className="hidden shrink-0 items-center gap-4 lg:flex">
           {controls}
 
-          <Link
-            href="/sign-in"
-            className="text-sm font-medium text-gray-700 no-underline! hover:text-cyan-400 dark:text-gray-200 dark:hover:text-cyan-400"
-          >
-            {t("login")}
-          </Link>
+          {mounted && isLoggedIn ? (
+            <DropdownProfile onLogout={() => setIsLoggedIn(false)} />
+          ) : (
+            <>
+              <Link
+                href="/sign-in"
+                className="text-sm font-medium text-gray-700 no-underline! hover:text-cyan-400 dark:text-gray-200 dark:hover:text-cyan-400"
+              >
+                {t("login")}
+              </Link>
 
-          <Button
-            variant="primary"
-            isRounded
-            size="md"
-            className="bg-cyan-500 px-5 text-white uppercase hover:bg-cyan-600"
-            onClick={handleSignUp}
-          >
-            {t("signup")}
-          </Button>
+              <Button
+                variant="primary"
+                isRounded
+                size="md"
+                className="bg-cyan-500 px-5 text-white uppercase hover:bg-cyan-600"
+                onClick={handleSignUp}
+              >
+                {t("signup")}
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile Actions */}
@@ -142,23 +157,29 @@ export default function Navbar({ controls }: NavbarProps) {
           </nav>
 
           <div className="mt-3 flex flex-col gap-2 border-t ds-border-color pt-3">
-            <Link
-              href="/sign-in"
-              onClick={closeMenu}
-              className="ds-text-primary ds-hover ds-rounded-sm block px-3 py-3 text-sm font-medium no-underline!"
-            >
-              {t("login")}
-            </Link>
+            {mounted && isLoggedIn ? (
+              <DropdownProfile onLogout={() => setIsLoggedIn(false)} />
+            ) : (
+              <>
+                <Link
+                  href="/sign-in"
+                  onClick={closeMenu}
+                  className="ds-text-primary ds-hover ds-rounded-sm block px-3 py-3 text-sm font-medium no-underline!"
+                >
+                  {t("login")}
+                </Link>
 
-            <Button
-              variant="primary"
-              isRounded
-              size="md"
-              className="w-full bg-cyan-500 text-white uppercase hover:bg-cyan-600"
-              onClick={handleSignUp}
-            >
-              {t("signup")}
-            </Button>
+                <Button
+                  variant="primary"
+                  isRounded
+                  size="md"
+                  className="w-full bg-cyan-500 text-white uppercase hover:bg-cyan-600"
+                  onClick={handleSignUp}
+                >
+                  {t("signup")}
+                </Button>
+              </>
+            )}
           </div>
         </div>
       )}
