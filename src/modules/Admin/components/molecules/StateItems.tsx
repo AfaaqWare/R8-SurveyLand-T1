@@ -2,9 +2,7 @@ import StatCard from "./StateCard";
 import { useTranslations } from "next-intl";
 import { stateItemsData } from "../../utils/DashboardData";
 import { Card } from "@/shared/components/atoms/Card";
-import { CircleAlert } from "@/assets/icons/icons";
-import Button from "@/shared/components/atoms/Button";;
-import Text from "@/shared/components/atoms/Text";
+import { ErrorState } from "@/core/ui-states";
 
 interface StatsGridProps {
   stats: {
@@ -23,13 +21,8 @@ const StateItems = ({ stats, isError = false, onRetry }: StatsGridProps) => {
 
   if (isError) {
     return (
-      <Card className=" ds-border-card ds-bg-card flex flex-col items-center justify-center gap-3 p-6 shadow-none">
-        <CircleAlert className="ds-text-danger size-8" />
-
-        <Text className="ds-text-sm ds-text-danger">{t("error")}</Text>
-        <Button variant="outline" size="sm" onClick={onRetry}>
-          {t("retry")}
-        </Button>
+      <Card className="ds-border-card ds-bg-card shadow-none">
+        <ErrorState onRetry={onRetry} className="min-h-0 py-6" />
       </Card>
     );
   }
