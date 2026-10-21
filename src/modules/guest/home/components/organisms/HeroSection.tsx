@@ -2,7 +2,7 @@ import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import Image from "@/shared/components/atoms/Image";
 import ButtonGroup from "@/shared/components/molecules/ButtonGroup";
-import heroImage from "../../../assets/images/HeroImage.png";
+import heroImage from "@/assets/images/HeroImage.png";
 import { getTranslations } from "next-intl/server";
 
 export default async function HeroSection() {
