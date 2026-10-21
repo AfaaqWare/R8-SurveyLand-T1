@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import Title from "@/shared/components/atoms/Title";
 import { UserInfoCardProps } from "../../../types/RoleType";
 import InfoRow from "./InfoRow";
+import { defaultAvatar } from "@/assets/images/images";
+
 
 const UserInfoCard = ({ user }: UserInfoCardProps) => {
   const t = useTranslations("dashboard.editRole");
@@ -17,7 +19,7 @@ const UserInfoCard = ({ user }: UserInfoCardProps) => {
         <div className="flex items-start gap-3">
           <div className="relative h-15 w-15 shrink-0 overflow-hidden rounded-full">
             <AppImage
-              src={user.image}
+              src={user.image ?? defaultAvatar}
               alt={user.name}
               fill
               sizes="40px"
@@ -28,8 +30,6 @@ const UserInfoCard = ({ user }: UserInfoCardProps) => {
           <div className="flex min-w-0 flex-1 flex-col gap-2">
             <InfoRow label="Full Name" value={user.name} />
             <InfoRow label="Email" value={user.email} />
-            <InfoRow label="Status" value={user.status} />
-            <InfoRow label="Date" value={user.date} />
           </div>
         </div>
       </CardContent>

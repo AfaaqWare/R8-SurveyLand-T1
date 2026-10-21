@@ -6,8 +6,9 @@ import Title from "@/shared/components/atoms/Title";
 import Button from "@/shared/components/atoms/Button";
 import Icon from "@/shared/components/atoms/Icon";
 import { User } from "@/assets/icons/icons";
+import { UserRole } from "@/modules/Admin/types/RoleType";
 
-const RoleManagementCard = () => {
+const RoleManagementCard = ({ role }: { role: UserRole }) => {
   const t = useTranslations("dashboard.editRole");
 
   return (
@@ -27,7 +28,7 @@ const RoleManagementCard = () => {
               <Icon IconComponent={User} className="ds-text-alt" />
             </div>
             <Text size="sm" className="flex-1 font-medium">
-              {t(`roles.ADMIN.title`)}
+              {role}
             </Text>
           </Button>
         </div>
