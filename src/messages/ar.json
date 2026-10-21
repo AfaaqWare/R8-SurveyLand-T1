@@ -243,7 +243,6 @@
   },
   "signup": {
     "title": "أنشئ حسابك",
-    "welcomeDescription": "سجّل الآن لتبدأ.",
     "haveAccount": "لديك حساب بالفعل؟",
     "logIn": "تسجيل الدخول",
     "googleSignup": "التسجيل عبر Google",

@@ -242,8 +242,7 @@
     }
   },
   "signup": {
-    "title": "Create your account",
-    "welcomeDescription": "Sign up to get started.",
+    "title": "Create account",
     "haveAccount": "Already have an account?",
     "logIn": "Log in",
     "googleSignup": "Sign up with Google",
