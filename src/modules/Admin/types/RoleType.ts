@@ -8,19 +8,14 @@ export interface InfoRowProps {
 }
 
 export interface UserDetails {
-  name: string;
+  id: string;
   email: string;
-  status: string;
-  date: string;
-  image: string | StaticImageData;
+  name: string;
   role: UserRole;
+  provider: string;
+  image: string | StaticImageData |null;
 }
 
 export interface UserInfoCardProps {
   user: UserDetails;
-}
-
-export interface RoleManagementCardProps {
-  role: UserRole;
-  onRoleChange: (role: UserRole) => void;
 }

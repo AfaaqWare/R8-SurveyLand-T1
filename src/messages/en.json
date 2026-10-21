@@ -71,7 +71,7 @@
       "save": "Save"
     },
     "editRole": {
-      "title": "Edit User Role",
+      "title": " User Role",
       "subtitle": "Update the role and permissions for this user.",
       "userInfo": "User Information",
       "name": "Full Name",

@@ -13,5 +13,6 @@
  *   export { heroImage, card1 };
  */
 import Avatar from "./Avatar.jpg";
+import defaultAvatar from "./user.webp";
 
-export { Avatar };
+export { Avatar,defaultAvatar };

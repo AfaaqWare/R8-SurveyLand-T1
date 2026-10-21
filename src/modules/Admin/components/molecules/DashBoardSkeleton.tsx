@@ -30,7 +30,7 @@ const DashBoardSkeleton = () => {
         <div className="ds-border-card ds-bg-card ds-rounded-lg flex flex-col gap-3 p-4">
           <Skeleton className="h-5 w-40" />
           <div className="flex flex-wrap items-center justify-center gap-6 py-2">
-            <Skeleton className="size-40 shrink-0 rounded-full" />
+            <Skeleton className="size-40 shrink-0 rounded-full!" />
             <div className="flex flex-col gap-3">
               <Skeleton className="h-3 w-32" />
               <Skeleton className="h-3 w-32" />
@@ -66,7 +66,7 @@ const DashBoardSkeleton = () => {
         <div className="ds-border-card ds-bg-card ds-rounded-lg flex flex-col gap-3 p-4">
           <Skeleton className="h-5 w-40" />
           <div className="flex flex-wrap items-center justify-center gap-6 py-2">
-            <Skeleton className="size-40 shrink-0 rounded-full" />
+            <Skeleton className="size-40 shrink-0 rounded-full!" />
             <div className="flex flex-col gap-3">
               <Skeleton className="h-3 w-32" />
               <Skeleton className="h-3 w-32" />
