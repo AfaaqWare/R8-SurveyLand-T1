@@ -48,6 +48,19 @@
       "remember": "Remember me?",
       "forget-password": "Forget password?",
       "submit": "Sign in"
+    },
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact Us",
+      "faqs": "FAQs",
+      "pricing": "Pricing",
+      "login": "Login",
+      "signup": "Sign Up",
+      "account": "Account",
+      "dashboard": "Dashboard",
+      "logout": "Logout",
+      "logoutSuccess": "You have been logged out successfully"
     }
   },
   "ui-state": {
@@ -275,6 +288,48 @@
         "subtitle": "Become part of our community",
         "cta": "SIGN UP"
       }
+    }
+  },
+  "Footer": {
+    "ariaLabel": "Site footer",
+    "brand": {
+      "ariaLabel": "Survey Land - Home",
+      "first": "Survey",
+      "second": "Land"
+    },
+    "tagline": "Build surveys, collect answers, and turn responses into useful insights.",
+    "columns": {
+      "product": "Product",
+      "support": "Support"
+    },
+    "links": {
+      "home": "Home",
+      "templates": "Templates",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "helpCenter": "Help Center",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "refund": "Refund Policy",
+      "faqs": "FAQs"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "social": {
+      "title": "Follow Us",
+      "x": "X",
+      "linkedin": "LinkedIn"
+    },
+    "copyright": "© {year} Survey Land. All rights reserved.",
+    "newsletter": {
+      "label": "Subscribe to our newsletter",
+      "placeholder": "Enter your email",
+      "submit": "Subscribe",
+      "loading": "Loading...",
+      "success": "Thanks for subscribing!",
+      "error": "Something went wrong. Please try again.",
+      "invalid": "Please enter a valid email address."
     }
   }
 }
