@@ -4,42 +4,46 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return null;
+  // نفس حجم الزر عشان الكبسولة ما تتحركش قبل ما الصفحة تحمّل
+  if (!mounted) return <span aria-hidden="true" className="block h-9 w-9" />;
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
+      type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="flex h-14 w-14 items-center justify-center rounded-xl border border-[var(--border-color-card)] bg-[var(--color-bg-alt)] transition-all duration-200 hover:border-[var(--color-primary)] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+      className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full transition-colors duration-200 hover:bg-[var(--color-bg-card)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
     >
       {isDark ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8"
+          className="h-5 w-5"
           style={{ color: "var(--color-primary)" }}
           viewBox="0 0 24 24"
           fill="currentColor"
+          aria-hidden="true"
         >
           <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
         </svg>
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-yellow-500"
+          className="h-5 w-5 text-yellow-500"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          aria-hidden="true"
         >
           <circle cx="12" cy="12" r="5" />
           <line x1="12" y1="1" x2="12" y2="3" />

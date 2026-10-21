@@ -3,9 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { cookies } from "next/headers";
 import "./globals.css";
 import AppProviders from "@/providers/AppProviders";
-import { changeLocaleAction } from "@/i18n/locale";
 import { NextIntlClientProvider } from "next-intl";
-import LocaleSwitcher from "@/shared/components/atoms/LocalSwitcher";
+import { getMessages } from "next-intl/server";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,18 +30,16 @@ export default async function RootLayout({
   const locale = store.get("locale")?.value || "en";
   const dir = locale === "ar" ? "rtl" : "ltr";
 
+  const messages = await getMessages();
+
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
         suppressHydrationWarning
       >
-        <NextIntlClientProvider>
-          <AppProviders>
-            {children}
-
-            <LocaleSwitcher changeLocaleAction={changeLocaleAction} />
-          </AppProviders>
+        <NextIntlClientProvider messages={messages}>
+          <AppProviders>{children}</AppProviders>
         </NextIntlClientProvider>
       </body>
     </html>
