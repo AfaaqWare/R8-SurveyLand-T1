@@ -69,6 +69,13 @@ import {
   SquareUserRound,
   UserRoundCog,
   Loader,
+  ChartLine,
+  PencilLine,
+  UsersRound,
+  MessageSquareText,
+  CirclePlus,
+  CircleAlert,
+  Inbox,
 } from "lucide-react";
 import { IconLayoutSidebarLeftCollapse } from "@tabler/icons-react";
 
@@ -144,4 +151,11 @@ export {
   UserRoundCog,
   ArrowLeft,
   Loader,
+  ChartLine,
+  PencilLine,
+  UsersRound,
+  MessageSquareText,
+  CirclePlus,
+  CircleAlert,
+  Inbox,
 };
