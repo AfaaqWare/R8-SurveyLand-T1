@@ -1,4 +1,4 @@
-import EditRole from "@/modules/Admin/components/organisms/EditRole";
+import EditRole from "@/modules/Admin/Role/components/organisms/EditRole";
 
 const page = () => {
   return (

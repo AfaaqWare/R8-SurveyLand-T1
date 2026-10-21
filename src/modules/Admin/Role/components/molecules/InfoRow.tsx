@@ -1,5 +1,6 @@
 
-import { InfoRowProps } from "../../types/RoleType";
+
+import { InfoRowProps } from "@/modules/Admin/types/RoleType";
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
 
