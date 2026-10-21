@@ -8,9 +8,9 @@ import {
   FOOTER_COLUMNS,
   SOCIAL_LINKS,
   SUPPORT_EMAIL,
-} from "@/config/footer";
+} from "@/modules/guest/utils/data";
 
-import type { SocialLink } from "@/config/footer";
+import type { SocialLink } from "@/modules/guest/utils/data";
 
 import NewsletterForm from "./NewsletterForm";
 

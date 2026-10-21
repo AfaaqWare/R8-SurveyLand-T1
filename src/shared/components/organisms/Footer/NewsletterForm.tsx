@@ -2,7 +2,7 @@
 
 import { useId, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
-import { NEWSLETTER_ENDPOINT } from "@/config/footer";
+import { NEWSLETTER_ENDPOINT } from "@/modules/guest/utils/data";
 
 type Status = "idle" | "loading" | "success" | "error" | "invalid";
 
