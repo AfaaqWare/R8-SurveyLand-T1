@@ -1,6 +1,7 @@
+import DashboardHome from "@/modules/Admin/components/organisms/DashboardHome";
 
 const page = () => {
-  return <div></div>;
+  return <DashboardHome />;
 };
 
 export default page;

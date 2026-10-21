@@ -320,6 +320,30 @@
     color: var(--color-text-primary);
   }
 
+  .ds-status-draft {
+    color: var(--color-status-draft);
+  }
+
+  .ds-status-published {
+    color: var(--color-status-published);
+  }
+
+  .ds-status-closed {
+    color: var(--color-status-closed);
+  }
+
+  .bg-status-draft {
+    background-color: var(--color-status-draft);
+  }
+
+  .bg-status-closed {
+    background-color: var(--color-status-closed);
+  }
+
+  .bg-status-published {
+    background-color: var(--color-status-published);
+  }
+
   /* ================= SPACING ================= */
   .ds-p-sm {
     padding: var(--space-sm);

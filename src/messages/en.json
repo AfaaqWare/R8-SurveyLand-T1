@@ -71,7 +71,7 @@
       "save": "Save"
     },
     "editRole": {
-      "title": "Edit User Role",
+      "title": " User Role",
       "subtitle": "Update the role and permissions for this user.",
       "userInfo": "User Information",
       "name": "Full Name",
@@ -94,6 +94,51 @@
           "title": "Admin",
           "description": "Full access to all features and user management"
         }
+      }
+    },
+    "home": {
+      "title": "Dashboard",
+      "subtitle": "Welcome back. Here's what's happening with your surveys.",
+      "fromLastMonth": "from last month",
+      "viewAll": "View All",
+      "total": "Total",
+      "statusOverview": "Survey Status Overview",
+      "recentSurveys": "Recent Surveys",
+      "recentResponses": "Recent Responses",
+      "untitled": "Untitled survey",
+      "anonymous": "Anonymous",
+      "noEmail": "No email",
+      "noData": "No data to show yet",
+      "error": "Couldn't load the data",
+      "retry": "Try again",
+      "stats": {
+        "totalSurveys": "Total Surveys",
+        "draftSurveys": "Draft Surveys",
+        "publishedSurveys": "Published Surveys",
+        "responses": "Responses",
+        "totalUsers": "Total Users"
+      },
+      "status": {
+        "draft": "Draft",
+        "published": "Published",
+        "closed": "Closed"
+      },
+      "columns": {
+        "surveyTitle": "Survey Title",
+        "status": "Status",
+        "questions": "Questions",
+        "updatedAt": "Updated At",
+        "respondent": "Respondent",
+        "email": "Email",
+        "answers": "Answers",
+        "submittedAt": "Submitted At"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "create": { "title": "Create New Survey", "description": "Build a new survey" },
+        "users": { "title": "Manage Users", "description": "View and manage users" },
+        "responses": { "title": "View Responses", "description": "Browse all responses" },
+        "export": { "title": "Export Reports", "description": "Download survey reports" }
       }
     }
   },

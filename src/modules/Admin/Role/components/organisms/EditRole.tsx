@@ -6,11 +6,12 @@ import { useTranslations } from "next-intl";
 import DashboardTitle from "../../../components/molecules/DashboardTitle";
 import useGetProfile from "@/modules/Admin/hooks/useGetProfile";
 import { ErrorState } from "@/core/ui-states";
+import RoleSkeleton from "../molecules/RoleSkeleton";
 const EditRole = () => {
   const t = useTranslations("dashboard.editRole");
   const { data, isError, isPending, refetch } = useGetProfile();
 
-  if (isPending) return <>no</>;
+  if (isPending) return <RoleSkeleton />;
   if (isError || !data) return <ErrorState onRetry={refetch} />;
   return (
     <section className="flex w-full max-w-225 flex-col gap-8">
