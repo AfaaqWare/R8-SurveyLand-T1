@@ -59,10 +59,10 @@ export default function Navbar({ controls }: NavbarProps) {
           className="shrink-0 no-underline!"
           aria-label="Survey Land - Home"
         >
-          <span className="ds-font-heading text-xl font-bold text-cyan-400">
+          <span className="text-2xl md:text-4xl font-bold text-cyan-400">
             Survey
           </span>
-          <span className="ds-font-heading text-xl font-bold text-gray-900 dark:text-white">
+          <span className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white">
             Land
           </span>
         </Link>
@@ -93,7 +93,7 @@ export default function Navbar({ controls }: NavbarProps) {
             <>
               <Link
                 href="/sign-in"
-                className="text-sm font-medium text-gray-700 no-underline! hover:text-cyan-400 dark:text-gray-200 dark:hover:text-cyan-400"
+                className="flex items-center text-sm font-medium text-gray-700 no-underline! hover:text-cyan-400 dark:text-gray-200 dark:hover:text-cyan-400"
               >
                 {t("login")}
               </Link>
@@ -149,7 +149,7 @@ export default function Navbar({ controls }: NavbarProps) {
                 key={link.key}
                 href={link.href}
                 onClick={closeMenu}
-                className="ds-text-primary ds-hover ds-rounded-sm block px-3 py-3 text-sm font-medium no-underline!"
+                className="ds-text-primary ds-hover ds-rounded-sm flex items-center px-3 py-3 text-sm font-medium no-underline!"
               >
                 {t(link.key)}
               </Link>
@@ -164,16 +164,15 @@ export default function Navbar({ controls }: NavbarProps) {
                 <Link
                   href="/sign-in"
                   onClick={closeMenu}
-                  className="ds-text-primary ds-hover ds-rounded-sm block px-3 py-3 text-sm font-medium no-underline!"
+                  className="ds-text-primary ds-hover ds-rounded-sm flex items-center px-3 py-3 text-sm font-medium no-underline!"
                 >
                   {t("login")}
                 </Link>
 
                 <Button
                   variant="primary"
-                  isRounded
                   size="md"
-                  className="w-full bg-cyan-500 text-white uppercase hover:bg-cyan-600"
+                  className="w-full bg-cyan-500 text-white rounded-sm! uppercase hover:bg-cyan-600"
                   onClick={handleSignUp}
                 >
                   {t("signup")}
