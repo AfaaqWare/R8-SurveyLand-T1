@@ -5,6 +5,7 @@ import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import { dataCard } from "@/shared/utils/data";
 
+
 function SectionPopular() {
   return (
     <div>

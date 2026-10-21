@@ -1,30 +1,5 @@
-/**
- * data.tsx — static data used by shared components (e.g. landing cards).
- *
- * TODO: define and export your data arrays here, then import them
- * from "@/shared/utils/data".
- *
- * Example:
- *   export const dataCards = [
- *     { id: 1, img: card1, alt: "Card", title: "Title", text: "Text" },
- *   ];
- */
-// import BuildImg from "@/assets/images/Frame 11 (1).png";
-// import card1 from "@/assets/images/Frame 14.png";
-// import card2 from "@/assets/images/Frame 14 (3).png";
-// import card3 from "@/assets/images/Frame 14 (2).png";
-// import card4 from "@/assets/images/Frame 14@2x.png";
-// import card5 from "@/assets/images/Frame 14.png";
-// import card6 from "@/assets/images/Frame 14 (3).png";
-// import card7 from "@/assets/images/Frame 14 (4).png";
-// import card8 from "@/assets/images/Frame 14 (5).png";
-// import card9 from "@/assets/images/Frame 7.png";
-// import card10 from "@/assets/images/Frame 2.png";
-// import card13 from "@/assets/images/Frame 3.png";
-// import card14 from "@/assets/images/Frame 5.png";
-// import card15 from "@/assets/images/Frame 4.png";
-// import card16 from "@/assets/images/Frame 1.png";
-// import card17 from "@/assets/images/Frame 8.png";
+
+import {card1 , card2 , card3 , card4 , card5 , card6 , card7 , card8 , card9 , card10 , card13 , card14 , card15 , card16 , card17} from "@/assets/images/images";
 
 export type PlanId = "basic" | "plus" | "business";
 export type BillingCycle = "monthly" | "yearly";
@@ -67,7 +42,7 @@ export const feedbackCards = [
     titletext: "Course Evaluation Survey",
     title: "Course Evaluation Survey",
     text: "Assesses course content and delivery.",
-    image:"/images/Frame 14.png",
+    image:card1,
   },
   {
     id: 2,
@@ -75,21 +50,21 @@ export const feedbackCards = [
     title: "Learning Outcomes Survey",
 
     text: "Gathers feedback on pricing acceptability.",
-    image: "/images/Frame 14 (3).png",
+    image: card2,
   },
   {
     id: 3,
     btn: "Use Template",
     title: "Student Satisfaction Survey",
     text: "Measures overall educational experience",
-    image: "/images/Frame 14 (4).png",
+    image: card7,
   },
   {
     id: 4,
     btn: "Use Template",
     title: "Instructor Feedback",
     text: "Evaluates teacher or trainer performance",
-    image: "/images/Frame 14 (5).png",
+    image: card8,
   },
 ];
 
@@ -100,28 +75,28 @@ export const marketCards = [
     btn: "Use Template",
     title: "Brand Awareness Survey",
     text: "Measures how familiar people are with your brand",
-    image:"/images/Frame 2.png",
+    image:card10,
   },
   {
     id: 6,
     btn: "Use Template",
     title: "Product Pricing Survey",
     text: "Gathers feedback on pricing acceptability",
-    image: "/images/Frame 7.png",
+    image: card9,
   },
   {
     id: 7,
     btn: "Use Template",
     title: "Consumer Preferences Survey",
     text: "Identifies customer needs and wants",
-    image: "/images/Frame 14 (2).png",
+    image: card3 ,
   },
   {
     id: 8,
     btn: "Use Template",
     title: "Competitor Analysis Survey",
     text: "Compares your brand to competitors",
-    image:"/images/Frame 8.png",
+    image:card17,
   },
 ];
 
@@ -132,28 +107,28 @@ export const Education = [
     btn: "Use Template",
     title: "Course Evaluation Survey",
     text: "Assesses course content...",
-    image: "/images/Frame 2.png",
+    image: card10,
   },
   {
     id: 10,
     btn: "Use Template",
     title: "Learning Outcomes Survey",
     text: "Gathers feedback on pricing...",
-    image: "/images/Frame 7.png",
+    image: card9,
   },
   {
     id: 11,
     btn: "Use Template",
     title: "Student Satisfaction Survey",
     text: "Measures overall...",
-    image: "/images/Frame 14 (2).png",
+    image: card3,
   },
   {
     id: 12,
     btn: "Use Template",
     title: "Instructor Feedback",
     text: "Evaluates teacher...",
-    image: "/images/Frame 14@2x.png",
+    image: card4,
   },
 ];
 
@@ -164,28 +139,28 @@ export const eventFeedback = [
     btn: "Use Template",
     title: "Course Evaluation Survey",
     text: "Assesses course content...",
-    image: "/images/Frame 3.png",
+    image: card13,
   },
   {
     id: 14,
     btn: "Use Template",
     title: "Learning Outcomes Survey",
     text: "Gathers feedback on pricing...",
-    image: "/images/Frame 5.png",
+    image: card14,
   },
   {
     id: 15,
     btn: "Use Template",
     title: "Student Satisfaction Survey",
     text: "Measures overall...",
-    image: "/images/Frame 4.png",
+    image: card15,
   },
   {
     id: 16,
     btn: "Use Template",
     title: "Instructor Feedback",
     text: "Evaluates teacher...",
-    image: "/images/Frame 1.png",
+    image: card16,
   },
 ];
 export const dataCard = [
