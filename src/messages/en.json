@@ -9,7 +9,6 @@
     "item7": "settings",
     "btn": "Login"
   },
-
   "publicPages": {
     "home": {
       "hero-section": {
@@ -51,7 +50,6 @@
       "submit": "Sign in"
     }
   },
-
   "ui-state": {
     "loading": "Loading...",
     "notFound": {
@@ -67,7 +65,6 @@
       "default": "No data available to display."
     }
   },
-
   "dashboard": {
     "common": {
       "cancel": "Cancel",
@@ -100,7 +97,9 @@
       }
     }
   },
-  "common": { "ok": "ok" },
+  "common": {
+    "ok": "ok"
+  },
   "pricing": {
     "headingPrefix": "Plans &",
     "headingAccent": "Pricing",
@@ -186,6 +185,50 @@
       "total": "Total Questions",
       "required": "Required",
       "submit": "Submit Response"
+    },
+    "mock": {
+      "q1": "What's your favorite language?",
+      "q1o1": "JavaScript",
+      "q1o2": "Python",
+      "q1o3": "Go",
+      "q2": "What is your name?",
+      "q3": "What do you think of the training?"
+    }
+  },
+  "otp": {
+    "title": "Verify Your OTP for Register",
+    "description": "We've sent a 6-digit code to your email, Please enter it below to verify your account",
+    "expire": "This code will expire in {seconds} seconds",
+    "expired": "This code has expired. Request a new code to continue.",
+    "verify": "Verify",
+    "verifying": "Verifying...",
+    "resend": "Send again",
+    "resendSuccess": "A new verification code has been sent.",
+    "errors": {
+      "verifyFailed": "We couldn't verify your code. Please try again.",
+      "resendFailed": "We couldn't send a new code. Please try again.",
+      "invalidOtp": "Enter a valid 6-digit verification code."
+    },
+  "auth": {
+    "header": {
+      "signIn": {
+        "prefix": "Don't have an account?",
+        "apply": "Apply Now"
+      },
+      "signUp": {
+        "prefix": "Already have an account?",
+        "apply": "Log in now"
+      },
+      "loginBtn": "Login",
+      "signUpBtn": "Sign Up",
+      "home": "Home"
+    },
+    "sheets": {
+      "signIn": {
+        "title": "New to SurveyLand? Sign up here!",
+        "subtitle": "Become part of our community",
+        "cta": "SIGN UP"
+      }
     }
   }
-}
+}}
