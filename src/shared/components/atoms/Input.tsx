@@ -76,7 +76,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const inputId = id ?? `input-${useId.toString().slice(2, 7)}`;
+    // FIX: useId must be CALLED. `useId.toString()` returned the function's source
+    // text, so every input without an `id` got the same id.
+    const generatedId = useId();
+    const inputId = id ?? generatedId;
 
     const baseInputClasses = [
       "w-full rounded-lg border bg-[var(--color-bg-form)] font-[var(--font-sans)]",
@@ -102,7 +105,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           >
             {label}
             {required && (
-              <span className="ml-1 text-red-500" aria-hidden="true">
+              // FIX: ms-1 (logical) instead of ml-1 so the asterisk works in RTL
+              <span className="ms-1 text-red-500" aria-hidden="true">
                 *
               </span>
             )}
@@ -124,6 +128,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             id={inputId}
             disabled={disabled}
+            // FIX: `required` was destructured but never reached the <input>
+            required={required}
             aria-invalid={state === "error"}
             aria-describedby={
               state === "error" && errorMessage
