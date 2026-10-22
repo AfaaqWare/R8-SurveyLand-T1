@@ -6,7 +6,7 @@ import { useForm, type RegisterOptions } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
 import { FcGoogle, FaGithub, User, Mail, Lock, Eye, EyeOff } from "@/assets/icons/icons";
-import IconInput from "@/shared/components/atoms/Input";
+import IconInput from "@/shared/components/molecules/IconInput";
 import Button from "@/shared/components/atoms/Button";
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
@@ -24,7 +24,7 @@ interface SignUpFormData {
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
-    <p className="ds-text-error -mt-2 text-xs leading-5" role="alert">
+    <p className="ds-text-danger -mt-2 text-xs leading-5" role="alert">
       {message}
     </p>
   );
@@ -81,15 +81,6 @@ export default function SignUpForm() {
   return (
     <section className="ds-bg flex w-full flex-1 items-center justify-center px-4 py-8 sm:px-8 lg:px-12">
       <div className="flex w-full max-w-md flex-col gap-6">
-        <div className="flex flex-wrap items-center justify-end gap-2 text-sm">
-          <span className="ds-text-secondary">{t("haveAccount")}</span>
-          <Link
-            href="/sign-in"
-            className="ds-text-alt font-bold transition-opacity hover:opacity-75"
-          >
-            {t("logIn")}
-          </Link>
-        </div>
 
         <Title size="xl" variant="alt" isCenter className="ds-font-heading font-bold">
           {t("title")}
