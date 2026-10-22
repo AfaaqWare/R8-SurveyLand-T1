@@ -51,12 +51,16 @@
     },
     "navbar": {
       "home": "Home",
-      "about": "About Us",
+      "about": "About",
       "contact": "Contact Us",
       "faqs": "FAQs",
       "pricing": "Pricing",
       "login": "Login",
-      "signup": "Sign Up"
+      "signup": "Sign Up",
+      "account": "Account",
+      "dashboard": "Dashboard",
+      "logout": "Logout",
+      "logoutSuccess": "You have been logged out successfully"
     }
   },
   "ui-state": {
@@ -80,7 +84,7 @@
       "save": "Save"
     },
     "editRole": {
-      "title": "Edit User Role",
+      "title": " User Role",
       "subtitle": "Update the role and permissions for this user.",
       "userInfo": "User Information",
       "name": "Full Name",
@@ -103,6 +107,51 @@
           "title": "Admin",
           "description": "Full access to all features and user management"
         }
+      }
+    },
+    "home": {
+      "title": "Dashboard",
+      "subtitle": "Welcome back. Here's what's happening with your surveys.",
+      "fromLastMonth": "from last month",
+      "viewAll": "View All",
+      "total": "Total",
+      "statusOverview": "Survey Status Overview",
+      "recentSurveys": "Recent Surveys",
+      "recentResponses": "Recent Responses",
+      "untitled": "Untitled survey",
+      "anonymous": "Anonymous",
+      "noEmail": "No email",
+      "noData": "No data to show yet",
+      "error": "Couldn't load the data",
+      "retry": "Try again",
+      "stats": {
+        "totalSurveys": "Total Surveys",
+        "draftSurveys": "Draft Surveys",
+        "publishedSurveys": "Published Surveys",
+        "responses": "Responses",
+        "totalUsers": "Total Users"
+      },
+      "status": {
+        "draft": "Draft",
+        "published": "Published",
+        "closed": "Closed"
+      },
+      "columns": {
+        "surveyTitle": "Survey Title",
+        "status": "Status",
+        "questions": "Questions",
+        "updatedAt": "Updated At",
+        "respondent": "Respondent",
+        "email": "Email",
+        "answers": "Answers",
+        "submittedAt": "Submitted At"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "create": { "title": "Create New Survey", "description": "Build a new survey" },
+        "users": { "title": "Manage Users", "description": "View and manage users" },
+        "responses": { "title": "View Responses", "description": "Browse all responses" },
+        "export": { "title": "Export Reports", "description": "Download survey reports" }
       }
     }
   },
@@ -217,27 +266,32 @@
       "verifyFailed": "We couldn't verify your code. Please try again.",
       "resendFailed": "We couldn't send a new code. Please try again.",
       "invalidOtp": "Enter a valid 6-digit verification code."
-    },
-    "auth": {
-      "header": {
-        "signIn": {
-          "prefix": "Don't have an account?",
-          "apply": "Apply Now"
-        },
-        "signUp": {
-          "prefix": "Already have an account?",
-          "apply": "Log in now"
-        },
-        "loginBtn": "Login",
-        "signUpBtn": "Sign Up",
-        "home": "Home"
+    }
+  },
+  "auth": {
+    "header": {
+      "signUp": {
+        "prefix": "Already have an account?",
+        "apply": "Log in now"
       },
-      "sheets": {
-        "signIn": {
-          "title": "New to SurveyLand? Sign up here!",
-          "subtitle": "Become part of our community",
-          "cta": "SIGN UP"
-        }
+      "loginBtn": "Login",
+      "signUpBtn": "Sign Up",
+      "home": "Home",
+      "signIn": {
+        "prefix": "Don't have an account?",
+        "apply": "Apply Now"
+      }
+    },
+    "sheets": {
+      "signIn": {
+        "title": "New to SurveyLand? Sign up here!",
+        "subtitle": "Become part of our community",
+        "cta": "SIGN UP"
+      },
+      "signUp": {
+        "title": "One of us? Sign in here!",
+        "subtitle": "Welcome back, log in to continue to your surveys",
+        "cta": "SIGN IN"
       }
     }
   },
@@ -248,8 +302,8 @@
     "googleSignup": "Sign up with Google",
     "githubSignup": "Sign up with GitHub",
     "orRegister": "or sign up with email",
-    "nameRequired": "Full name",
-    "emailRequired": "Email address",
+    "nameRequired": "Name",
+    "emailRequired": "E-mail",
     "passwordRequired": "Password",
     "confirmPasswordRequired": "Confirm password",
     "passwordHint": "At least 8 characters, with an uppercase letter, a lowercase letter and a number.",
@@ -259,6 +313,7 @@
     "terms": "Terms and Conditions",
     "submit": "Create account",
     "submitting": "Creating account...",
+    "success": "Account created successfully",
     "errors": {
       "nameMin": "Name must be at least 2 characters.",
       "nameMax": "Name must be 60 characters or fewer.",

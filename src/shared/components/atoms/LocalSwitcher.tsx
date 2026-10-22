@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { Locale, useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/cn";
 
 type Props = {
   changeLocaleAction: (locale: Locale) => Promise<void>;
@@ -34,32 +33,12 @@ export default function LocaleSwitcher({ changeLocaleAction }: Props) {
     }
   };
 
-  const baseClasses = `
-    fixed
-    bottom-4
-    w-14
-    h-14
-    rounded-full
-    ds-bg-primary
-    text-white
-    flex
-    items-center
-    justify-center
-    text-md
-    shadow-xl
-    hover:scale-105
-    transition
-    cursor-pointer
-    z-50
-    disabled:cursor-not-allowed
-    disabled:opacity-70
-  `;
   return (
     <button
       type="button"
       onClick={handleLocaleChange}
       disabled={isPending}
-      className={cn(baseClasses, locale === "en" ? "right-8" : "left-8")}
+      className="ds-text-primary flex h-9 min-w-9 cursor-pointer items-center justify-center rounded-full px-2 text-xs font-bold transition-colors duration-200 hover:bg-[var(--color-bg-card)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] disabled:cursor-not-allowed disabled:opacity-70"
       aria-label={`Switch language to ${nextLabel}`}
       title={`Current language: ${label}. Switch to ${nextLabel}`}
     >
