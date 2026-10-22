@@ -6,7 +6,7 @@ import { useForm, type RegisterOptions } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
 import { FcGoogle, FaGithub, User, Mail, Lock, Eye, EyeOff } from "@/assets/icons/icons";
-import Input from "@/shared/components/atoms/Input";
+import IconInput from "@/shared/components/atoms/Input";
 import Button from "@/shared/components/atoms/Button";
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
@@ -115,7 +115,7 @@ export default function SignUpForm() {
           noValidate
           className="flex flex-col gap-4"
         >
-          <Input
+          <IconInput
             type="text"
             placeholder={t("nameRequired")}
             aria-label={t("nameRequired")}
@@ -127,7 +127,7 @@ export default function SignUpForm() {
           />
           <FieldError message={errors.name?.message} />
 
-          <Input
+          <IconInput
             type="email"
             placeholder={t("emailRequired")}
             aria-label={t("emailRequired")}
@@ -139,7 +139,7 @@ export default function SignUpForm() {
           />
           <FieldError message={errors.email?.message} />
 
-          <Input
+          <IconInput
             type={showPassword ? "text" : "password"}
             placeholder={t("passwordRequired")}
             aria-label={t("passwordRequired")}
@@ -162,7 +162,7 @@ export default function SignUpForm() {
           />
           <FieldError message={errors.password?.message} />
 
-          <Input
+          <IconInput
             type={showConfirmPassword ? "text" : "password"}
             placeholder={t("confirmPasswordRequired")}
             aria-label={t("confirmPasswordRequired")}
