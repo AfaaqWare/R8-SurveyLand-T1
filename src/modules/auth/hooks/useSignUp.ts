@@ -5,21 +5,28 @@ import { useTranslations } from "next-intl";
 import { isAxiosError } from "axios";
 import { useApiMutation } from "@/shared/hooks/useApiMutation";
 import { useAlert } from "@/shared/hooks/useAlert";
+import { useOtpStore } from "@/modules/auth/verify-otp/store/otpStore";
 import { signUpApi, type SignUpPayload, type SignUpResponse } from "../api/signUp";
 
 export function useSignUp() {
   const router = useRouter();
   const t = useTranslations("signup");
   const { showAlert } = useAlert();
+  const setEmail = useOtpStore(s => s.setEmail);
 
   return useApiMutation<SignUpPayload, SignUpResponse>({
     mutationFn: signUpApi,
     options: {
-      onSuccess: () => {
-        showAlert("success", t("success")).then(() => router.push("/sign-in"));
+      onSuccess: (_data, variables) => {
+        setEmail(variables.email);
+        router.push("/verify-otp");
       },
       onError: error => {
-        let key = "errors.genericError";
+        let key:
+          | "errors.genericError"
+          | "errors.networkError"
+          | "errors.emailExists"
+          | "errors.tooManyRequests" = "errors.genericError";
 
         if (isAxiosError(error)) {
           if (!error.response) key = "errors.networkError";
