@@ -24,7 +24,7 @@ interface SignUpFormData {
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
-    <p className="ds-text-error -mt-2 text-xs leading-5" role="alert">
+    <p className="-mt-2 text-xs leading-5 ds-text-danger" role="alert">
       {message}
     </p>
   );
@@ -42,8 +42,15 @@ export default function SignUpForm() {
     getValues,
     formState: { errors },
   } = useForm<SignUpFormData>({
-    mode: "onChange",
-    defaultValues: { name: "", email: "", password: "", confirmPassword: "", agreeTerms: false },
+    mode: "onBlur",
+    reValidateMode: "onChange",
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      agreeTerms: false,
+    },
   });
 
   const onSubmit = ({ name, email, password }: SignUpFormData) => {
@@ -58,7 +65,10 @@ export default function SignUpForm() {
     },
     email: {
       required: t("errors.emailRequired"),
-      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: t("errors.emailInvalid") },
+      pattern: {
+        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        message: t("errors.emailInvalid"),
+      },
     },
     password: {
       required: t("errors.passwordMin"),
@@ -81,16 +91,19 @@ export default function SignUpForm() {
   return (
     <section className="ds-bg flex w-full flex-1 items-center justify-center px-4 py-8 sm:px-8 lg:px-12">
       <div className="flex w-full max-w-md flex-col gap-6">
-  <div className="flex flex-wrap items-center justify-end gap-2 text-sm">
-    <span className="ds-text-secondary">{t("haveAccount")}</span>
-    <Link href="/sign-in" className="ds-text-alt font-bold transition-opacity hover:opacity-75">
-      {t("logIn")}
-    </Link>
-  </div>
+        <div className="flex flex-wrap items-center justify-end gap-2 text-sm">
+          <span className="ds-text-secondary">{t("haveAccount")}</span>
+          <Link
+            href="/sign-in"
+            className="ds-text-alt font-bold transition-opacity hover:opacity-75"
+          >
+            {t("logIn")}
+          </Link>
+        </div>
 
-  <Title size="xl" variant="alt" isCenter className="ds-font-heading font-bold">
-    {t("title")}
-  </Title>
+        <Title size="xl" variant="alt" isCenter className="ds-font-heading font-bold">
+          {t("title")}
+        </Title>
 
         <div className="flex items-center justify-center gap-4">
           <SocialButton label={t("googleSignup")} icon={<FcGoogle className="h-5 w-5" />} />
@@ -170,11 +183,7 @@ export default function SignUpForm() {
                 className="ds-text-secondary flex items-center bg-transparent! shadow-none! transition-opacity hover:bg-transparent! hover:opacity-70"
                 aria-label={showConfirmPassword ? t("hidePassword") : t("showPassword")}
               >
-                {showConfirmPassword ? (
-                  <EyeOff className="h-4 w-4" />
-                ) : (
-                  <Eye className="h-4 w-4" />
-                )}
+                {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </Button>
             }
           />
@@ -185,7 +194,7 @@ export default function SignUpForm() {
               type="checkbox"
               id="agreeTerms"
               {...register("agreeTerms", rules.agreeTerms)}
-              className="mt-1 h-4 w-4 shrink-0 cursor-pointer accent-var(--color-primary)"
+              className="accent-var(--color-primary) mt-1 h-4 w-4 shrink-0 cursor-pointer"
             />
             <label
               htmlFor="agreeTerms"
