@@ -25,7 +25,12 @@ export default function SocialButton({
       disabled={disabled}
       aria-label={label}
       title={label}
-      className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border-color-card)] bg-[var(--color-bg-alt)] transition-all duration-200 hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-subtle)] hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-none"
+      className="hover:border-var(--color-primary) focus-visible:ring-var(--color-primary) 
+      flex h-11 w-11 rounded-xl items-center justify-center  
+      border border-gray-200 bg-white text-gray-900 transition-all duration-200 
+      hover:bg-gray-50 hover:shadow-sm 
+      focus:outline-none focus-visible:ring-2 
+      disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-none"
     >
       <span className="flex h-5 w-5 items-center justify-center">{icon}</span>
     </button>
