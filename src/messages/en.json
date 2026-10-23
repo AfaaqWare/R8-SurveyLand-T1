@@ -9,17 +9,60 @@
     "item7": "settings",
     "btn": "Login"
   },
-
   "publicPages": {
     "home": {
       "hero-section": {
-        "title": "",
-        "description": "",
-        "create-btn": ""
+        "title": "Turn <highlight>Questions</highlight> into Clarity and Transform <highlight>Responses</highlight> into Valuable Insights",
+        "description": "Effortlessly build surveys that deliver the answers you need to grow, improve, and connect with your audience.",
+        "create-btn": "Create Your Survey",
+        "how-it-works-btn": "See How It Works",
+        "image-alt": "People building a survey on a laptop"
+      },
+      "how-it-works": {
+        "title": "How It",
+        "highlight": "Works",
+        "description": "Get started in just 3 simple steps",
+        "create": {
+          "title": "Create Your Survey",
+          "description": "Choose a template or start from scratch using our easy-to-use builder"
+        },
+        "share": {
+          "title": "Share With Your Audience",
+          "description": "Send your survey via email, social media, or embed it in your website"
+        },
+        "analyze": {
+          "title": "Analyze Responses",
+          "description": "Get instant insights with clean charts and downloadable reports"
+        }
       }
+    },
+    "sign-in": {
+      "title": "Sign in",
+      "google": "Sign in with Google",
+      "github": "Sign in with GitHub",
+      "email-hint": "Or register using your email address",
+      "email": "E-mail",
+      "password": "Password",
+      "show-password": "Show password",
+      "hide-password": "Hide password",
+      "remember": "Remember me?",
+      "forget-password": "Forget password?",
+      "submit": "Sign in"
+    },
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact Us",
+      "faqs": "FAQs",
+      "pricing": "Pricing",
+      "login": "Login",
+      "signup": "Sign Up",
+      "account": "Account",
+      "dashboard": "Dashboard",
+      "logout": "Logout",
+      "logoutSuccess": "You have been logged out successfully"
     }
   },
-
   "ui-state": {
     "loading": "Loading...",
     "notFound": {
@@ -35,5 +78,312 @@
       "default": "No data available to display."
     }
   },
-  "common": { "ok": "ok" }
+  "dashboard": {
+    "common": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "editRole": {
+      "title": " User Role",
+      "subtitle": "Update the role and permissions for this user.",
+      "userInfo": "User Information",
+      "name": "Full Name",
+      "email": "Email",
+      "status": "Status",
+      "date": "Date",
+      "roleManagement": "Role Management",
+      "currentRole": "Current Role",
+      "saved": "Role updated successfully",
+      "roles": {
+        "USER": {
+          "title": "User",
+          "description": "Basic access to create and manage own surveys"
+        },
+        "EDITOR": {
+          "title": "Editor",
+          "description": "Can manage surveys and view responses"
+        },
+        "ADMIN": {
+          "title": "Admin",
+          "description": "Full access to all features and user management"
+        }
+      }
+    },
+    "home": {
+      "title": "Dashboard",
+      "subtitle": "Welcome back. Here's what's happening with your surveys.",
+      "fromLastMonth": "from last month",
+      "viewAll": "View All",
+      "total": "Total",
+      "statusOverview": "Survey Status Overview",
+      "recentSurveys": "Recent Surveys",
+      "recentResponses": "Recent Responses",
+      "untitled": "Untitled survey",
+      "anonymous": "Anonymous",
+      "noEmail": "No email",
+      "noData": "No data to show yet",
+      "error": "Couldn't load the data",
+      "retry": "Try again",
+      "stats": {
+        "totalSurveys": "Total Surveys",
+        "draftSurveys": "Draft Surveys",
+        "publishedSurveys": "Published Surveys",
+        "responses": "Responses",
+        "totalUsers": "Total Users"
+      },
+      "status": {
+        "draft": "Draft",
+        "published": "Published",
+        "closed": "Closed"
+      },
+      "columns": {
+        "surveyTitle": "Survey Title",
+        "status": "Status",
+        "questions": "Questions",
+        "updatedAt": "Updated At",
+        "respondent": "Respondent",
+        "email": "Email",
+        "answers": "Answers",
+        "submittedAt": "Submitted At"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "create": { "title": "Create New Survey", "description": "Build a new survey" },
+        "users": { "title": "Manage Users", "description": "View and manage users" },
+        "responses": { "title": "View Responses", "description": "Browse all responses" },
+        "export": { "title": "Export Reports", "description": "Download survey reports" }
+      }
+    }
+  },
+  "common": {
+    "ok": "ok"
+  },
+  "pricing": {
+    "headingPrefix": "Plans &",
+    "headingAccent": "Pricing",
+    "subtitle": "Looking for advanced features? Check out our latest plans",
+    "billingLabel": "Billing frequency",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "perMonth": "/ month",
+    "perYear": "/ year",
+    "includedTitle": "What's included",
+    "choosePlan": "Choose plan",
+    "selected": "Plan selected",
+    "selectedMessage": "You selected the {plan} plan.",
+    "choosePlanLabel": "Choose the {plan} plan",
+    "priceLabel": "{price} dollars per {period}",
+    "features": {
+      "responses100": "100 responses",
+      "user1": "1 user",
+      "unlimitedSurveys": "Unlimited surveys",
+      "unlimitedQuestions": "Unlimited questions",
+      "responses1000": "1,000 responses",
+      "users3": "3 users",
+      "everythingBasic": "Everything in Basic",
+      "dropOffRates": "Drop-off rates",
+      "responses10000": "10,000 responses",
+      "users5": "5 users",
+      "everythingPlus": "Everything in Plus",
+      "conversionTracking": "Conversion tracking"
+    },
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "description": "Create interactive forms that connect to your workflow",
+        "monthlyPrice": "25",
+        "yearlyPrice": "250",
+        "features": ["100 responses", "1 user", "Unlimited surveys", "Unlimited questions"]
+      },
+      "plus": {
+        "name": "Plus",
+        "description": "Make your forms more beautiful and on-brand",
+        "monthlyPrice": "50",
+        "yearlyPrice": "500",
+        "features": ["1,000 responses", "3 users", "Everything in Basic", "Drop-off rates"]
+      },
+      "business": {
+        "name": "Business",
+        "description": "Analyze performance and do more with your data",
+        "monthlyPrice": "83",
+        "yearlyPrice": "830",
+        "features": ["10,000 responses", "5 users", "Everything in Plus", "Conversion tracking"]
+      }
+    }
+  },
+  "forgotPassword": {
+    "title": "Forgot Password?",
+    "subtitle": "Don't worry, we'll help you reset it.",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Enter a valid email",
+    "submit": "Reset Password",
+    "backToSignIn": "Back to sign in",
+    "success": "A verification code has been sent to your email",
+    "somethingWrong": "Something went wrong, please try again"
+  },
+  "surveyPreview": {
+    "header": {
+      "title": "Frontend Training Survey",
+      "description": "Help us improve the training experience",
+      "deadline": "Deadline: {date}",
+      "duration": "Takes {time} minutes",
+      "imageAlt": "Survey cover image"
+    },
+    "info": {
+      "title": "Your Information",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Ammar Hassan",
+      "email": "Email Address",
+      "emailPlaceholder": "ammar@gmail.com",
+      "confidential": "Your information will be kept confidential."
+    },
+    "questions": {
+      "title": "Survey Questions",
+      "total": "Total Questions",
+      "required": "Required",
+      "submit": "Submit Response"
+    },
+    "mock": {
+      "q1": "What's your favorite language?",
+      "q1o1": "JavaScript",
+      "q1o2": "Python",
+      "q1o3": "Go",
+      "q2": "What is your name?",
+      "q3": "What do you think of the training?"
+    }
+  },
+  "otp": {
+    "title": "Verify Your OTP for Register",
+    "description": "We've sent a 6-digit code to your email, Please enter it below to verify your account",
+    "expire": "This code will expire in {seconds} seconds",
+    "expired": "This code has expired. Request a new code to continue.",
+    "verify": "Verify",
+    "verifying": "Verifying...",
+    "resend": "Send again",
+    "resendSuccess": "A new verification code has been sent.",
+    "errors": {
+      "verifyFailed": "We couldn't verify your code. Please try again.",
+      "resendFailed": "We couldn't send a new code. Please try again.",
+      "invalidOtp": "Enter a valid 6-digit verification code."
+    }
+  },
+  "auth": {
+    "header": {
+      "signUp": {
+        "prefix": "Already have an account?",
+        "apply": "Log in now"
+      },
+      "loginBtn": "Login",
+      "signUpBtn": "Sign Up",
+      "home": "Home",
+      "signIn": {
+        "prefix": "Don't have an account?",
+        "apply": "Apply Now"
+      }
+    },
+    "sheets": {
+      "signIn": {
+        "title": "New to SurveyLand? Sign up here!",
+        "subtitle": "Become part of our community",
+        "cta": "SIGN UP"
+      },
+      "signUp": {
+        "title": "One of us? Sign in here!",
+        "subtitle": "Welcome back, log in to continue to your surveys",
+        "cta": "SIGN IN"
+      }
+    }
+  },
+  "signup": {
+    "title": "Create account",
+    "haveAccount": "Already have an account?",
+    "logIn": "Log in",
+    "googleSignup": "Sign up with Google",
+    "githubSignup": "Sign up with GitHub",
+    "orRegister": "or sign up with email",
+    "nameRequired": "Name",
+    "emailRequired": "E-mail",
+    "passwordRequired": "Password",
+    "confirmPasswordRequired": "Confirm password",
+    "passwordHint": "At least 8 characters, with an uppercase letter, a lowercase letter and a number.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "agreeWith": "I agree to the",
+    "terms": "Terms and Conditions",
+    "submit": "Create account",
+    "submitting": "Creating account...",
+    "success": "Account created successfully",
+    "errors": {
+      "nameMin": "Name must be at least 2 characters.",
+      "nameMax": "Name must be 60 characters or fewer.",
+      "emailRequired": "Enter your email address.",
+      "emailInvalid": "Enter a valid email address.",
+      "passwordMin": "Password must be at least 8 characters.",
+      "passwordMax": "Password must be 72 characters or fewer.",
+      "passwordLower": "Add at least one lowercase letter.",
+      "passwordUpper": "Add at least one uppercase letter.",
+      "passwordNumber": "Add at least one number.",
+      "confirmRequired": "Confirm your password.",
+      "passwordMismatch": "Passwords don't match.",
+      "termsRequired": "You must accept the terms to continue.",
+      "invalidField": "Check this field and try again.",
+      "emailExists": "An account with this email already exists. Try logging in.",
+      "tooManyRequests": "Too many attempts. Wait a few minutes and try again.",
+      "networkError": "Can't reach the server. Check your connection and try again.",
+      "genericError": "Something went wrong. Try again in a moment."
+    }
+  },
+
+  "thankYou": {
+    "title": "Thank You!",
+    "subtitle": "Your response has been submitted successfully",
+    "description": "We really appreciate you taking the time to complete this survey. Your feedback helps us improve and make better decisions.",
+    "detailTitle": "Your opinion matters",
+    "detailText": "Every response helps us understand your needs and improve your experience.",
+    "actionLabel": "Back Home",
+    "imageAlt": "Survey completed successfully"
+  },
+  "Footer": {
+    "ariaLabel": "Site footer",
+    "brand": {
+      "first": "Survey",
+      "second": "Land",
+      "ariaLabel": "SurveyLand home"
+    },
+    "tagline": "Make smarter decisions with better data. Create surveys, gather feedback, and grow.",
+    "newsletter": {
+      "label": "Email address",
+      "placeholder": "Stay informed by entering your email",
+      "submit": "Enter",
+      "loading": "Sending...",
+      "invalid": "Enter a valid email address.",
+      "error": "Something went wrong. Try again.",
+      "success": "You're subscribed."
+    },
+    "columns": {
+      "product": "Product",
+      "support": "Support"
+    },
+    "links": {
+      "home": "Home",
+      "templates": "Templates",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "helpCenter": "Help Center",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "refund": "Refund Policy",
+      "faqs": "FAQs"
+    },
+    "contact": {
+      "title": "E-mail us at"
+    },
+    "social": {
+      "title": "Follow us",
+      "x": "Follow us on X",
+      "linkedin": "Follow us on LinkedIn"
+    },
+    "copyright": "©{year} SurveyLand. All rights reserved"
+  }
 }

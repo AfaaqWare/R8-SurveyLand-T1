@@ -1,16 +1,17 @@
 import NextLink from "next/link";
 import { cn } from "@/lib/cn";
-import { ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from "react";
 
 type LinkProps = {
   href: string;
   children: ReactNode;
   className?: string;
-
+  variant?: "primary" | "alt";
   target?: "_self" | "_blank";
   prefetch?: boolean;
   replace?: boolean;
   scroll?: boolean;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 };
 
 export default function Link({
@@ -21,6 +22,8 @@ export default function Link({
   scroll,
   prefetch,
   className,
+  variant = "primary",
+  onClick,
 }: LinkProps) {
   return (
     <NextLink
@@ -29,7 +32,12 @@ export default function Link({
       prefetch={prefetch}
       replace={replace}
       scroll={scroll}
-      className={cn("ds-text-primary pb-2 underline", className)}
+      onClick={onClick}
+      className={cn(
+        variant === "alt" ? "ds-text-alt" : "ds-text-primary",
+        "pb-2 underline",
+        className
+      )}
     >
       {children}
     </NextLink>

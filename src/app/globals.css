@@ -46,7 +46,7 @@
     width: 92%;
   }
 }
-
+/* --color-text-primary-dark */
 /* -------------------------------------------------- */
 /* Design System Utilities                             */
 /* -------------------------------------------------- */
@@ -142,6 +142,9 @@
   }
   .ds-text-gray {
     color: var(--color-stats-gray);
+  }
+  .ds-text-black {
+    color: var(--color-text-black);
   }
   /* ================= HEADING ================= */
   .ds-h1 {
@@ -305,6 +308,40 @@
 
   .ds-font-heading {
     font-family: var(--font-heading);
+  }
+
+  .role-option {
+    background-color: transparent;
+    color: var(--color-text-primary);
+  }
+
+  .role-option:hover {
+    background-color: var(--color-form);
+    color: var(--color-text-primary);
+  }
+
+  .ds-status-draft {
+    color: var(--color-status-draft);
+  }
+
+  .ds-status-published {
+    color: var(--color-status-published);
+  }
+
+  .ds-status-closed {
+    color: var(--color-status-closed);
+  }
+
+  .bg-status-draft {
+    background-color: var(--color-status-draft);
+  }
+
+  .bg-status-closed {
+    background-color: var(--color-status-closed);
+  }
+
+  .bg-status-published {
+    background-color: var(--color-status-published);
   }
 
   /* ================= SPACING ================= */
