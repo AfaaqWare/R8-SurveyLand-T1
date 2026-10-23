@@ -11,13 +11,13 @@
  *   import card1 from "./card1.png";
  *
  *   export { heroImage, card1 };
- * 
+ *
  * // import BuildImg from "@/assets/images/Frame 11 (1).png";
-
- */
+*/
 import Avatar from "./Avatar.jpg";
 import defaultAvatar from "./user.webp";
 import heroImage from "./HeroImage.png";
+import syrveyDone from "./SyrveyDone.png"
 
 import card1 from "@/assets/images/Frame 14.png";
 import card2 from "@/assets/images/Frame 14 (3).png";
@@ -37,5 +37,6 @@ import card17 from "@/assets/images/Frame 8.png";
 
 
 export { Avatar, defaultAvatar, heroImage,
-  card1 , card2 , card3 , card4 , card5 , card6 , card7 , card8 , card9 , card10 , card13 , card14 , card15 , card16 , card17
+  card1 , card2 , card3 , card4 , card5 , card6 , card7 , card8 , card9 , card10 , card13 , card14 , card15 , card16 , card17, syrveyDone
 };
+

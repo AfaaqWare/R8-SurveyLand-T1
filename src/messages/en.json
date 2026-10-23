@@ -334,6 +334,16 @@
       "genericError": "Something went wrong. Try again in a moment."
     }
   },
+
+  "thankYou": {
+    "title": "Thank You!",
+    "subtitle": "Your response has been submitted successfully",
+    "description": "We really appreciate you taking the time to complete this survey. Your feedback helps us improve and make better decisions.",
+    "detailTitle": "Your opinion matters",
+    "detailText": "Every response helps us understand your needs and improve your experience.",
+    "actionLabel": "Back Home",
+    "imageAlt": "Survey completed successfully"
+  },
   "Footer": {
     "ariaLabel": "Site footer",
     "brand": {
