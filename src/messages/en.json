@@ -47,7 +47,8 @@
       "hide-password": "Hide password",
       "remember": "Remember me?",
       "forget-password": "Forget password?",
-      "submit": "Sign in"
+      "submit": "Sign in",
+      "dismiss-error": "Dismiss error"
     },
     "navbar": {
       "home": "Home",

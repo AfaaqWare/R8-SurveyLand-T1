@@ -47,7 +47,8 @@
       "hide-password": "إخفاء كلمة المرور",
       "remember": "تذكرني؟",
       "forget-password": "نسيت كلمة المرور؟",
-      "submit": "تسجيل الدخول"
+      "submit": "تسجيل الدخول",
+      "dismiss-error": "إغلاق رسالة الخطأ"
     },
     "navbar": {
       "home": "الرئيسية",
