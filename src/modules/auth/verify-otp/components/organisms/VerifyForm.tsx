@@ -15,15 +15,15 @@ import { getApiErrorMessage } from "@/modules/auth/verify-otp/utils/getApiErrorM
 import { otpSchema, type OtpFormValues } from "@/modules/auth/verify-otp/utils/otpSchema";
 
 const OTP_SECONDS = 60;
-const REGISTER_ROUTE = "/register"; 
-const AFTER_VERIFY_ROUTE = "/login"; 
+const REGISTER_ROUTE = "/register";
+const AFTER_VERIFY_ROUTE = "/";
 
 export default function VerifyForm() {
   const t = useTranslations("otp");
   const router = useRouter();
 
-  const email = useOtpStore((s) => s.email);
-  const clearEmail = useOtpStore((s) => s.clear);
+  const email = useOtpStore(s => s.email);
+  const clearEmail = useOtpStore(s => s.clear);
 
   const { seconds, isDone, restart } = useCountdown(OTP_SECONDS);
   const [serverError, setServerError] = useState("");
@@ -40,7 +40,7 @@ export default function VerifyForm() {
     resolver: zodResolver(otpSchema),
     defaultValues: { otp: "" },
   });
-  
+
   // useEffect(() => {
   //   if (!useOtpStore.getState().email) router.replace(REGISTER_ROUTE);
   // }, [router]);
@@ -55,7 +55,7 @@ export default function VerifyForm() {
           clearEmail();
           router.push(AFTER_VERIFY_ROUTE);
         },
-        onError: (err) => setServerError(getApiErrorMessage(err, t("errors.verifyFailed"))),
+        onError: err => setServerError(getApiErrorMessage(err, t("errors.verifyFailed"))),
       }
     );
   };
@@ -70,7 +70,7 @@ export default function VerifyForm() {
           restart();
           setResendMessage(t("resendSuccess"));
         },
-        onError: (err) => setServerError(getApiErrorMessage(err, t("errors.resendFailed"))),
+        onError: err => setServerError(getApiErrorMessage(err, t("errors.resendFailed"))),
       }
     );
   };
@@ -78,10 +78,10 @@ export default function VerifyForm() {
   return (
     <section className="mx-auto flex w-full flex-col items-center gap-8 px-10 py-35 text-center">
       <header className="flex flex-col items-center gap-3">
-        <h1 className="text-2xl font-semibold text-black dark:text-white sm:text-4xl">
+        <h1 className="text-2xl font-semibold text-black sm:text-4xl dark:text-white">
           {t("title")}
         </h1>
-        <p className="max-w-md text-xs text-gray-500 dark:text-white/40 sm:text-sm">
+        <p className="max-w-md text-xs text-gray-500 sm:text-sm dark:text-white/40">
           {t("description")}
         </p>
       </header>
@@ -126,7 +126,7 @@ export default function VerifyForm() {
             type="submit"
             disabled={verify.isPending}
             aria-busy={verify.isPending}
-            className="h-10 w-full rounded-md bg-[#00a9b1] text-sm font-medium text-white transition hover:bg-[#008f96] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00a9b1]"
+            className="h-10 w-full rounded-md bg-[#00a9b1] text-sm font-medium text-white transition hover:bg-[#008f96] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00a9b1] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {verify.isPending ? t("verifying") : t("verify")}
           </button>
@@ -134,7 +134,7 @@ export default function VerifyForm() {
             type="button"
             onClick={onResend}
             disabled={!isDone || resend.isPending}
-            className="h-10 w-full rounded-md border border-[#00a9b1] bg-transparent text-sm font-medium text-[#00a9b1] transition hover:bg-[#00a9b1]/10 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00a9b1]"
+            className="h-10 w-full rounded-md border border-[#00a9b1] bg-transparent text-sm font-medium text-[#00a9b1] transition hover:bg-[#00a9b1]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00a9b1] disabled:cursor-not-allowed disabled:opacity-50"
           >
             {t("resend")}
           </button>

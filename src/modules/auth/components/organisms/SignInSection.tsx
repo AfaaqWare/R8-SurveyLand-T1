@@ -14,11 +14,12 @@ import { useTranslations } from "next-intl";
 
 export default function SignInSection() {
   const [showPassword, setShowPassword] = useState(false);
-  const { mutate, isPending } = useSignIn();
+  const { mutate, isPending, errorMessage, clearError } = useSignIn();
   const t = useTranslations("publicPages.sign-in");
 
   function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
+    clearError();
     const formData = new FormData(event.currentTarget);
 
     mutate({
@@ -30,6 +31,22 @@ export default function SignInSection() {
   return (
     <section className="ds-bg ds-px-md ds-py-lg flex min-h-screen items-center justify-center">
       <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col items-center gap-8">
+        {errorMessage && (
+          <div
+            role="alert"
+            className="flex w-full items-center justify-between gap-3 rounded-md bg-red-100 px-4 py-3 text-sm text-red-800"
+          >
+            <p>{errorMessage}</p>
+            <button
+              type="button"
+              aria-label={t("dismiss-error")}
+              onClick={clearError}
+              className="shrink-0 cursor-pointer text-base leading-none"
+            >
+              ×
+            </button>
+          </div>
+        )}
         <Title
           size="xl"
           variant="alt"
