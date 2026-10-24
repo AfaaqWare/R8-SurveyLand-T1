@@ -13,6 +13,8 @@ import useUpdateSurvey from "@/modules/dashboard/hooks/useUpdateSurvey";
 import EditSurveySkeleton from "./EditSurveySkeleton";
 import { ErrorState } from "@/core/ui-states";
 import SurveyHeader from "@/modules/dashboard/components/molecules/SurveyHeader";
+import Notfoundsurvey from "./Notfoundsurvey";
+import notfound from "@/assets/images/notfound.png";
 
 const Surveyform = ({ id }: IdProps) => {
   const t = useTranslations("UserDashboard.editSurvey");
@@ -28,11 +30,21 @@ const Surveyform = ({ id }: IdProps) => {
     isSaving,
     refetch,
     errors,
+    isNotFound,
   } = useUpdateSurvey({
     id,
   });
 
   if (isLoading) return <EditSurveySkeleton />;
+  if (isNotFound)
+    return (
+      <Notfoundsurvey
+        image={notfound}
+        message={t("notFound.title")}
+        actionLabel={t("notFound.back")}
+        href="/dashboard/surveys"
+      />
+    );
   if (isError) return <ErrorState onRetry={refetch} />;
 
   return (

@@ -3,11 +3,14 @@ import useGetSurvey from "./useGetSurvey";
 import type { IdProps, UpdateSurveyProps } from "../types/UpdateSurveyType";
 import useSaveSurvey from "./useSaveSurvey";
 import useSurveyForm from "./useSurveyForm";
+import { isAxiosError } from "axios";
 
 const useUpdateSurvey = ({ id }: IdProps) => {
-  const { data, isPending, isError, refetch } = useGetSurvey({ id });
+  const { data, isPending, isError, refetch, error } = useGetSurvey({ id });
   const { handleSubmit, ...form } = useSurveyForm(data);
   const { mutate, isSaving } = useSaveSurvey(id);
+
+  const isNotFound = isAxiosError(error) && error.response?.status === 404;
 
   const onSubmit = handleSubmit(values => {
     const payload: UpdateSurveyProps = {
@@ -32,6 +35,7 @@ const useUpdateSurvey = ({ id }: IdProps) => {
     isSaving,
     disableSave: form.disableSave,
     errors: form.errors,
+    isNotFound,
   };
 };
 

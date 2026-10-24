@@ -399,7 +399,12 @@
       "somethingWrong": "Something went wrong, please try again",
       "titleRequired": "Title is required",
       "deadlineRequired": "Deadline is required",
-      "descriptionRequired": "Description is required"
+      "descriptionRequired": "Description is required",
+      "notFound": {
+        "title": "Survey not found",
+        "message": "This survey doesn't exist or may have been deleted.",
+        "back": "Back to My Surveys"
+      }
     }
   }
 }

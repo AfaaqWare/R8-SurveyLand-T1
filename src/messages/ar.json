@@ -399,7 +399,12 @@
       "somethingWrong": "حدث خطأ، حاول مرة أخرى",
       "titleRequired": "العنوان مطلوب",
       "deadlineRequired": "الموعد النهائي مطلوب",
-      "descriptionRequired": "ألوصف مطلوب"
+      "descriptionRequired": "ألوصف مطلوب",
+      "notFound": {
+        "title": "الاستبيان غير موجود",
+        "message": "هذا الاستبيان غير موجود أو ربما تم حذفه.",
+        "back": "العودة إلى استبياناتي"
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Image from "next/image";
 import { ImagePlus } from "lucide-react";
 import { Card } from "@/shared/components/atoms/Card";
@@ -17,9 +17,6 @@ interface CoverImageCardProps {
 const ImageCard = ({ title, hint, cover, emptyLabel }: CoverImageCardProps) => {
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    setLoaded(false);
-  }, [cover]);
 
   return (
     <Card className="ds-border-card ds-bg-card flex flex-col gap-4 p-4 shadow-none">
@@ -41,7 +38,7 @@ const ImageCard = ({ title, hint, cover, emptyLabel }: CoverImageCardProps) => {
             sizes="320px"
             priority
             onLoad={() => setLoaded(true)}
-            className={`object-cover transition-opacity duration-500 ${
+            className={`object-cover transition-opacity duration-100 ${
               loaded ? "opacity-100" : "opacity-0"
             }`}
           />

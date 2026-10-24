@@ -9,6 +9,7 @@ const useGetSurvey = ({ id }: IdProps) => {
     queryFn: () => getSurvey({ id }),
     options: {
       enabled: !!id,
+      retry:false
     },
   });
 };

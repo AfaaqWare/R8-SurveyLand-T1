@@ -34,8 +34,26 @@ import card14 from "@/assets/images/Frame 5.png";
 import card15 from "@/assets/images/Frame 4.png";
 import card16 from "@/assets/images/Frame 1.png";
 import card17 from "@/assets/images/Frame 8.png";
+import notfound from "@/assets/images/notfound.png";
 
-
-export { Avatar, defaultAvatar, heroImage,
-  card1 , card2 , card3 , card4 , card5 , card6 , card7 , card8 , card9 , card10 , card13 , card14 , card15 , card16 , card17
+export {
+  Avatar,
+  defaultAvatar,
+  heroImage,
+  card1,
+  card2,
+  card3,
+  card4,
+  card5,
+  card6,
+  card7,
+  card8,
+  card9,
+  card10,
+  card13,
+  card14,
+  card15,
+  card16,
+  card17,
+  notfound,
 };
