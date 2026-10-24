@@ -23,6 +23,7 @@ export default function FormField<T extends FieldValues>({
   control,
   name,
   translateError,
+  labelClassName,
   ...inputProps
 }: FormFieldProps<T>) {
   return (
@@ -40,6 +41,7 @@ export default function FormField<T extends FieldValues>({
             value={field.value ?? ""}
             state={errorKey ? "error" : "default"}
             errorMessage={errorKey ? translateError(errorKey) : undefined}
+            labelClassName={labelClassName}
           />
         );
       }}

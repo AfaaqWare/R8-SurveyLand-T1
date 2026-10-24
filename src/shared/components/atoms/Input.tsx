@@ -15,6 +15,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   /** Addons rendered on the right side (e.g. "EGP", an icon button) */
   rightAddon?: ReactNode;
   required?: boolean;
+  labelClassName?: string;
 }
 
 // Class maps
@@ -71,6 +72,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       required,
       disabled,
       className = "",
+      labelClassName = "",
       id,
       ...rest
     },
@@ -101,7 +103,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="text-sm leading-none font-medium text-[var(--color-text-primary)]"
+            className={`text-sm leading-none font-medium text-[var(--color-text-primary)] ${labelClassName}`}
           >
             {label}
             {required && (
