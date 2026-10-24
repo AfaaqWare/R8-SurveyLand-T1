@@ -11,13 +11,13 @@
  *   import card1 from "./card1.png";
  *
  *   export { heroImage, card1 };
- * 
+ *
  * // import BuildImg from "@/assets/images/Frame 11 (1).png";
-
- */
+*/
 import Avatar from "./Avatar.jpg";
 import defaultAvatar from "./user.webp";
 import heroImage from "./HeroImage.png";
+import syrveyDone from "./SyrveyDone.png"
 
 import card1 from "@/assets/images/Frame 14.png";
 import card2 from "@/assets/images/Frame 14 (3).png";
@@ -56,4 +56,6 @@ export {
   card16,
   card17,
   notfound,
+  syrveyDone
 };
+
