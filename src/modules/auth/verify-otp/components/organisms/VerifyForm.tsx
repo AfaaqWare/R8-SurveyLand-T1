@@ -15,8 +15,10 @@ import { getApiErrorMessage } from "@/modules/auth/verify-otp/utils/getApiErrorM
 import { otpSchema, type OtpFormValues } from "@/modules/auth/verify-otp/utils/otpSchema";
 
 const OTP_SECONDS = 60;
-const REGISTER_ROUTE = "/register"; 
-const AFTER_VERIFY_ROUTE = "/login"; 
+const REGISTER_ROUTE = "/sign-up"; 
+
+// Abdallah: Replace it with the `Done` screen when it's complete. 
+const AFTER_VERIFY_ROUTE = "/sign-in";
 
 export default function VerifyForm() {
   const t = useTranslations("otp");

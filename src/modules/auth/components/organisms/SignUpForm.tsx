@@ -6,7 +6,7 @@ import { useForm, type RegisterOptions } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
 import { FcGoogle, FaGithub, User, Mail, Lock, Eye, EyeOff } from "@/assets/icons/icons";
-import Input from "@/shared/components/atoms/Input";
+import IconInput from "@/shared/components/molecules/IconInput";
 import Button from "@/shared/components/atoms/Button";
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
@@ -24,7 +24,7 @@ interface SignUpFormData {
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
-    <p className="ds-text-error -mt-2 text-xs leading-5" role="alert">
+    <p className="ds-text-danger -mt-2 text-xs leading-5" role="alert">
       {message}
     </p>
   );
@@ -81,16 +81,10 @@ export default function SignUpForm() {
   return (
     <section className="ds-bg flex w-full flex-1 items-center justify-center px-4 py-8 sm:px-8 lg:px-12">
       <div className="flex w-full max-w-md flex-col gap-6">
-  <div className="flex flex-wrap items-center justify-end gap-2 text-sm">
-    <span className="ds-text-secondary">{t("haveAccount")}</span>
-    <Link href="/sign-in" className="ds-text-alt font-bold transition-opacity hover:opacity-75">
-      {t("logIn")}
-    </Link>
-  </div>
 
-  <Title size="xl" variant="alt" isCenter className="ds-font-heading font-bold">
-    {t("title")}
-  </Title>
+        <Title size="xl" variant="alt" isCenter className="ds-font-heading font-bold">
+          {t("title")}
+        </Title>
 
         <div className="flex items-center justify-center gap-4">
           <SocialButton label={t("googleSignup")} icon={<FcGoogle className="h-5 w-5" />} />
@@ -105,8 +99,14 @@ export default function SignUpForm() {
           <div className="ds-border-color grow border-t" />
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-4">
-          <Input
+        <form
+          onSubmit={handleSubmit(onSubmit, errors => {
+            console.log("Validation errors:", errors);
+          })}
+          noValidate
+          className="flex flex-col gap-4"
+        >
+          <IconInput
             type="text"
             placeholder={t("nameRequired")}
             aria-label={t("nameRequired")}
@@ -118,7 +118,7 @@ export default function SignUpForm() {
           />
           <FieldError message={errors.name?.message} />
 
-          <Input
+          <IconInput
             type="email"
             placeholder={t("emailRequired")}
             aria-label={t("emailRequired")}
@@ -130,7 +130,7 @@ export default function SignUpForm() {
           />
           <FieldError message={errors.email?.message} />
 
-          <Input
+          <IconInput
             type={showPassword ? "text" : "password"}
             placeholder={t("passwordRequired")}
             aria-label={t("passwordRequired")}
@@ -153,7 +153,7 @@ export default function SignUpForm() {
           />
           <FieldError message={errors.password?.message} />
 
-          <Input
+          <IconInput
             type={showConfirmPassword ? "text" : "password"}
             placeholder={t("confirmPasswordRequired")}
             aria-label={t("confirmPasswordRequired")}
@@ -170,11 +170,7 @@ export default function SignUpForm() {
                 className="ds-text-secondary flex items-center bg-transparent! shadow-none! transition-opacity hover:bg-transparent! hover:opacity-70"
                 aria-label={showConfirmPassword ? t("hidePassword") : t("showPassword")}
               >
-                {showConfirmPassword ? (
-                  <EyeOff className="h-4 w-4" />
-                ) : (
-                  <Eye className="h-4 w-4" />
-                )}
+                {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </Button>
             }
           />
@@ -185,7 +181,7 @@ export default function SignUpForm() {
               type="checkbox"
               id="agreeTerms"
               {...register("agreeTerms", rules.agreeTerms)}
-              className="mt-1 h-4 w-4 shrink-0 cursor-pointer accent-var(--color-primary)"
+              className="accent-var(--color-primary) mt-1 h-4 w-4 shrink-0 cursor-pointer"
             />
             <label
               htmlFor="agreeTerms"
