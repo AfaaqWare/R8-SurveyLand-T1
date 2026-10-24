@@ -2,7 +2,7 @@
 import { useApiQuery } from "@/shared/hooks/useApiQuery";
 import { getAllSurveys } from "../api/getAllSurveys";
 import { SurveysApiResponse } from "../types/DashboardTypes";
-const useGetSurvey = () => {
+const useGetSurvey = (surveyId: string) => {
   const {
     data: surveysData,
     isPending: surveysPending,

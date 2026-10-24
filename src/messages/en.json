@@ -385,5 +385,36 @@
       "linkedin": "Follow us on LinkedIn"
     },
     "copyright": "©{year} SurveyLand. All rights reserved"
+  },
+  "UserDashboard": {
+    "editSurvey": {
+      "title": "Edit Survey",
+      "subtitle": "You can edit your survey.",
+      "fields": {
+        "title": { "label": "Title", "hint": "Give your survey a clear and descriptive title." },
+        "description": { "label": "Description", "hint": "Describe what this survey is about." },
+        "deadline": { "label": "Deadline", "hint": "Choose the last date for receiving responses" },
+        "status": { "label": "Status", "hint": "Set the current status of your survey" }
+      },
+      "statuses": { "draft": "Draft", "published": "Published", "closed": "Closed" },
+      "cover": {
+        "title": "Cover Image",
+        "hint": "This image will be displayed on your survey page",
+        "change": "Change image",
+        "empty": "No image"
+      },
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "saved": "Survey updated successfully",
+      "somethingWrong": "Something went wrong, please try again",
+      "titleRequired": "Title is required",
+      "deadlineRequired": "Deadline is required",
+      "descriptionRequired": "Description is required",
+      "notFound": {
+        "title": "Survey not found",
+        "message": "This survey doesn't exist or may have been deleted.",
+        "back": "Back to My Surveys"
+      }
+    }
   }
 }
