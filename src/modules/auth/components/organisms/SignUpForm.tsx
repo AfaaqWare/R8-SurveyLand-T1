@@ -113,8 +113,8 @@ export default function SignUpForm() {
             aria-invalid={!!errors.name}
             {...register("name", rules.name)}
             autoComplete="name"
-            size="lg"
-            leftIcon={<User className="h-5 w-5" />}
+            // size="lg"
+            icon={<User className="h-5 w-5" />}
           />
           <FieldError message={errors.name?.message} />
 
@@ -125,8 +125,8 @@ export default function SignUpForm() {
             aria-invalid={!!errors.email}
             {...register("email", rules.email)}
             autoComplete="email"
-            size="lg"
-            leftIcon={<Mail className="h-5 w-5" />}
+            // size="lg"
+            icon={<Mail className="h-5 w-5" />}
           />
           <FieldError message={errors.email?.message} />
 
@@ -137,9 +137,9 @@ export default function SignUpForm() {
             aria-invalid={!!errors.password}
             {...register("password", rules.password)}
             autoComplete="new-password"
-            size="lg"
-            leftIcon={<Lock className="h-5 w-5" />}
-            rightAddon={
+            // size="lg"
+            icon={<Lock className="h-5 w-5" />}
+            trailingAction={
               <Button
                 type="button"
                 variant="ghost"
@@ -160,9 +160,9 @@ export default function SignUpForm() {
             aria-invalid={!!errors.confirmPassword}
             {...register("confirmPassword", rules.confirmPassword)}
             autoComplete="new-password"
-            size="lg"
-            leftIcon={<Lock className="h-5 w-5" />}
-            rightAddon={
+            // size="lg"
+            icon={<Lock className="h-5 w-5" />}
+            trailingAction={
               <Button
                 type="button"
                 variant="ghost"
