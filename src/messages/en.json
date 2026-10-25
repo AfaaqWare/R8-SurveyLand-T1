@@ -375,5 +375,16 @@
       "linkedin": "Follow us on LinkedIn"
     },
     "copyright": "©{year} SurveyLand. All rights reserved"
+  },
+  "mySurveys": {
+    "pagination": {
+      "showing": "Showing {start} to {end} of",
+      "surveys": "Surveys",
+      "nav": "Survey pages",
+      "first": "First page",
+      "previous": "Previous page",
+      "next": "Next page",
+      "last": "Last page"
+    }
   }
 }
