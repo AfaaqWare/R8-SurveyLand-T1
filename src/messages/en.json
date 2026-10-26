@@ -386,6 +386,7 @@
     },
     "copyright": "©{year} SurveyLand. All rights reserved"
   },
+
   "UserDashboard": {
     "editSurvey": {
       "title": "Edit Survey",
@@ -415,6 +416,44 @@
         "message": "This survey doesn't exist or may have been deleted.",
         "back": "Back to My Surveys"
       }
+    }
+  },
+  "createSurvey": {
+    "title": "Create Survey",
+    "subtitle": "Create a new Survey and start collecting responses",
+    "fields": {
+      "title": {
+        "label": "Title",
+        "hint": "Give your survey a clear and descriptive title.",
+        "placeholder": "e.g. Customer Satisfaction Survey"
+      },
+      "description": {
+        "label": "Description",
+        "hint": "Briefly explain what your survey is about.",
+        "placeholder": "e.g. Help us improve by sharing your experience"
+      },
+      "deadline": {
+        "label": "Deadline",
+        "hint": "Choose the last date of receiving responses"
+      }
+    },
+    "image": {
+      "dragTitle": "Drag and Drop an image here",
+      "or": "Or",
+      "choose": "Choose file",
+      "hint": "PNG, JPG or WEBP (Max. 1MB)",
+      "remove": "Remove image"
+    },
+    "submit": "Create Survey",
+    "submitting": "Creating...",
+    "errors": {
+      "titleRequired": "Title is required",
+      "descriptionRequired": "Description is required",
+      "deadlineRequired": "Deadline is required",
+      "deadlinePast": "Deadline can't be in the past",
+      "imageType": "Image must be PNG, JPG or WEBP",
+      "imageSize": "Image must be 1MB or smaller",
+      "createFailed": "Could not create the survey, please try again"
     }
   }
 }

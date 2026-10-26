@@ -1,0 +1,3 @@
+
+export const fieldClass =
+  "w-full rounded-[var(--radius-md)] border border-[color:var(--border-color)] bg-[var(--color-form)] px-4 text-sm text-[color:var(--color-text-primary)] outline-none transition placeholder:text-[color:var(--color-text-disabled)] focus:border-[color:var(--color-primary)] focus:ring-1 focus:ring-[color:var(--color-primary)] disabled:cursor-not-allowed disabled:opacity-60 aria-[invalid=true]:border-[color:var(--color-error)]";
