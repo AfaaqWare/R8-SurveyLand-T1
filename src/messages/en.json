@@ -153,6 +153,37 @@
         "responses": { "title": "View Responses", "description": "Browse all responses" },
         "export": { "title": "Export Reports", "description": "Download survey reports" }
       }
+    },
+    "users": {
+      "title": "Get All Users",
+      "subtitle": "See all registered users in SurveyLand",
+      "columns": {
+        "id": "ID",
+        "user": "User",
+        "emailVerification": "Email verification",
+        "role": "Role",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "verified": "Verified",
+      "notVerified": "Not Verified",
+      "roleLabel": "Role for {name}",
+      "roleUpdated": "Role updated successfully",
+      "deleted": "User deleted successfully",
+      "showing": "Showing {from}-{to} of {total} users",
+      "pagination": "Users pagination",
+      "prev": "Previous page",
+      "next": "Next page",
+      "delete": {
+        "button": "Delete",
+        "title": "Delete this user?",
+        "text": "{name} will be permanently deleted. This can't be undone.",
+        "confirm": "Yes, delete",
+        "cancel": "Cancel"
+      },
+      "errors": {
+        "generic": "Something went wrong. Please try again."
+      }
     }
   },
   "common": {

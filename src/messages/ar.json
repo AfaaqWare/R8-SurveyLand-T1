@@ -153,6 +153,37 @@
         "responses": { "title": "عرض الردود", "description": "تصفح كل الردود" },
         "export": { "title": "تصدير التقارير", "description": "تحميل تقارير الاستبيانات" }
       }
+    },
+    "users": {
+      "title": "كل المستخدمين",
+      "subtitle": "اعرض كل المستخدمين المسجلين في SurveyLand",
+      "columns": {
+        "id": "الرقم",
+        "user": "المستخدم",
+        "emailVerification": "تأكيد البريد",
+        "role": "الدور",
+        "createdAt": "تاريخ الإنشاء",
+        "actions": "الإجراءات"
+      },
+      "verified": "مؤكد",
+      "notVerified": "غير مؤكد",
+      "roleLabel": "دور {name}",
+      "roleUpdated": "تم تحديث الدور بنجاح",
+      "deleted": "تم حذف المستخدم بنجاح",
+      "showing": "عرض {from}-{to} من {total} مستخدم",
+      "pagination": "التنقل بين صفحات المستخدمين",
+      "prev": "الصفحة السابقة",
+      "next": "الصفحة التالية",
+      "delete": {
+        "button": "حذف",
+        "title": "حذف هذا المستخدم؟",
+        "text": "سيتم حذف {name} نهائياً ولا يمكن التراجع عن ذلك.",
+        "confirm": "نعم، احذف",
+        "cancel": "إلغاء"
+      },
+      "errors": {
+        "generic": "حدث خطأ ما. حاول مرة أخرى."
+      }
     }
   },
   "common": {
