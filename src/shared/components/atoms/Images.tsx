@@ -1,7 +1,7 @@
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData , ImageProps } from "next/image";
 import { cn } from "@/lib/cn";
 
-interface Props {
+interface Props extends ImageProps {
   src: string | StaticImageData;
   alt: string;
   className?: string;
@@ -19,7 +19,7 @@ export default function Images({
   priority = false,
   center = false,
 }: Props) {
-  const baseClasses = "w-full  flex justify-end items-center";
+  const baseClasses = "w-full flex justify-end items-center";
   return (
     <div
       className={cn(

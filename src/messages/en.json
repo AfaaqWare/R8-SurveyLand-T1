@@ -518,5 +518,38 @@
       "invalidResetToken": "Your password reset session is invalid or has expired."
     },
     "backToSignIn": "Back to Sign In"
+  },
+  "DashboardProfile": {
+    "title": "Account Information",
+    "subtitle": "Update your personal information to keep your account up to date",
+    "avatarAlt": "Profile photo",
+    "uploadPhoto": "Upload New Photo",
+    "removePhoto": "Remove photo",
+    "userName": "User Name",
+    "phoneNumber": "Phone Number",
+    "email": "E-mail",
+    "country": "Country",
+    "password": "Password",
+    "language": "Language",
+    "countryNetherlands": "Netherlands Antilles",
+    "countryEgypt": "Egypt",
+    "countryUnitedStates": "United States",
+    "countryUnitedKingdom": "United Kingdom",
+    "languageEnglish": "English",
+    "languageArabic": "Arabic",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "saveChanges": "Save Changes",
+    "apiNotConnected": "The profile update API is not connected yet. Your changes have not been sent to the server.",
+    "userNameMin": "Name must contain at least 2 characters.",
+    "userNameMax": "Name cannot exceed 50 characters.",
+    "phoneInvalid": "Enter a valid phone number.",
+    "emailInvalid": "Enter a valid email address.",
+    "countryRequired": "Please select a country.",
+    "passwordMin": "Password must be at least 12 characters",
+    "passwordUppercase": "Password must contain an uppercase letter",
+    "passwordLowercase": "Password must contain a lowercase letter",
+    "passwordNumber": "Password must contain a number",
+    "passwordSpecial": "Password must contain a special character"
   }
 }

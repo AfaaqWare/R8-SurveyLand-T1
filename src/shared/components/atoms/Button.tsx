@@ -2,7 +2,19 @@ import React from "react";
 import { cn } from "@/lib/cn";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "outline1" | "ghost" | "primary200" | "disabled" | "white" | "primaryWhite" | "panel" ;
+  variant?:
+    | "primary"
+    | "secondary"
+    | "outline"
+    | "outline1"
+    | "ghost"
+    | "primary200"
+    | "disabled"
+    | "white"
+    | "primaryWhite"
+    | "panel"
+    | "alt"
+    | "gray";
   size?: "sm" | "md" | "lg" | "xlg" | "form";
   className?: string;
   children: React.ReactNode;
@@ -36,17 +48,30 @@ export default function Button({
 
   const variants = {
     primary: "ds-bg-primary ds-text-white hover:opacity-90 active:opacity-80 ds-shadow-sm",
+
     secondary: "ds-bg-secondary ds-text-white hover:opacity-90 active:opacity-80 ds-shadow-sm",
+
     outline:
       "bg-transparent border border-[var(--color-primary)] text-[var(--color-primary)] hover:ds-bg-primary hover:ds-text-white active:opacity-80",
+
     outline1:
       "bg-transparent border border-[var(--color-primary)] ds-text-primary hover:ds-bg-primary hover:ds-text-white active:opacity-80",
+
     ghost: "bg-transparent ds-text-primary font-semibold hover:opacity-70 active:opacity-50",
+
     primary200: "ds-primary-200 ds-text-alt hover:opacity-90 active:opacity-80",
+
     disabled: "ds-bg-primary ds-text-white cursor-not-allowed ds-disabled",
+
     white: "ds-primary-300 ds-text-alt hover:opacity-90 active:opacity-80 ds-shadow-sm",
+
     primaryWhite: "ds-bg-primary text-white hover:opacity-90 active:opacity-80 ds-shadow-sm",
+
     panel: "ds-bg sm:px-15 ds-text-alt font-semibold hover:opacity-90",
+
+    alt: "ds-bg-alt ds-text-alt hover:ds-bg-primary hover:ds-text-white active:opacity-80 ds-shadow-sm",
+
+    gray: "ds-bg-gray-soft ds-text-gray hover:opacity-90 active:opacity-80",
   };
 
   const resolvedFullWidth = isFullWidth;
