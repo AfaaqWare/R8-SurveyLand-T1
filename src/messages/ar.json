@@ -575,5 +575,38 @@
       },
       "backToSignIn": "العودة إلى تسجيل الدخول"
     }
+  },
+  "DashboardProfile": {
+    "title": "معلومات الحساب",
+    "subtitle": "حدّث معلوماتك الشخصية للحفاظ على بيانات حسابك محدثة",
+    "avatarAlt": "الصورة الشخصية",
+    "uploadPhoto": "تحميل صورة جديدة",
+    "removePhoto": "إزالة الصورة",
+    "userName": "اسم المستخدم",
+    "phoneNumber": "رقم الهاتف",
+    "email": "البريد الإلكتروني",
+    "country": "الدولة",
+    "password": "كلمة المرور",
+    "language": "اللغة",
+    "countryNetherlands": "جزر الأنتيل الهولندية",
+    "countryEgypt": "مصر",
+    "countryUnitedStates": "الولايات المتحدة",
+    "countryUnitedKingdom": "المملكة المتحدة",
+    "languageEnglish": "الإنجليزية",
+    "languageArabic": "العربية",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "saveChanges": "حفظ التغييرات",
+    "apiNotConnected": "لم يتم ربط واجهة تحديث الملف الشخصي بالخادم بعد، ولم تُرسل التغييرات إليه.",
+    "userNameMin": "يجب ألا يقل الاسم عن حرفين.",
+    "userNameMax": "يجب ألا يزيد الاسم عن 50 حرفًا.",
+    "phoneInvalid": "أدخل رقم هاتف صحيحًا.",
+    "emailInvalid": "أدخل بريدًا إلكترونيًا صحيحًا.",
+    "countryRequired": "يرجى اختيار الدولة.",
+    "passwordMin": "يجب ألا تقل كلمة المرور عن 12 حرفًا",
+    "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف إنجليزي كبير",
+    "passwordLowercase": "يجب أن تحتوي كلمة المرور على حرف إنجليزي صغير",
+    "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+    "passwordSpecial": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل"
   }
 }
