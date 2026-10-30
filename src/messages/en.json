@@ -550,6 +550,13 @@
     "passwordUppercase": "Password must contain an uppercase letter",
     "passwordLowercase": "Password must contain a lowercase letter",
     "passwordNumber": "Password must contain a number",
-    "passwordSpecial": "Password must contain a special character"
+    "passwordSpecial": "Password must contain a special character",
+    "phoneRequired": "Phone number is required",
+    "emailRequired": "Email address is required",
+    "photoInvalid": "Please select a valid image file",
+    "photoInvalidType": "Only JPG, PNG, and WEBP images are allowed",
+    "photoTooLarge": "Image size must not exceed 5 MB",
+    "countryPlaceholder": "Select a country",
+    "passwordRequired": "Password is required"
   }
 }

@@ -552,6 +552,13 @@
     "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف إنجليزي كبير",
     "passwordLowercase": "يجب أن تحتوي كلمة المرور على حرف إنجليزي صغير",
     "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
-    "passwordSpecial": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل"
+    "passwordSpecial": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+    "phoneRequired": "رقم الهاتف مطلوب",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "photoInvalid": "يرجى اختيار ملف صورة صالح",
+    "photoInvalidType": "يُسمح فقط بصور JPG و PNG و WEBP",
+    "photoTooLarge": "يجب ألا يتجاوز حجم الصورة 5 ميجابايت",
+    "countryPlaceholder": "اختر الدولة",
+    "passwordRequired": "كلمة المرور مطلوبة"
   }
 }
