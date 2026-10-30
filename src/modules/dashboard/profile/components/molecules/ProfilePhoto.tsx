@@ -1,11 +1,19 @@
+
 "use client";
+
+import { useRef, useState, type ChangeEvent } from "react";
+import { useTranslations } from "next-intl";
 
 import Images from "@/shared/components/atoms/Images";
 import Input from "@/shared/components/atoms/Input";
 import Button from "@/shared/components/atoms/Button";
-import { useRef, type ChangeEvent } from "react";
-import { useTranslations } from "next-intl";
+
 import Avatar from "@/assets/images/Avatar.jpg";
+
+import {
+  profilePhotoSchema,
+  type ProfileValidationKey,
+} from "@/modules/dashboard/schema/ProfileSchema";
 
 type ProfilePhotoProps = {
   photoPreview: string | null;
@@ -19,23 +27,48 @@ export default function ProfilePhoto({
   onRemovePhoto,
 }: ProfilePhotoProps) {
   const t = useTranslations("DashboardProfile");
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const [photoError, setPhotoError] =
+    useState<ProfileValidationKey | null>(null);
+
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.currentTarget.files?.[0];
+    const input = event.currentTarget;
+    const file = input.files?.[0];
 
     if (!file) return;
 
-    if (!file.type.startsWith("image/")) {
-      event.currentTarget.value = "";
+    // Validate the selected image using Zod
+    const result = profilePhotoSchema.safeParse(file);
+
+    if (!result.success) {
+      const errorKey = result.error.issues[0]?.message;
+
+      setPhotoError(
+        (errorKey as ProfileValidationKey) || "photoInvalid"
+      );
+
+      input.value = "";
       return;
     }
 
+    // Valid image
+    setPhotoError(null);
     onPhotoChange(file);
-    event.currentTarget.value = "";
+
+    // Allow selecting the same file again
+    input.value = "";
   }
+
+  function handleRemovePhoto() {
+    setPhotoError(null);
+    onRemovePhoto();
+  }
+
   return (
     <div className="flex flex-wrap items-center gap-4" dir="ltr">
+      {/* Profile Avatar */}
       <div className="h-24 w-24 shrink-0">
         <Images
           src={photoPreview ?? Avatar}
@@ -48,16 +81,17 @@ export default function ProfilePhoto({
         />
       </div>
 
+      {/* Hidden File Input */}
       <Input
         ref={fileInputRef}
         type="file"
-        accept="image/*"
+        accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
         className="hidden"
         onChange={handleFileChange}
         aria-label={t("uploadPhoto")}
       />
 
-      {/* Photo actions */}
+      {/* Photo Actions */}
       <div className="flex flex-wrap items-center gap-3">
         <Button
           type="button"
@@ -71,12 +105,20 @@ export default function ProfilePhoto({
         <Button
           type="button"
           variant="gray"
-          onClick={onRemovePhoto}
+          onClick={handleRemovePhoto}
           className="h-10 rounded-lg px-4 text-xs font-medium"
         >
           {t("removePhoto")}
         </Button>
       </div>
+
+      {/* Photo Validation Error */}
+      {photoError && (
+        <p className="w-full text-xs text-red-500" role="alert">
+          {t(photoError)}
+        </p>
+      )}
+
     </div>
   );
 }
