@@ -551,5 +551,12 @@
     "passwordLowercase": "Password must contain a lowercase letter",
     "passwordNumber": "Password must contain a number",
     "passwordSpecial": "Password must contain a special character"
+  },
+
+  "AuthSuccessCard": {
+    "title": "DONE",
+    "passwordResetDescription": "Password reset complete! Use the button below to log in.",
+    "accountReactivationDescription": "Your account has been reactivated successfully! Use the button below to log in.",
+    "returnToLogin": "Return to Login"
   }
 }

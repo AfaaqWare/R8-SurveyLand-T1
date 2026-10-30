@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -12,19 +11,19 @@ import Heading from "@/shared/components/atoms/Heading";
 import Text from "@/shared/components/atoms/Text";
 
 import useCreateNewPassword from "@/modules/auth/hooks/useCreateNewPassword";
+import AuthSuccessCard from "@/modules/auth/components/molecules/AuthSuccessCard";
 
 const CreateNewPassword = () => {
   const t = useTranslations("createNewPassword");
 
-  const {
-    register,
-    errors,
-    onSubmit,
-    isSubmitting,
-  } = useCreateNewPassword();
+  const { register, errors, onSubmit, isSubmitting, isSuccess } = useCreateNewPassword();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  if (isSuccess) {
+    return <AuthSuccessCard type="passwordReset" />;
+  }
 
   return (
     <form
@@ -54,24 +53,14 @@ const CreateNewPassword = () => {
             <Button
               type="button"
               variant="ghost"
-              onClick={() => setShowPassword((previous) => !previous)}
-              aria-label={
-                showPassword ? t("hidePassword") : t("showPassword")
-              }
+              onClick={() => setShowPassword(previous => !previous)}
+              aria-label={showPassword ? t("hidePassword") : t("showPassword")}
               aria-pressed={showPassword}
             >
-              <Icon
-                IconComponent={showPassword ? EyeOff : Eye}
-                size={18}
-                variant="secondary"
-              />
+              <Icon IconComponent={showPassword ? EyeOff : Eye} size={18} variant="secondary" />
             </Button>
           }
-          errorMessage={
-            errors.password?.message
-              ? t(errors.password.message)
-              : undefined
-          }
+          errorMessage={errors.password?.message ? t(errors.password.message) : undefined}
           {...register("password")}
           state={errors.password ? "error" : "default"}
           className="ds-bg-form w-full border-0!"
@@ -88,14 +77,8 @@ const CreateNewPassword = () => {
             <Button
               type="button"
               variant="ghost"
-              onClick={() =>
-                setShowConfirmPassword((previous) => !previous)
-              }
-              aria-label={
-                showConfirmPassword
-                  ? t("hideConfirmPassword")
-                  : t("showConfirmPassword")
-              }
+              onClick={() => setShowConfirmPassword(previous => !previous)}
+              aria-label={showConfirmPassword ? t("hideConfirmPassword") : t("showConfirmPassword")}
               aria-pressed={showConfirmPassword}
             >
               <Icon
@@ -106,9 +89,7 @@ const CreateNewPassword = () => {
             </Button>
           }
           errorMessage={
-            errors.confirmPassword?.message
-              ? t(errors.confirmPassword.message)
-              : undefined
+            errors.confirmPassword?.message ? t(errors.confirmPassword.message) : undefined
           }
           {...register("confirmPassword")}
           state={errors.confirmPassword ? "error" : "default"}
@@ -127,17 +108,10 @@ const CreateNewPassword = () => {
           className="w-full! md:w-full!"
         >
           {isSubmitting && (
-            <Icon
-              IconComponent={Loader}
-              size={20}
-              variant="white"
-              className="animate-spin"
-            />
+            <Icon IconComponent={Loader} size={20} variant="white" className="animate-spin" />
           )}
 
-          {isSubmitting
-            ? t("resettingPassword")
-            : t("resetPassword")}
+          {isSubmitting ? t("resettingPassword") : t("resetPassword")}
         </Button>
       </div>
     </form>
