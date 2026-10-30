@@ -617,5 +617,11 @@
     "photoTooLarge": "Image size must not exceed 5 MB",
     "countryPlaceholder": "Select a country",
     "passwordRequired": "Password is required"
+  },
+  "AuthSuccessCard": {
+    "title": "DONE",
+    "passwordResetDescription": "Password reset complete! Use the button below to log in.",
+    "accountReactivationDescription": "Your account has been reactivated successfully! Use the button below to log in.",
+    "returnToLogin": "Return to Login"
   }
 }

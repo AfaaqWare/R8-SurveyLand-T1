@@ -615,5 +615,11 @@
     "photoTooLarge": "يجب ألا يتجاوز حجم الصورة 5 ميجابايت",
     "countryPlaceholder": "اختر الدولة",
     "passwordRequired": "كلمة المرور مطلوبة"
+  },
+  "AuthSuccessCard": {
+    "title": "تم بنجاح",
+    "passwordResetDescription": "تم تغيير كلمة المرور بنجاح! استخدم الزر أدناه لتسجيل الدخول.",
+    "accountReactivationDescription": "تمت إعادة تفعيل حسابك بنجاح! استخدم الزر أدناه لتسجيل الدخول.",
+    "returnToLogin": "العودة إلى تسجيل الدخول"
   }
 }
