@@ -48,7 +48,11 @@
       "remember": "Remember me?",
       "forget-password": "Forget password?",
       "submit": "Sign in",
-      "dismiss-error": "Dismiss error"
+      "dismiss-error": "Dismiss error",
+      "emailRequired": "Enter your email address.",
+      "emailInvalid": "Enter a valid email address.",
+      "passwordRequired": "Enter your password.",
+      "success": "Signed in successfully."
     },
     "navbar": {
       "home": "Home",

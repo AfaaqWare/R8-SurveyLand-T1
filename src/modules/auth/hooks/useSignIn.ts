@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { isAxiosError } from "axios";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useApiMutation } from "@/shared/hooks/useApiMutation";
+import { useAlert } from "@/shared/hooks/useAlert";
 import { TokenService } from "@/services/tokenService";
 import { getApiErrorMessage } from "@/modules/auth/verify-otp/utils/getApiErrorMessage";
 import { useOtpStore } from "@/modules/auth/verify-otp/store/otpStore";
 import { signInApi, type SignInPayload, type SignInResponse } from "../api/signIn";
 import { getUsersApi } from "../api/getUsers";
+import { signInSchema, type SignInValues } from "../schema/signInSchema";
 
 function isUnverifiedEmailError(error: unknown) {
   if (!isAxiosError(error)) return false;
@@ -39,19 +42,31 @@ function isUnverifiedEmailError(error: unknown) {
 
 export function useSignIn() {
   const router = useRouter();
-  const t = useTranslations("ui-state.error");
-  const [errorMessage, setErrorMessage] = useState("");
+  const t = useTranslations("publicPages.sign-in");
+  const tError = useTranslations("ui-state.error");
+  const { showAlert } = useAlert();
+
+  const {
+    register,
+    handleSubmit,
+    setError,
+    clearErrors,
+    formState: { errors },
+  } = useForm<SignInValues>({
+    resolver: zodResolver(signInSchema),
+    defaultValues: { email: "", password: "" },
+  });
 
   const goToVerifyOtp = (email: string) => {
     useOtpStore.getState().setEmail(email);
     router.push("/verify-otp");
   };
 
-  const mutation = useApiMutation<SignInPayload, SignInResponse>({
+  const { mutate, isPending } = useApiMutation<SignInPayload, SignInResponse>({
     mutationFn: signInApi,
     options: {
       onSuccess: async (data, { email }) => {
-        setErrorMessage("");
+        clearErrors("root");
         TokenService.setToken(data.accessToken);
 
         try {
@@ -68,23 +83,27 @@ export function useSignIn() {
           return;
         }
 
+        await showAlert("success", t("success"));
         router.push("/");
       },
       onError: (error, { email }) => {
         if (isUnverifiedEmailError(error)) {
-          setErrorMessage("");
+          clearErrors("root");
           goToVerifyOtp(email);
           return;
         }
 
-        setErrorMessage(getApiErrorMessage(error, t("default")));
+        const message = getApiErrorMessage(error, tError("default"));
+        setError("root", { message });
+        showAlert("error", message);
       },
     },
   });
 
-  return {
-    ...mutation,
-    errorMessage,
-    clearError: () => setErrorMessage(""),
-  };
+  const onSubmit = handleSubmit(values => {
+    clearErrors("root");
+    mutate(values);
+  });
+
+  return { register, errors, onSubmit, isPending };
 }

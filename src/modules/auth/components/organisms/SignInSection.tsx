@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type SubmitEvent } from "react";
+import { useState } from "react";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import Button from "@/shared/components/atoms/Button";
@@ -14,39 +14,12 @@ import { useTranslations } from "next-intl";
 
 export default function SignInSection() {
   const [showPassword, setShowPassword] = useState(false);
-  const { mutate, isPending, errorMessage, clearError } = useSignIn();
+  const { register, errors, onSubmit, isPending } = useSignIn();
   const t = useTranslations("publicPages.sign-in");
-
-  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
-    event.preventDefault();
-    clearError();
-    const formData = new FormData(event.currentTarget);
-
-    mutate({
-      email: String(formData.get("email") ?? ""),
-      password: String(formData.get("password") ?? ""),
-    });
-  }
 
   return (
     <section className="ds-bg ds-px-md ds-py-lg flex min-h-screen items-center justify-center">
-      <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col items-center gap-8">
-        {errorMessage && (
-          <div
-            role="alert"
-            className="flex w-full items-center justify-between gap-3 rounded-md bg-red-100 px-4 py-3 text-sm text-red-800"
-          >
-            <p>{errorMessage}</p>
-            <button
-              type="button"
-              aria-label={t("dismiss-error")}
-              onClick={clearError}
-              className="shrink-0 cursor-pointer text-base leading-none"
-            >
-              ×
-            </button>
-          </div>
-        )}
+      <form onSubmit={onSubmit} noValidate className="flex w-full max-w-md flex-col items-center gap-8">
         <Title
           size="xl"
           variant="alt"
@@ -84,15 +57,19 @@ export default function SignInSection() {
         <div className="flex w-full flex-col gap-4">
           <IconInput
             type="email"
-            name="email"
             placeholder={t("email")}
+            autoComplete="email"
             icon={<Icon IconComponent={Mail} size="sm" variant="disabled" />}
+            errorMessage={errors.email?.message ? t(errors.email.message) : undefined}
+            {...register("email")}
           />
           <IconInput
             type={showPassword ? "text" : "password"}
-            name="password"
             placeholder={t("password")}
+            autoComplete="current-password"
             icon={<Icon IconComponent={Lock} size="sm" variant="disabled" />}
+            errorMessage={errors.password?.message ? t(errors.password.message) : undefined}
+            {...register("password")}
             trailingAction={
               <button
                 type="button"
@@ -112,6 +89,12 @@ export default function SignInSection() {
             </Link>
           </div>
         </div>
+
+        {errors.root?.message && (
+          <p role="alert" className="w-full text-sm text-red-500">
+            {errors.root.message}
+          </p>
+        )}
 
         <Button
           type="submit"
