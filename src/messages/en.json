@@ -447,6 +447,36 @@
         "message": "This survey doesn't exist or may have been deleted.",
         "back": "Back to My Surveys"
       }
+    },
+    "previewSurvey": {
+      "title": "Preview Survey",
+      "subtitle": "This is how your survey will look for respondents.",
+      "edit": "Edit",
+      "share": "Share Survey",
+      "deadline": "Deadline: {date}",
+      "timeToComplete": "Time to complete: ~{minutes} min",
+      "selectPlaceholder": "Select an option",
+      "textPlaceholder": "Write your answer here...",
+      "noQuestions": "This survey has no questions yet.",
+      "submit": "Submit Survey",
+      "secure": "Your response is secure and anonymous.",
+      "overview": {
+        "title": "Survey Overview",
+        "totalQuestions": "Total Questions",
+        "questionTypes": "Question Types",
+        "textarea": "Text Area",
+        "mcq": "MCQ",
+        "requiredQuestions": "Required Questions",
+        "lastUpdated": "Last Updated",
+        "deadline": "Deadline"
+      },
+      "notFound": {
+        "title": "Survey not found",
+        "message": "This survey doesn't exist or may have been deleted.",
+        "back": "Back to My Surveys"
+      },
+      "copySuccess": "Survey link copied successfully!",
+      "copyError": "Failed to copy survey link. Please try again."
     }
   },
   "createSurvey": {
