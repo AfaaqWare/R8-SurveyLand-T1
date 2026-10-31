@@ -423,6 +423,16 @@
     },
     "copyright": "© {year} SurveyLand. جميع الحقوق محفوظة"
   },
+  "mySurveys": {
+    "pagination": {
+      "showing": "عرض {start} إلى {end} من",
+      "surveys": "الاستبيانات",
+      "nav": "صفحات الاستبيانات",
+      "first": "الصفحة الأولى",
+      "previous": "الصفحة السابقة",
+      "next": "الصفحة التالية",
+      "last": "الصفحة الأخيرة"
+  },
   "UserDashboard": {
     "editSurvey": {
       "title": "تعديل الاستبيان",
@@ -520,5 +530,5 @@
       "imageSize": "يجب ألا يتجاوز حجم الصورة 1MB",
       "createFailed": "تعذر إنشاء الاستبيان، حاول مرة أخرى"
     }
-  }
+  }}
 }
