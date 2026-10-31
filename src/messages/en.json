@@ -491,5 +491,37 @@
       "imageSize": "Image must be 1MB or smaller",
       "createFailed": "Could not create the survey, please try again"
     }
+  },
+  "createNewPassword": {
+    "title": "Create New Password",
+    "description": "Please enter your new password below. Make sure it's strong and secure.",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your new password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter your new password",
+    "passwordRequirements": "Password must be at least 8 characters, include an uppercase letter and a number.",
+    "resetPassword": "Reset Password",
+    "resettingPassword": "Resetting Password...",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "showConfirmPassword": "Show confirm password",
+    "hideConfirmPassword": "Hide confirm password",
+    "validation": {
+      "passwordRequired": "Password is required.",
+      "confirmPasswordRequired": "Please confirm your password.",
+      "passwordMinLength": "Password must be at least 8 characters.",
+      "passwordUppercase": "Password must contain at least one uppercase letter.",
+      "passwordNumber": "Password must contain at least one number.",
+      "passwordsDoNotMatch": "Passwords do not match."
+    },
+    "success": {
+      "title": "Password Reset Successful",
+      "description": "Your password has been changed successfully."
+    },
+    "errors": {
+      "resetFailed": "Unable to reset your password. Please try again.",
+      "invalidResetToken": "Your password reset session is invalid or has expired."
+    },
+    "backToSignIn": "Back to Sign In"
   }
 }
