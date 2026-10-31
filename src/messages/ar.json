@@ -530,5 +530,39 @@
       "imageSize": "يجب ألا يتجاوز حجم الصورة 1MB",
       "createFailed": "تعذر إنشاء الاستبيان، حاول مرة أخرى"
     }
+  },
+
+  "createNewPassword": {
+    "title": "إنشاء كلمة مرور جديدة",
+    "description": "أدخل كلمة المرور الجديدة أدناه، وتأكد من أنها قوية وآمنة.",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور الجديدة",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور الجديدة",
+    "passwordRequirements": "يجب ألا تقل كلمة المرور عن 8 أحرف، وأن تحتوي على حرف كبير واحد ورقم واحد على الأقل.",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "resettingPassword": "جارٍ إعادة تعيين كلمة المرور...",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "showConfirmPassword": "إظهار كلمة المرور للتأكيد",
+    "hideConfirmPassword": "إخفاء كلمة المرور للتأكيد",
+    "validation": {
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "confirmPasswordRequired": "يرجى تأكيد كلمة المرور.",
+      "passwordMinLength": "يجب ألا تقل كلمة المرور عن 8 أحرف.",
+      "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل.",
+      "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل.",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين."
+    },
+    "success": {
+      "title": "تم تغيير كلمة المرور بنجاح",
+      "description": "تم تغيير كلمة المرور الخاصة بك بنجاح."
+    },
+    "errors": {
+      "resetFailed": "تعذرت إعادة تعيين كلمة المرور. يرجى المحاولة مرة أخرى.",
+      "invalidResetToken": "جلسة إعادة تعيين كلمة المرور غير صالحة أو انتهت صلاحيتها."
+    },
+    "backToSignIn": "العودة إلى تسجيل الدخول"
+  }
   }}
 }
