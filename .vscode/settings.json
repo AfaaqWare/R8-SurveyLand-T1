@@ -6,5 +6,6 @@
   },
   "files.eol": "\n",
   "eslint.validate": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
-  "cSpell.words": ["allresponses", "surveysrefetch", "totalresponse", "Userimgage", "إشتراك"]
+  "cSpell.words": ["allresponses", "surveysrefetch", "totalresponse", "Userimgage", "إشتراك"],
+  "folder-color.pathColors": []
 }

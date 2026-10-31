@@ -47,7 +47,12 @@
       "hide-password": "Hide password",
       "remember": "Remember me?",
       "forget-password": "Forget password?",
-      "submit": "Sign in"
+      "submit": "Sign in",
+      "dismiss-error": "Dismiss error",
+      "emailRequired": "Enter your email address.",
+      "emailInvalid": "Enter a valid email address.",
+      "passwordRequired": "Enter your password.",
+      "success": "Signed in successfully."
     },
     "navbar": {
       "home": "Home",
@@ -152,6 +157,37 @@
         "users": { "title": "Manage Users", "description": "View and manage users" },
         "responses": { "title": "View Responses", "description": "Browse all responses" },
         "export": { "title": "Export Reports", "description": "Download survey reports" }
+      }
+    },
+    "users": {
+      "title": "Get All Users",
+      "subtitle": "See all registered users in SurveyLand",
+      "columns": {
+        "id": "ID",
+        "user": "User",
+        "emailVerification": "Email verification",
+        "role": "Role",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "verified": "Verified",
+      "notVerified": "Not Verified",
+      "roleLabel": "Role for {name}",
+      "roleUpdated": "Role updated successfully",
+      "deleted": "User deleted successfully",
+      "showing": "Showing {from}-{to} of {total} users",
+      "pagination": "Users pagination",
+      "prev": "Previous page",
+      "next": "Next page",
+      "delete": {
+        "button": "Delete",
+        "title": "Delete this user?",
+        "text": "{name} will be permanently deleted. This can't be undone.",
+        "confirm": "Yes, delete",
+        "cancel": "Cancel"
+      },
+      "errors": {
+        "generic": "Something went wrong. Please try again."
       }
     }
   },
@@ -334,6 +370,16 @@
       "genericError": "Something went wrong. Try again in a moment."
     }
   },
+
+  "thankYou": {
+    "title": "Thank You!",
+    "subtitle": "Your response has been submitted successfully",
+    "description": "We really appreciate you taking the time to complete this survey. Your feedback helps us improve and make better decisions.",
+    "detailTitle": "Your opinion matters",
+    "detailText": "Every response helps us understand your needs and improve your experience.",
+    "actionLabel": "Back Home",
+    "imageAlt": "Survey completed successfully"
+  },
   "Footer": {
     "ariaLabel": "Site footer",
     "brand": {
@@ -385,6 +431,104 @@
       "previous": "Previous page",
       "next": "Next page",
       "last": "Last page"
+  },
+  "UserDashboard": {
+    "editSurvey": {
+      "title": "Edit Survey",
+      "subtitle": "You can edit your survey.",
+      "fields": {
+        "title": { "label": "Title", "hint": "Give your survey a clear and descriptive title." },
+        "description": { "label": "Description", "hint": "Describe what this survey is about." },
+        "deadline": { "label": "Deadline", "hint": "Choose the last date for receiving responses" },
+        "status": { "label": "Status", "hint": "Set the current status of your survey" }
+      },
+      "statuses": { "draft": "Draft", "published": "Published", "closed": "Closed" },
+      "cover": {
+        "title": "Cover Image",
+        "hint": "This image will be displayed on your survey page",
+        "change": "Change image",
+        "empty": "No image"
+      },
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "saved": "Survey updated successfully",
+      "somethingWrong": "Something went wrong, please try again",
+      "titleRequired": "Title is required",
+      "deadlineRequired": "Deadline is required",
+      "descriptionRequired": "Description is required",
+      "notFound": {
+        "title": "Survey not found",
+        "message": "This survey doesn't exist or may have been deleted.",
+        "back": "Back to My Surveys"
+      }
+    },
+    "previewSurvey": {
+      "title": "Preview Survey",
+      "subtitle": "This is how your survey will look for respondents.",
+      "edit": "Edit",
+      "share": "Share Survey",
+      "deadline": "Deadline: {date}",
+      "timeToComplete": "Time to complete: ~{minutes} min",
+      "selectPlaceholder": "Select an option",
+      "textPlaceholder": "Write your answer here...",
+      "noQuestions": "This survey has no questions yet.",
+      "submit": "Submit Survey",
+      "secure": "Your response is secure and anonymous.",
+      "overview": {
+        "title": "Survey Overview",
+        "totalQuestions": "Total Questions",
+        "questionTypes": "Question Types",
+        "textarea": "Text Area",
+        "mcq": "MCQ",
+        "requiredQuestions": "Required Questions",
+        "lastUpdated": "Last Updated",
+        "deadline": "Deadline"
+      },
+      "notFound": {
+        "title": "Survey not found",
+        "message": "This survey doesn't exist or may have been deleted.",
+        "back": "Back to My Surveys"
+      },
+      "copySuccess": "Survey link copied successfully!",
+      "copyError": "Failed to copy survey link. Please try again."
+    }
+  },
+  "createSurvey": {
+    "title": "Create Survey",
+    "subtitle": "Create a new Survey and start collecting responses",
+    "fields": {
+      "title": {
+        "label": "Title",
+        "hint": "Give your survey a clear and descriptive title.",
+        "placeholder": "e.g. Customer Satisfaction Survey"
+      },
+      "description": {
+        "label": "Description",
+        "hint": "Briefly explain what your survey is about.",
+        "placeholder": "e.g. Help us improve by sharing your experience"
+      },
+      "deadline": {
+        "label": "Deadline",
+        "hint": "Choose the last date of receiving responses"
+      }
+    },
+    "image": {
+      "dragTitle": "Drag and Drop an image here",
+      "or": "Or",
+      "choose": "Choose file",
+      "hint": "PNG, JPG or WEBP (Max. 1MB)",
+      "remove": "Remove image"
+    },
+    "submit": "Create Survey",
+    "submitting": "Creating...",
+    "errors": {
+      "titleRequired": "Title is required",
+      "descriptionRequired": "Description is required",
+      "deadlineRequired": "Deadline is required",
+      "deadlinePast": "Deadline can't be in the past",
+      "imageType": "Image must be PNG, JPG or WEBP",
+      "imageSize": "Image must be 1MB or smaller",
+      "createFailed": "Could not create the survey, please try again"
     }
   }
-}
+}}
