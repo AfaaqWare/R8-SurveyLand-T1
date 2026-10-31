@@ -4,6 +4,7 @@ import Button from "../atoms/Button";
 import Text from "../atoms/Text";
 import Title from "../atoms/Title";
 import AppImage from "../atoms/Image";
+import Link from "../atoms/Link";
 
 interface Props {
   src: string | StaticImageData;
@@ -39,9 +40,11 @@ export default function ImgCard({
             {text}
           </Text>
         </div>
-        <Button variant="primary" size="md" className="mt-2 w-full max-w-[200px]">
-          {btn}
-        </Button>
+        <Link href="/pricing">
+          <Button variant="primary" size="md" className="mt-2 w-full max-w-[200px]">
+            {btn}
+          </Button>
+        </Link>
       </div>
     </div>
   );
