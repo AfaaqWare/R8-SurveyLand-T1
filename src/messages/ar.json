@@ -481,6 +481,33 @@
       },
       "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
       "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
+    },
+    "addQuestion": {
+      "title": "إضافة سؤال جديد",
+      "close": "إغلاق",
+      "selectType": "1. اختر نوع السؤال",
+      "configure": "2. اضبط سؤالك",
+      "types": {
+        "mcq": { "title": "اختيار من متعدد", "subtitle": "MCQ" },
+        "textarea": { "title": "نص طويل", "subtitle": "إجابة طويلة" }
+      },
+      "questionText": {
+        "label": "نص السؤال",
+        "placeholder": "أدخل سؤالك هنا..."
+      },
+      "choices": "الخيارات",
+      "choicePlaceholder": "خيار {number}",
+      "addChoice": "إضافة خيار",
+      "removeChoice": "حذف الخيار {number}",
+      "required": "سؤال مطلوب",
+      "save": "حفظ السؤال",
+      "saving": "جارٍ الحفظ...",
+      "saved": "تمت إضافة السؤال بنجاح",
+      "somethingWrong": "حدث خطأ، حاول مرة أخرى",
+      "errors": {
+        "questionRequired": "نص السؤال مطلوب",
+        "choicesRequired": "أضف خيارين على الأقل"
+      }
     }
   },
   "createSurvey": {
