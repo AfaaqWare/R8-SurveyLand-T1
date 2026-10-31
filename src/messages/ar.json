@@ -47,7 +47,12 @@
       "hide-password": "إخفاء كلمة المرور",
       "remember": "تذكرني؟",
       "forget-password": "نسيت كلمة المرور؟",
-      "submit": "تسجيل الدخول"
+      "submit": "تسجيل الدخول",
+      "dismiss-error": "إغلاق رسالة الخطأ",
+      "emailRequired": "أدخل بريدك الإلكتروني.",
+      "emailInvalid": "أدخل بريداً إلكترونياً صالحاً.",
+      "passwordRequired": "أدخل كلمة المرور.",
+      "success": "تم تسجيل الدخول بنجاح."
     },
     "navbar": {
       "home": "الرئيسية",
@@ -418,6 +423,16 @@
     },
     "copyright": "© {year} SurveyLand. جميع الحقوق محفوظة"
   },
+  "mySurveys": {
+    "pagination": {
+      "showing": "عرض {start} إلى {end} من",
+      "surveys": "الاستبيانات",
+      "nav": "صفحات الاستبيانات",
+      "first": "الصفحة الأولى",
+      "previous": "الصفحة السابقة",
+      "next": "الصفحة التالية",
+      "last": "الصفحة الأخيرة"
+  },
   "UserDashboard": {
     "editSurvey": {
       "title": "تعديل الاستبيان",
@@ -447,6 +462,35 @@
         "message": "هذا الاستبيان غير موجود أو ربما تم حذفه.",
         "back": "العودة إلى استبياناتي"
       }
+    },
+    "previewSurvey": {
+      "title": "معاينة الاستبيان",
+      "subtitle": "هكذا سيظهر استبيانك للمشاركين.",
+      "edit": "تعديل",
+      "share": "مشاركة الاستبيان",
+      "deadline": "الموعد النهائي: {date}",
+      "timeToComplete": "وقت الإكمال: حوالي {minutes} دقيقة",
+      "selectPlaceholder": "اختر إجابة",
+      "textPlaceholder": "اكتب إجابتك هنا...",
+      "noQuestions": "لا توجد أسئلة في هذا الاستبيان بعد.",
+      "submit": "إرسال الاستبيان",
+      "secure": "إجابتك آمنة ومجهولة.",
+      "overview": {
+        "title": "ملخص الاستبيان",
+        "totalQuestions": "إجمالي الأسئلة",
+        "questionTypes": "أنواع الأسئلة",
+        "textarea": "نص حر",
+        "mcq": "اختيار من متعدد",
+        "requiredQuestions": "الأسئلة الإجبارية",
+        "lastUpdated": "آخر تحديث"
+      },
+      "notFound": {
+        "title": "الاستبيان غير موجود",
+        "message": "هذا الاستبيان غير موجود أو ربما تم حذفه.",
+        "back": "العودة إلى استبياناتي"
+      },
+      "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
+      "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
     }
   },
   "createSurvey": {
@@ -520,4 +564,5 @@
     },
     "backToSignIn": "العودة إلى تسجيل الدخول"
   }
+  }}
 }

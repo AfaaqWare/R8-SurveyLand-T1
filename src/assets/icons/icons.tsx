@@ -77,7 +77,8 @@ import {
   CircleAlert,
   Inbox,
   Heart,
-  LockKeyhole
+  LockKeyhole,
+  Clock,
 } from "lucide-react";
 import { IconLayoutSidebarLeftCollapse } from "@tabler/icons-react";
 
@@ -161,5 +162,6 @@ export {
   CircleAlert,
   Inbox,
   Heart,
-  LockKeyhole
+  LockKeyhole,
+  Clock,
 };
