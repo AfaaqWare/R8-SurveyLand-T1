@@ -47,7 +47,12 @@
       "hide-password": "إخفاء كلمة المرور",
       "remember": "تذكرني؟",
       "forget-password": "نسيت كلمة المرور؟",
-      "submit": "تسجيل الدخول"
+      "submit": "تسجيل الدخول",
+      "dismiss-error": "إغلاق رسالة الخطأ",
+      "emailRequired": "أدخل بريدك الإلكتروني.",
+      "emailInvalid": "أدخل بريداً إلكترونياً صالحاً.",
+      "passwordRequired": "أدخل كلمة المرور.",
+      "success": "تم تسجيل الدخول بنجاح."
     },
     "navbar": {
       "home": "الرئيسية",
