@@ -432,6 +432,7 @@
       "previous": "الصفحة السابقة",
       "next": "الصفحة التالية",
       "last": "الصفحة الأخيرة"
+    }
   },
   "UserDashboard": {
     "editSurvey": {
@@ -491,6 +492,32 @@
       },
       "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
       "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
+    },
+    "editQuestion": {
+      "title": "تعديل السؤال",
+      "badge": "تعديل السؤال رقم {number}",
+      "close": "إغلاق",
+      "cancel": "إلغاء",
+      "update": "تحديث السؤال",
+      "updating": "جارٍ التحديث...",
+      "fields": {
+        "type": { "label": "نوع السؤال" },
+        "text": { "label": "نص السؤال", "placeholder": "مثال: ما هي لغتك المفضلة؟" },
+        "required": "سؤال إجباري",
+        "questionId": "معرّف السؤال"
+      },
+      "types": { "mcq": "اختيار من متعدد", "textarea": "إجابة نصية" },
+      "choices": {
+        "label": "الخيارات",
+        "placeholder": "الخيار {number}",
+        "add": "إضافة خيار",
+        "remove": "حذف الخيار {number}"
+      },
+      "errors": {
+        "textRequired": "نص السؤال مطلوب",
+        "minChoices": "أضف خيارين على الأقل",
+        "choiceRequired": "الخيار لا يمكن أن يكون فارغاً"
+      }
     }
   },
   "createSurvey": {
@@ -531,7 +558,6 @@
       "createFailed": "تعذر إنشاء الاستبيان، حاول مرة أخرى"
     }
   },
-
   "createNewPassword": {
     "title": "إنشاء كلمة مرور جديدة",
     "description": "أدخل كلمة المرور الجديدة أدناه، وتأكد من أنها قوية وآمنة.",
@@ -564,5 +590,4 @@
     },
     "backToSignIn": "العودة إلى تسجيل الدخول"
   }
-  }}
 }

@@ -1,7 +1,9 @@
+import type { QuestionType } from "./QuestionTypes";
+
 export interface PreviewQuestion {
   qid: string;
   questionText: string;
-  type: string; // "mcq" أو "textarea"
+  type: QuestionType;
   choices: string[] | null;
   isRequired: boolean;
 }
