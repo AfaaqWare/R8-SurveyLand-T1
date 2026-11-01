@@ -1,7 +1,5 @@
 import MySurveys from "@/modules/surveys/components/organisms/MySurveys";
 
-const page = () => {
+export default function SurveysPage() {
   return <MySurveys />;
-};
-
-export default page;
+}
