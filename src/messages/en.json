@@ -482,6 +482,32 @@
       },
       "copySuccess": "Survey link copied successfully!",
       "copyError": "Failed to copy survey link. Please try again."
+    },
+    "editQuestion": {
+      "title": "Edit Question",
+      "badge": "Edit Question #{number}",
+      "close": "Close",
+      "cancel": "Cancel",
+      "update": "Update Question",
+      "updating": "Updating...",
+      "fields": {
+        "type": { "label": "Question Type" },
+        "text": { "label": "Question Text", "placeholder": "e.g. What's your favorite language?" },
+        "required": "Required Question",
+        "questionId": "Question ID"
+      },
+      "types": { "mcq": "Multiple Choice (MCQ)", "textarea": "Text Answer" },
+      "choices": {
+        "label": "Choices",
+        "placeholder": "Choice {number}",
+        "add": "Add choice",
+        "remove": "Remove choice {number}"
+      },
+      "errors": {
+        "textRequired": "Question text is required",
+        "minChoices": "Add at least 2 choices",
+        "choiceRequired": "Choice can't be empty"
+      }
     }
   },
   "createSurvey": {
