@@ -567,6 +567,46 @@
         "passwordNumber": "Password must contain at least one number.",
         "passwordsDoNotMatch": "Passwords do not match."
       },
+      "copySuccess": "Survey link copied successfully!",
+      "copyError": "Failed to copy survey link. Please try again."
+    },
+    "addQuestion": {
+      "title": "Add New Question",
+      "close": "Close",
+      "selectType": "1. Select question type",
+      "configure": "2. Configure your question",
+      "types": {
+        "mcq": { "title": "Multiple Choice", "subtitle": "MCQ" },
+        "textarea": { "title": "Text Area", "subtitle": "Long answer" }
+      },
+      "questionText": {
+        "label": "Question Text",
+        "placeholder": "Enter Your Question Here..."
+      },
+      "choices": "choices",
+      "choicePlaceholder": "choice {number}",
+      "addChoice": "Add choice",
+      "removeChoice": "Remove choice {number}",
+      "required": "Required Question",
+      "save": "Save Question",
+      "saving": "Saving...",
+      "saved": "Question added successfully",
+      "somethingWrong": "Something went wrong, please try again",
+      "errors": {
+        "questionRequired": "Question text is required",
+        "choicesRequired": "Add at least two choices"
+      }
+    }
+  },
+  "createSurvey": {
+    "title": "Create Survey",
+    "subtitle": "Create a new Survey and start collecting responses",
+    "fields": {
+      "title": {
+        "label": "Title",
+        "hint": "Give your survey a clear and descriptive title.",
+        "placeholder": "e.g. Customer Satisfaction Survey"
+      },
       "success": {
         "title": "Password Reset Successful",
         "description": "Your password has been changed successfully."
