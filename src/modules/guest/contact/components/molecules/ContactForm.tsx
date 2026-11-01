@@ -3,8 +3,10 @@ import { Send } from "lucide-react";
 import Button from "../../../../../shared/components/atoms/Button";
 import Title from "../../../../../shared/components/atoms/Title";
 import Text  from "../../../../../shared/components/atoms/Text";
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
+   const t = useTranslations("publicPages.contact");
   return (
    
 
@@ -12,7 +14,7 @@ export default function ContactForm() {
       
     
       <Title size="md" variant="primary" className="mb-8 font-bold">
-        Get In Touch
+        {t("formTitle")}
       </Title>
 
       <div className="space-y-5">
@@ -21,11 +23,11 @@ export default function ContactForm() {
         <div>
        
           <Text size="sm" variant="primary" className="block font-bold mb-2">
-            Full Name
+         {t("fullName")}
           </Text>
           <input
             type="text"
-            placeholder="Enter Your Full Name"
+            placeholder={t("fullNamePlaceholder")}
             className="w-full ds-bg-form border ds-border-input ds-rounded-md px-4 py-3 ds-text-sm ds-text-primary placeholder:ds-text-disabled focus:outline-none focus:ds-border-focus focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
           />
         </div>
@@ -33,11 +35,11 @@ export default function ContactForm() {
      
         <div>
           <Text size="sm" variant="primary" className="block font-bold mb-2">
-            Email Address
+           {t("email")}
           </Text>
           <input
             type="email"
-            placeholder="Enter Your Email address"
+            placeholder={t("emailPlaceholder")}
             className="w-full ds-bg-form border ds-border-input ds-rounded-md px-4 py-3 ds-text-sm ds-text-primary placeholder:ds-text-disabled focus:outline-none focus:ds-border-focus focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
           />
         </div>
@@ -45,11 +47,11 @@ export default function ContactForm() {
      
         <div>
           <Text size="sm" variant="primary" className="block font-bold mb-2">
-            Subject
+          {t("subject")}
           </Text>
           <input
             type="text"
-            placeholder="Enter Your subject"
+            placeholder={t("subjectPlaceholder")}
             className="w-full ds-bg-form border ds-border-input ds-rounded-md px-4 py-3 ds-text-sm ds-text-primary placeholder:ds-text-disabled focus:outline-none focus:ds-border-focus focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
           />
         </div>
@@ -57,11 +59,11 @@ export default function ContactForm() {
       
         <div>
           <Text size="sm" variant="primary" className="block font-bold mb-2">
-            Message
+           {t("message")}
           </Text>
           <textarea
             rows={4}
-            placeholder="Type your Message here..."
+            placeholder={t("messagePlaceholder")}
             className="w-full ds-bg-form border ds-border-input ds-rounded-md px-4 py-3 ds-text-sm ds-text-primary placeholder:ds-text-disabled focus:outline-none focus:ds-border-focus focus:ring-1 focus:ring-[var(--color-primary)] transition-all resize-none"
           ></textarea>
         </div>
@@ -74,7 +76,7 @@ export default function ContactForm() {
           className="mt-2"
         >
           <Send className="w-5 h-5" />
-          Send message
+         {t("sendMessage")}
         </Button>
 
       </div>

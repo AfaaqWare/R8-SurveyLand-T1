@@ -66,6 +66,26 @@
       "dashboard": "Dashboard",
       "logout": "Logout",
       "logoutSuccess": "You have been logged out successfully"
+    },
+    "contact": {
+      "title": "Contact",
+      "titleHighlight": "Us",
+      "description": "Need help? we'd love to hear from you. Get in touch and our team will respond within 24 hours.",
+      "sendMessage": "Send message",
+      "formTitle": "Get In Touch",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter Your Full Name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter Your Email address",
+      "subject": "Subject",
+      "subjectPlaceholder": "Enter Your subject",
+      "message": "Message",
+      "messagePlaceholder": "Type your Message here...",
+      "infoTitle": "Get In Touch",
+      "infoEmail": "Email",
+      "infoPhone": "Phone",
+      "infoLocation": "Location",
+      "infoHours": "Working Hours"
     }
   },
   "ui-state": {

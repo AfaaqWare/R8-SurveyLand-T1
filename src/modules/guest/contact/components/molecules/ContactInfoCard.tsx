@@ -4,9 +4,11 @@ import Image from "../../../../../shared/components/atoms/Image";
 import Image2 from "../../../../../assets/images/ChatGPT Image Jun 11, 2026, 07_37_19 AM 2.png"; 
 import Title from "../../../../../shared/components/atoms/Title";
 import Text  from "../../../../../shared/components/atoms/Text";
+import { useTranslations } from "next-intl";
 
 
 export default function ContactInfoCard() {
+  const t = useTranslations("publicPages.contact");
   return (
   
  <div className="ds-bg-primary-300 ds-rounded-2xl p-8 md:p-10 flex flex-col relative overflow-hidden h-full min-h-[550px]">
@@ -23,7 +25,7 @@ export default function ContactInfoCard() {
       <div className="relative z-10">
    
         <Title size="md" variant="primary" className="mb-8 font-bold">
-          Get In Touch
+          {t("infoTitle")}
         </Title>
 
         <div className="space-y-6">
@@ -36,7 +38,7 @@ export default function ContactInfoCard() {
             <div>
          
               <Title size="sm" variant="primary" className="font-bold capitalize">
-                Email
+              {t("infoEmail")}
               </Title>
           
               <Text size="sm" variant="secondary" className="mt-1">
@@ -52,7 +54,7 @@ export default function ContactInfoCard() {
             </div>
             <div>
               <Title size="sm" variant="primary" className="font-bold capitalize">
-                Phone
+               {t("infoPhone")}
               </Title>
               <Text size="sm" variant="secondary" className="mt-1">
                 +20100123565
@@ -67,7 +69,7 @@ export default function ContactInfoCard() {
             </div>
             <div>
               <Title size="sm" variant="primary" className="font-bold capitalize">
-                Location
+             {t("infoLocation")}
               </Title>
               <Text size="sm" variant="secondary" className="mt-1">
                 Mansoura, Egypt
@@ -82,7 +84,7 @@ export default function ContactInfoCard() {
             </div>
             <div>
               <Title size="sm" variant="primary" className="font-bold capitalize">
-                Working Hours
+               {t("infoHours")}
               </Title>
               <Text size="sm" variant="secondary" className="mt-1">
                 Sun - Thu
