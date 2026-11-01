@@ -1,7 +1,6 @@
 
 "use client";
 
-import { Trash2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import {
@@ -16,30 +15,16 @@ import {
 import type { AdminUser } from "../../types/UsersTypes";
 import UserCell from "./UserCell";
 import VerifiedBadge from "./VerifiedBadge";
-import RoleSelect from "./RoleSelect";
 
 interface UsersTableProps {
   users: AdminUser[];
   /** Number of rows on previous pages, used for the ID column. */
   startIndex: number;
-  /** Id of the user whose role is being saved. */
-  updatingId?: string;
-  /** Id of the user being deleted. */
-  deletingId?: string;
-  /** Disable role change / delete for the signed-in admin. */
-  currentUserId?: string;
-  onRoleChange: (user: AdminUser, role: string) => void;
-  onDelete: (user: AdminUser) => void;
 }
 
 export default function UsersTable({
   users,
   startIndex,
-  updatingId,
-  deletingId,
-  currentUserId,
-  onRoleChange,
-  onDelete,
 }: UsersTableProps) {
   const t = useTranslations("dashboard.users");
   const locale = useLocale();
@@ -50,6 +35,20 @@ export default function UsersTable({
       month: "short",
       day: "numeric",
     });
+
+  const formatRole = (role: string) => {
+    const upperRole = role.toUpperCase();
+    switch (upperRole) {
+      case "ADMIN":
+        return t("roles.ADMIN.title");
+      case "EDITOR":
+        return t("roles.EDITOR.title");
+      case "USER":
+        return t("roles.USER.title");
+      default:
+        return role;
+    }
+  };
 
   if (users.length === 0) {
     return (
@@ -76,15 +75,11 @@ export default function UsersTable({
               </TableHead>
               <TableHead>{t("columns.role")}</TableHead>
               <TableHead>{t("columns.createdAt")}</TableHead>
-              <TableHead>{t("columns.actions")}</TableHead>
             </TableRow>
           </TableHeader>
 
           <TableBody>
             {users.map((user, index) => {
-              const isSelf = user.id === currentUserId;
-              const isBusy =
-                updatingId === user.id || deletingId === user.id;
               const userIndex = startIndex + index + 1;
 
               return (
@@ -111,46 +106,13 @@ export default function UsersTable({
                   </TableCell>
 
                   <TableCell className="min-w-30">
-                    <RoleSelect
-                      value={user.role}
-                      label={t("roleLabel", {
-                        name: user.name,
-                      })}
-                      disabled={isBusy || isSelf}
-                      onChange={(role) =>
-                        onRoleChange(user, role)
-                      }
-                    />
+                    <span className="inline-flex items-center gap-1.5 rounded-md bg-muted px-2.5 py-1 text-xs font-medium">
+                      {formatRole(user.role)}
+                    </span>
                   </TableCell>
 
                   <TableCell className="whitespace-nowrap">
                     {formatDate(user.createdAt)}
-                  </TableCell>
-
-                  <TableCell>
-                    <button
-                      type="button"
-                      onClick={() => onDelete(user)}
-                      disabled={isBusy || isSelf}
-                      aria-label={`${t("delete.button")}: ${user.name}`}
-                      className="
-                        inline-flex min-h-10 items-center justify-center
-                        gap-1.5 whitespace-nowrap rounded-md
-                        border border-red-500 px-3 py-2
-                        text-xs font-medium text-red-500
-                        transition-colors hover:bg-red-500/10
-                        focus-visible:outline-none
-                        focus-visible:ring-2 focus-visible:ring-red-500
-                        focus-visible:ring-offset-2
-                        disabled:cursor-not-allowed disabled:opacity-40
-                      "
-                    >
-                      <Trash2
-                        className="size-4 shrink-0"
-                        aria-hidden="true"
-                      />
-                      {t("delete.button")}
-                    </button>
                   </TableCell>
                 </TableRow>
               );
@@ -162,9 +124,6 @@ export default function UsersTable({
       {/* Mobile: user cards */}
       <div className="grid min-w-0 grid-cols-1 gap-3 md:hidden">
         {users.map((user, index) => {
-          const isSelf = user.id === currentUserId;
-          const isBusy =
-            updatingId === user.id || deletingId === user.id;
           const userIndex = startIndex + index + 1;
 
           return (
@@ -223,16 +182,9 @@ export default function UsersTable({
                   </span>
 
                   <div className="min-w-0">
-                    <RoleSelect
-                      value={user.role}
-                      label={t("roleLabel", {
-                        name: user.name,
-                      })}
-                      disabled={isBusy || isSelf}
-                      onChange={(role) =>
-                        onRoleChange(user, role)
-                      }
-                    />
+                    <span className="inline-flex items-center gap-1.5 rounded-md bg-muted px-2.5 py-1 text-xs font-medium">
+                      {formatRole(user.role)}
+                    </span>
                   </div>
                 </div>
 
@@ -248,33 +200,6 @@ export default function UsersTable({
                     {formatDate(user.createdAt)}
                   </time>
                 </div>
-              </div>
-
-              {/* Actions */}
-              <div className="ds-border-color mt-4 border-t pt-3">
-                <button
-                  type="button"
-                  onClick={() => onDelete(user)}
-                  disabled={isBusy || isSelf}
-                  aria-label={`${t("delete.button")}: ${user.name}`}
-                  className="
-                    inline-flex min-h-11 w-full items-center
-                    justify-center gap-2 rounded-lg
-                    border border-red-500 px-4 py-2
-                    text-sm font-medium text-red-500
-                    transition-colors hover:bg-red-500/10
-                    focus-visible:outline-none
-                    focus-visible:ring-2 focus-visible:ring-red-500
-                    focus-visible:ring-offset-2
-                    disabled:cursor-not-allowed disabled:opacity-40
-                  "
-                >
-                  <Trash2
-                    className="size-4 shrink-0"
-                    aria-hidden="true"
-                  />
-                  {t("delete.button")}
-                </button>
               </div>
             </article>
           );
