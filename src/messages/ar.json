@@ -61,6 +61,26 @@
       "dashboard": "لوحة التحكم",
       "logout": "تسجيل الخروج",
       "logoutSuccess": "تم تسجيل خروجك بنجاح"
+    },
+    "contact": {
+      "title": "اتصل",
+      "titleHighlight": "بنا",
+      "description": "تحتاج مساعدة؟ يسعدنا أن نسمع منك. تواصل معنا وسيرد فريقنا خلال 24 ساعة.",
+      "sendMessage": "إرسال الرسالة",
+      "formTitle": "تواصل معنا",
+      "fullName": "الاسم الكامل",
+      "fullNamePlaceholder": "أدخل اسمك الكامل",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "subject": "الموضوع",
+      "subjectPlaceholder": "أدخل الموضوع",
+      "message": "الرسالة",
+      "messagePlaceholder": "اكتب رسالتك هنا...",
+      "infoTitle": "تواصل معنا",
+      "infoEmail": "البريد الإلكتروني",
+      "infoPhone": "الهاتف",
+      "infoLocation": "الموقع",
+      "infoHours": "ساعات العمل"
     }
   },
   "ui-state": {
