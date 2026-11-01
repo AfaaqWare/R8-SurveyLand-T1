@@ -465,6 +465,61 @@
       "last": "الصفحة الأخيرة"
     },
     "UserDashboard": {
+      "surveyDetails": {
+        "title": "استبياناتي",
+        "subtitle": "أدِر استبياناتك وعدّلها وتابعها.",
+        "back": "استبياناتي",
+        "preview": "معاينة",
+        "edit": "تعديل",
+        "share": "مشاركة الاستبيان",
+        "createdBy": "أنشأه: {name}",
+        "unknownCreator": "أنت",
+        "deadline": "الموعد النهائي: {date}",
+        "questionCount": "الأسئلة: {count}",
+        "updatedAt": "آخر تحديث: {date}",
+        "notAvailable": "غير متاح",
+        "notPublished": "لم يُنشر بعد",
+        "shareSuccess": "تم نسخ رابط الاستبيان بنجاح!",
+        "shareError": "تعذّر نسخ رابط الاستبيان. حاول مرة أخرى.",
+        "statuses": {
+          "draft": "مسودة",
+          "published": "منشور",
+          "closed": "مغلق"
+        },
+        "notFound": "هذا الاستبيان غير موجود أو ربما تم حذفه.",
+        "overview": {
+          "title": "نظرة عامة",
+          "surveyId": "معرّف الاستبيان",
+          "status": "الحالة",
+          "createdAt": "تاريخ الإنشاء",
+          "updatedAt": "آخر تحديث",
+          "link": "الرابط",
+          "openLink": "فتح الاستبيان"
+        },
+        "questions": {
+          "title": "الأسئلة ({count})",
+          "viewAll": "عرض الكل",
+          "multipleChoice": "اختيار من متعدد: {count}",
+          "textArea": "نص حر: {count}",
+          "multipleChoiceLabel": "اختيار من متعدد",
+          "textAreaLabel": "نص حر",
+          "recent": "أحدث الأسئلة",
+          "empty": "لا توجد أسئلة في هذا الاستبيان بعد."
+        },
+        "actions": {
+          "title": "إجراءات سريعة"
+        },
+        "delete": {
+          "action": "حذف الاستبيان",
+          "deleting": "جارٍ الحذف...",
+          "confirmTitle": "هل تريد حذف هذا الاستبيان؟",
+          "confirmText": "لا يمكن التراجع عن هذا الإجراء.",
+          "confirm": "نعم، احذف",
+          "cancel": "إلغاء",
+          "success": "تم حذف الاستبيان بنجاح.",
+          "error": "تعذّر حذف الاستبيان. حاول مرة أخرى."
+        }
+      },
       "editSurvey": {
         "title": "تعديل الاستبيان",
         "subtitle": "يمكنك تعديل الاستبيان الخاص بك.",
@@ -618,23 +673,71 @@
   },
   "createSurvey": {
     "title": "إنشاء استبيان",
-    "subtitle": "أنشئ استبياناً جديداً وابدأ بجمع الردود",
+    "subtitle": "أنشئ استبيانًا جديدًا وابدأ بجمع الردود.",
     "fields": {
       "title": {
         "label": "العنوان",
-        "hint": "اختر عنواناً واضحاً ومعبّراً لاستبيانك.",
+        "hint": "اختر عنوانًا واضحًا ووصفيًا لاستبيانك.",
         "placeholder": "مثال: استبيان رضا العملاء"
       },
-      "success": {
-        "title": "تم تغيير كلمة المرور بنجاح",
-        "description": "تم تغيير كلمة المرور الخاصة بك بنجاح."
+      "description": {
+        "label": "الوصف",
+        "hint": "اشرح باختصار موضوع استبيانك.",
+        "placeholder": "مثال: ساعدنا على التحسين بمشاركة تجربتك"
       },
-      "errors": {
-        "resetFailed": "تعذرت إعادة تعيين كلمة المرور. يرجى المحاولة مرة أخرى.",
-        "invalidResetToken": "جلسة إعادة تعيين كلمة المرور غير صالحة أو انتهت صلاحيتها."
-      },
-      "backToSignIn": "العودة إلى تسجيل الدخول"
+      "deadline": {
+        "label": "الموعد النهائي",
+        "hint": "اختر آخر موعد لاستقبال الردود"
+      }
+    },
+    "image": {
+      "dragTitle": "اسحب صورة وأفلتها هنا",
+      "or": "أو",
+      "choose": "اختر ملفًا",
+      "hint": "PNG أو JPG أو WEBP (الحد الأقصى 1MB)",
+      "remove": "إزالة الصورة"
+    },
+    "submit": "إنشاء الاستبيان",
+    "submitting": "جارٍ الإنشاء...",
+    "errors": {
+      "titleRequired": "العنوان مطلوب",
+      "descriptionRequired": "الوصف مطلوب",
+      "deadlineRequired": "الموعد النهائي مطلوب",
+      "deadlinePast": "لا يمكن أن يكون الموعد في الماضي",
+      "imageType": "يجب أن تكون الصورة PNG أو JPG أو WEBP",
+      "imageSize": "يجب ألا يتجاوز حجم الصورة 1MB",
+      "createFailed": "تعذّر إنشاء الاستبيان. حاول مرة أخرى."
     }
+  },
+  "createNewPassword": {
+    "title": "إنشاء كلمة مرور جديدة",
+    "description": "أدخل كلمة المرور الجديدة أدناه، وتأكد من أنها قوية وآمنة.",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور الجديدة",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور الجديدة",
+    "passwordRequirements": "يجب ألا تقل كلمة المرور عن 8 أحرف، وأن تحتوي على حرف كبير واحد ورقم واحد على الأقل.",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "resettingPassword": "جارٍ إعادة تعيين كلمة المرور...",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "showConfirmPassword": "إظهار كلمة المرور للتأكيد",
+    "hideConfirmPassword": "إخفاء كلمة المرور للتأكيد",
+    "errors": {
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "confirmPasswordRequired": "يرجى تأكيد كلمة المرور.",
+      "passwordMinLength": "يجب ألا تقل كلمة المرور عن 8 أحرف.",
+      "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل.",
+      "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل.",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين.",
+      "resetFailed": "تعذرت إعادة تعيين كلمة المرور. يرجى المحاولة مرة أخرى.",
+      "invalidResetToken": "جلسة إعادة تعيين كلمة المرور غير صالحة أو انتهت صلاحيتها."
+    },
+    "success": {
+      "title": "تم تغيير كلمة المرور بنجاح",
+      "description": "تم تغيير كلمة المرور الخاصة بك بنجاح."
+    },
+    "backToSignIn": "العودة إلى تسجيل الدخول"
   },
   "DashboardProfile": {
     "title": "معلومات الحساب",

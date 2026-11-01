@@ -464,6 +464,61 @@
       "last": "Last page"
     },
     "UserDashboard": {
+      "surveyDetails": {
+        "title": "My Surveys",
+        "subtitle": "Manage, edit and track your surveys.",
+        "back": "My Surveys",
+        "preview": "Preview",
+        "edit": "Edit",
+        "share": "Share Survey",
+        "createdBy": "Created by: {name}",
+        "unknownCreator": "You",
+        "deadline": "Deadline: {date}",
+        "questionCount": "Questions: {count}",
+        "updatedAt": "Updated: {date}",
+        "notAvailable": "Not available",
+        "notPublished": "Not published yet",
+        "shareSuccess": "Survey link copied successfully!",
+        "shareError": "Failed to copy survey link. Please try again.",
+        "statuses": {
+          "draft": "Draft",
+          "published": "Published",
+          "closed": "Closed"
+        },
+        "notFound": "This survey doesn't exist or may have been deleted.",
+        "overview": {
+          "title": "Overview",
+          "surveyId": "Survey ID",
+          "status": "Status",
+          "createdAt": "Created At",
+          "updatedAt": "Updated At",
+          "link": "Link",
+          "openLink": "Open survey"
+        },
+        "questions": {
+          "title": "Questions ({count})",
+          "viewAll": "View All Questions",
+          "multipleChoice": "Multiple Choice: {count}",
+          "textArea": "Text Area: {count}",
+          "multipleChoiceLabel": "Multiple Choice",
+          "textAreaLabel": "Text Area",
+          "recent": "Recent Questions",
+          "empty": "This survey has no questions yet."
+        },
+        "actions": {
+          "title": "Quick Actions"
+        },
+        "delete": {
+          "action": "Delete survey",
+          "deleting": "Deleting...",
+          "confirmTitle": "Delete this survey?",
+          "confirmText": "This action can't be undone.",
+          "confirm": "Yes, delete",
+          "cancel": "Cancel",
+          "success": "Survey deleted successfully.",
+          "error": "Couldn't delete the survey. Please try again."
+        }
+      },
       "editSurvey": {
         "title": "Edit Survey",
         "subtitle": "You can edit your survey.",
@@ -620,23 +675,71 @@
   },
   "createSurvey": {
     "title": "Create Survey",
-    "subtitle": "Create a new Survey and start collecting responses",
+    "subtitle": "Create a new survey and start collecting responses.",
     "fields": {
       "title": {
         "label": "Title",
         "hint": "Give your survey a clear and descriptive title.",
         "placeholder": "e.g. Customer Satisfaction Survey"
       },
-      "success": {
-        "title": "Password Reset Successful",
-        "description": "Your password has been changed successfully."
+      "description": {
+        "label": "Description",
+        "hint": "Briefly explain what your survey is about.",
+        "placeholder": "e.g. Help us improve by sharing your experience"
       },
-      "errors": {
-        "resetFailed": "Unable to reset your password. Please try again.",
-        "invalidResetToken": "Your password reset session is invalid or has expired."
-      },
-      "backToSignIn": "Back to Sign In"
+      "deadline": {
+        "label": "Deadline",
+        "hint": "Choose the last date for receiving responses"
+      }
+    },
+    "image": {
+      "dragTitle": "Drag and drop an image here",
+      "or": "Or",
+      "choose": "Choose file",
+      "hint": "PNG, JPG or WEBP (Max. 1MB)",
+      "remove": "Remove image"
+    },
+    "submit": "Create Survey",
+    "submitting": "Creating...",
+    "errors": {
+      "titleRequired": "Title is required",
+      "descriptionRequired": "Description is required",
+      "deadlineRequired": "Deadline is required",
+      "deadlinePast": "Deadline can't be in the past",
+      "imageType": "Image must be PNG, JPG or WEBP",
+      "imageSize": "Image must be 1MB or smaller",
+      "createFailed": "Could not create the survey. Please try again."
     }
+  },
+  "createNewPassword": {
+    "title": "Create New Password",
+    "description": "Please enter your new password below. Make sure it's strong and secure.",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your new password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter your new password",
+    "passwordRequirements": "Password must be at least 8 characters, include an uppercase letter and a number.",
+    "resetPassword": "Reset Password",
+    "resettingPassword": "Resetting Password...",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "showConfirmPassword": "Show confirm password",
+    "hideConfirmPassword": "Hide confirm password",
+    "errors": {
+      "passwordRequired": "Password is required.",
+      "confirmPasswordRequired": "Please confirm your password.",
+      "passwordMinLength": "Password must be at least 8 characters.",
+      "passwordUppercase": "Password must contain at least one uppercase letter.",
+      "passwordNumber": "Password must contain at least one number.",
+      "passwordsDoNotMatch": "Passwords do not match.",
+      "resetFailed": "Unable to reset your password. Please try again.",
+      "invalidResetToken": "Your password reset session is invalid or has expired."
+    },
+    "success": {
+      "title": "Password Reset Successful",
+      "description": "Your password has been changed successfully."
+    },
+    "backToSignIn": "Back to Sign In"
   },
   "DashboardProfile": {
     "title": "Account Information",
