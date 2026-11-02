@@ -28,7 +28,7 @@ export default function ContactUsThankYou({
   actionLabel,
   actionHref = "/",
 }: ContactUsThankYouProps) {
-  const t = useTranslations("contactUsThankYou");
+  const t = useTranslations("ThankYou");
 
   return (
     <section

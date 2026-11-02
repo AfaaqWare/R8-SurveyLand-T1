@@ -7,8 +7,11 @@ export type SurveyStatus = "draft" | "published" | "closed";
 export interface Survey {
   id: string;
   title: string;
+  description?: string | null;
   status: SurveyStatus;
   questions: unknown[];
+  deadline?: string | null;
+  cover?: string | null;
   updatedAt: string;
 }
 

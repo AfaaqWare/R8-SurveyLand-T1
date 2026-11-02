@@ -16,6 +16,9 @@ import {
   Moon,
   Sun,
   ListMinus,
+  List,
+  AlignLeft,
+  CircleMinus,
   X,
   Eye,
   Menu,
@@ -76,7 +79,9 @@ import {
   CirclePlus,
   CircleAlert,
   Inbox,
-  Heart
+  Heart,
+  LockKeyhole,
+  Clock,
 } from "lucide-react";
 import { IconLayoutSidebarLeftCollapse } from "@tabler/icons-react";
 
@@ -91,6 +96,9 @@ const FcGoogle = (props: IconProps) => <Icon icon="flat-color-icons:google" {...
 export {
   Sun,
   Moon,
+  List,
+  AlignLeft,
+  CircleMinus,
   FaFacebookF,
   FaLinkedinIn,
   FaWhatsapp,
@@ -159,5 +167,7 @@ export {
   CirclePlus,
   CircleAlert,
   Inbox,
-  Heart
+  Heart,
+  LockKeyhole,
+  Clock,
 };

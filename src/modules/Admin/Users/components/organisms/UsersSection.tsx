@@ -7,10 +7,6 @@ import { Card } from "@/shared/components/atoms/Card";
 import Skeleton from "@/shared/components/atoms/Skeleton";
 import { ErrorState } from "@/core/ui-states";
 import useGetUsers from "../../hooks/useGetUsers";
-import { useUpdateUserRole } from "../../hooks/useUpdateUserRole";
-import { useDeleteUser } from "../../hooks/useDeleteUser";
-import { useConfirmDelete } from "../../hooks/Useconfirmdelete";
-import { AdminUser } from "../../types/UsersTypes";
 import UsersTable from "../molecules/UsersTable";
 import UsersPagination from "../molecules/UsersPagination";
 
@@ -23,26 +19,13 @@ export default function UsersSection() {
   const [page, setPage] = useState(1);
 
   const { users, isPending, isError, refetch } = useGetUsers();
-  const updateRole = useUpdateUserRole();
-  const removeUser = useDeleteUser();
-  const confirmDelete = useConfirmDelete();
 
-  // Client-side pagination. Clamp so deleting the last row of a page
-  // doesn't leave the admin on an empty page.
+  // Client-side pagination
   const pageCount = Math.max(1, Math.ceil(users.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const visibleUsers = users.slice(startIndex, startIndex + PAGE_SIZE);
   const showingTo = startIndex + visibleUsers.length;
-
-  const handleRoleChange = (user: AdminUser, role: string) => {
-    if (role === user.role.toUpperCase()) return;
-    updateRole.mutate({ id: user.id, role });
-  };
-
-  const handleDelete = async (user: AdminUser) => {
-    if (await confirmDelete(user.name)) removeUser.mutate(user.id);
-  };
 
   const renderContent = () => {
     if (isPending) {
@@ -74,10 +57,6 @@ export default function UsersSection() {
         <UsersTable
           users={visibleUsers}
           startIndex={startIndex}
-          updatingId={updateRole.isPending ? updateRole.variables?.id : undefined}
-          deletingId={removeUser.isPending ? removeUser.variables : undefined}
-          onRoleChange={handleRoleChange}
-          onDelete={handleDelete}
         />
 
         <div className="flex flex-wrap items-center justify-between gap-3">

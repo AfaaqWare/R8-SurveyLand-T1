@@ -1,5 +1,3 @@
-
-import React from "react";
 import Surveyform from "../molecules/Surveyform";
 import { IdProps } from "@/modules/dashboard/types/UpdateSurveyType";
 

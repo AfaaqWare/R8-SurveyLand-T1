@@ -1,5 +1,5 @@
-const page = () => {
-  return <div>page</div>;
-};
+import MySurveys from "@/modules/surveys/components/organisms/MySurveys";
 
-export default page;
+export default function SurveysPage() {
+  return <MySurveys />;
+}

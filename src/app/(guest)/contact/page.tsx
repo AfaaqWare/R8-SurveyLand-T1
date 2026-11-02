@@ -1,15 +1,12 @@
 import React from 'react'
 
-import ContactUsThankYou from '@/modules/guest/components/organisms/ContactUsThankYou'
+import ContactSection from "@/modules/guest/contact/components/organisms/ContactSection";
 
 export default function page() {
-
-  if(true) {
-    return <ContactUsThankYou />
-  }
-
   return (
-    <div>Contact Page</div>
+    <div>
+      <ContactSection></ContactSection>
+    </div>
   )
 }
 
