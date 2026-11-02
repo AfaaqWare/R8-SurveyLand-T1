@@ -36,6 +36,7 @@ import card16 from "@/assets/images/Frame 1.png";
 import card17 from "@/assets/images/Frame 8.png";
 import notfound from "@/assets/images/notfound.png";
 import imgcontact from "@/assets/images/ChatGPT Image Jun 11, 2026, 07_37_19 AM 2.png";
+import graduationSurveyCover from "./2-03-scaled 2.png";
 
 export {
   Avatar,
@@ -58,6 +59,6 @@ export {
   card17,
   notfound,
   syrveyDone,
-  imgcontact
+  imgcontact,
+  graduationSurveyCover,
 };
-

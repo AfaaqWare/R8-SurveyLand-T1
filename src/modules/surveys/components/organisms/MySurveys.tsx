@@ -1,7 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Plus } from "@/assets/icons/icons";
+import { graduationSurveyCover } from "@/assets/images/images";
 import { ErrorState, EmptyState, LoadingState } from "@/core/ui-states";
 import type { Survey, SurveyStatus } from "@/modules/Admin/types/DashboardTypes";
 import Button from "@/shared/components/atoms/Button";
@@ -32,7 +34,7 @@ function toUpdatedAt(value?: string) {
 function toCard(survey: Survey) {
   return {
     id: survey.id,
-    image: survey.cover || "",
+    image: survey.cover || graduationSurveyCover,
     status: toStatus(survey.status),
     title: survey.title || "Untitled survey",
     description: survey.description || "",
@@ -44,6 +46,7 @@ function toCard(survey: Survey) {
 }
 
 export default function MySurveys() {
+  const router = useRouter();
   const [page, setPage] = useState(1);
   const [tab, setTab] = useState<SurveyTab>("All");
   const [query, setQuery] = useState("");
@@ -141,6 +144,7 @@ export default function MySurveys() {
                     deadline={survey.deadline}
                     updatedAt={survey.updatedAt}
                     surveyId={survey.id}
+                    onPreview={() => router.push(`/dashboard/surveys/${survey.id}`)}
                   />
                 ))}
               </div>
