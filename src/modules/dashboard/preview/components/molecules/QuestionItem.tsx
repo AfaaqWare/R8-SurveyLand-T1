@@ -8,7 +8,7 @@ interface QuestionItemProps {
 }
 
 const QuestionItem = ({ number, question }: QuestionItemProps) => {
-  const t = useTranslations("UserDashboard.previewSurvey");
+  const t = useTranslations("mySurveys.UserDashboard.previewSurvey");
 
   const questionTitle = (
     <>

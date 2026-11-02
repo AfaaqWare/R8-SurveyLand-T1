@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { useAlert } from "@/shared/hooks/useAlert";
 
 const PreviewHeader = ({ id }: IdProps) => {
-  const t = useTranslations("UserDashboard.previewSurvey");
+  const t = useTranslations("mySurveys.UserDashboard.previewSurvey");
   const router = useRouter();
   const { showAlert } = useAlert();
 

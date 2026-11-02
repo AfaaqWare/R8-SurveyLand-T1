@@ -17,7 +17,7 @@ import Notfoundsurvey from "./Notfoundsurvey";
 import notfound from "@/assets/images/notfound.png";
 
 const Surveyform = ({ id }: IdProps) => {
-  const t = useTranslations("UserDashboard.editSurvey");
+  const t = useTranslations("mySurveys.UserDashboard.editSurvey");
   const {
     control,
     register,
