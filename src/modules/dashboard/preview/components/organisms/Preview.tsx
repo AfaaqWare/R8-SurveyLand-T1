@@ -11,7 +11,7 @@ import { notfound } from "@/assets/images/images";
 import { useTranslations } from "next-intl";
 
 const Preview = ({ id }: IdProps) => {
-  const t = useTranslations("UserDashboard.previewSurvey");
+  const t = useTranslations("mySurveys.UserDashboard.previewSurvey");
   const {
     survey,
     questions,

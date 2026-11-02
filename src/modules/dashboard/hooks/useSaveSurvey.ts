@@ -8,7 +8,7 @@ import { UpdateSurvey } from "../api/UpdateSurvey";
 import type { SurveyResponse, UpdateSurveyProps } from "../types/UpdateSurveyType";
 
 const useSaveSurvey = (id: string) => {
-  const t = useTranslations("UserDashboard.editSurvey");
+  const t = useTranslations("mySurveys.UserDashboard.editSurvey");
   const { showAlert } = useAlert();
   const queryClient = useQueryClient();
 
@@ -31,7 +31,7 @@ const useSaveSurvey = (id: string) => {
       },
     },
   });
-  return {  mutate, isSaving: isPending };
+  return { mutate, isSaving: isPending };
 };
 
 export default useSaveSurvey;

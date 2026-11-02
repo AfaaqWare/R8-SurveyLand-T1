@@ -496,6 +496,35 @@
           "back": "Back to My Surveys"
         }
       },
+      "previewResponse": {
+        "title": "Response Details",
+        "subtitle": "View the complete details of this response",
+        "info": {
+          "title": "Response Information",
+          "surveyId": "Response ID",
+          "survey": "Survey",
+          "submittedAt": "Submitted At",
+          "respondentName": "Respondent Name"
+        },
+        "answers": {
+          "title": "Survey Answers",
+          "placeholder": "Write the answer here...",
+          "noQuestions": "No questions found for this survey."
+        },
+        "cancel": "Cancel",
+        "reset": "Reset",
+        "save": "Save Changes",
+        "saved": "Response updated successfully",
+        "somethingWrong": "Something went wrong, please try again",
+        "errors": {
+          "required": "This answer is required"
+        },
+        "notFound": {
+          "title": "Survey not found",
+          "message": "This survey doesn't exist or may have been deleted.",
+          "back": "Back to My Surveys"
+        }
+      },
       "previewSurvey": {
         "title": "Preview Survey",
         "subtitle": "This is how your survey will look for respondents.",
