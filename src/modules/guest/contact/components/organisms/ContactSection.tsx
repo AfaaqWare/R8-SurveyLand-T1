@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "../../../../../shared/components/atoms/Image";
 import Image2 from "../../../../../assets/images/ChatGPT Image Jun 11, 2026, 07_37_19 AM 2.png";
 import ContactInfoCard from "../molecules/ContactInfoCard";
