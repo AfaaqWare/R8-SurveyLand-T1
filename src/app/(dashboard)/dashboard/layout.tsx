@@ -1,7 +1,6 @@
-import AdminTemplate from "@/modules/Admin/components/template/AdminTemplate";
-
+import UserTemplate from "@/modules/dashboard/components/template/UserTemplate";
 const layout = ({ children }: { children: React.ReactNode }) => {
-  return <AdminTemplate>{children}</AdminTemplate>;
+  return <UserTemplate>{children}</UserTemplate>;
 };
 
 export default layout;

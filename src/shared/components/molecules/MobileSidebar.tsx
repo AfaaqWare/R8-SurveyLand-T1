@@ -1,45 +1,42 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
+import { useLocale } from "next-intl";
+import type { ReactNode } from "react";
 
-import { useLocale, useTranslations } from "next-intl";
+import Button from "../atoms/Button";
+import Icon from "../atoms/Icon";
 
 import { Menu, X } from "@/assets/icons/icons";
 
-import Button from "../atoms/Button";
-
-import AdminSidebarContent, {
-  type AdminSidebarProfile,
-} from "./AdminSidebarContent";
-
 type Props = {
-  profile: AdminSidebarProfile;
-  isLoading: boolean;
-  isLogoutPending: boolean;
-  onLogout: () => void;
+  children: (onNavigate: () => void) => ReactNode;
+  openLabel: string;
+  closeLabel: string;
 };
 
 export default function MobileSidebar({
-  profile,
-  isLoading,
-  isLogoutPending,
-  onLogout,
+  children,
+  openLabel,
+  closeLabel,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const locale = useLocale();
   const isArabic = locale === "ar";
 
-  const t = useTranslations("AdminDashboard");
+  const sidebarId = useId();
 
-  const closeSidebar = () => setIsOpen(false);
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     if (!isOpen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeSidebar();
       }
     };
 
@@ -55,20 +52,24 @@ export default function MobileSidebar({
       {/* Menu Button */}
       <Button
         type="button"
-        aria-label={t("actions.openSidebar")}
+        aria-label={openLabel}
         aria-expanded={isOpen}
-        aria-controls="admin-mobile-sidebar"
+        aria-controls={sidebarId}
         onClick={() => setIsOpen(true)}
         className="ds-bg-alt ds-border-color ds-shadow-sm fixed start-4 top-4 z-50 rounded-md border p-2 lg:hidden"
       >
-        <Menu size={20} />
+        <Icon
+          IconComponent={Menu}
+          size={20}
+          variant="primary"
+        />
       </Button>
 
       {/* Overlay */}
       {isOpen && (
         <button
           type="button"
-          aria-label={t("actions.closeSidebar")}
+          aria-label={closeLabel}
           onClick={closeSidebar}
           className="fixed inset-0 z-40 bg-black/40 lg:hidden"
         />
@@ -76,9 +77,9 @@ export default function MobileSidebar({
 
       {/* Sidebar */}
       <aside
-        id="admin-mobile-sidebar"
+        id={sidebarId}
         aria-hidden={!isOpen}
-        className={`ds-bg-alt ds-border-color fixed inset-y-0 start-0 z-50 flex h-screen w-80 max-w-[85vw] flex-col overflow-y-auto border-e transition-transform duration-300 lg:hidden ${
+        className={`ds-bg-alt ds-border-color fixed inset-y-0 start-0 z-50 flex h-screen w-80 max-w-[85vw] flex-col overflow-y-auto dashboard-sidebar-scrollbar border-e transition-transform duration-300 ease-out lg:hidden ${
           isOpen
             ? "translate-x-0"
             : isArabic
@@ -86,30 +87,24 @@ export default function MobileSidebar({
               : "-translate-x-full"
         }`}
       >
-
         {/* Close Button */}
         <div className="flex h-16 shrink-0 items-center justify-end px-4">
           <Button
             type="button"
-            aria-label={t("actions.closeSidebar")}
+            aria-label={closeLabel}
             onClick={closeSidebar}
             className="rounded-md p-2"
           >
-            <X size={20} />
+            <Icon
+              IconComponent={X}
+              size={20}
+              variant="primary"
+            />
           </Button>
         </div>
 
-        <AdminSidebarContent
-          profile={profile}
-          isLoading={isLoading}
-          isLogoutPending={isLogoutPending}
-          onLogout={() => {
-            closeSidebar();
-            onLogout();
-          }}
-          onNavigate={closeSidebar}
-        />
-
+        {/* Injected Sidebar Content */}
+        {children(closeSidebar)}
       </aside>
     </>
   );

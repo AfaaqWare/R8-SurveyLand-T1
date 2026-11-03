@@ -1,36 +1,17 @@
 "use client";
 
-import { useLocale } from "next-intl";
-
-import AdminSidebarContent, {
-  type AdminSidebarProfile,
-} from "./AdminSidebarContent";
+import type { ReactNode } from "react";
 
 type Props = {
-  profile: AdminSidebarProfile;
-  isLoading: boolean;
-  isLogoutPending: boolean;
-  onLogout: () => void;
+  children: (onNavigate: () => void) => ReactNode;
 };
 
-export default function DesktopSidebar({
-  profile,
-  isLoading,
-  isLogoutPending,
-  onLogout,
-}: Props) {
-  const locale = useLocale();
+export default function DesktopSidebar({ children }: Props) {
+  const handleNavigate = () => {};
 
   return (
-    <aside className="ds-bg-alt ds-border-color fixed inset-y-0 start-0 z-30 hidden h-screen w-80 flex-col overflow-y-auto border-e lg:flex">
-
-      <AdminSidebarContent
-        profile={profile}
-        isLoading={isLoading}
-        isLogoutPending={isLogoutPending}
-        onLogout={onLogout}
-      />
-
+    <aside className="ds-bg-alt ds-border-color fixed inset-y-0 start-0 z-30 hidden h-screen w-80 flex-col overflow-y-auto dashboard-sidebar-scrollbar border-e lg:flex">
+      {children(handleNavigate)}
     </aside>
   );
 }

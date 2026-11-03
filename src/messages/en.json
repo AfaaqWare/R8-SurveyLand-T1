@@ -847,5 +847,27 @@
       "closeSidebar": "Close navigation",
       "navigationLabel": "Admin navigation"
     }
+  },
+  "UserDashboard": {
+    "profile": {
+      "role": "User",
+      "loading": "Loading...",
+      "fallbackName": "User"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "mySurveys": "My Surveys",
+      "createSurvey": "Create Survey",
+      "responses": "Responses",
+      "analytics": "Analytics",
+      "profile": "Profile",
+      "logout": "Log out"
+    },
+    "sections": {
+      "others": "Others"
+    },
+    "actions": {
+      "navigationLabel": "User navigation"
+    }
   }
 }

@@ -844,5 +844,27 @@
       "closeSidebar": "إغلاق القائمة",
       "navigationLabel": "قائمة إدارة النظام"
     }
+  },
+  "UserDashboard": {
+    "profile": {
+      "role": "مستخدم",
+      "loading": "جاري التحميل...",
+      "fallbackName": "مستخدم"
+    },
+    "items": {
+      "dashboard": "لوحة التحكم",
+      "mySurveys": "استبياناتي",
+      "createSurvey": "إنشاء استبيان",
+      "responses": "الردود",
+      "analytics": "التحليلات",
+      "profile": "الملف الشخصي",
+      "logout": "تسجيل الخروج"
+    },
+    "sections": {
+      "others": "أخرى"
+    },
+    "actions": {
+      "navigationLabel": "قائمة المستخدم"
+    }
   }
 }

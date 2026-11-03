@@ -1,7 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import DesktopSidebar from "../molecules/DesktopSidebar";
 import MobileSidebar from "../molecules/MobileSidebar";
+
+import AdminSidebarContent from "../molecules/AdminSidebarContent";
 
 import useGetProfile from "@/modules/auth/hooks/useGetProfile";
 import useLogout from "@/modules/auth/hooks/useLogout";
@@ -11,21 +15,34 @@ export default function AdminSidebar() {
 
   const { handleLogout, isPending } = useLogout();
 
-  const handleSidebarLogout = () => {
+  const t = useTranslations("AdminDashboard");
+
+  const handleLogoutClick = () => {
     void handleLogout();
   };
 
-  const sidebarProps = {
-    profile: data,
-    isLoading,
-    isLogoutPending: isPending,
-    onLogout: handleSidebarLogout,
-  };
+  const renderAdminContent = (onNavigate: () => void) => (
+    <AdminSidebarContent
+      profile={data}
+      isLoading={isLoading}
+      isLogoutPending={isPending}
+      onLogout={handleLogoutClick}
+      onNavigate={onNavigate}
+    />
+  );
 
   return (
     <>
-      <MobileSidebar {...sidebarProps} />
-      <DesktopSidebar {...sidebarProps} />
+      <MobileSidebar
+        openLabel={t("actions.openSidebar")}
+        closeLabel={t("actions.closeSidebar")}
+      >
+        {renderAdminContent}
+      </MobileSidebar>
+
+      <DesktopSidebar>
+        {renderAdminContent}
+      </DesktopSidebar>
     </>
   );
 }
