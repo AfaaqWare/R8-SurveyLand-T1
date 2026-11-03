@@ -1,4 +1,6 @@
+
 import Image, { StaticImageData , ImageProps } from "next/image";
+
 import { cn } from "@/lib/cn";
 
 interface Props extends ImageProps {

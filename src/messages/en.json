@@ -173,10 +173,22 @@
       },
       "quickActions": {
         "title": "Quick Actions",
-        "create": { "title": "Create New Survey", "description": "Build a new survey" },
-        "users": { "title": "Manage Users", "description": "View and manage users" },
-        "responses": { "title": "View Responses", "description": "Browse all responses" },
-        "export": { "title": "Export Reports", "description": "Download survey reports" }
+        "create": {
+          "title": "Create New Survey",
+          "description": "Build a new survey"
+        },
+        "users": {
+          "title": "Manage Users",
+          "description": "View and manage users"
+        },
+        "responses": {
+          "title": "View Responses",
+          "description": "Browse all responses"
+        },
+        "export": {
+          "title": "Export Reports",
+          "description": "Download survey reports"
+        }
       }
     },
     "users": {
@@ -402,7 +414,7 @@
     }
   },
 
-  "thankYou": {
+  "ThankYou": {
     "title": "Thank You!",
     "subtitle": "Your response has been submitted successfully",
     "description": "We really appreciate you taking the time to complete this survey. Your feedback helps us improve and make better decisions.",
@@ -524,15 +536,28 @@
         "title": "Edit Survey",
         "subtitle": "You can edit your survey.",
         "fields": {
-          "title": { "label": "Title", "hint": "Give your survey a clear and descriptive title." },
-          "description": { "label": "Description", "hint": "Describe what this survey is about." },
+          "title": {
+            "label": "Title",
+            "hint": "Give your survey a clear and descriptive title."
+          },
+          "description": {
+            "label": "Description",
+            "hint": "Describe what this survey is about."
+          },
           "deadline": {
             "label": "Deadline",
             "hint": "Choose the last date for receiving responses"
           },
-          "status": { "label": "Status", "hint": "Set the current status of your survey" }
+          "status": {
+            "label": "Status",
+            "hint": "Set the current status of your survey"
+          }
         },
-        "statuses": { "draft": "Draft", "published": "Published", "closed": "Closed" },
+        "statuses": {
+          "draft": "Draft",
+          "published": "Published",
+          "closed": "Closed"
+        },
         "cover": {
           "title": "Cover Image",
           "hint": "This image will be displayed on your survey page",
@@ -652,213 +677,341 @@
             "email": "Respondent Email",
             "question": "Q{number} {title}",
             "submittedAt": "Submitted At"
+          },
+          "editQuestion": {
+            "title": "Edit Question",
+            "badge": "Edit Question #{number}",
+            "close": "Close",
+            "cancel": "Cancel",
+            "update": "Update Question",
+            "updating": "Updating...",
+            "fields": {
+              "type": {
+                "label": "Question Type"
+              },
+              "text": {
+                "label": "Question Text",
+                "placeholder": "e.g. What's your favorite language?"
+              },
+              "required": "Required Question",
+              "questionId": "Question ID"
+            },
+            "types": {
+              "mcq": "Multiple Choice (MCQ)",
+              "textarea": "Text Answer"
+            },
+            "choices": {
+              "label": "Choices",
+              "placeholder": "Choice {number}",
+              "add": "Add choice",
+              "remove": "Remove choice {number}"
+            },
+            "errors": {
+              "textRequired": "Question text is required",
+              "minChoices": "Add at least 2 choices",
+              "choiceRequired": "Choice can't be empty"
+            }
+          }
+        },
+        "createSurvey": {
+          "title": "Create Survey",
+          "subtitle": "Create a new Survey and start collecting responses",
+          "fields": {
+            "title": {
+              "label": "Title",
+              "hint": "Give your survey a clear and descriptive title.",
+              "placeholder": "e.g. Customer Satisfaction Survey"
+            },
+            "description": {
+              "label": "Description",
+              "hint": "Briefly explain what your survey is about.",
+              "placeholder": "e.g. Help us improve by sharing your experience"
+            },
+            "deadline": {
+              "label": "Deadline",
+              "hint": "Choose the last date of receiving responses"
+            }
+          },
+          "image": {
+            "dragTitle": "Drag and Drop an image here",
+            "or": "Or",
+            "choose": "Choose file",
+            "hint": "PNG, JPG or WEBP (Max. 1MB)",
+            "remove": "Remove image"
+          },
+          "submit": "Create Survey",
+          "submitting": "Creating...",
+          "errors": {
+            "titleRequired": "Title is required",
+            "descriptionRequired": "Description is required",
+            "deadlineRequired": "Deadline is required",
+            "deadlinePast": "Deadline can't be in the past",
+            "imageType": "Image must be PNG, JPG or WEBP",
+            "imageSize": "Image must be 1MB or smaller",
+            "createFailed": "Could not create the survey, please try again"
+          }
+        },
+        "createNewPassword": {
+          "title": "Create New Password",
+          "description": "Please enter your new password below. Make sure it's strong and secure.",
+          "password": "Password",
+          "passwordPlaceholder": "Enter your new password",
+          "confirmPassword": "Confirm Password",
+          "confirmPasswordPlaceholder": "Re-enter your new password",
+          "passwordRequirements": "Password must be at least 8 characters, include an uppercase letter and a number.",
+          "resetPassword": "Reset Password",
+          "resettingPassword": "Resetting Password...",
+          "showPassword": "Show password",
+          "hidePassword": "Hide password",
+          "showConfirmPassword": "Show confirm password",
+          "hideConfirmPassword": "Hide confirm password",
+          "validation": {
+            "passwordRequired": "Password is required.",
+            "confirmPasswordRequired": "Please confirm your password.",
+            "passwordMinLength": "Password must be at least 8 characters.",
+            "passwordUppercase": "Password must contain at least one uppercase letter.",
+            "passwordNumber": "Password must contain at least one number.",
+            "passwordsDoNotMatch": "Passwords do not match."
+          },
+          "copySuccess": "Survey link copied successfully!",
+          "copyError": "Failed to copy survey link. Please try again.",
+          "success": {
+            "title": "Password Reset Successful",
+            "description": "Your password has been changed successfully."
+          },
+          "errors": {
+            "resetFailed": "Unable to reset your password. Please try again.",
+            "invalidResetToken": "Your password reset session is invalid or has expired."
+          },
+          "backToSignIn": "Back to Sign In"
+        },
+        "addQuestion": {
+          "title": "Add New Question",
+          "close": "Close",
+          "selectType": "1. Select question type",
+          "configure": "2. Configure your question",
+          "types": {
+            "mcq": {
+              "title": "Multiple Choice",
+              "subtitle": "MCQ"
+            },
+            "textarea": {
+              "title": "Text Area",
+              "subtitle": "Long answer"
+            }
+          },
+          "questionText": {
+            "label": "Question Text",
+            "placeholder": "Enter Your Question Here..."
+          },
+          "choices": "choices",
+          "choicePlaceholder": "choice {number}",
+          "addChoice": "Add choice",
+          "removeChoice": "Remove choice {number}",
+          "required": "Required Question",
+          "save": "Save Question",
+          "saving": "Saving...",
+          "saved": "Question added successfully",
+          "somethingWrong": "Something went wrong, please try again",
+          "errors": {
+            "questionRequired": "Question text is required",
+            "choicesRequired": "Add at least two choices"
+          }
+        }
+      },
+      "createSurvey": {
+        "title": "Create Survey",
+        "subtitle": "Create a new survey and start collecting responses.",
+        "fields": {
+          "title": {
+            "label": "Title",
+            "hint": "Give your survey a clear and descriptive title.",
+            "placeholder": "e.g. Customer Satisfaction Survey"
+          },
+          "description": {
+            "label": "Description",
+            "hint": "Briefly explain what your survey is about.",
+            "placeholder": "e.g. Help us improve by sharing your experience"
+          },
+          "deadline": {
+            "label": "Deadline",
+            "hint": "Choose the last date for receiving responses"
+          }
+        },
+        "image": {
+          "dragTitle": "Drag and drop an image here",
+          "or": "Or",
+          "choose": "Choose file",
+          "hint": "PNG, JPG or WEBP (Max. 1MB)",
+          "remove": "Remove image"
+        },
+        "submit": "Create Survey",
+        "submitting": "Creating...",
+        "errors": {
+          "titleRequired": "Title is required",
+          "descriptionRequired": "Description is required",
+          "deadlineRequired": "Deadline is required",
+          "deadlinePast": "Deadline can't be in the past",
+          "imageType": "Image must be PNG, JPG or WEBP",
+          "imageSize": "Image must be 1MB or smaller",
+          "createFailed": "Could not create the survey. Please try again."
+        }
+      },
+      "createNewPassword": {
+        "title": "Create New Password",
+        "description": "Please enter your new password below. Make sure it's strong and secure.",
+        "password": "Password",
+        "passwordPlaceholder": "Enter your new password",
+        "confirmPassword": "Confirm Password",
+        "confirmPasswordPlaceholder": "Re-enter your new password",
+        "passwordRequirements": "Password must be at least 8 characters, include an uppercase letter and a number.",
+        "resetPassword": "Reset Password",
+        "resettingPassword": "Resetting Password...",
+        "showPassword": "Show password",
+        "hidePassword": "Hide password",
+        "showConfirmPassword": "Show confirm password",
+        "hideConfirmPassword": "Hide confirm password",
+        "errors": {
+          "passwordRequired": "Password is required.",
+          "confirmPasswordRequired": "Please confirm your password.",
+          "passwordMinLength": "Password must be at least 8 characters.",
+          "passwordUppercase": "Password must contain at least one uppercase letter.",
+          "passwordNumber": "Password must contain at least one number.",
+          "passwordsDoNotMatch": "Passwords do not match.",
+          "resetFailed": "Unable to reset your password. Please try again.",
+          "invalidResetToken": "Your password reset session is invalid or has expired."
+        },
+        "success": {
+          "title": "Password Reset Successful",
+          "description": "Your password has been changed successfully."
+        },
+        "backToSignIn": "Back to Sign In",
+        "validation": {
+          "passwordRequired": "Password is required.",
+          "confirmPasswordRequired": "Please confirm your password.",
+          "passwordMinLength": "Password must be at least 8 characters.",
+          "passwordUppercase": "Password must contain at least one uppercase letter.",
+          "passwordNumber": "Password must contain at least one number.",
+          "passwordsDoNotMatch": "Passwords do not match."
+        },
+        "copySuccess": "Survey link copied successfully!",
+        "copyError": "Failed to copy survey link. Please try again."
+      },
+      "DashboardProfile": {
+        "title": "Account Information",
+        "subtitle": "Update your personal information to keep your account up to date",
+        "avatarAlt": "Profile photo",
+        "uploadPhoto": "Upload New Photo",
+        "removePhoto": "Remove photo",
+        "userName": "User Name",
+        "phoneNumber": "Phone Number",
+        "email": "E-mail",
+        "country": "Country",
+        "password": "Password",
+        "language": "Language",
+        "countryNetherlands": "Netherlands Antilles",
+        "countryEgypt": "Egypt",
+        "countryUnitedStates": "United States",
+        "countryUnitedKingdom": "United Kingdom",
+        "languageEnglish": "English",
+        "languageArabic": "Arabic",
+        "showPassword": "Show password",
+        "hidePassword": "Hide password",
+        "saveChanges": "Save Changes",
+        "apiNotConnected": "The profile update API is not connected yet. Your changes have not been sent to the server.",
+        "userNameMin": "Name must contain at least 2 characters.",
+        "userNameMax": "Name cannot exceed 50 characters.",
+        "phoneInvalid": "Enter a valid phone number.",
+        "emailInvalid": "Enter a valid email address.",
+        "countryRequired": "Please select a country.",
+        "passwordMin": "Password must be at least 12 characters",
+        "passwordUppercase": "Password must contain an uppercase letter",
+        "passwordLowercase": "Password must contain a lowercase letter",
+        "passwordNumber": "Password must contain a number",
+        "passwordSpecial": "Password must contain a special character",
+        "phoneRequired": "Phone number is required",
+        "emailRequired": "Email address is required",
+        "photoInvalid": "Please select a valid image file",
+        "photoInvalidType": "Only JPG, PNG, and WEBP images are allowed",
+        "photoTooLarge": "Image size must not exceed 5 MB",
+        "countryPlaceholder": "Select a country",
+        "passwordRequired": "Password is required"
+      },
+      "AuthSuccessCard": {
+        "title": "DONE",
+        "passwordResetDescription": "Password reset complete! Use the button below to log in.",
+        "accountReactivationDescription": "Your account has been reactivated successfully! Use the button below to log in.",
+        "returnToLogin": "Return to Login"
+      },
+      "UserDashboard": {
+        "addQuestion": {
+          "title": "Add New Question",
+          "close": "Close",
+          "selectType": "1. Select question type",
+          "configure": "2. Configure your question",
+          "types": {
+            "mcq": {
+              "title": "Multiple Choice",
+              "subtitle": "MCQ"
+            },
+            "textarea": {
+              "title": "Text Area",
+              "subtitle": "Long answer"
+            }
+          },
+          "questionText": {
+            "label": "Question Text",
+            "placeholder": "Enter Your Question Here..."
+          },
+          "choices": "choices",
+          "choicePlaceholder": "choice {number}",
+          "addChoice": "Add choice",
+          "removeChoice": "Remove choice {number}",
+          "required": "Required Question",
+          "save": "Save Question",
+          "saving": "Saving...",
+          "saved": "Question added successfully",
+          "somethingWrong": "Something went wrong, please try again",
+          "errors": {
+            "questionRequired": "Question text is required",
+            "choicesRequired": "Add at least two choices"
+          }
+        },
+        "editQuestion": {
+          "title": "Edit Question",
+          "badge": "Edit Question #{number}",
+          "close": "Close",
+          "cancel": "Cancel",
+          "update": "Update Question",
+          "updating": "Updating...",
+          "fields": {
+            "type": {
+              "label": "Question Type"
+            },
+            "text": {
+              "label": "Question Text",
+              "placeholder": "e.g. What's your favorite language?"
+            },
+            "required": "Required Question",
+            "questionId": "Question ID"
+          },
+          "types": {
+            "mcq": "Multiple Choice (MCQ)",
+            "textarea": "Text Answer"
+          },
+          "choices": {
+            "label": "Choices",
+            "placeholder": "Choice {number}",
+            "add": "Add choice",
+            "remove": "Remove choice {number}"
+          },
+          "errors": {
+            "textRequired": "Question text is required",
+            "minChoices": "Add at least 2 choices",
+            "choiceRequired": "Choice can't be empty"
           }
         }
       }
-    },
-    "createSurvey": {
-      "title": "Create Survey",
-      "subtitle": "Create a new Survey and start collecting responses",
-      "fields": {
-        "title": {
-          "label": "Title",
-          "hint": "Give your survey a clear and descriptive title.",
-          "placeholder": "e.g. Customer Satisfaction Survey"
-        },
-        "description": {
-          "label": "Description",
-          "hint": "Briefly explain what your survey is about.",
-          "placeholder": "e.g. Help us improve by sharing your experience"
-        },
-        "deadline": {
-          "label": "Deadline",
-          "hint": "Choose the last date of receiving responses"
-        }
-      },
-      "image": {
-        "dragTitle": "Drag and Drop an image here",
-        "or": "Or",
-        "choose": "Choose file",
-        "hint": "PNG, JPG or WEBP (Max. 1MB)",
-        "remove": "Remove image"
-      },
-      "submit": "Create Survey",
-      "submitting": "Creating...",
-      "errors": {
-        "titleRequired": "Title is required",
-        "descriptionRequired": "Description is required",
-        "deadlineRequired": "Deadline is required",
-        "deadlinePast": "Deadline can't be in the past",
-        "imageType": "Image must be PNG, JPG or WEBP",
-        "imageSize": "Image must be 1MB or smaller",
-        "createFailed": "Could not create the survey, please try again"
-      }
-    },
-    "createNewPassword": {
-      "title": "Create New Password",
-      "description": "Please enter your new password below. Make sure it's strong and secure.",
-      "password": "Password",
-      "passwordPlaceholder": "Enter your new password",
-      "confirmPassword": "Confirm Password",
-      "confirmPasswordPlaceholder": "Re-enter your new password",
-      "passwordRequirements": "Password must be at least 8 characters, include an uppercase letter and a number.",
-      "resetPassword": "Reset Password",
-      "resettingPassword": "Resetting Password...",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "showConfirmPassword": "Show confirm password",
-      "hideConfirmPassword": "Hide confirm password",
-      "validation": {
-        "passwordRequired": "Password is required.",
-        "confirmPasswordRequired": "Please confirm your password.",
-        "passwordMinLength": "Password must be at least 8 characters.",
-        "passwordUppercase": "Password must contain at least one uppercase letter.",
-        "passwordNumber": "Password must contain at least one number.",
-        "passwordsDoNotMatch": "Passwords do not match."
-      },
-      "copySuccess": "Survey link copied successfully!",
-      "copyError": "Failed to copy survey link. Please try again."
-    },
-    "addQuestion": {
-      "title": "Add New Question",
-      "close": "Close",
-      "selectType": "1. Select question type",
-      "configure": "2. Configure your question",
-      "types": {
-        "mcq": { "title": "Multiple Choice", "subtitle": "MCQ" },
-        "textarea": { "title": "Text Area", "subtitle": "Long answer" }
-      },
-      "questionText": {
-        "label": "Question Text",
-        "placeholder": "Enter Your Question Here..."
-      },
-      "choices": "choices",
-      "choicePlaceholder": "choice {number}",
-      "addChoice": "Add choice",
-      "removeChoice": "Remove choice {number}",
-      "required": "Required Question",
-      "save": "Save Question",
-      "saving": "Saving...",
-      "saved": "Question added successfully",
-      "somethingWrong": "Something went wrong, please try again",
-      "errors": {
-        "questionRequired": "Question text is required",
-        "choicesRequired": "Add at least two choices"
-      }
     }
-  },
-  "createSurvey": {
-    "title": "Create Survey",
-    "subtitle": "Create a new survey and start collecting responses.",
-    "fields": {
-      "title": {
-        "label": "Title",
-        "hint": "Give your survey a clear and descriptive title.",
-        "placeholder": "e.g. Customer Satisfaction Survey"
-      },
-      "description": {
-        "label": "Description",
-        "hint": "Briefly explain what your survey is about.",
-        "placeholder": "e.g. Help us improve by sharing your experience"
-      },
-      "deadline": {
-        "label": "Deadline",
-        "hint": "Choose the last date for receiving responses"
-      }
-    },
-    "image": {
-      "dragTitle": "Drag and drop an image here",
-      "or": "Or",
-      "choose": "Choose file",
-      "hint": "PNG, JPG or WEBP (Max. 1MB)",
-      "remove": "Remove image"
-    },
-    "submit": "Create Survey",
-    "submitting": "Creating...",
-    "errors": {
-      "titleRequired": "Title is required",
-      "descriptionRequired": "Description is required",
-      "deadlineRequired": "Deadline is required",
-      "deadlinePast": "Deadline can't be in the past",
-      "imageType": "Image must be PNG, JPG or WEBP",
-      "imageSize": "Image must be 1MB or smaller",
-      "createFailed": "Could not create the survey. Please try again."
-    }
-  },
-  "createNewPassword": {
-    "title": "Create New Password",
-    "description": "Please enter your new password below. Make sure it's strong and secure.",
-    "password": "Password",
-    "passwordPlaceholder": "Enter your new password",
-    "confirmPassword": "Confirm Password",
-    "confirmPasswordPlaceholder": "Re-enter your new password",
-    "passwordRequirements": "Password must be at least 8 characters, include an uppercase letter and a number.",
-    "resetPassword": "Reset Password",
-    "resettingPassword": "Resetting Password...",
-    "showPassword": "Show password",
-    "hidePassword": "Hide password",
-    "showConfirmPassword": "Show confirm password",
-    "hideConfirmPassword": "Hide confirm password",
-    "errors": {
-      "passwordRequired": "Password is required.",
-      "confirmPasswordRequired": "Please confirm your password.",
-      "passwordMinLength": "Password must be at least 8 characters.",
-      "passwordUppercase": "Password must contain at least one uppercase letter.",
-      "passwordNumber": "Password must contain at least one number.",
-      "passwordsDoNotMatch": "Passwords do not match.",
-      "resetFailed": "Unable to reset your password. Please try again.",
-      "invalidResetToken": "Your password reset session is invalid or has expired."
-    },
-    "success": {
-      "title": "Password Reset Successful",
-      "description": "Your password has been changed successfully."
-    },
-    "backToSignIn": "Back to Sign In"
-  },
-  "DashboardProfile": {
-    "title": "Account Information",
-    "subtitle": "Update your personal information to keep your account up to date",
-    "avatarAlt": "Profile photo",
-    "uploadPhoto": "Upload New Photo",
-    "removePhoto": "Remove photo",
-    "userName": "User Name",
-    "phoneNumber": "Phone Number",
-    "email": "E-mail",
-    "country": "Country",
-    "password": "Password",
-    "language": "Language",
-    "countryNetherlands": "Netherlands Antilles",
-    "countryEgypt": "Egypt",
-    "countryUnitedStates": "United States",
-    "countryUnitedKingdom": "United Kingdom",
-    "languageEnglish": "English",
-    "languageArabic": "Arabic",
-    "showPassword": "Show password",
-    "hidePassword": "Hide password",
-    "saveChanges": "Save Changes",
-    "apiNotConnected": "The profile update API is not connected yet. Your changes have not been sent to the server.",
-    "userNameMin": "Name must contain at least 2 characters.",
-    "userNameMax": "Name cannot exceed 50 characters.",
-    "phoneInvalid": "Enter a valid phone number.",
-    "emailInvalid": "Enter a valid email address.",
-    "countryRequired": "Please select a country.",
-    "passwordMin": "Password must be at least 12 characters",
-    "passwordUppercase": "Password must contain an uppercase letter",
-    "passwordLowercase": "Password must contain a lowercase letter",
-    "passwordNumber": "Password must contain a number",
-    "passwordSpecial": "Password must contain a special character",
-    "phoneRequired": "Phone number is required",
-    "emailRequired": "Email address is required",
-    "photoInvalid": "Please select a valid image file",
-    "photoInvalidType": "Only JPG, PNG, and WEBP images are allowed",
-    "photoTooLarge": "Image size must not exceed 5 MB",
-    "countryPlaceholder": "Select a country",
-    "passwordRequired": "Password is required"
-  },
-  "AuthSuccessCard": {
-    "title": "DONE",
-    "passwordResetDescription": "Password reset complete! Use the button below to log in.",
-    "accountReactivationDescription": "Your account has been reactivated successfully! Use the button below to log in.",
-    "returnToLogin": "Return to Login"
   }
 }
