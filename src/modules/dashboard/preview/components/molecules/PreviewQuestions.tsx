@@ -16,7 +16,7 @@ interface PreviewQuestionsProps {
 }
 
 const PreviewQuestions = ({ title, description, deadline, questions }: PreviewQuestionsProps) => {
-  const t = useTranslations("UserDashboard.previewSurvey");
+  const t = useTranslations("mySurveys.UserDashboard.previewSurvey");
 
   return (
     <div className="flex min-w-0 flex-col gap-4">

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { StaticImageData } from "next/image";
+import Link from "next/link";
 import AppImage from "@/shared/components/atoms/Image";
 import {
   MoreVertical,
@@ -73,7 +74,15 @@ export default function SurveyCard({
     <article className="ds-bg-card ds-shadow-card ds-rounded-lg flex flex-col">
       <div className="relative">
         <div className="relative h-40 w-full overflow-hidden rounded-t-[var(--radius-lg)]">
-          {image ? <AppImage src={image} alt={imageAlt} fill className="relative h-full" /> : null}
+          {image ? (
+            <Link
+              href={`/dashboard/surveys/${surveyId}`}
+              aria-label={`View details for ${title}`}
+              className="block h-full w-full"
+            >
+              <AppImage src={image} alt={imageAlt} fill className="relative h-full" />
+            </Link>
+          ) : null}
         </div>
 
         <div ref={menuRef} className="absolute top-3 right-3">
@@ -97,7 +106,9 @@ export default function SurveyCard({
         <StatusBadge status={status} />
         <div className="flex flex-col gap-1">
           <Title size="base" className="leading-tight font-bold normal-case">
-            {title}
+            <Link href={`/dashboard/surveys/${surveyId}`} className="hover:ds-text-primary">
+              {title}
+            </Link>
           </Title>
           <Text size="sm" variant="secondary">
             {description}

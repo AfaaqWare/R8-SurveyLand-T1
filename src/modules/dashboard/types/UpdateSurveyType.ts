@@ -9,6 +9,14 @@ export interface IdProps {
 }
 export type SurveyStatus = "draft" | "published" | "closed";
 
+export interface SurveyQuestion {
+  qid: string;
+  questionText: string;
+  type: "mcq" | "textarea";
+  choices: string[] | null;
+  isRequired: boolean;
+}
+
 export interface SurveyResponse {
   id: string;
   userId: string;
@@ -21,7 +29,7 @@ export interface SurveyResponse {
   createdAt: string;
   updatedAt: string;
   lastMilestone: number;
-  questions: [];
+  questions: SurveyQuestion[];
 }
 
 export interface UpdateSurveyProps {

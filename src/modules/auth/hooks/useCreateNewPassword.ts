@@ -1,10 +1,10 @@
 
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 import { createNewPasswordSchema } from "@/modules/auth/schema/CreateNewPasswordSchema";
 import { createNewPasswordApi } from "@/modules/auth/api/createNewPasswordApi";
@@ -22,8 +22,9 @@ import { OtpService } from "@/services/OtpService";
 
 const useCreateNewPassword = () => {
   const t = useTranslations("createNewPassword");
-  const router = useRouter();
   const { showAlert } = useAlert();
+
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const {
     register,
@@ -43,12 +44,9 @@ const useCreateNewPassword = () => {
   >({
     mutationFn: createNewPasswordApi,
     options: {
-      onSuccess: async () => {
+      onSuccess: () => {
         OtpService.clear();
-
-        await showAlert("success", t("success.title"));
-
-        router.push("/sign-in");
+        setIsSuccess(true);
       },
 
       onError: (error) => {
@@ -81,6 +79,7 @@ const useCreateNewPassword = () => {
     errors,
     onSubmit,
     isSubmitting: isPending,
+    isSuccess,
   };
 };
 

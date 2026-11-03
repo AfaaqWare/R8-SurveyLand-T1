@@ -18,7 +18,7 @@ const PreviewOverview = ({
   requiredCount,
   updatedAt,
 }: PreviewOverviewProps) => {
-  const t = useTranslations("UserDashboard.previewSurvey.overview");
+  const t = useTranslations("mySurveys.UserDashboard.previewSurvey.overview");
 
   return (
     <Card className="ds-border-card ds-bg-card flex min-w-0 flex-col gap-4 p-4 shadow-none">
