@@ -173,10 +173,22 @@
       },
       "quickActions": {
         "title": "إجراءات سريعة",
-        "create": { "title": "إنشاء استبيان جديد", "description": "ابنِ استبيانًا جديدًا" },
-        "users": { "title": "إدارة المستخدمين", "description": "عرض وإدارة المستخدمين" },
-        "responses": { "title": "عرض الردود", "description": "تصفح كل الردود" },
-        "export": { "title": "تصدير التقارير", "description": "تحميل تقارير الاستبيانات" }
+        "create": {
+          "title": "إنشاء استبيان جديد",
+          "description": "ابنِ استبيانًا جديدًا"
+        },
+        "users": {
+          "title": "إدارة المستخدمين",
+          "description": "عرض وإدارة المستخدمين"
+        },
+        "responses": {
+          "title": "عرض الردود",
+          "description": "تصفح كل الردود"
+        },
+        "export": {
+          "title": "تصدير التقارير",
+          "description": "تحميل تقارير الاستبيانات"
+        }
       }
     },
     "users": {
@@ -411,7 +423,6 @@
     "actionLabel": "العودة إلى الصفحة الرئيسية",
     "imageAlt": "تم إكمال الاستبيان بنجاح"
   },
-
   "Footer": {
     "ariaLabel": "تذييل الموقع",
     "brand": {
@@ -524,12 +535,28 @@
         "title": "تعديل الاستبيان",
         "subtitle": "يمكنك تعديل الاستبيان الخاص بك.",
         "fields": {
-          "title": { "label": "العنوان", "hint": "اختر عنوانًا واضحًا ووصفيًا لاستبيانك." },
-          "description": { "label": "الوصف", "hint": "اشرح موضوع هذا الاستبيان." },
-          "deadline": { "label": "الموعد النهائي", "hint": "اختر آخر موعد لاستقبال الردود" },
-          "status": { "label": "الحالة", "hint": "حدد الحالة الحالية لاستبيانك" }
+          "title": {
+            "label": "العنوان",
+            "hint": "اختر عنوانًا واضحًا ووصفيًا لاستبيانك."
+          },
+          "description": {
+            "label": "الوصف",
+            "hint": "اشرح موضوع هذا الاستبيان."
+          },
+          "deadline": {
+            "label": "الموعد النهائي",
+            "hint": "اختر آخر موعد لاستقبال الردود"
+          },
+          "status": {
+            "label": "الحالة",
+            "hint": "حدد الحالة الحالية لاستبيانك"
+          }
         },
-        "statuses": { "draft": "مسودة", "published": "منشور", "closed": "مغلق" },
+        "statuses": {
+          "draft": "مسودة",
+          "published": "منشور",
+          "closed": "مغلق"
+        },
         "cover": {
           "title": "صورة الغلاف",
           "hint": "ستظهر هذه الصورة في صفحة الاستبيان",
@@ -646,7 +673,6 @@
         "createFailed": "تعذر إنشاء الاستبيان، حاول مرة أخرى"
       }
     },
-
     "createNewPassword": {
       "title": "إنشاء كلمة مرور جديدة",
       "description": "أدخل كلمة المرور الجديدة أدناه، وتأكد من أنها قوية وآمنة.",
@@ -678,8 +704,14 @@
       "selectType": "1. اختر نوع السؤال",
       "configure": "2. اضبط سؤالك",
       "types": {
-        "mcq": { "title": "اختيار من متعدد", "subtitle": "MCQ" },
-        "textarea": { "title": "نص طويل", "subtitle": "إجابة طويلة" }
+        "mcq": {
+          "title": "اختيار من متعدد",
+          "subtitle": "MCQ"
+        },
+        "textarea": {
+          "title": "نص طويل",
+          "subtitle": "إجابة طويلة"
+        }
       },
       "questionText": {
         "label": "نص السؤال",
@@ -766,7 +798,17 @@
       "title": "تم تغيير كلمة المرور بنجاح",
       "description": "تم تغيير كلمة المرور الخاصة بك بنجاح."
     },
-    "backToSignIn": "العودة إلى تسجيل الدخول"
+    "backToSignIn": "العودة إلى تسجيل الدخول",
+    "validation": {
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "confirmPasswordRequired": "يرجى تأكيد كلمة المرور.",
+      "passwordMinLength": "يجب ألا تقل كلمة المرور عن 8 أحرف.",
+      "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل.",
+      "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل.",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين."
+    },
+    "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
+    "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
   },
   "DashboardProfile": {
     "title": "معلومات الحساب",
@@ -813,5 +855,148 @@
     "passwordResetDescription": "تم تغيير كلمة المرور بنجاح! استخدم الزر أدناه لتسجيل الدخول.",
     "accountReactivationDescription": "تمت إعادة تفعيل حسابك بنجاح! استخدم الزر أدناه لتسجيل الدخول.",
     "returnToLogin": "العودة إلى تسجيل الدخول"
+  },
+  "UserDashboard": {
+    "editSurvey": {
+      "title": "تعديل الاستبيان",
+      "subtitle": "يمكنك تعديل الاستبيان الخاص بك.",
+      "fields": {
+        "title": {
+          "label": "العنوان",
+          "hint": "اختر عنوانًا واضحًا ووصفيًا لاستبيانك."
+        },
+        "description": {
+          "label": "الوصف",
+          "hint": "اشرح موضوع هذا الاستبيان."
+        },
+        "deadline": {
+          "label": "الموعد النهائي",
+          "hint": "اختر آخر موعد لاستقبال الردود"
+        },
+        "status": {
+          "label": "الحالة",
+          "hint": "حدد الحالة الحالية لاستبيانك"
+        }
+      },
+      "statuses": {
+        "draft": "مسودة",
+        "published": "منشور",
+        "closed": "مغلق"
+      },
+      "cover": {
+        "title": "صورة الغلاف",
+        "hint": "ستظهر هذه الصورة في صفحة الاستبيان",
+        "change": "تغيير الصورة",
+        "empty": "لا توجد صورة"
+      },
+      "cancel": "إلغاء",
+      "save": "حفظ التعديلات",
+      "saved": "تم تحديث الاستبيان بنجاح",
+      "somethingWrong": "حدث خطأ، حاول مرة أخرى",
+      "titleRequired": "العنوان مطلوب",
+      "deadlineRequired": "الموعد النهائي مطلوب",
+      "descriptionRequired": "ألوصف مطلوب",
+      "notFound": {
+        "title": "الاستبيان غير موجود",
+        "message": "هذا الاستبيان غير موجود أو ربما تم حذفه.",
+        "back": "العودة إلى استبياناتي"
+      }
+    },
+    "previewSurvey": {
+      "title": "معاينة الاستبيان",
+      "subtitle": "هكذا سيظهر استبيانك للمشاركين.",
+      "edit": "تعديل",
+      "share": "مشاركة الاستبيان",
+      "deadline": "الموعد النهائي: {date}",
+      "timeToComplete": "وقت الإكمال: حوالي {minutes} دقيقة",
+      "selectPlaceholder": "اختر إجابة",
+      "textPlaceholder": "اكتب إجابتك هنا...",
+      "noQuestions": "لا توجد أسئلة في هذا الاستبيان بعد.",
+      "submit": "إرسال الاستبيان",
+      "secure": "إجابتك آمنة ومجهولة.",
+      "overview": {
+        "title": "ملخص الاستبيان",
+        "totalQuestions": "إجمالي الأسئلة",
+        "questionTypes": "أنواع الأسئلة",
+        "textarea": "نص حر",
+        "mcq": "اختيار من متعدد",
+        "requiredQuestions": "الأسئلة الإجبارية",
+        "lastUpdated": "آخر تحديث"
+      },
+      "notFound": {
+        "title": "الاستبيان غير موجود",
+        "message": "هذا الاستبيان غير موجود أو ربما تم حذفه.",
+        "back": "العودة إلى استبياناتي"
+      },
+      "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
+      "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
+    },
+    "editQuestion": {
+      "title": "تعديل السؤال",
+      "badge": "تعديل السؤال رقم {number}",
+      "close": "إغلاق",
+      "cancel": "إلغاء",
+      "update": "تحديث السؤال",
+      "updating": "جارٍ التحديث...",
+      "fields": {
+        "type": {
+          "label": "نوع السؤال"
+        },
+        "text": {
+          "label": "نص السؤال",
+          "placeholder": "مثال: ما هي لغتك المفضلة؟"
+        },
+        "required": "سؤال إجباري",
+        "questionId": "معرّف السؤال"
+      },
+      "types": {
+        "mcq": "اختيار من متعدد",
+        "textarea": "إجابة نصية"
+      },
+      "choices": {
+        "label": "الخيارات",
+        "placeholder": "الخيار {number}",
+        "add": "إضافة خيار",
+        "remove": "حذف الخيار {number}"
+      },
+      "errors": {
+        "textRequired": "نص السؤال مطلوب",
+        "minChoices": "أضف خيارين على الأقل",
+        "choiceRequired": "الخيار لا يمكن أن يكون فارغاً"
+      }
+    },
+    "addQuestion": {
+      "title": "إضافة سؤال جديد",
+      "close": "إغلاق",
+      "selectType": "1. اختر نوع السؤال",
+      "configure": "2. اضبط سؤالك",
+      "types": {
+        "mcq": {
+          "title": "اختيار من متعدد",
+          "subtitle": "MCQ"
+        },
+        "textarea": {
+          "title": "نص طويل",
+          "subtitle": "إجابة طويلة"
+        }
+      },
+      "questionText": {
+        "label": "نص السؤال",
+        "placeholder": "أدخل سؤالك هنا..."
+      },
+      "choices": "الخيارات",
+      "choicePlaceholder": "خيار {number}",
+      "addChoice": "إضافة خيار",
+      "removeChoice": "حذف الخيار {number}",
+      "required": "سؤال مطلوب",
+      "save": "حفظ السؤال",
+      "saving": "جارٍ الحفظ...",
+      "saved": "تمت إضافة السؤال بنجاح",
+      "somethingWrong": "حدث خطأ، حاول مرة أخرى",
+      "errors": {
+        "questionRequired": "نص السؤال مطلوب",
+        "choicesRequired": "أضف خيارين على الأقل"
+      }
+    }
   }
 }
