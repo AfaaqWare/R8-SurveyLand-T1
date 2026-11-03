@@ -457,6 +457,7 @@
     "pagination": {
       "showing": "Showing {start} to {end} of",
       "surveys": "Surveys",
+      "responses": "Responses",
       "nav": "Survey pages",
       "first": "First page",
       "previous": "Previous page",
@@ -609,6 +610,50 @@
         },
         "copySuccess": "Survey link copied successfully!",
         "copyError": "Failed to copy survey link. Please try again."
+      },
+      "exportResponses": {
+        "title": "Export Responses",
+        "subtitle": "Export all survey responses to Excel file.",
+        "edit": "Edit",
+        "share": "Share Survey",
+        "copySuccess": "Survey link copied successfully!",
+        "copyError": "Failed to copy survey link. Please try again.",
+        "exported": "Responses exported successfully",
+        "somethingWrong": "Something went wrong, please try again",
+        "noColumns": "Select at least one field to export",
+        "notFound": {
+          "title": "Survey not found",
+          "back": "Back to My Surveys"
+        },
+        "settings": {
+          "title": "Export Settings",
+          "select": "Select data to include in the Excel file",
+          "includeName": "Include Respondent Name",
+          "includeEmail": "Include Respondent Email",
+          "includeSubmission": "Include Submission Data",
+          "includeAnswers": "Include Answers",
+          "fileName": "File Name",
+          "fileNamePlaceholder": "Enter file name",
+          "format": "The file will be exported in Excel format (.xlsx)",
+          "export": "Export to Excel",
+          "exporting": "Exporting...",
+          "secure": "Your data is secure and confidential"
+        },
+        "preview": {
+          "title": "Responses Preview",
+          "firstRows": "Showing first {count} rows",
+          "questions": "Question: {count}",
+          "responses": "Responses: {count}",
+          "hint": "A preview of the data that will be exported to Excel.",
+          "empty": "No responses to export yet.",
+          "columns": {
+            "id": "ID",
+            "name": "Respondent Name",
+            "email": "Respondent Email",
+            "question": "Q{number} {title}",
+            "submittedAt": "Submitted At"
+          }
+        }
       }
     },
     "createSurvey": {

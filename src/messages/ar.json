@@ -458,6 +458,7 @@
     "pagination": {
       "showing": "عرض {start} إلى {end} من",
       "surveys": "الاستبيانات",
+      "responses": "الردود",
       "nav": "صفحات الاستبيانات",
       "first": "الصفحة الأولى",
       "previous": "الصفحة السابقة",
@@ -606,6 +607,50 @@
         },
         "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
         "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
+      },
+      "exportResponses": {
+        "title": "تصدير الردود",
+        "subtitle": "صدّر كل ردود الاستبيان إلى ملف Excel.",
+        "edit": "تعديل",
+        "share": "مشاركة الاستبيان",
+        "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
+        "copyError": "تعذّر نسخ رابط الاستبيان. حاول مرة أخرى.",
+        "exported": "تم تصدير الردود بنجاح",
+        "somethingWrong": "حدث خطأ، حاول مرة أخرى",
+        "noColumns": "اختر حقلاً واحداً على الأقل للتصدير",
+        "notFound": {
+          "title": "الاستبيان غير موجود",
+          "back": "العودة إلى استبياناتي"
+        },
+        "settings": {
+          "title": "إعدادات التصدير",
+          "select": "اختر البيانات التي تريد تضمينها في ملف Excel",
+          "includeName": "تضمين اسم المجيب",
+          "includeEmail": "تضمين بريد المجيب",
+          "includeSubmission": "تضمين بيانات الإرسال",
+          "includeAnswers": "تضمين الإجابات",
+          "fileName": "اسم الملف",
+          "fileNamePlaceholder": "أدخل اسم الملف",
+          "format": "سيُصدَّر الملف بصيغة Excel(.xlsx)",
+          "export": "تصدير إلى Excel",
+          "exporting": "جارٍ التصدير...",
+          "secure": "بياناتك آمنة وسرية"
+        },
+        "preview": {
+          "title": "معاينة الردود",
+          "firstRows": "عرض أول {count} صفوف",
+          "questions": "الأسئلة: {count}",
+          "responses": "الردود: {count}",
+          "hint": "معاينة للبيانات التي ستُصدَّر إلى Excel.",
+          "empty": "لا توجد ردود للتصدير بعد.",
+          "columns": {
+            "id": "الرقم",
+            "name": "اسم المجيب",
+            "email": "بريد المجيب",
+            "question": "س{number} {title}",
+            "submittedAt": "وقت الإرسال"
+          }
+        }
       }
     },
     "createSurvey": {
