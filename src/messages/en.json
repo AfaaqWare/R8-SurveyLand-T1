@@ -815,5 +815,37 @@
     "passwordResetDescription": "Password reset complete! Use the button below to log in.",
     "accountReactivationDescription": "Your account has been reactivated successfully! Use the button below to log in.",
     "returnToLogin": "Return to Login"
+  },
+
+  "AdminDashboard": {
+    "profile": {
+      "role": "Admin",
+      "loading": "Loading...",
+      "fallbackName": "Administrator"
+    },
+    "sections": {
+      "userManagement": "User Management",
+      "surveyManagement": "Survey Management",
+      "responseManagement": "Response Management",
+      "others": "Others"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "allUsers": "All Users",
+      "roles": "Roles & Permission",
+      "allSurveys": "All Surveys",
+      "draftSurveys": "Draft Surveys",
+      "publishedSurveys": "Published Surveys",
+      "closedSurveys": "Closed Surveys",
+      "responses": "Responses",
+      "analytics": "Analytics",
+      "profile": "Profile",
+      "logout": "Log out"
+    },
+    "actions": {
+      "openSidebar": "Open navigation",
+      "closeSidebar": "Close navigation",
+      "navigationLabel": "Admin navigation"
+    }
   }
 }

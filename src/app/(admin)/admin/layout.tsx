@@ -1,7 +1,11 @@
+import type { ReactNode } from "react";
+
 import AdminTemplate from "@/modules/Admin/components/template/AdminTemplate";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+export default function AdminLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return <AdminTemplate>{children}</AdminTemplate>;
-};
-
-export default layout;
+}

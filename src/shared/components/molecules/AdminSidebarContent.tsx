@@ -1,0 +1,384 @@
+
+"use client";
+
+import type { ReactNode } from "react";
+
+import Link from "../atoms/Link";
+import Icon from "../atoms/Icon";
+import AppImage from "../atoms/Image";
+
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+
+import {
+  ChevronDown,
+  LayoutDashboard,
+  Users,
+  UserRoundCog,
+  ClipboardList,
+  FileText,
+  Send,
+  LockKeyhole,
+  PieChart,
+  ChartLine,
+  User,
+  LogOut,
+} from "@/assets/icons/icons";
+
+import { defaultAvatar } from "@/assets/images/images";
+
+export type AdminSidebarProfile = {
+  name?: string | null;
+  image?: string | null;
+} | null | undefined;
+
+type Props = {
+  profile: AdminSidebarProfile;
+  isLoading: boolean;
+  isLogoutPending: boolean;
+  onLogout: () => void;
+  onNavigate?: () => void;
+};
+
+type SidebarLinkProps = {
+  href: string;
+  label: string;
+  icon: ReactNode;
+  isActive: boolean;
+  onNavigate?: () => void;
+};
+
+function SidebarNavigationLink({
+  href,
+  label,
+  icon,
+  isActive,
+  onNavigate,
+}: SidebarLinkProps) {
+  return (
+    <Link
+      href={href}
+      label={label}
+      onClick={onNavigate}
+      className={`sidebar-nav-item font-bold pb-5 ${
+        isActive
+          ? "active !bg-[var(--color-dashboard-role-selected-bg)] !text-[var(--color-primary)]"
+          : ""
+      }`}
+    >
+      {icon}
+      <span>{label}</span>
+    </Link>
+  );
+}
+
+export default function AdminSidebarContent({
+  profile,
+  isLoading,
+  isLogoutPending,
+  onLogout,
+  onNavigate,
+}: Props) {
+  const t = useTranslations("AdminDashboard");
+  const pathname = usePathname();
+
+  // Normalize pathname
+  const currentPath = pathname.replace(/\/+$/, "") || "/";
+
+  // Remove locale prefix if present
+  const normalizedPath = currentPath.replace(
+    /^\/(en|ar)(?=\/)/,
+    ""
+  );
+
+  // Exact route matching
+  const isActive = (href: string) => normalizedPath === href;
+
+  // Icon styling
+  const iconClassName = (active: boolean) =>
+    `sidebar-nav-icon ${
+      active ? "!text-[var(--color-primary)]" : ""
+    }`;
+
+  const userName =
+    profile?.name ||
+    (isLoading
+      ? t("profile.loading")
+      : t("profile.fallbackName"));
+
+  return (
+    <div className="flex min-h-full flex-col pb-4">
+
+      {/* Profile Section */}
+      <div className="sidebar-profile-section mt-2">
+
+        <span className="sidebar-profile-avatar relative block">
+          <AppImage
+            src={profile?.image || defaultAvatar}
+            alt={userName}
+            fill
+            sizes="50px"
+            objectFit="cover"
+            className="h-full w-full"
+          />
+        </span>
+
+        <div className="sidebar-profile-info">
+          <p className="sidebar-profile-name" title={userName}>
+            {userName}
+          </p>
+
+          <p className="sidebar-profile-role">
+            {t("profile.role")}
+          </p>
+        </div>
+
+        <Icon
+          IconComponent={ChevronDown}
+          size={18}
+          variant="secondary"
+          className="sidebar-chevron"
+        />
+
+      </div>
+
+      {/* Navigation */}
+      <nav aria-label={t("actions.navigationLabel")}>
+
+        {/* Dashboard */}
+        <div className="sidebar-nav">
+          <SidebarNavigationLink
+            href="/admin/dashboard"
+            label={t("items.dashboard")}
+            icon={
+              <Icon
+                IconComponent={LayoutDashboard}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/dashboard")
+                )}
+              />
+            }
+            isActive={isActive("/admin/dashboard")}
+            onNavigate={onNavigate}
+          />
+        </div>
+
+        <div className="sidebar-divider" />
+
+        {/* User Management */}
+        <p className="sidebar-section-label">
+          {t("sections.userManagement")}
+        </p>
+
+        <div className="sidebar-nav">
+
+          <SidebarNavigationLink
+            href="/admin/users"
+            label={t("items.allUsers")}
+            icon={
+              <Icon
+                IconComponent={Users}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/users")
+                )}
+              />
+            }
+            isActive={isActive("/admin/users")}
+            onNavigate={onNavigate}
+          />
+
+          <SidebarNavigationLink
+            href="/admin/role"
+            label={t("items.roles")}
+            icon={
+              <Icon
+                IconComponent={UserRoundCog}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/role")
+                )}
+              />
+            }
+            isActive={isActive("/admin/role")}
+            onNavigate={onNavigate}
+          />
+
+        </div>
+
+        <div className="sidebar-divider" />
+
+        {/* Survey Management */}
+        <p className="sidebar-section-label">
+          {t("sections.surveyManagement")}
+        </p>
+
+        <div className="sidebar-nav">
+
+          <SidebarNavigationLink
+            href="/admin/surveys"
+            label={t("items.allSurveys")}
+            icon={
+              <Icon
+                IconComponent={ClipboardList}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/surveys")
+                )}
+              />
+            }
+            isActive={isActive("/admin/surveys")}
+            onNavigate={onNavigate}
+          />
+
+          <SidebarNavigationLink
+            href="/admin/surveys/drafts"
+            label={t("items.draftSurveys")}
+            icon={
+              <Icon
+                IconComponent={FileText}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/surveys/drafts")
+                )}
+              />
+            }
+            isActive={isActive("/admin/surveys/drafts")}
+            onNavigate={onNavigate}
+          />
+
+          <SidebarNavigationLink
+            href="/admin/surveys/published"
+            label={t("items.publishedSurveys")}
+            icon={
+              <Icon
+                IconComponent={Send}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/surveys/published")
+                )}
+              />
+            }
+            isActive={isActive("/admin/surveys/published")}
+            onNavigate={onNavigate}
+          />
+
+          <SidebarNavigationLink
+            href="/admin/surveys/closed"
+            label={t("items.closedSurveys")}
+            icon={
+              <Icon
+                IconComponent={LockKeyhole}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/surveys/closed")
+                )}
+              />
+            }
+            isActive={isActive("/admin/surveys/closed")}
+            onNavigate={onNavigate}
+          />
+
+        </div>
+
+        <div className="sidebar-divider" />
+
+        {/* Response Management */}
+        <p className="sidebar-section-label">
+          {t("sections.responseManagement")}
+        </p>
+
+        <div className="sidebar-nav">
+
+          <SidebarNavigationLink
+            href="/admin/responses"
+            label={t("items.responses")}
+            icon={
+              <Icon
+                IconComponent={PieChart}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/responses")
+                )}
+              />
+            }
+            isActive={isActive("/admin/responses")}
+            onNavigate={onNavigate}
+          />
+
+          <SidebarNavigationLink
+            href="/admin/analytics"
+            label={t("items.analytics")}
+            icon={
+              <Icon
+                IconComponent={ChartLine}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/analytics")
+                )}
+              />
+            }
+            isActive={isActive("/admin/analytics")}
+            onNavigate={onNavigate}
+          />
+
+        </div>
+
+        <div className="sidebar-divider" />
+
+        {/* Others */}
+        <p className="sidebar-section-label">
+          {t("sections.others")}
+        </p>
+
+        <div className="sidebar-nav">
+
+          <SidebarNavigationLink
+            href="/admin/profile"
+            label={t("items.profile")}
+            icon={
+              <Icon
+                IconComponent={User}
+                size={20}
+                variant="secondary"
+                className={iconClassName(
+                  isActive("/admin/profile")
+                )}
+              />
+            }
+            isActive={isActive("/admin/profile")}
+            onNavigate={onNavigate}
+          />
+
+          {/* Logout */}
+          <button
+            type="button"
+            onClick={onLogout}
+            disabled={isLogoutPending}
+            className="sidebar-nav-item sidebar-logout disabled:opacity-50"
+          >
+            <Icon
+              IconComponent={LogOut}
+              size={20}
+              color="var(--color-error)"
+              className="sidebar-nav-icon"
+            />
+
+            <span>{t("items.logout")}</span>
+          </button>
+
+        </div>
+      </nav>
+    </div>
+  );
+}

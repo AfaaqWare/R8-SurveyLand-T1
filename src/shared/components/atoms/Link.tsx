@@ -5,6 +5,7 @@ import type { MouseEventHandler, ReactNode } from "react";
 type LinkProps = {
   href: string;
   children: ReactNode;
+  label: string;
   className?: string;
   variant?: "primary" | "alt";
   target?: "_self" | "_blank";
@@ -17,6 +18,7 @@ type LinkProps = {
 export default function Link({
   href,
   children,
+  label,
   target,
   replace,
   scroll,
@@ -28,6 +30,7 @@ export default function Link({
   return (
     <NextLink
       href={href}
+      aria-label={label}
       target={target}
       prefetch={prefetch}
       replace={replace}

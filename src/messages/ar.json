@@ -813,5 +813,36 @@
     "passwordResetDescription": "تم تغيير كلمة المرور بنجاح! استخدم الزر أدناه لتسجيل الدخول.",
     "accountReactivationDescription": "تمت إعادة تفعيل حسابك بنجاح! استخدم الزر أدناه لتسجيل الدخول.",
     "returnToLogin": "العودة إلى تسجيل الدخول"
+  },
+  "AdminDashboard": {
+    "profile": {
+      "role": "مدير النظام",
+      "loading": "جاري التحميل...",
+      "fallbackName": "مدير النظام"
+    },
+    "sections": {
+      "userManagement": "إدارة المستخدمين",
+      "surveyManagement": "إدارة الاستبيانات",
+      "responseManagement": "إدارة الردود",
+      "others": "أخرى"
+    },
+    "items": {
+      "dashboard": "لوحة التحكم",
+      "allUsers": "جميع المستخدمين",
+      "roles": "الأدوار والصلاحيات",
+      "allSurveys": "جميع الاستبيانات",
+      "draftSurveys": "المسودات",
+      "publishedSurveys": "الاستبيانات المنشورة",
+      "closedSurveys": "الاستبيانات المغلقة",
+      "responses": "الردود",
+      "analytics": "التحليلات",
+      "profile": "الملف الشخصي",
+      "logout": "تسجيل الخروج"
+    },
+    "actions": {
+      "openSidebar": "فتح القائمة",
+      "closeSidebar": "إغلاق القائمة",
+      "navigationLabel": "قائمة إدارة النظام"
+    }
   }
 }

@@ -1,13 +1,31 @@
+"use client";
+
 import DesktopSidebar from "../molecules/DesktopSidebar";
 import MobileSidebar from "../molecules/MobileSidebar";
 
-const AdminSidebar = () => {
+import useGetProfile from "@/modules/auth/hooks/useGetProfile";
+import useLogout from "@/modules/auth/hooks/useLogout";
+
+export default function AdminSidebar() {
+  const { data, isLoading } = useGetProfile();
+
+  const { handleLogout, isPending } = useLogout();
+
+  const handleSidebarLogout = () => {
+    void handleLogout();
+  };
+
+  const sidebarProps = {
+    profile: data,
+    isLoading,
+    isLogoutPending: isPending,
+    onLogout: handleSidebarLogout,
+  };
+
   return (
     <>
-      <MobileSidebar />
-      <DesktopSidebar />
+      <MobileSidebar {...sidebarProps} />
+      <DesktopSidebar {...sidebarProps} />
     </>
   );
-};
-
-export default AdminSidebar;
+}
