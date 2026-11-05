@@ -1,16 +1,17 @@
 "use client";
-import { useLocale } from "next-intl";
-const DesktopSidebar = () => {
-  const locale = useLocale();
-  const isArabic = locale === "ar";
 
-  return (
-    <aside
-      className={`ds-border-color ds-bg-alt fixed inset-y-0 z-30 hidden h-screen w-80 flex-col border lg:flex ${
-        isArabic ? "right-0 border-l" : "left-0 border-r"
-      }`}
-    ></aside>
-  );
+import type { ReactNode } from "react";
+
+type Props = {
+  children: (onNavigate: () => void) => ReactNode;
 };
 
-export default DesktopSidebar;
+export default function DesktopSidebar({ children }: Props) {
+  const handleNavigate = () => {};
+
+  return (
+    <aside className="ds-bg-alt ds-border-color fixed inset-y-0 start-0 z-30 hidden h-screen w-80 flex-col overflow-y-auto dashboard-sidebar-scrollbar border-e lg:flex">
+      {children(handleNavigate)}
+    </aside>
+  );
+}

@@ -1,7 +1,22 @@
-import AdminTemplate from "@/modules/Admin/components/template/AdminTemplate";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
-  return <AdminTemplate>{children}</AdminTemplate>;
-};
+import type { ReactNode } from "react";
 
-export default layout;
+import UserTemplate from "@/modules/dashboard/components/template/UserTemplate";
+
+import AuthInitializer from "@/shared/guards/AuthInitializer";
+import ProtectedRoute from "@/shared/guards/ProtectedRoute";
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+
+  return (
+    <AuthInitializer>
+      <ProtectedRoute>
+        <UserTemplate>{children}</UserTemplate>
+      </ProtectedRoute>
+    </AuthInitializer>
+  );
+}
