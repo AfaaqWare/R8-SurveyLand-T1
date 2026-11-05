@@ -413,7 +413,6 @@
       "genericError": "حدث خطأ ما. حاول مرة أخرى بعد قليل."
     }
   },
-
   "ThankYou": {
     "title": "شكرًا لك!",
     "subtitle": "تم إرسال إجابتك بنجاح",
@@ -930,7 +929,6 @@
       "navigationLabel": "قائمة إدارة النظام"
     }
   },
-
   "createNewPasswordFromLayout": {
     "title": "إنشاء كلمة مرور جديدة",
     "description": "الرجاء إدخال كلمة المرور الجديدة أدناه. تأكد من أنها قوية وآمنة.",
@@ -961,7 +959,6 @@
     },
     "backToSignIn": "العودة إلى تسجيل الدخول"
   },
-
   "UserDashboardSidebar": {
     "profile": {
       "loading": "جاري التحميل...",
