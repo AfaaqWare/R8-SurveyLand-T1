@@ -1,4 +1,3 @@
-
 "use client";
 
 import type { ReactNode } from "react";
@@ -9,6 +8,8 @@ import AppImage from "../atoms/Image";
 
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+
+import type { UserDetails } from "@/modules/Admin/types/RoleType";
 
 import {
   ChevronDown,
@@ -27,10 +28,7 @@ import {
 
 import { defaultAvatar } from "@/assets/images/images";
 
-export type AdminSidebarProfile = {
-  name?: string | null;
-  image?: string | null;
-} | null | undefined;
+export type AdminSidebarProfile = Pick<UserDetails, "name" | "image" | "role"> | null | undefined;
 
 type Props = {
   profile: AdminSidebarProfile;
@@ -48,19 +46,13 @@ type SidebarLinkProps = {
   onNavigate?: () => void;
 };
 
-function SidebarNavigationLink({
-  href,
-  label,
-  icon,
-  isActive,
-  onNavigate,
-}: SidebarLinkProps) {
+function SidebarNavigationLink({ href, label, icon, isActive, onNavigate }: SidebarLinkProps) {
   return (
     <Link
       href={href}
       label={label}
       onClick={onNavigate}
-      className={`sidebar-nav-item font-bold pb-5 ${
+      className={`sidebar-nav-item pb-5 font-bold ${
         isActive
           ? "active !bg-[var(--color-dashboard-role-selected-bg)] !text-[var(--color-primary)]"
           : ""
@@ -86,32 +78,21 @@ export default function AdminSidebarContent({
   const currentPath = pathname.replace(/\/+$/, "") || "/";
 
   // Remove locale prefix if present
-  const normalizedPath = currentPath.replace(
-    /^\/(en|ar)(?=\/)/,
-    ""
-  );
+  const normalizedPath = currentPath.replace(/^\/(en|ar)(?=\/)/, "");
 
   // Exact route matching
   const isActive = (href: string) => normalizedPath === href;
 
   // Icon styling
   const iconClassName = (active: boolean) =>
-    `sidebar-nav-icon ${
-      active ? "!text-[var(--color-primary)]" : ""
-    }`;
+    `sidebar-nav-icon ${active ? "!text-[var(--color-primary)]" : ""}`;
 
-  const userName =
-    profile?.name ||
-    (isLoading
-      ? t("profile.loading")
-      : t("profile.fallbackName"));
+  const userName = profile?.name || (isLoading ? t("profile.loading") : t("profile.fallbackName"));
 
   return (
     <div className="flex min-h-full flex-col pb-4">
-
       {/* Profile Section */}
       <div className="sidebar-profile-section mt-2">
-
         <span className="sidebar-profile-avatar relative block">
           <AppImage
             src={profile?.image || defaultAvatar}
@@ -128,9 +109,7 @@ export default function AdminSidebarContent({
             {userName}
           </p>
 
-          <p className="sidebar-profile-role">
-            {t("profile.role")}
-          </p>
+          <p className="sidebar-profile-role">{profile?.role ?? ""}</p>
         </div>
 
         <Icon
@@ -139,12 +118,10 @@ export default function AdminSidebarContent({
           variant="secondary"
           className="sidebar-chevron"
         />
-
       </div>
 
       {/* Navigation */}
       <nav aria-label={t("actions.navigationLabel")}>
-
         {/* Dashboard */}
         <div className="sidebar-nav">
           <SidebarNavigationLink
@@ -155,9 +132,7 @@ export default function AdminSidebarContent({
                 IconComponent={LayoutDashboard}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/dashboard")
-                )}
+                className={iconClassName(isActive("/admin/dashboard"))}
               />
             }
             isActive={isActive("/admin/dashboard")}
@@ -168,12 +143,9 @@ export default function AdminSidebarContent({
         <div className="sidebar-divider" />
 
         {/* User Management */}
-        <p className="sidebar-section-label">
-          {t("sections.userManagement")}
-        </p>
+        <p className="sidebar-section-label">{t("sections.userManagement")}</p>
 
         <div className="sidebar-nav">
-
           <SidebarNavigationLink
             href="/admin/users"
             label={t("items.allUsers")}
@@ -182,9 +154,7 @@ export default function AdminSidebarContent({
                 IconComponent={Users}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/users")
-                )}
+                className={iconClassName(isActive("/admin/users"))}
               />
             }
             isActive={isActive("/admin/users")}
@@ -199,26 +169,20 @@ export default function AdminSidebarContent({
                 IconComponent={UserRoundCog}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/role")
-                )}
+                className={iconClassName(isActive("/admin/role"))}
               />
             }
             isActive={isActive("/admin/role")}
             onNavigate={onNavigate}
           />
-
         </div>
 
         <div className="sidebar-divider" />
 
         {/* Survey Management */}
-        <p className="sidebar-section-label">
-          {t("sections.surveyManagement")}
-        </p>
+        <p className="sidebar-section-label">{t("sections.surveyManagement")}</p>
 
         <div className="sidebar-nav">
-
           <SidebarNavigationLink
             href="/admin/surveys"
             label={t("items.allSurveys")}
@@ -227,9 +191,7 @@ export default function AdminSidebarContent({
                 IconComponent={ClipboardList}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/surveys")
-                )}
+                className={iconClassName(isActive("/admin/surveys"))}
               />
             }
             isActive={isActive("/admin/surveys")}
@@ -244,9 +206,7 @@ export default function AdminSidebarContent({
                 IconComponent={FileText}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/surveys/drafts")
-                )}
+                className={iconClassName(isActive("/admin/surveys/drafts"))}
               />
             }
             isActive={isActive("/admin/surveys/drafts")}
@@ -261,9 +221,7 @@ export default function AdminSidebarContent({
                 IconComponent={Send}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/surveys/published")
-                )}
+                className={iconClassName(isActive("/admin/surveys/published"))}
               />
             }
             isActive={isActive("/admin/surveys/published")}
@@ -278,26 +236,20 @@ export default function AdminSidebarContent({
                 IconComponent={LockKeyhole}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/surveys/closed")
-                )}
+                className={iconClassName(isActive("/admin/surveys/closed"))}
               />
             }
             isActive={isActive("/admin/surveys/closed")}
             onNavigate={onNavigate}
           />
-
         </div>
 
         <div className="sidebar-divider" />
 
         {/* Response Management */}
-        <p className="sidebar-section-label">
-          {t("sections.responseManagement")}
-        </p>
+        <p className="sidebar-section-label">{t("sections.responseManagement")}</p>
 
         <div className="sidebar-nav">
-
           <SidebarNavigationLink
             href="/admin/responses"
             label={t("items.responses")}
@@ -306,9 +258,7 @@ export default function AdminSidebarContent({
                 IconComponent={PieChart}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/responses")
-                )}
+                className={iconClassName(isActive("/admin/responses"))}
               />
             }
             isActive={isActive("/admin/responses")}
@@ -323,26 +273,20 @@ export default function AdminSidebarContent({
                 IconComponent={ChartLine}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/analytics")
-                )}
+                className={iconClassName(isActive("/admin/analytics"))}
               />
             }
             isActive={isActive("/admin/analytics")}
             onNavigate={onNavigate}
           />
-
         </div>
 
         <div className="sidebar-divider" />
 
         {/* Others */}
-        <p className="sidebar-section-label">
-          {t("sections.others")}
-        </p>
+        <p className="sidebar-section-label">{t("sections.others")}</p>
 
         <div className="sidebar-nav">
-
           <SidebarNavigationLink
             href="/admin/profile"
             label={t("items.profile")}
@@ -351,9 +295,7 @@ export default function AdminSidebarContent({
                 IconComponent={User}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/admin/profile")
-                )}
+                className={iconClassName(isActive("/admin/profile"))}
               />
             }
             isActive={isActive("/admin/profile")}
@@ -376,7 +318,6 @@ export default function AdminSidebarContent({
 
             <span>{t("items.logout")}</span>
           </button>
-
         </div>
       </nav>
     </div>

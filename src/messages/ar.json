@@ -173,10 +173,22 @@
       },
       "quickActions": {
         "title": "إجراءات سريعة",
-        "create": { "title": "إنشاء استبيان جديد", "description": "ابنِ استبيانًا جديدًا" },
-        "users": { "title": "إدارة المستخدمين", "description": "عرض وإدارة المستخدمين" },
-        "responses": { "title": "عرض الردود", "description": "تصفح كل الردود" },
-        "export": { "title": "تصدير التقارير", "description": "تحميل تقارير الاستبيانات" }
+        "create": {
+          "title": "إنشاء استبيان جديد",
+          "description": "ابنِ استبيانًا جديدًا"
+        },
+        "users": {
+          "title": "إدارة المستخدمين",
+          "description": "عرض وإدارة المستخدمين"
+        },
+        "responses": {
+          "title": "عرض الردود",
+          "description": "تصفح كل الردود"
+        },
+        "export": {
+          "title": "تصدير التقارير",
+          "description": "تحميل تقارير الاستبيانات"
+        }
       }
     },
     "users": {
@@ -411,7 +423,6 @@
     "actionLabel": "العودة إلى الصفحة الرئيسية",
     "imageAlt": "تم إكمال الاستبيان بنجاح"
   },
-
   "Footer": {
     "ariaLabel": "تذييل الموقع",
     "brand": {
@@ -458,6 +469,7 @@
     "pagination": {
       "showing": "عرض {start} إلى {end} من",
       "surveys": "الاستبيانات",
+      "responses": "الردود",
       "nav": "صفحات الاستبيانات",
       "first": "الصفحة الأولى",
       "previous": "الصفحة السابقة",
@@ -524,12 +536,28 @@
         "title": "تعديل الاستبيان",
         "subtitle": "يمكنك تعديل الاستبيان الخاص بك.",
         "fields": {
-          "title": { "label": "العنوان", "hint": "اختر عنوانًا واضحًا ووصفيًا لاستبيانك." },
-          "description": { "label": "الوصف", "hint": "اشرح موضوع هذا الاستبيان." },
-          "deadline": { "label": "الموعد النهائي", "hint": "اختر آخر موعد لاستقبال الردود" },
-          "status": { "label": "الحالة", "hint": "حدد الحالة الحالية لاستبيانك" }
+          "title": {
+            "label": "العنوان",
+            "hint": "اختر عنوانًا واضحًا ووصفيًا لاستبيانك."
+          },
+          "description": {
+            "label": "الوصف",
+            "hint": "اشرح موضوع هذا الاستبيان."
+          },
+          "deadline": {
+            "label": "الموعد النهائي",
+            "hint": "اختر آخر موعد لاستقبال الردود"
+          },
+          "status": {
+            "label": "الحالة",
+            "hint": "حدد الحالة الحالية لاستبيانك"
+          }
         },
-        "statuses": { "draft": "مسودة", "published": "منشور", "closed": "مغلق" },
+        "statuses": {
+          "draft": "مسودة",
+          "published": "منشور",
+          "closed": "مغلق"
+        },
         "cover": {
           "title": "صورة الغلاف",
           "hint": "ستظهر هذه الصورة في صفحة الاستبيان",
@@ -606,6 +634,50 @@
         },
         "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
         "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
+      },
+      "exportResponses": {
+        "title": "تصدير الردود",
+        "subtitle": "صدّر كل ردود الاستبيان إلى ملف Excel.",
+        "edit": "تعديل",
+        "share": "مشاركة الاستبيان",
+        "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
+        "copyError": "تعذّر نسخ رابط الاستبيان. حاول مرة أخرى.",
+        "exported": "تم تصدير الردود بنجاح",
+        "somethingWrong": "حدث خطأ، حاول مرة أخرى",
+        "noColumns": "اختر حقلاً واحداً على الأقل للتصدير",
+        "notFound": {
+          "title": "الاستبيان غير موجود",
+          "back": "العودة إلى استبياناتي"
+        },
+        "settings": {
+          "title": "إعدادات التصدير",
+          "select": "اختر البيانات التي تريد تضمينها في ملف Excel",
+          "includeName": "تضمين اسم المجيب",
+          "includeEmail": "تضمين بريد المجيب",
+          "includeSubmission": "تضمين بيانات الإرسال",
+          "includeAnswers": "تضمين الإجابات",
+          "fileName": "اسم الملف",
+          "fileNamePlaceholder": "أدخل اسم الملف",
+          "format": "سيُصدَّر الملف بصيغة Excel(.xlsx)",
+          "export": "تصدير إلى Excel",
+          "exporting": "جارٍ التصدير...",
+          "secure": "بياناتك آمنة وسرية"
+        },
+        "preview": {
+          "title": "معاينة الردود",
+          "firstRows": "عرض أول {count} صفوف",
+          "questions": "الأسئلة: {count}",
+          "responses": "الردود: {count}",
+          "hint": "معاينة للبيانات التي ستُصدَّر إلى Excel.",
+          "empty": "لا توجد ردود للتصدير بعد.",
+          "columns": {
+            "id": "الرقم",
+            "name": "اسم المجيب",
+            "email": "بريد المجيب",
+            "question": "س{number} {title}",
+            "submittedAt": "وقت الإرسال"
+          }
+        }
       }
     },
     "createSurvey": {
@@ -646,7 +718,6 @@
         "createFailed": "تعذر إنشاء الاستبيان، حاول مرة أخرى"
       }
     },
-
     "createNewPassword": {
       "title": "إنشاء كلمة مرور جديدة",
       "description": "أدخل كلمة المرور الجديدة أدناه، وتأكد من أنها قوية وآمنة.",
@@ -678,8 +749,14 @@
       "selectType": "1. اختر نوع السؤال",
       "configure": "2. اضبط سؤالك",
       "types": {
-        "mcq": { "title": "اختيار من متعدد", "subtitle": "MCQ" },
-        "textarea": { "title": "نص طويل", "subtitle": "إجابة طويلة" }
+        "mcq": {
+          "title": "اختيار من متعدد",
+          "subtitle": "MCQ"
+        },
+        "textarea": {
+          "title": "نص طويل",
+          "subtitle": "إجابة طويلة"
+        }
       },
       "questionText": {
         "label": "نص السؤال",
@@ -766,7 +843,17 @@
       "title": "تم تغيير كلمة المرور بنجاح",
       "description": "تم تغيير كلمة المرور الخاصة بك بنجاح."
     },
-    "backToSignIn": "العودة إلى تسجيل الدخول"
+    "backToSignIn": "العودة إلى تسجيل الدخول",
+    "validation": {
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "confirmPasswordRequired": "يرجى تأكيد كلمة المرور.",
+      "passwordMinLength": "يجب ألا تقل كلمة المرور عن 8 أحرف.",
+      "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل.",
+      "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل.",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين."
+    },
+    "copySuccess": "تم نسخ رابط الاستبيان بنجاح!",
+    "copyError": "فشل نسخ رابط الاستبيان. حاولي مرة أخرى"
   },
   "DashboardProfile": {
     "title": "معلومات الحساب",
@@ -816,7 +903,6 @@
   },
   "AdminDashboard": {
     "profile": {
-      "role": "مدير النظام",
       "loading": "جاري التحميل...",
       "fallbackName": "مدير النظام"
     },
@@ -845,9 +931,40 @@
       "navigationLabel": "قائمة إدارة النظام"
     }
   },
-  "UserDashboard": {
+
+  "createNewPasswordFromLayout": {
+    "title": "إنشاء كلمة مرور جديدة",
+    "description": "الرجاء إدخال كلمة المرور الجديدة أدناه. تأكد من أنها قوية وآمنة.",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور الجديدة",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور الجديدة",
+    "passwordRequirements": "يجب أن تكون كلمة المرور من 8 أحرف على الأقل، وتحتوي على حرف كبير ورقم.",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "resettingPassword": "جاري إعادة التعيين...",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "showConfirmPassword": "إظهار تأكيد كلمة المرور",
+    "hideConfirmPassword": "إخفاء تأكيد كلمة المرور",
+    "errors": {
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "confirmPasswordRequired": "الرجاء تأكيد كلمة المرور.",
+      "passwordMinLength": "يجب أن تكون كلمة المرور من 8 أحرف على الأقل.",
+      "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل.",
+      "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل.",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين.",
+      "resetFailed": "تعذر إعادة تعيين كلمة المرور. الرجاء المحاولة مرة أخرى.",
+      "invalidResetToken": "جلسة إعادة تعيين كلمة المرور غير صالحة أو انتهت صلاحيتها."
+    },
+    "success": {
+      "title": "تم إعادة تعيين كلمة المرور بنجاح",
+      "description": "تم تغيير كلمة المرور الخاصة بك بنجاح."
+    },
+    "backToSignIn": "العودة إلى تسجيل الدخول"
+  },
+
+  "UserDashboardSidebar": {
     "profile": {
-      "role": "مستخدم",
       "loading": "جاري التحميل...",
       "fallbackName": "مستخدم"
     },

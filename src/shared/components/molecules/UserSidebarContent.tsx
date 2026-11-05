@@ -1,4 +1,3 @@
-
 "use client";
 
 import type { ReactNode } from "react";
@@ -9,6 +8,8 @@ import AppImage from "../atoms/Image";
 
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+
+import type { ProfileResponse } from "@/modules/auth/api/getProfile";
 
 import {
   ChevronDown,
@@ -24,12 +25,7 @@ import {
 import { defaultAvatar } from "@/assets/images/images";
 
 export type UserSidebarProfile =
-  | {
-      name?: string | null;
-      image?: string | null;
-    }
-  | null
-  | undefined;
+  Pick<ProfileResponse, "name" | "image" | "role"> | null | undefined;
 
 type Props = {
   profile: UserSidebarProfile;
@@ -47,13 +43,7 @@ type SidebarLinkProps = {
   onNavigate?: () => void;
 };
 
-function SidebarNavigationLink({
-  href,
-  label,
-  icon,
-  isActive,
-  onNavigate,
-}: SidebarLinkProps) {
+function SidebarNavigationLink({ href, label, icon, isActive, onNavigate }: SidebarLinkProps) {
   return (
     <Link
       href={href}
@@ -78,42 +68,29 @@ export default function UserSidebarContent({
   onLogout,
   onNavigate,
 }: Props) {
-  const t = useTranslations("UserDashboard");
+  const t = useTranslations("UserDashboardSidebar");
   const pathname = usePathname();
 
   // Normalize pathname
   const currentPath = pathname.replace(/\/+$/, "") || "/";
 
   // Remove locale prefix if present
-  const normalizedPath = currentPath.replace(
-    /^\/(en|ar)(?=\/|$)/,
-    ""
-  ) || "/";
+  const normalizedPath = currentPath.replace(/^\/(en|ar)(?=\/|$)/, "") || "/";
 
   // Keep Dashboard active only on its exact route.
   // Nested pages remain associated with their parent item.
   const isActive = (href: string) =>
-    normalizedPath === href ||
-    (href !== "/dashboard" &&
-      normalizedPath.startsWith(`${href}/`));
+    normalizedPath === href || (href !== "/dashboard" && normalizedPath.startsWith(`${href}/`));
 
   const iconClassName = (active: boolean) =>
-    `sidebar-nav-icon ${
-      active ? "!text-[var(--color-primary)]" : ""
-    }`;
+    `sidebar-nav-icon ${active ? "!text-[var(--color-primary)]" : ""}`;
 
-  const userName =
-    profile?.name ||
-    (isLoading
-      ? t("profile.loading")
-      : t("profile.fallbackName"));
+  const userName = profile?.name || (isLoading ? t("profile.loading") : t("profile.fallbackName"));
 
   return (
     <div className="flex min-h-full flex-col pb-4">
-
       {/* User Profile */}
       <div className="sidebar-profile-section mt-2">
-
         <span className="sidebar-profile-avatar relative block">
           <AppImage
             src={profile?.image || defaultAvatar}
@@ -130,9 +107,7 @@ export default function UserSidebarContent({
             {userName}
           </p>
 
-          <p className="sidebar-profile-role">
-            {t("profile.role")}
-          </p>
+          <p className="sidebar-profile-role">{profile?.role ?? ""}</p>
         </div>
 
         <Icon
@@ -141,14 +116,11 @@ export default function UserSidebarContent({
           variant="secondary"
           className="sidebar-chevron"
         />
-
       </div>
 
       {/* Navigation */}
       <nav aria-label={t("actions.navigationLabel")}>
-
         <div className="sidebar-nav">
-
           {/* Dashboard */}
           <SidebarNavigationLink
             href="/dashboard"
@@ -174,9 +146,7 @@ export default function UserSidebarContent({
                 IconComponent={ClipboardList}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/dashboard/surveys")
-                )}
+                className={iconClassName(isActive("/dashboard/surveys"))}
               />
             }
             isActive={isActive("/dashboard/surveys")}
@@ -192,9 +162,7 @@ export default function UserSidebarContent({
                 IconComponent={FileText}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/dashboard/create-survey")
-                )}
+                className={iconClassName(isActive("/dashboard/create-survey"))}
               />
             }
             isActive={isActive("/dashboard/create-survey")}
@@ -210,9 +178,7 @@ export default function UserSidebarContent({
                 IconComponent={PieChart}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/dashboard/responses")
-                )}
+                className={iconClassName(isActive("/dashboard/responses"))}
               />
             }
             isActive={isActive("/dashboard/responses")}
@@ -228,26 +194,20 @@ export default function UserSidebarContent({
                 IconComponent={ChartLine}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/dashboard/analytics")
-                )}
+                className={iconClassName(isActive("/dashboard/analytics"))}
               />
             }
             isActive={isActive("/dashboard/analytics")}
             onNavigate={onNavigate}
           />
-
         </div>
 
         <div className="sidebar-divider" />
 
         {/* Others */}
-        <p className="sidebar-section-label">
-          {t("sections.others")}
-        </p>
+        <p className="sidebar-section-label">{t("sections.others")}</p>
 
         <div className="sidebar-nav">
-
           {/* Profile */}
           <SidebarNavigationLink
             href="/dashboard/profile"
@@ -257,9 +217,7 @@ export default function UserSidebarContent({
                 IconComponent={User}
                 size={20}
                 variant="secondary"
-                className={iconClassName(
-                  isActive("/dashboard/profile")
-                )}
+                className={iconClassName(isActive("/dashboard/profile"))}
               />
             }
             isActive={isActive("/dashboard/profile")}
@@ -282,7 +240,6 @@ export default function UserSidebarContent({
 
             <span>{t("items.logout")}</span>
           </button>
-
         </div>
       </nav>
     </div>

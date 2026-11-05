@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 
 import DesktopSidebar from "../molecules/DesktopSidebar";
 import MobileSidebar from "../molecules/MobileSidebar";

@@ -5,7 +5,7 @@ import type { MouseEventHandler, ReactNode } from "react";
 type LinkProps = {
   href: string;
   children: ReactNode;
-  label: string;
+  label?: string;
   className?: string;
   variant?: "primary" | "alt";
   target?: "_self" | "_blank";

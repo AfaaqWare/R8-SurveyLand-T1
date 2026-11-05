@@ -7,11 +7,12 @@ import MobileSidebar from "../molecules/MobileSidebar";
 
 import AdminSidebarContent from "../molecules/AdminSidebarContent";
 
-import useGetProfile from "@/modules/auth/hooks/useGetProfile";
+import useGetProfile from "@/modules/Admin/hooks/useGetProfile";
+
 import useLogout from "@/modules/auth/hooks/useLogout";
 
 export default function AdminSidebar() {
-  const { data, isLoading } = useGetProfile();
+  const { data, isPending: isLoading } = useGetProfile();
 
   const { handleLogout, isPending } = useLogout();
 
@@ -33,16 +34,11 @@ export default function AdminSidebar() {
 
   return (
     <>
-      <MobileSidebar
-        openLabel={t("actions.openSidebar")}
-        closeLabel={t("actions.closeSidebar")}
-      >
+      <MobileSidebar openLabel={t("actions.openSidebar")} closeLabel={t("actions.closeSidebar")}>
         {renderAdminContent}
       </MobileSidebar>
 
-      <DesktopSidebar>
-        {renderAdminContent}
-      </DesktopSidebar>
+      <DesktopSidebar>{renderAdminContent}</DesktopSidebar>
     </>
   );
 }
