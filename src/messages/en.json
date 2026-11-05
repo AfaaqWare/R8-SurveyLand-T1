@@ -1109,7 +1109,6 @@
       "publishedSurveys": "Published Surveys",
       "closedSurveys": "Closed Surveys",
       "responses": "Responses",
-      "analytics": "Analytics",
       "profile": "Profile",
       "logout": "Log out"
     },
@@ -1129,7 +1128,6 @@
       "mySurveys": "My Surveys",
       "createSurvey": "Create Survey",
       "responses": "Responses",
-      "analytics": "Analytics",
       "profile": "Profile",
       "logout": "Log out"
     },

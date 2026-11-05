@@ -21,7 +21,6 @@ import {
   Send,
   LockKeyhole,
   PieChart,
-  ChartLine,
   User,
   LogOut,
 } from "@/assets/icons/icons";
@@ -265,20 +264,6 @@ export default function AdminSidebarContent({
             onNavigate={onNavigate}
           />
 
-          <SidebarNavigationLink
-            href="/admin/analytics"
-            label={t("items.analytics")}
-            icon={
-              <Icon
-                IconComponent={ChartLine}
-                size={20}
-                variant="secondary"
-                className={iconClassName(isActive("/admin/analytics"))}
-              />
-            }
-            isActive={isActive("/admin/analytics")}
-            onNavigate={onNavigate}
-          />
         </div>
 
         <div className="sidebar-divider" />

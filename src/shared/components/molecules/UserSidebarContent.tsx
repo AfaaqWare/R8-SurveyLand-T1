@@ -17,7 +17,6 @@ import {
   ClipboardList,
   FileText,
   PieChart,
-  ChartLine,
   User,
   LogOut,
 } from "@/assets/icons/icons";
@@ -185,21 +184,6 @@ export default function UserSidebarContent({
             onNavigate={onNavigate}
           />
 
-          {/* Analytics */}
-          <SidebarNavigationLink
-            href="/dashboard/analytics"
-            label={t("items.analytics")}
-            icon={
-              <Icon
-                IconComponent={ChartLine}
-                size={20}
-                variant="secondary"
-                className={iconClassName(isActive("/dashboard/analytics"))}
-              />
-            }
-            isActive={isActive("/dashboard/analytics")}
-            onNavigate={onNavigate}
-          />
         </div>
 
         <div className="sidebar-divider" />
