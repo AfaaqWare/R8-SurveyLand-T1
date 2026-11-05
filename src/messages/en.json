@@ -967,5 +967,71 @@
         "choiceRequired": "Choice can't be empty"
       }
     }
+  },
+  "responses": {
+    "title": "Responses",
+    "subtitle": "Browse, search and export every response collected on your surveys.",
+    "stats": {
+      "total": "Total Responses",
+      "uniqueSurveys": "Unique Surveys",
+      "latest": "Latest Response",
+      "export": "Export Ready",
+      "allTime": "All time",
+      "latestCaption": "Most recent submission",
+      "latestEmpty": "No responses yet",
+      "exportCaption": "Download CSV"
+    },
+    "toolbar": {
+      "search": "Search by name or email",
+      "sort": "Sort responses",
+      "newest": "Newest first",
+      "oldest": "Oldest first",
+      "dateRange": "Date range",
+      "from": "From date",
+      "to": "To date",
+      "filter": "Filter",
+      "filterTitle": "Filter responses",
+      "survey": "Survey",
+      "allSurveys": "All surveys",
+      "answeredOnly": "Only responses with answers",
+      "reset": "Reset filters"
+    },
+    "table": {
+      "caption": "Survey responses",
+      "id": "ID",
+      "respondent": "Respondent",
+      "email": "Email",
+      "surveyId": "Survey ID",
+      "answers": "Answers",
+      "submittedAt": "Submitted At",
+      "actions": "Actions",
+      "anonymous": "Anonymous",
+      "noEmail": "No email"
+    },
+    "answersCount": "{count, plural, =0 {No answers} one {# answer} other {# answers}}",
+    "copySurveyId": "Copy survey ID",
+    "actions": {
+      "view": "View response from {name}",
+      "more": "More actions",
+      "copyId": "Copy response ID",
+      "copied": "Copied"
+    },
+    "pagination": {
+      "showing": "Showing {from} to {to} of {total} responses",
+      "nav": "Responses pages",
+      "previous": "Previous page",
+      "next": "Next page",
+      "page": "Page {page}"
+    },
+    "states": {
+      "errorTitle": "Couldn't load responses",
+      "errorText": "Something went wrong while loading the responses. Please try again.",
+      "retry": "Try again",
+      "emptyTitle": "No responses yet",
+      "emptyText": "Responses will show up here once people start answering your surveys.",
+      "noResultsTitle": "No matching responses",
+      "noResultsText": "Try changing or clearing your filters.",
+      "clear": "Clear filters"
+    }
   }
 }
