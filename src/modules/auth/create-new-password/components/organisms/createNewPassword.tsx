@@ -14,7 +14,7 @@ import useCreateNewPassword from "@/modules/auth/hooks/useCreateNewPassword";
 import AuthSuccessCard from "@/modules/auth/components/molecules/AuthSuccessCard";
 
 const CreateNewPassword = () => {
-  const t = useTranslations("createNewPassword");
+  const t = useTranslations("createNewPasswordFromLayout");
 
   const { register, errors, onSubmit, isSubmitting, isSuccess } = useCreateNewPassword();
 

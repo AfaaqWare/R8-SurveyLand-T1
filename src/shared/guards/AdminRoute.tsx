@@ -1,28 +1,58 @@
+
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 import { TokenService } from "@/services/tokenService";
+import useGetProfile from "@/modules/auth/hooks/useGetProfile";
 
-const ADMIN_ROLE = "ADMIN";
-
-export default function AdminRoute({ children }: { children: React.ReactNode }) {
+export default function AdminRoute({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const router = useRouter();
-  const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
+
+  const { data, isLoading, isError } = useGetProfile();
+
+  const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
-    const token = TokenService.getToken();
-    if (!token) {
+    // 1. Check whether a token exists
+    if (!TokenService.hasToken()) {
       router.replace("/sign-in");
-      setIsAuthorized(false);
       return;
     }
 
-    void ADMIN_ROLE;
-    setIsAuthorized(true);
-  }, [router]);
+    // 2. Wait for the backend profile request
+    if (isLoading) return;
 
-  if (isAuthorized === null || !isAuthorized) return null;
+    // 3. Reject an invalid or unavailable session
+    if (isError || !data) {
+      router.replace("/sign-in");
+      return;
+    }
+
+    // 4. Check the actual user role returned by the API
+    const role = data.role?.trim().toUpperCase();
+
+    if (role === "ADMIN") {
+      setIsAuthorized(true);
+      return;
+    }
+
+    // 5. Regular users cannot access Admin Dashboard
+    if (role === "USER") {
+      router.replace("/dashboard");
+      return;
+    }
+
+    // 6. Unknown roles are not authorized
+    router.replace("/sign-in");
+  }, [data, isLoading, isError, router]);
+
+  if (!isAuthorized) return null;
 
   return <>{children}</>;
 }
