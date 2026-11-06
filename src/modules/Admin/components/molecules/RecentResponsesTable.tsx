@@ -22,11 +22,7 @@ const RecentResponsesTable = ({ surveys, isError = false, onRetry }: RecentRespo
 
   return (
     <Card className="ds-border-card ds-bg-card flex min-w-0 flex-col gap-3 p-4 shadow-none">
-      <CardHeader
-        title={t("recentSurveys")}
-        actionLabel={t("viewAll")}
-        actionHref="/admin/surveys"
-      />
+      <CardHeader title={t("recentSurveys")} />
 
       {isError ? (
         <div className="flex min-h-72 w-full items-center justify-center">

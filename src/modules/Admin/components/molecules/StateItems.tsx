@@ -12,11 +12,12 @@ interface StatsGridProps {
     responses: number;
     totalUsers: number;
   };
+  isAdmin?: boolean;
   isError?: boolean;
   onRetry?: () => void;
 }
 
-const StateItems = ({ stats, isError = false, onRetry }: StatsGridProps) => {
+const StateItems = ({ stats, isAdmin = true, isError = false, onRetry }: StatsGridProps) => {
   const t = useTranslations("dashboard.home");
 
   if (isError) {
@@ -27,9 +28,17 @@ const StateItems = ({ stats, isError = false, onRetry }: StatsGridProps) => {
     );
   }
 
+  const items = isAdmin
+    ? stateItemsData
+    : stateItemsData.filter(item => item.key !== "totalUsers");
+
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
-      {stateItemsData.map(item => (
+    <div
+      className={`grid grid-cols-1 gap-4 md:grid-cols-2 ${
+        isAdmin ? "lg:grid-cols-5" : "lg:grid-cols-4"
+      }`}
+    >
+      {items.map(item => (
         <StatCard
           key={item.key}
           icon={item.icon}

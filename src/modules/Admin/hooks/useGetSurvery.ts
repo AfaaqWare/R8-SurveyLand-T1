@@ -15,8 +15,10 @@ const useGetSurvey = (surveyId?: string) => {
 
   const surveys = surveysData?.data ?? [];
   const totalSurveys = surveysData?.total ?? surveys.length;
-  const draftSurveys = surveys.filter(survey => survey.status === "draft").length;
-  const publishedSurveys = surveys.filter(survey => survey.status === "published").length;
+  const draftSurveys = surveys.filter(survey => survey.status.trim().toLowerCase() === "draft").length;
+  const publishedSurveys = surveys.filter(
+    survey => survey.status.trim().toLowerCase() === "published"
+  ).length;
 
   return {
     totalSurveys,
