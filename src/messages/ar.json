@@ -64,6 +64,7 @@
       "signup": "إنشاء حساب",
       "account": "حساب",
       "dashboard": "لوحة التحكم",
+      "profile": "الملف الشخصي",
       "logout": "تسجيل الخروج",
       "logoutSuccess": "تم تسجيل خروجك بنجاح"
     },
@@ -102,6 +103,10 @@
         "label": "إجمالي قيمة التداول"
       },
       "team": {
+        "title": "قائد <highlight>الفريق</highlight>",
+        "subtitle": "انضم إلى الفريق",
+        "description": "تأسست Survey Land عام 2012، وأصبحت اليوم شركة تعمل عن بُعد بفريق دولي يضم أكثر من 250 موظفاً. نقدم تعويضات تنافسية ومزايا وفرصاً وظيفية تدعم نموك المهني.",
+        "button": "تصفح الوظائف المتاحة",
         "imageAlt": "فريق Survey Land يحتفل معاً"
       },
       "howItWorks": {
@@ -506,6 +511,35 @@
     "copyright": "© {year} SurveyLand. جميع الحقوق محفوظة"
   },
   "mySurveys": {
+    "title": "استبياناتي",
+    "subtitle": "أدِر استبياناتك وعدّلها وتابعها.",
+    "createSurvey": "إنشاء استبيان",
+    "untitled": "استبيان بلا عنوان",
+    "card": {
+      "coverAlt": "غلاف الاستبيان",
+      "viewDetails": "عرض تفاصيل {title}",
+      "settings": "إعدادات الاستبيان",
+      "questions": "الأسئلة",
+      "responses": "الردود",
+      "deadline": "الموعد النهائي",
+      "updated": "آخر تحديث",
+      "preview": "معاينة",
+      "edit": "تعديل",
+      "share": "مشاركة"
+    },
+    "toolbar": {
+      "tabs": {
+        "all": "الكل",
+        "draft": "مسودة",
+        "published": "منشور",
+        "closed": "مغلق"
+      },
+      "searchPlaceholder": "البحث في الاستبيانات",
+      "orders": {
+        "newest": "الأحدث أولاً",
+        "oldest": "الأقدم أولاً"
+      }
+    },
     "pagination": {
       "showing": "عرض {start} إلى {end} من",
       "surveys": "الاستبيانات",
@@ -718,44 +752,6 @@
             "submittedAt": "وقت الإرسال"
           }
         }
-      }
-    },
-    "createSurvey": {
-      "title": "إنشاء استبيان",
-      "subtitle": "أنشئ استبياناً جديداً وابدأ بجمع الردود",
-      "fields": {
-        "title": {
-          "label": "العنوان",
-          "hint": "اختر عنواناً واضحاً ومعبّراً لاستبيانك.",
-          "placeholder": "مثال: استبيان رضا العملاء"
-        },
-        "description": {
-          "label": "الوصف",
-          "hint": "اشرح باختصار موضوع استبيانك.",
-          "placeholder": "مثال: ساعدنا على التحسين بمشاركة تجربتك"
-        },
-        "deadline": {
-          "label": "الموعد النهائي",
-          "hint": "اختر آخر تاريخ لاستقبال الردود"
-        }
-      },
-      "image": {
-        "dragTitle": "اسحب صورة وأفلتها هنا",
-        "or": "أو",
-        "choose": "اختر ملفاً",
-        "hint": "PNG أو JPG أو WEBP (الحد الأقصى 1MB)",
-        "remove": "إزالة الصورة"
-      },
-      "submit": "إنشاء الاستبيان",
-      "submitting": "جارٍ الإنشاء...",
-      "errors": {
-        "titleRequired": "العنوان مطلوب",
-        "descriptionRequired": "الوصف مطلوب",
-        "deadlineRequired": "الموعد النهائي مطلوب",
-        "deadlinePast": "لا يمكن أن يكون الموعد في الماضي",
-        "imageType": "يجب أن تكون الصورة PNG أو JPG أو WEBP",
-        "imageSize": "يجب ألا يتجاوز حجم الصورة 1MB",
-        "createFailed": "تعذر إنشاء الاستبيان، حاول مرة أخرى"
       }
     },
     "createNewPassword": {

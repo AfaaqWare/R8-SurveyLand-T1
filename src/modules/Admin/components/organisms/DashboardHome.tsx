@@ -10,10 +10,14 @@ import { UsersRound } from "@/assets/icons/icons";
 import QuickAnswers from "../molecules/QuickActions";
 import DashBoardSkeleton from "../molecules/DashBoardSkeleton";
 import useDashboardHome from "../../hooks/useDashboardHome";
+import useGetProfile from "@/modules/auth/hooks/useGetProfile";
 
 const DashboardHome = () => {
   const t = useTranslations("dashboard.home");
-  const { stats, surveys, responses, isPending, isError, errors, retry } = useDashboardHome();
+  const { data: profile } = useGetProfile();
+  const isAdmin = profile?.role?.trim().toUpperCase() === "ADMIN";
+  const { stats, surveys, responses, isPending, isError, errors, retry } =
+    useDashboardHome(isAdmin);
 
   if (isPending) {
     return <DashBoardSkeleton />;
@@ -22,7 +26,7 @@ const DashboardHome = () => {
   return (
     <section className="flex w-full flex-col gap-6">
       <DashboardTitle title={t("title")} subtitle={t("subtitle")} />
-      <StateItems stats={stats} isError={isError} onRetry={retry} />
+      <StateItems stats={stats} isAdmin={isAdmin} isError={isError} onRetry={retry} />
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
         <SurveyChartCard title={t("statusOverview")} counts={statusCounts} startAngle={90} />
@@ -39,7 +43,7 @@ const DashboardHome = () => {
         />
       </div>
 
-      <QuickAnswers />
+      {isAdmin && <QuickAnswers />}
     </section>
   );
 };

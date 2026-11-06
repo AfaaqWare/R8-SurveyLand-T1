@@ -243,6 +243,8 @@
     --color-status-published: var(--color-status-published-dark);
     --color-status-closed: var(--color-status-closed-dark);
 
+    --color-primary-300: var(--color-primary-300-dark);
+
     --color-stats-teal: var(--color-stats-teal-dark);
     --color-stats-teal-bg: var(--color-stats-teal-bg-dark);
 

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Plus } from "@/assets/icons/icons";
 import { graduationSurveyCover } from "@/assets/images/images";
 import { ErrorState, EmptyState, LoadingState } from "@/core/ui-states";
@@ -31,12 +32,12 @@ function toUpdatedAt(value?: string) {
   return formatDate(value);
 }
 
-function toCard(survey: Survey) {
+function toCard(survey: Survey, untitledLabel: string) {
   return {
     id: survey.id,
     image: survey.cover || graduationSurveyCover,
     status: toStatus(survey.status),
-    title: survey.title || "Untitled survey",
+    title: survey.title || untitledLabel,
     description: survey.description || "",
     questionsCount: survey.questions?.length ?? 0,
     responsesCount: 0,
@@ -46,6 +47,7 @@ function toCard(survey: Survey) {
 }
 
 export default function MySurveys() {
+  const t = useTranslations("mySurveys");
   const router = useRouter();
   const [page, setPage] = useState(1);
   const [tab, setTab] = useState<SurveyTab>("All");
@@ -70,8 +72,8 @@ export default function MySurveys() {
         const bTime = new Date(b.updatedAt).getTime();
         return order === "Newest First" ? bTime - aTime : aTime - bTime;
       })
-      .map(toCard);
-  }, [data, tab, query, order]);
+      .map(survey => toCard(survey, t("untitled")));
+  }, [data, tab, query, order, t]);
 
   const total = surveys.length;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
@@ -99,16 +101,16 @@ export default function MySurveys() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col gap-1">
           <Title size="lg" className="font-bold normal-case">
-            My Surveys
+            {t("title")}
           </Title>
           <Text size="sm" variant="secondary">
-            Manage, Edit and track all your Survey
+            {t("subtitle")}
           </Text>
         </div>
 
         <Button className="h-11 shrink-0 px-5">
           <Plus size={16} />
-          Create Survey
+          {t("createSurvey")}
         </Button>
       </div>
 

@@ -18,8 +18,6 @@ import {
   UserRoundCog,
   ClipboardList,
   FileText,
-  Send,
-  LockKeyhole,
   PieChart,
   User,
   LogOut,
@@ -71,6 +69,7 @@ export default function AdminSidebarContent({
   onNavigate,
 }: Props) {
   const t = useTranslations("AdminDashboard");
+  const tUser = useTranslations("UserDashboardSidebar");
   const pathname = usePathname();
 
   // Normalize pathname
@@ -79,8 +78,10 @@ export default function AdminSidebarContent({
   // Remove locale prefix if present
   const normalizedPath = currentPath.replace(/^\/(en|ar)(?=\/)/, "");
 
-  // Exact route matching
-  const isActive = (href: string) => normalizedPath === href;
+  // Keep Dashboard active only on its exact route.
+  // Nested pages remain associated with their parent item.
+  const isActive = (href: string) =>
+    normalizedPath === href || (href !== "/dashboard" && normalizedPath.startsWith(`${href}/`));
 
   // Icon styling
   const iconClassName = (active: boolean) =>
@@ -91,7 +92,7 @@ export default function AdminSidebarContent({
   return (
     <div className="flex min-h-full flex-col pb-4">
       {/* Profile Section */}
-      <div className="sidebar-profile-section mt-2">
+      <div className="sidebar-profile-section lg:mt-5">
         <span className="sidebar-profile-avatar relative block">
           <AppImage
             src={profile?.image || defaultAvatar}
@@ -120,27 +121,7 @@ export default function AdminSidebarContent({
       </div>
 
       {/* Navigation */}
-      <nav aria-label={t("actions.navigationLabel")}>
-        {/* Dashboard */}
-        <div className="sidebar-nav">
-          <SidebarNavigationLink
-            href="/admin/dashboard"
-            label={t("items.dashboard")}
-            icon={
-              <Icon
-                IconComponent={LayoutDashboard}
-                size={20}
-                variant="secondary"
-                className={iconClassName(isActive("/admin/dashboard"))}
-              />
-            }
-            isActive={isActive("/admin/dashboard")}
-            onNavigate={onNavigate}
-          />
-        </div>
-
-        <div className="sidebar-divider" />
-
+      <nav aria-label={t("actions.navigationLabel")} className="flex flex-1 flex-col">
         {/* User Management */}
         <p className="sidebar-section-label">{t("sections.userManagement")}</p>
 
@@ -178,131 +159,111 @@ export default function AdminSidebarContent({
 
         <div className="sidebar-divider" />
 
-        {/* Survey Management */}
-        <p className="sidebar-section-label">{t("sections.surveyManagement")}</p>
-
+        {/* User navigation */}
         <div className="sidebar-nav">
           <SidebarNavigationLink
-            href="/admin/surveys"
-            label={t("items.allSurveys")}
+            href="/dashboard"
+            label={tUser("items.dashboard")}
+            icon={
+              <Icon
+                IconComponent={LayoutDashboard}
+                size={20}
+                variant="secondary"
+                className={iconClassName(isActive("/dashboard"))}
+              />
+            }
+            isActive={isActive("/dashboard")}
+            onNavigate={onNavigate}
+          />
+
+          <SidebarNavigationLink
+            href="/dashboard/surveys"
+            label={tUser("items.mySurveys")}
             icon={
               <Icon
                 IconComponent={ClipboardList}
                 size={20}
                 variant="secondary"
-                className={iconClassName(isActive("/admin/surveys"))}
+                className={iconClassName(isActive("/dashboard/surveys"))}
               />
             }
-            isActive={isActive("/admin/surveys")}
+            isActive={isActive("/dashboard/surveys")}
             onNavigate={onNavigate}
           />
 
           <SidebarNavigationLink
-            href="/admin/surveys/drafts"
-            label={t("items.draftSurveys")}
+            href="/dashboard/create-survey"
+            label={tUser("items.createSurvey")}
             icon={
               <Icon
                 IconComponent={FileText}
                 size={20}
                 variant="secondary"
-                className={iconClassName(isActive("/admin/surveys/drafts"))}
+                className={iconClassName(isActive("/dashboard/create-survey"))}
               />
             }
-            isActive={isActive("/admin/surveys/drafts")}
+            isActive={isActive("/dashboard/create-survey")}
             onNavigate={onNavigate}
           />
 
           <SidebarNavigationLink
-            href="/admin/surveys/published"
-            label={t("items.publishedSurveys")}
-            icon={
-              <Icon
-                IconComponent={Send}
-                size={20}
-                variant="secondary"
-                className={iconClassName(isActive("/admin/surveys/published"))}
-              />
-            }
-            isActive={isActive("/admin/surveys/published")}
-            onNavigate={onNavigate}
-          />
-
-          <SidebarNavigationLink
-            href="/admin/surveys/closed"
-            label={t("items.closedSurveys")}
-            icon={
-              <Icon
-                IconComponent={LockKeyhole}
-                size={20}
-                variant="secondary"
-                className={iconClassName(isActive("/admin/surveys/closed"))}
-              />
-            }
-            isActive={isActive("/admin/surveys/closed")}
-            onNavigate={onNavigate}
-          />
-        </div>
-
-        <div className="sidebar-divider" />
-
-        {/* Response Management */}
-        <p className="sidebar-section-label">{t("sections.responseManagement")}</p>
-
-        <div className="sidebar-nav">
-          <SidebarNavigationLink
-            href="/admin/responses"
-            label={t("items.responses")}
+            href="/dashboard/responses"
+            label={tUser("items.responses")}
             icon={
               <Icon
                 IconComponent={PieChart}
                 size={20}
                 variant="secondary"
-                className={iconClassName(isActive("/admin/responses"))}
+                className={iconClassName(isActive("/dashboard/responses"))}
               />
             }
-            isActive={isActive("/admin/responses")}
+            isActive={isActive("/dashboard/responses")}
             onNavigate={onNavigate}
           />
-
         </div>
 
         <div className="sidebar-divider" />
 
-        {/* Others */}
-        <p className="sidebar-section-label">{t("sections.others")}</p>
+        <div className="mt-auto">
+          <div className="sidebar-divider" />
 
-        <div className="sidebar-nav">
-          <SidebarNavigationLink
-            href="/admin/profile"
-            label={t("items.profile")}
-            icon={
-              <Icon
-                IconComponent={User}
-                size={20}
-                variant="secondary"
-                className={iconClassName(isActive("/admin/profile"))}
-              />
-            }
-            isActive={isActive("/admin/profile")}
-            onNavigate={onNavigate}
-          />
+          {/* Others */}
+          <p className="sidebar-section-label">{t("sections.others")}</p>
 
-          {/* Logout */}
-          <button
-            type="button"
-            onClick={onLogout}
-            disabled={isLogoutPending}
-            className="sidebar-nav-item sidebar-logout disabled:opacity-50"
-          >
-            <Icon
-              IconComponent={LogOut}
-              size={20}
-              color="var(--color-error)"
-              className="sidebar-nav-icon"
+          <div className="sidebar-nav">
+            {/* Profile */}
+            <SidebarNavigationLink
+              href="/profile"
+              label={tUser("items.profile")}
+              icon={
+                <Icon
+                  IconComponent={User}
+                  size={20}
+                  variant="secondary"
+                  className={iconClassName(isActive("/profile"))}
+                />
+              }
+              isActive={isActive("/profile")}
+              onNavigate={onNavigate}
             />
 
-            <span>{t("items.logout")}</span>
-          </button>
+            {/* Logout */}
+            <button
+              type="button"
+              onClick={onLogout}
+              disabled={isLogoutPending}
+              className="sidebar-nav-item sidebar-logout disabled:opacity-50"
+            >
+              <Icon
+                IconComponent={LogOut}
+                size={20}
+                color="var(--color-error)"
+                className="sidebar-nav-icon"
+              />
+
+              <span>{t("items.logout")}</span>
+            </button>
+          </div>
         </div>
       </nav>
     </div>

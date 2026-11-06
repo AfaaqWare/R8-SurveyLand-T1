@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import AppImage from "@/shared/components/atoms/Image";
 import {
   MoreVertical,
@@ -38,7 +39,7 @@ export interface SurveyCardProps {
 
 export default function SurveyCard({
   image,
-  imageAlt = "Survey cover",
+  imageAlt,
   status,
   title,
   description,
@@ -51,6 +52,7 @@ export default function SurveyCard({
   onEdit,
   onShare,
 }: SurveyCardProps) {
+  const t = useTranslations("mySurveys.card");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -77,10 +79,10 @@ export default function SurveyCard({
           {image ? (
             <Link
               href={`/dashboard/surveys/${surveyId}`}
-              aria-label={`View details for ${title}`}
+              aria-label={t("viewDetails", { title })}
               className="block h-full w-full"
             >
-              <AppImage src={image} alt={imageAlt} fill className="relative h-full" />
+              <AppImage src={image} alt={imageAlt || t("coverAlt")} fill className="relative h-full" />
             </Link>
           ) : null}
         </div>
@@ -89,7 +91,7 @@ export default function SurveyCard({
           <button
             type="button"
             onClick={() => setIsMenuOpen(open => !open)}
-            aria-label="Survey settings"
+            aria-label={t("settings")}
             aria-expanded={isMenuOpen}
             aria-haspopup="menu"
             className="inline-flex size-8 cursor-pointer items-center justify-center rounded-full bg-white shadow-md"
@@ -119,25 +121,25 @@ export default function SurveyCard({
           <span className="flex min-w-0 items-center gap-2">
             <ClipboardList size={16} className="shrink-0" />
             <Text size="sm" variant="secondary" className="truncate">
-              {questionsCount} Questions
+              {questionsCount} {t("questions")}
             </Text>
           </span>
           <span className="flex min-w-0 items-center gap-2">
             <PieChart size={16} className="shrink-0" />
             <Text size="sm" variant="secondary" className="truncate">
-              {responsesCount} Responses
+              {responsesCount} {t("responses")}
             </Text>
           </span>
           <span className="flex min-w-0 items-center gap-2">
             <CalendarDays size={16} className="shrink-0" />
             <Text size="sm" variant="secondary" className="truncate">
-              deadline: {deadline}
+              {t("deadline")}: {deadline}
             </Text>
           </span>
           <span className="flex min-w-0 items-center gap-2">
             <Clock3 size={16} className="shrink-0" />
             <Text size="sm" variant="secondary" className="truncate">
-              Updated: {updatedAt}
+              {t("updated")}: {updatedAt}
             </Text>
           </span>
         </div>
@@ -147,18 +149,18 @@ export default function SurveyCard({
             variant="ghost"
             size="sm"
             onClick={onPreview}
-            className="h-10 flex-1 border border-[#d9dde3] bg-white font-bold text-black hover:bg-white"
+            className="ds-bg-card ds-text-primary ds-border-card h-10 flex-1 border font-bold hover:opacity-90"
           >
             <Eye size={16} />
-            preview
+            {t("preview")}
           </Button>
           <Button variant="outline" size="sm" onClick={onEdit} className="h-10 flex-1 font-bold">
             <Pencil size={16} />
-            Edit
+            {t("edit")}
           </Button>
           <Button variant="primary" size="sm" onClick={onShare} className="h-10 flex-1 font-bold">
             <Share2 size={16} />
-            Share
+            {t("share")}
           </Button>
         </div>
       </div>

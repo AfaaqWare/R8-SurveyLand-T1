@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import PublicLayout from "@/shared/components/Layouts/PublicLayout";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
 import Button from "@/shared/components/atoms/Button";
@@ -15,9 +14,8 @@ export default function PricingPage() {
   const [selectedPlan, setSelectedPlan] = useState<PlanId | null>(null);
 
   return (
-    <PublicLayout>
-      <section
-        aria-labelledby="pricing-title"
+    <section
+      aria-labelledby="pricing-title"
         className="ds-bg min-h-[calc(100vh-4rem)] px-4 py-12 sm:px-6 lg:py-16"
       >
         <div className="mx-auto w-full max-w-6xl">
@@ -151,7 +149,6 @@ export default function PricingPage() {
             })}
           </div>
         </div>
-      </section>
-    </PublicLayout>
+    </section>
   );
 }

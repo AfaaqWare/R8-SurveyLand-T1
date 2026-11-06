@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useForm, type RegisterOptions } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
@@ -188,12 +187,7 @@ export default function SignUpForm() {
               className="ds-text-xs ds-text-secondary cursor-pointer leading-6"
             >
               {t("agreeWith")}{" "}
-              <Link
-                href="/terms"
-                className="ds-text-alt font-semibold transition-opacity hover:opacity-75"
-              >
-                {t("terms")}
-              </Link>
+              <span className="ds-text-alt font-semibold">{t("terms")}</span>
             </label>
           </div>
           <FieldError message={errors.agreeTerms?.message} />

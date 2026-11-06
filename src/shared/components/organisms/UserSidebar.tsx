@@ -28,10 +28,7 @@ export default function UserSidebar() {
 
   return (
     <>
-      <MobileSidebar
-        openLabel="Open navigation"
-        closeLabel="Close navigation"
-      >
+      <MobileSidebar closeLabel="Close navigation">
         {renderUserContent}
       </MobileSidebar>
 

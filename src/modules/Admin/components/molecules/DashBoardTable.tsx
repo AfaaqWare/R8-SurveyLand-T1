@@ -23,11 +23,7 @@ const DashBoardTable = ({ responses, isError, onRetry }: DashBoardTableProps) =>
 
   return (
     <Card className="ds-border-card ds-bg-card flex min-w-0 flex-col gap-3 p-4 shadow-none">
-      <CardHeader
-        title={t("recentSurveys")}
-        actionLabel={t("viewAll")}
-        actionHref="/admin/responses"
-      />
+      <CardHeader title={t("recentSurveys")} />
       {isError ? (
         <div className="flex min-h-72 w-full items-center justify-center">
           <ErrorState onRetry={onRetry} className="min-h-0 w-full" />

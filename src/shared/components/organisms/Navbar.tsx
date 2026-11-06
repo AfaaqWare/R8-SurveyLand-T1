@@ -6,32 +6,24 @@ import { useTranslations } from "next-intl";
 import Link from "@/shared/components/atoms/Link";
 import Button from "@/shared/components/atoms/Button";
 import DropdownProfile from "@/shared/components/organisms/DropdownProfile";
+import { useMobileNavOptional } from "@/shared/components/organisms/MobileNavProvider";
 import { TokenService } from "@/services/tokenService";
+import { NAV_LINKS } from "@/shared/utils/navLinks";
 import { Menu, X } from "@/assets/icons/icons";
 
 type NavbarProps = {
   /** Theme and language controls passed from the layout */
   controls?: ReactNode;
+  /** Hide the profile dropdown (useful in dashboard layouts) */
+  hideProfile?: boolean;
 };
-
-type NavLinkItem = {
-  key: "home" | "about" | "contact" | "faqs" | "pricing";
-  href: "/" | "/about" | "/contact" | "/faqs" | "/pricing";
-};
-
-const NAV_LINKS: NavLinkItem[] = [
-  { key: "home", href: "/" },
-  { key: "about", href: "/about" },
-  { key: "contact", href: "/contact" },
-  { key: "faqs", href: "/faqs" },
-  { key: "pricing", href: "/pricing" },
-];
 
 const linkClass =
   "text-sm font-medium text-gray-600 no-underline! transition-colors hover:text-cyan-400 dark:text-gray-300 dark:hover:text-cyan-400";
 
-export default function Navbar({ controls }: NavbarProps) {
+export default function Navbar({ controls, hideProfile = false }: NavbarProps) {
   const t = useTranslations("publicPages.navbar");
+  const dashboardNav = useMobileNavOptional();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -87,9 +79,9 @@ export default function Navbar({ controls }: NavbarProps) {
         <div className="hidden shrink-0 items-center gap-4 lg:flex">
           {controls}
 
-          {mounted && isLoggedIn ? (
+          {mounted && isLoggedIn && !hideProfile ? (
             <DropdownProfile onLogout={() => setIsLoggedIn(false)} />
-          ) : (
+          ) : mounted && isLoggedIn && hideProfile ? null : (
             <>
               <Link
                 href="/sign-in"
@@ -115,22 +107,41 @@ export default function Navbar({ controls }: NavbarProps) {
         <div className="flex min-w-0 items-center gap-2 lg:hidden">
           {controls}
 
-          <Button
-            type="button"
-            variant="ghost"
-            size="md"
-            className="flex h-10 w-10 shrink-0 items-center justify-center !p-0"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-navigation"
-            onClick={() => setIsMenuOpen((open) => !open)}
-          >
-            {isMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+          {dashboardNav ? (
+            <Button
+              type="button"
+              variant="ghost"
+              size="md"
+              className="flex h-10 w-10 shrink-0 items-center justify-center p-0!"
+              aria-label={dashboardNav.isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={dashboardNav.isOpen}
+              aria-controls={dashboardNav.sidebarId}
+              onClick={dashboardNav.toggle}
+            >
+              {dashboardNav.isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
+          ) : (
+            <Button
+              type="button"
+              variant="ghost"
+              size="md"
+              className="flex h-10 w-10 shrink-0 items-center justify-center p-0!"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setIsMenuOpen((open) => !open)}
+            >
+              {isMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
+          )}
         </div>
       </div>
 
@@ -157,9 +168,9 @@ export default function Navbar({ controls }: NavbarProps) {
           </nav>
 
           <div className="mt-3 flex flex-col gap-2 border-t ds-border-color pt-3">
-            {mounted && isLoggedIn ? (
+            {mounted && isLoggedIn && !hideProfile ? (
               <DropdownProfile onLogout={() => setIsLoggedIn(false)} />
-            ) : (
+            ) : mounted && isLoggedIn && hideProfile ? null : (
               <>
                 <Link
                   href="/sign-in"

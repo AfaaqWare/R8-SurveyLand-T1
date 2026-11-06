@@ -1,8 +1,5 @@
 import { QuickAction } from "../types/DashboardTypes";
 import {
-  CirclePlus,
-  Download,
-  MessageSquareText,
   UsersRound,
   ChartLine,
   ClipboardList,
@@ -43,32 +40,11 @@ export const summaryStatusCounts = {
 
 export const Quick_Action: QuickAction[] = [
   {
-    key: "create",
-    href: "/admin/surveys/create",
-    icon: CirclePlus,
-    variant: "blue",
-    tone: "ds-bg-blue-soft",
-  },
-  {
     key: "users",
     href: "/admin/users",
     icon: UsersRound,
     variant: "green",
     tone: "ds-bg-green-soft",
-  },
-  {
-    key: "responses",
-    href: "/admin/responses",
-    icon: MessageSquareText,
-    variant: "orange",
-    tone: "ds-bg-orange-soft",
-  },
-  {
-    key: "export",
-    href: "/admin/reports",
-    icon: Download,
-    variant: "gray" as never,
-    tone: "ds-bg-gray-soft",
   },
 ];
 

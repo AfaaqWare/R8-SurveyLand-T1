@@ -2,13 +2,13 @@ import useStatsNumber from "./useStatsNumber";
 import useGetAllResponses from "./useGetAllResponses";
 import useGetSurvey from "./useGetSurvery";
 
-const useDashboardHome = () => {
+const useDashboardHome = (isAdmin = true) => {
   const {
     totalUsers,
     isPending: usersPending,
     isError: usersError,
     refetch: usersRefetch,
-  } = useStatsNumber();
+  } = useStatsNumber(isAdmin);
 
   const {
     draftSurveys,
@@ -28,12 +28,12 @@ const useDashboardHome = () => {
     refetch: responsesRefetch,
   } = useGetAllResponses();
 
-  const isPending = usersPending || surveysPending || responsesPending;
+  const isPending = (isAdmin && usersPending) || surveysPending || responsesPending;
 
-  const isError = usersError || surveysError || responsesError;
+  const isError = (isAdmin && usersError) || surveysError || responsesError;
 
   const retry = () => {
-    if (usersError) usersRefetch();
+    if (isAdmin && usersError) usersRefetch();
     if (surveysError) surveysRefetch();
     if (responsesError) responsesRefetch();
   };
