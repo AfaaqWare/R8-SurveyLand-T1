@@ -13,15 +13,7 @@ export default function AuthGroupLayout({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!TokenService.getToken()) return;
-    const resetFlowActive =
-      sessionStorage.getItem("resetFlow") === "reset" &&
-      Boolean(sessionStorage.getItem("resetEmail"));
-    const flowRoutes = ["/otp-verify", "/reset-password", "/done"];
-    if (
-      pathname === "/sign-in" ||
-      pathname === "/sign-up" ||
-      (flowRoutes.includes(pathname) && !resetFlowActive)
-    ) {
+    if (pathname === "/sign-in" || pathname === "/sign-up") {
       router.replace("/");
     }
   }, [router, pathname]);

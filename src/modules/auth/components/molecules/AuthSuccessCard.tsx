@@ -56,7 +56,7 @@ export default function AuthSuccessCard({
 
       {/* Action */}
       <Button
-        onClick={() => router.push("/login")}
+        onClick={() => router.push("/sign-in")}
         className="mt-1 min-w-31.25"
       >
         {t("returnToLogin")}
