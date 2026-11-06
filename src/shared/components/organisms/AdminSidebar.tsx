@@ -34,7 +34,7 @@ export default function AdminSidebar() {
 
   return (
     <>
-      <MobileSidebar openLabel={t("actions.openSidebar")} closeLabel={t("actions.closeSidebar")}>
+      <MobileSidebar closeLabel={t("actions.closeSidebar")}>
         {renderAdminContent}
       </MobileSidebar>
 

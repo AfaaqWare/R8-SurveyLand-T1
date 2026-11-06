@@ -91,7 +91,7 @@ export default function AdminSidebarContent({
   return (
     <div className="flex min-h-full flex-col pb-4">
       {/* Profile Section */}
-      <div className="sidebar-profile-section mt-2">
+      <div className="sidebar-profile-section lg:mt-5">
         <span className="sidebar-profile-avatar relative block">
           <AppImage
             src={profile?.image || defaultAvatar}
@@ -120,7 +120,7 @@ export default function AdminSidebarContent({
       </div>
 
       {/* Navigation */}
-      <nav aria-label={t("actions.navigationLabel")}>
+      <nav aria-label={t("actions.navigationLabel")} className="flex flex-1 flex-col">
         {/* Dashboard */}
         <div className="sidebar-nav">
           <SidebarNavigationLink
@@ -266,43 +266,45 @@ export default function AdminSidebarContent({
 
         </div>
 
-        <div className="sidebar-divider" />
+        <div className="mt-auto">
+          <div className="sidebar-divider" />
 
-        {/* Others */}
-        <p className="sidebar-section-label">{t("sections.others")}</p>
+          {/* Others */}
+          <p className="sidebar-section-label">{t("sections.others")}</p>
 
-        <div className="sidebar-nav">
-          <SidebarNavigationLink
-            href="/admin/profile"
-            label={t("items.profile")}
-            icon={
-              <Icon
-                IconComponent={User}
-                size={20}
-                variant="secondary"
-                className={iconClassName(isActive("/admin/profile"))}
-              />
-            }
-            isActive={isActive("/admin/profile")}
-            onNavigate={onNavigate}
-          />
-
-          {/* Logout */}
-          <button
-            type="button"
-            onClick={onLogout}
-            disabled={isLogoutPending}
-            className="sidebar-nav-item sidebar-logout disabled:opacity-50"
-          >
-            <Icon
-              IconComponent={LogOut}
-              size={20}
-              color="var(--color-error)"
-              className="sidebar-nav-icon"
+          <div className="sidebar-nav">
+            <SidebarNavigationLink
+              href="/admin/profile"
+              label={t("items.profile")}
+              icon={
+                <Icon
+                  IconComponent={User}
+                  size={20}
+                  variant="secondary"
+                  className={iconClassName(isActive("/admin/profile"))}
+                />
+              }
+              isActive={isActive("/admin/profile")}
+              onNavigate={onNavigate}
             />
 
-            <span>{t("items.logout")}</span>
-          </button>
+            {/* Logout */}
+            <button
+              type="button"
+              onClick={onLogout}
+              disabled={isLogoutPending}
+              className="sidebar-nav-item sidebar-logout disabled:opacity-50"
+            >
+              <Icon
+                IconComponent={LogOut}
+                size={20}
+                color="var(--color-error)"
+                className="sidebar-nav-icon"
+              />
+
+              <span>{t("items.logout")}</span>
+            </button>
+          </div>
         </div>
       </nav>
     </div>

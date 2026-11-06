@@ -1,35 +1,29 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
-import { useLocale } from "next-intl";
+import { useEffect } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
+import Link from "../atoms/Link";
 import Button from "../atoms/Button";
 import Icon from "../atoms/Icon";
 
-import { Menu, X } from "@/assets/icons/icons";
+import { useMobileNav } from "../organisms/MobileNavProvider";
+import { NAV_LINKS } from "@/shared/utils/navLinks";
+import { X } from "@/assets/icons/icons";
 
 type Props = {
   children: (onNavigate: () => void) => ReactNode;
-  openLabel: string;
   closeLabel: string;
 };
 
-export default function MobileSidebar({
-  children,
-  openLabel,
-  closeLabel,
-}: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function MobileSidebar({ children, closeLabel }: Props) {
+  const { isOpen, sidebarId, close: closeSidebar } = useMobileNav();
 
   const locale = useLocale();
   const isArabic = locale === "ar";
 
-  const sidebarId = useId();
-
-  const closeSidebar = () => {
-    setIsOpen(false);
-  };
+  const t = useTranslations("publicPages.navbar");
 
   useEffect(() => {
     if (!isOpen) return;
@@ -45,26 +39,10 @@ export default function MobileSidebar({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, closeSidebar]);
 
   return (
     <>
-      {/* Menu Button */}
-      <Button
-        type="button"
-        aria-label={openLabel}
-        aria-expanded={isOpen}
-        aria-controls={sidebarId}
-        onClick={() => setIsOpen(true)}
-        className="ds-bg-alt ds-border-color ds-shadow-sm fixed start-4 top-4 z-50 rounded-md border p-2 lg:hidden"
-      >
-        <Icon
-          IconComponent={Menu}
-          size={20}
-          variant="primary"
-        />
-      </Button>
-
       {/* Overlay */}
       {isOpen && (
         <button
@@ -79,12 +57,8 @@ export default function MobileSidebar({
       <aside
         id={sidebarId}
         aria-hidden={!isOpen}
-        className={`ds-bg-alt ds-border-color fixed inset-y-0 start-0 z-50 flex h-screen w-80 max-w-[85vw] flex-col overflow-y-auto dashboard-sidebar-scrollbar border-e transition-transform duration-300 ease-out lg:hidden ${
-          isOpen
-            ? "translate-x-0"
-            : isArabic
-              ? "translate-x-full"
-              : "-translate-x-full"
+        className={`ds-bg-alt ds-border-color dashboard-sidebar-scrollbar fixed inset-y-0 start-0 z-50 flex h-screen w-80 max-w-[85vw] flex-col overflow-y-auto border-e transition-transform duration-300 ease-out lg:hidden ${
+          isOpen ? "translate-x-0" : isArabic ? "translate-x-full" : "-translate-x-full"
         }`}
       >
         {/* Close Button */}
@@ -95,13 +69,25 @@ export default function MobileSidebar({
             onClick={closeSidebar}
             className="rounded-md p-2"
           >
-            <Icon
-              IconComponent={X}
-              size={20}
-              variant="primary"
-            />
+            <Icon IconComponent={X} size={20} variant="primary" />
           </Button>
         </div>
+
+        {/* Public site navigation — keeps the main routing reachable from the dashboard */}
+        <nav aria-label="Main navigation" className="ds-border-color shrink-0 border-b px-4 pb-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
+            {NAV_LINKS.map(link => (
+              <Link
+                key={link.key}
+                href={link.href}
+                onClick={closeSidebar}
+                className="text-sm font-medium text-gray-600 no-underline! transition-colors hover:text-cyan-400 dark:text-gray-300 dark:hover:text-cyan-400"
+              >
+                {t(link.key)}
+              </Link>
+            ))}
+          </div>
+        </nav>
 
         {/* Injected Sidebar Content */}
         {children(closeSidebar)}

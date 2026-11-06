@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import NextLink from "next/link";
 import { useTranslations } from "next-intl";
-import { ChevronDown, LayoutDashboard, LogOut } from "@/assets/icons/icons";
+import { ChevronDown, LayoutDashboard, LogOut, User } from "@/assets/icons/icons";
 import { defaultAvatar } from "@/assets/images/images";
 import { cn } from "@/lib/cn";
 import Icon from "@/shared/components/atoms/Icon";
@@ -91,6 +91,16 @@ export default function DropdownProfile({ onLogout }: DropdownProfileProps) {
           >
             <Icon IconComponent={LayoutDashboard} size={18} />
             {t("dashboard")}
+          </NextLink>
+
+          <NextLink
+            href="/profile"
+            role="menuitem"
+            onClick={() => setIsOpen(false)}
+            className="ds-text-primary flex items-center gap-2 px-4 py-3 text-sm transition-colors hover:bg-[var(--color-bg-card)]"
+          >
+            <Icon IconComponent={User} size={18} />
+            {t("profile")}
           </NextLink>
 
           <button
