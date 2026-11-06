@@ -22,18 +22,3 @@ export const authSheetRoutes: AuthRoute[] = [
   { path: "/sign-in", i18nKey: "signIn", ctaPath: "/sign-up", sheetFirst: false },
   { path: "/sign-up", i18nKey: "signUp", ctaPath: "/sign-in", sheetFirst: true },
 ];
-
-export const footerList1 = [
-  { id: 1, key: "footerLists.footerList1.element1.key", path: "/" },
-  { id: 2, key: "footerLists.footerList1.element2.key", path: "/templates" },
-  { id: 3, key: "footerLists.footerList1.element3.key", path: "/pricing" },
-  { id: 4, key: "footerLists.footerList1.element4.key", path: "/integrations" },
-];
-
-export const footerList2 = [
-  { id: 1, key: "footerLists.footerList2.element1.key", path: "/help-center" },
-  { id: 2, key: "footerLists.footerList2.element2.key", path: "/Terms-of-services" },
-  { id: 3, key: "footerLists.footerList2.element3.key", path: "/privacy-policy" },
-  { id: 4, key: "footerLists.footerList2.element4.key", path: "/refund-policy" },
-  { id: 5, key: "footerLists.footerList2.element5.key", path: "/faqs" },
-];

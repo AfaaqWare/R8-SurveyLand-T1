@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import LoadingState from "@/core/ui-states/LoadingState";
 import { TokenService } from "@/services/tokenService";
 import useGetProfile from "@/modules/auth/hooks/useGetProfile";
 
@@ -52,7 +53,7 @@ export default function AdminRoute({
     router.replace("/sign-in");
   }, [data, isLoading, isError, router]);
 
-  if (!isAuthorized) return null;
+  if (!isAuthorized) return <LoadingState />;
 
   return <>{children}</>;
 }

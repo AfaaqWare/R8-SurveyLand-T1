@@ -40,23 +40,15 @@ export default function ProtectedRoute({
     // 4. Check the verified user role
     const role = data.role?.trim().toUpperCase();
 
-    // 5. Allow regular users
-    if (role === "USER") {
+    // 5. Both regular users and admins can access user routes
+    if (role === "USER" || role === "ADMIN") {
       setIsAuthorized(true);
       return;
     }
 
-    // 6. Redirect Admin users
+    // 6. Reject unknown roles
     setIsAuthorized(false);
-
-    if (role === "ADMIN") {
-      router.replace("/admin");
-      return;
-    }
-
-    // 7. Reject unknown roles
     router.replace("/sign-in");
-
   }, [data, isLoading, isError, router]);
 
   // Show loading while checking authentication
