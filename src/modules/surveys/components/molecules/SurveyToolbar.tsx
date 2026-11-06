@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Search } from "@/assets/icons/icons";
 import { cn } from "@/lib/cn";
+import { useTranslations } from "next-intl";
 
 const tabs = ["All", "Draft", "Published", "Closed"] as const;
 const orders = ["Newest First", "Oldest First"] as const;
@@ -27,6 +28,7 @@ export default function SurveyToolbar({
   onQueryChange,
   onOrderChange,
 }: Props) {
+  const t = useTranslations("mySurveys.toolbar");
   const [isOrderOpen, setIsOrderOpen] = useState(false);
   const orderRef = useRef<HTMLDivElement>(null);
 
@@ -45,29 +47,29 @@ export default function SurveyToolbar({
 
   return (
     <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-      <div className="ds-bg-card ds-rounded-lg flex w-fit items-center gap-1 p-1">
+      <div className="ds-bg-card ds-border-card ds-rounded-lg flex w-fit items-center gap-1 border p-1">
         {tabs.map(item => (
           <button
             key={item}
             type="button"
             onClick={() => onTabChange(item)}
             className={cn(
-              "ds-text-sm ds-rounded-md cursor-pointer px-4 py-2 font-medium",
+              "ds-text-sm ds-text-primary ds-rounded-md cursor-pointer px-4 py-2 font-medium transition-colors focus-visible:outline-2 focus-visible:outline-[var(--color-primary)]",
               tab === item ? "ds-primary-200 ds-text-primary" : "ds-text-secondary"
             )}
           >
-            {item}
+            {t(`tabs.${item.toLowerCase()}`)}
           </button>
         ))}
       </div>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <label className="ds-bg-card ds-rounded-lg relative flex h-11 min-w-56 items-center">
+        <label className="ds-bg-card ds-border-card ds-rounded-lg relative flex h-11 min-w-56 items-center border">
           <Search size={16} className="ds-text-secondary pointer-events-none absolute start-3" />
           <input
             value={query}
             onChange={event => onQueryChange(event.target.value)}
-            placeholder="Search Surveys"
+            placeholder={t("searchPlaceholder")}
             className="ds-text-sm ds-text-primary h-full w-full bg-transparent ps-9 pe-3 outline-none placeholder:text-[var(--color-text-secondary)]"
           />
         </label>
@@ -78,16 +80,16 @@ export default function SurveyToolbar({
             onClick={() => setIsOrderOpen(open => !open)}
             aria-expanded={isOrderOpen}
             aria-haspopup="listbox"
-            className="ds-bg-card ds-text-primary ds-text-sm ds-rounded-lg flex h-11 cursor-pointer items-center gap-8 px-4"
+            className="ds-bg-card ds-border-card ds-text-primary ds-text-sm ds-rounded-lg flex h-11 cursor-pointer items-center gap-8 border px-4 focus-visible:outline-2 focus-visible:outline-[var(--color-primary)]"
           >
-            {order}
+            {t(`orders.${order === "Newest First" ? "newest" : "oldest"}`)}
             <ChevronDown size={16} className={cn("transition-transform", isOrderOpen && "rotate-180")} />
           </button>
 
           {isOrderOpen && (
             <div
               role="listbox"
-              className="ds-bg-card absolute top-12 right-0 z-20 w-full overflow-hidden rounded-xl py-1 shadow-lg"
+              className="ds-bg-card ds-border-card absolute top-12 right-0 z-20 w-full overflow-hidden rounded-xl border py-1 shadow-lg"
             >
               {orders.map(item => (
                 <button
@@ -104,7 +106,7 @@ export default function SurveyToolbar({
                     item === order ? "ds-primary-200 ds-text-primary" : "ds-text-secondary"
                   )}
                 >
-                  {item}
+                  {t(`orders.${item === "Newest First" ? "newest" : "oldest"}`)}
                 </button>
               ))}
             </div>
