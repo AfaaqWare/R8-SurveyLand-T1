@@ -64,6 +64,7 @@
       "signup": "Sign Up",
       "account": "Account",
       "dashboard": "Dashboard",
+      "profile": "Profile",
       "logout": "Logout",
       "logoutSuccess": "You have been logged out successfully"
     },
@@ -1003,44 +1004,6 @@
       "noResultsText": "Try changing or clearing your filters.",
       "clear": "Clear filters"
     },
-    "createSurvey": {
-      "title": "Create Survey",
-      "subtitle": "Create a new survey and start collecting responses.",
-      "fields": {
-        "title": {
-          "label": "Title",
-          "hint": "Give your survey a clear and descriptive title.",
-          "placeholder": "e.g. Customer Satisfaction Survey"
-        },
-        "description": {
-          "label": "Description",
-          "hint": "Briefly explain what your survey is about.",
-          "placeholder": "e.g. Help us improve by sharing your experience"
-        },
-        "deadline": {
-          "label": "Deadline",
-          "hint": "Choose the last date for receiving responses"
-        }
-      },
-      "image": {
-        "dragTitle": "Drag and drop an image here",
-        "or": "Or",
-        "choose": "Choose file",
-        "hint": "PNG, JPG or WEBP (Max. 1MB)",
-        "remove": "Remove image"
-      },
-      "submit": "Create Survey",
-      "submitting": "Creating...",
-      "errors": {
-        "titleRequired": "Title is required",
-        "descriptionRequired": "Description is required",
-        "deadlineRequired": "Deadline is required",
-        "deadlinePast": "Deadline can't be in the past",
-        "imageType": "Image must be PNG, JPG or WEBP",
-        "imageSize": "Image must be 1MB or smaller",
-        "createFailed": "Could not create the survey. Please try again."
-      }
-    },
     "createNewPasswordFromLayout": {
       "title": "Create New Password",
       "description": "Please enter your new password below. Make sure it's strong and secure.",
@@ -1071,100 +1034,138 @@
       },
       "backToSignIn": "Back to Sign In"
     },
-    "DashboardProfile": {
-      "title": "Account Information",
-      "subtitle": "Update your personal information to keep your account up to date",
-      "avatarAlt": "Profile photo",
-      "uploadPhoto": "Upload New Photo",
-      "removePhoto": "Remove photo",
-      "userName": "User Name",
-      "phoneNumber": "Phone Number",
-      "email": "E-mail",
-      "country": "Country",
-      "password": "Password",
-      "language": "Language",
-      "countryNetherlands": "Netherlands Antilles",
-      "countryEgypt": "Egypt",
-      "countryUnitedStates": "United States",
-      "countryUnitedKingdom": "United Kingdom",
-      "languageEnglish": "English",
-      "languageArabic": "Arabic",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "saveChanges": "Save Changes",
-      "apiNotConnected": "The profile update API is not connected yet. Your changes have not been sent to the server.",
-      "userNameMin": "Name must contain at least 2 characters.",
-      "userNameMax": "Name cannot exceed 50 characters.",
-      "phoneInvalid": "Enter a valid phone number.",
-      "emailInvalid": "Enter a valid email address.",
-      "countryRequired": "Please select a country.",
-      "passwordMin": "Password must be at least 12 characters",
-      "passwordUppercase": "Password must contain an uppercase letter",
-      "passwordLowercase": "Password must contain a lowercase letter",
-      "passwordNumber": "Password must contain a number",
-      "passwordSpecial": "Password must contain a special character",
-      "phoneRequired": "Phone number is required",
-      "emailRequired": "Email address is required",
-      "photoInvalid": "Please select a valid image file",
-      "photoInvalidType": "Only JPG, PNG, and WEBP images are allowed",
-      "photoTooLarge": "Image size must not exceed 5 MB",
-      "countryPlaceholder": "Select a country",
-      "passwordRequired": "Password is required"
-    },
     "AuthSuccessCard": {
       "title": "DONE",
       "passwordResetDescription": "Password reset complete! Use the button below to log in.",
       "accountReactivationDescription": "Your account has been reactivated successfully! Use the button below to log in.",
       "returnToLogin": "Return to Login"
+    }
+  },
+  "UserDashboardSidebar": {
+    "profile": {
+      "loading": "Loading...",
+      "fallbackName": "User"
     },
-    "AdminDashboard": {
-      "profile": {
-        "loading": "Loading...",
-        "fallbackName": "Administrator"
+    "items": {
+      "dashboard": "Dashboard",
+      "mySurveys": "My Surveys",
+      "createSurvey": "Create Survey",
+      "responses": "Responses",
+      "profile": "Profile",
+      "logout": "Log out"
+    },
+    "sections": {
+      "others": "Others"
+    },
+    "actions": {
+      "navigationLabel": "User navigation"
+    }
+  },
+  "AdminDashboard": {
+    "profile": {
+      "loading": "Loading...",
+      "fallbackName": "Administrator"
+    },
+    "sections": {
+      "userManagement": "User Management",
+      "surveyManagement": "Survey Management",
+      "responseManagement": "Response Management",
+      "others": "Others"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "allUsers": "All Users",
+      "roles": "Roles & Permission",
+      "allSurveys": "All Surveys",
+      "draftSurveys": "Draft Surveys",
+      "publishedSurveys": "Published Surveys",
+      "closedSurveys": "Closed Surveys",
+      "responses": "Responses",
+      "profile": "Profile",
+      "logout": "Log out"
+    },
+    "actions": {
+      "openSidebar": "Open navigation",
+      "closeSidebar": "Close navigation",
+      "navigationLabel": "Admin navigation"
+    }
+  },
+  "DashboardProfile": {
+    "title": "Account Information",
+    "subtitle": "Update your personal information to keep your account up to date",
+    "avatarAlt": "Profile photo",
+    "uploadPhoto": "Upload New Photo",
+    "removePhoto": "Remove photo",
+    "userName": "User Name",
+    "phoneNumber": "Phone Number",
+    "email": "E-mail",
+    "country": "Country",
+    "password": "Password",
+    "language": "Language",
+    "countryNetherlands": "Netherlands Antilles",
+    "countryEgypt": "Egypt",
+    "countryUnitedStates": "United States",
+    "countryUnitedKingdom": "United Kingdom",
+    "languageEnglish": "English",
+    "languageArabic": "Arabic",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "saveChanges": "Save Changes",
+    "apiNotConnected": "The profile update API is not connected yet. Your changes have not been sent to the server.",
+    "userNameMin": "Name must contain at least 2 characters.",
+    "userNameMax": "Name cannot exceed 50 characters.",
+    "phoneInvalid": "Enter a valid phone number.",
+    "emailInvalid": "Enter a valid email address.",
+    "countryRequired": "Please select a country.",
+    "passwordMin": "Password must be at least 12 characters",
+    "passwordUppercase": "Password must contain an uppercase letter",
+    "passwordLowercase": "Password must contain a lowercase letter",
+    "passwordNumber": "Password must contain a number",
+    "passwordSpecial": "Password must contain a special character",
+    "phoneRequired": "Phone number is required",
+    "emailRequired": "Email address is required",
+    "photoInvalid": "Please select a valid image file",
+    "photoInvalidType": "Only JPG, PNG, and WEBP images are allowed",
+    "photoTooLarge": "Image size must not exceed 5 MB",
+    "countryPlaceholder": "Select a country",
+    "passwordRequired": "Password is required"
+  },
+  "createSurvey": {
+    "title": "Create Survey",
+    "subtitle": "Create a new survey and start collecting responses.",
+    "fields": {
+      "title": {
+        "label": "Title",
+        "hint": "Give your survey a clear and descriptive title.",
+        "placeholder": "e.g. Customer Satisfaction Survey"
       },
-      "sections": {
-        "userManagement": "User Management",
-        "surveyManagement": "Survey Management",
-        "responseManagement": "Response Management",
-        "others": "Others"
+      "description": {
+        "label": "Description",
+        "hint": "Briefly explain what your survey is about.",
+        "placeholder": "e.g. Help us improve by sharing your experience"
       },
-      "items": {
-        "dashboard": "Dashboard",
-        "allUsers": "All Users",
-        "roles": "Roles & Permission",
-        "allSurveys": "All Surveys",
-        "draftSurveys": "Draft Surveys",
-        "publishedSurveys": "Published Surveys",
-        "closedSurveys": "Closed Surveys",
-        "responses": "Responses",
-        "profile": "Profile",
-        "logout": "Log out"
-      },
-      "actions": {
-        "openSidebar": "Open navigation",
-        "closeSidebar": "Close navigation",
-        "navigationLabel": "Admin navigation"
+      "deadline": {
+        "label": "Deadline",
+        "hint": "Choose the last date for receiving responses"
       }
     },
-    "UserDashboardSidebar": {
-      "profile": {
-        "loading": "Loading...",
-        "fallbackName": "User"
-      },
-      "items": {
-        "dashboard": "Dashboard",
-        "mySurveys": "My Surveys",
-        "createSurvey": "Create Survey",
-        "responses": "Responses",
-        "profile": "Profile",
-        "logout": "Log out"
-      },
-      "sections": {
-        "others": "Others"
-      },
-      "actions": {
-        "navigationLabel": "User navigation"
-      }
+    "image": {
+      "dragTitle": "Drag and drop an image here",
+      "or": "Or",
+      "choose": "Choose file",
+      "hint": "PNG, JPG or WEBP (Max. 1MB)",
+      "remove": "Remove image"
+    },
+    "submit": "Create Survey",
+    "submitting": "Creating...",
+    "errors": {
+      "titleRequired": "Title is required",
+      "descriptionRequired": "Description is required",
+      "deadlineRequired": "Deadline is required",
+      "deadlinePast": "Deadline can't be in the past",
+      "imageType": "Image must be PNG, JPG or WEBP",
+      "imageSize": "Image must be 1MB or smaller",
+      "createFailed": "Could not create the survey. Please try again."
     }
   }
 }
