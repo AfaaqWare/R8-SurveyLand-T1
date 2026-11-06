@@ -1,9 +1,11 @@
 import { aboutHero } from "@/assets/images/images";
+import Link from "@/shared/components/atoms/Link";
 import Button from "@/shared/components/atoms/Button";
 import Image from "@/shared/components/atoms/Image";
 import Text from "@/shared/components/atoms/Text";
 import Title from "@/shared/components/atoms/Title";
 import { getTranslations } from "next-intl/server";
+import CreateSurveyButton from "../molecules/CreateSurveyButton";
 
 export default async function AboutHero() {
   const t = await getTranslations("publicPages.about.hero");
@@ -21,12 +23,12 @@ export default async function AboutHero() {
             {t("description")}
           </Text>
           <div className="flex flex-wrap items-center gap-3">
-            <Button variant="primary" size="md" isRounded>
-              {t("explore")}
-            </Button>
-            <Button variant="outline" size="md" isRounded>
-              {t("create")}
-            </Button>
+            <Link href="/pricing" className="no-underline">
+              <Button variant="primary" size="md" isRounded>
+                {t("explore")}
+              </Button>
+            </Link>
+            <CreateSurveyButton />
           </div>
         </div>
         <Image

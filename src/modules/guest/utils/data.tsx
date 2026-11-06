@@ -19,20 +19,12 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     id: "product",
     links: [
       { key: "home", href: "/" },
-      { key: "templates", href: "/templates" },
       { key: "pricing", href: "/pricing" },
-      { key: "integrations", href: "/integrations" },
     ],
   },
   {
     id: "support",
-    links: [
-      { key: "helpCenter", href: "/help-center" },
-      { key: "terms", href: "/terms-of-service" },
-      { key: "privacy", href: "/privacy-policy" },
-      { key: "refund", href: "/refund-policy" },
-      { key: "faqs", href: "/faqs" },
-    ],
+    links: [{ key: "faqs", href: "/faqs" }],
   },
 ];
 

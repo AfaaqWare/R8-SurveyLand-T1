@@ -103,6 +103,10 @@
         "label": "إجمالي قيمة التداول"
       },
       "team": {
+        "title": "قائد <highlight>الفريق</highlight>",
+        "subtitle": "انضم إلى الفريق",
+        "description": "تأسست Survey Land عام 2012، وأصبحت اليوم شركة تعمل عن بُعد بفريق دولي يضم أكثر من 250 موظفاً. نقدم تعويضات تنافسية ومزايا وفرصاً وظيفية تدعم نموك المهني.",
+        "button": "تصفح الوظائف المتاحة",
         "imageAlt": "فريق Survey Land يحتفل معاً"
       },
       "howItWorks": {
@@ -507,6 +511,35 @@
     "copyright": "© {year} SurveyLand. جميع الحقوق محفوظة"
   },
   "mySurveys": {
+    "title": "استبياناتي",
+    "subtitle": "أدِر استبياناتك وعدّلها وتابعها.",
+    "createSurvey": "إنشاء استبيان",
+    "untitled": "استبيان بلا عنوان",
+    "card": {
+      "coverAlt": "غلاف الاستبيان",
+      "viewDetails": "عرض تفاصيل {title}",
+      "settings": "إعدادات الاستبيان",
+      "questions": "الأسئلة",
+      "responses": "الردود",
+      "deadline": "الموعد النهائي",
+      "updated": "آخر تحديث",
+      "preview": "معاينة",
+      "edit": "تعديل",
+      "share": "مشاركة"
+    },
+    "toolbar": {
+      "tabs": {
+        "all": "الكل",
+        "draft": "مسودة",
+        "published": "منشور",
+        "closed": "مغلق"
+      },
+      "searchPlaceholder": "البحث في الاستبيانات",
+      "orders": {
+        "newest": "الأحدث أولاً",
+        "oldest": "الأقدم أولاً"
+      }
+    },
     "pagination": {
       "showing": "عرض {start} إلى {end} من",
       "surveys": "الاستبيانات",

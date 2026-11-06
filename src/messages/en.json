@@ -92,8 +92,8 @@
       "hero": {
         "title": "Simple Smart <highlight>Surveys</highlight>",
         "description": "Create surveys, share them easily, and get real feedback. Survey Land lets you build MCQs, comment boxes, and more — all in one simple platform.",
-        "explore": "Exolore",
-        "create": "create",
+        "explore": "Explore",
+        "create": "Create",
         "imageAlt": "People building a survey together"
       },
       "treading": {
@@ -103,6 +103,10 @@
         "label": "ALL TIME TRADE VALUE"
       },
       "team": {
+        "title": "Team <highlight>Leader</highlight>",
+        "subtitle": "Join the team",
+        "description": "Founded in 2012, Survey Land is now a remote-first company with an international team of over 250 employees. We offer competitive compensation, benefits, and career opportunities to support your professional growth.",
+        "button": "Browse Open Roles",
         "imageAlt": "The Survey Land team celebrating together"
       },
       "howItWorks": {
@@ -507,6 +511,35 @@
     "copyright": "©{year} SurveyLand. All rights reserved"
   },
   "mySurveys": {
+    "title": "My Surveys",
+    "subtitle": "Manage, edit and track all your surveys.",
+    "createSurvey": "Create Survey",
+    "untitled": "Untitled survey",
+    "card": {
+      "coverAlt": "Survey cover",
+      "viewDetails": "View details for {title}",
+      "settings": "Survey settings",
+      "questions": "Questions",
+      "responses": "Responses",
+      "deadline": "Deadline",
+      "updated": "Updated",
+      "preview": "Preview",
+      "edit": "Edit",
+      "share": "Share"
+    },
+    "toolbar": {
+      "tabs": {
+        "all": "All",
+        "draft": "Draft",
+        "published": "Published",
+        "closed": "Closed"
+      },
+      "searchPlaceholder": "Search surveys",
+      "orders": {
+        "newest": "Newest first",
+        "oldest": "Oldest first"
+      }
+    },
     "pagination": {
       "showing": "Showing {start} to {end} of",
       "surveys": "Surveys",
