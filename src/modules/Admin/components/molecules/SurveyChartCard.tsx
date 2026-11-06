@@ -34,10 +34,10 @@ const SurveyChartCard = ({ title, counts, startAngle, centerIcon }: SurveyChartC
   }));
 
   return (
-    <Card className="ds-border-card ds-bg-card flex min-w-0 flex-col gap-3 p-4 shadow-none">
+    <Card className="ds-border-card ds-bg-card @container flex min-w-0 flex-col gap-3 overflow-hidden p-4 shadow-none">
       <Title size="sm">{title}</Title>
 
-      <div className="flex min-w-0 items-center justify-center gap-6 py-2">
+      <div className="flex min-w-0 flex-col items-center justify-center gap-4 py-2 @sm:flex-row @sm:gap-6">
         <SurveyChart data={chartData} label={title} startAngle={startAngle}>
           {centerIcon ? (
             <Icon IconComponent={centerIcon} size={20} />

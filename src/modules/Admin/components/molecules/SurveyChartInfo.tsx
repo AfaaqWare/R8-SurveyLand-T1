@@ -9,11 +9,11 @@ interface Props {
 
 const SurveyChartInfo = ({ items }: { items: Props[] }) => {
   return (
-    <ul className="flex min-w-0 flex-col gap-2">
+    <ul className="flex w-full min-w-0 flex-1 flex-col gap-2">
       {items.map(item => (
-        <li key={item.label} className="flex items-center gap-2">
+        <li key={item.label} className="flex min-w-0 items-center gap-2">
           <span className={`size-2 shrink-0 rounded-full ${item.dotClass}`} />
-          <Text size="xs" className="flex-1 font-medium">
+          <Text size="xs" className="min-w-0 flex-1 truncate font-medium">
             {item.label}
           </Text>
           <Text size="xs" className="text-end font-medium">
