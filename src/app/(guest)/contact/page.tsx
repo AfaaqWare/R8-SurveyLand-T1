@@ -4,19 +4,11 @@ import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const tNav = await getTranslations({ locale, namespace: "publicPages.navbar" });
-  const tContact = await getTranslations({ locale, namespace: "publicPages.contact" });
-
-  return getSeoMetadata({
-    title: `${tNav("contact")} | Survey Land`,
-    description: tContact("description"),
-  });
+export async function generateMetadata(): Promise<Metadata> {
+  const tNav = await getTranslations("publicPages.navbar");
+  const tContact = await getTranslations("publicPages.contact");
+  return getSeoMetadata({ title: `${tNav("contact")} | Survey Land`, description: tContact("description") });
 }
 
 export default function page() {
