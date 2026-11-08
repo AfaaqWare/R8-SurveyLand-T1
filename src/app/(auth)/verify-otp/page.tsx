@@ -1,6 +1,24 @@
 import React from "react";
 import VerifyOtp from "@/modules/auth/verify-otp/components/organisms/VerifyForm";
 
-export default function verifyOtp() {
+import { Metadata } from "next";
+import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
+import { getTranslations } from "next-intl/server";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "verifyOtp" });
+
+  return getSeoMetadata({
+    title: `${t("title")} | Survey Land`,
+    description: t("subtitle"),
+    noIndex: true, 
+  });
+}
+export default function VerifyOtpPage() {
   return <VerifyOtp />;
 }

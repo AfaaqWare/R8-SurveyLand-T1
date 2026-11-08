@@ -4,7 +4,9 @@ import { cookies } from "next/headers";
 import "./globals.css";
 import AppProviders from "@/providers/AppProviders";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
+import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,21 +18,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Survey Land",
-  description: "Built by @AfaaqWare team",
+type Props = {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Footer.brand" });
+  const brandName = `${t("first")}${t("second")}`;
+
+  return getSeoMetadata({
+    title: `Survey Land | ${brandName}`,
+    description: "Build custom forms, share them, and analyze responses easily.",
+  });
+}
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
-  const store = await cookies();
-  const locale = store.get("locale")?.value || "en";
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const dir = locale === "ar" ? "rtl" : "ltr";
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
@@ -38,7 +52,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased overflow-x-hidden`}
         suppressHydrationWarning
       >
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <AppProviders>{children}</AppProviders>
         </NextIntlClientProvider>
       </body>

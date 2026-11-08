@@ -8,6 +8,10 @@ import Text from "@/shared/components/atoms/Text";
 
 import { Check, Heart } from "@/assets/icons/icons";
 import surveyDone from "@/assets/images/SyrveyDone.png"
+import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
+import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
+
 
 type ContactUsThankYouProps = {
   title?: string;
@@ -19,6 +23,20 @@ type ContactUsThankYouProps = {
   actionHref?: string;
 };
 
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const tNav = await getTranslations({ locale, namespace: "publicPages.navbar" });
+  const tThank = await getTranslations({ locale, namespace: "thank" });
+
+  return getSeoMetadata({
+    title: `${tNav("Thank")} | Survey Land`,
+    description: tThank("subtitle"),
+  });
+}
 export default function ContactUsThankYou({
   title,
   subtitle,
