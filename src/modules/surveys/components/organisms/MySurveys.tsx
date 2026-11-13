@@ -35,7 +35,7 @@ function toUpdatedAt(value?: string) {
 function toCard(survey: Survey, untitledLabel: string) {
   return {
     id: survey.id,
-    image: survey.cover || graduationSurveyCover,
+    image: survey.cover || null,
     status: toStatus(survey.status),
     title: survey.title || untitledLabel,
     description: survey.description || "",
@@ -108,7 +108,10 @@ export default function MySurveys() {
           </Text>
         </div>
 
-        <Button className="h-11 shrink-0 px-5">
+        <Button
+          className="h-11 shrink-0 px-5"
+          onClick={() => router.push(`/dashboard/create-survey`)}
+        >
           <Plus size={16} />
           {t("createSurvey")}
         </Button>
@@ -146,7 +149,9 @@ export default function MySurveys() {
                     deadline={survey.deadline}
                     updatedAt={survey.updatedAt}
                     surveyId={survey.id}
-                    onPreview={() => router.push(`/dashboard/surveys/${survey.id}`)}
+                    onDetails={() => router.push(`/dashboard/surveys/${survey.id}`)}
+                    onPreview={() => router.push(`/dashboard/surveys/${survey.id}/preview`)}
+                    onEdit={() => router.push(`/dashboard/surveys/${survey.id}/editsurvey`)}
                   />
                 ))}
               </div>

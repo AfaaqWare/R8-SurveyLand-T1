@@ -11,6 +11,7 @@ import ResponsesStats from "../molecules/ResponsesStats";
 import ResponsesTable from "../molecules/ResponsesTable";
 import ResponsesToolbar from "../molecules/ResponsesToolbar";
 import StateMessage from "../molecules/StateMessage";
+import { useRouter } from "next/navigation";
 
 function TableSkeleton() {
   return (
@@ -23,6 +24,7 @@ function TableSkeleton() {
 }
 
 export default function ResponsesSection() {
+  const router = useRouter();
   const t = useTranslations("responses");
   const tTable = useTranslations("responses.table");
   const table = useResponsesTable();
@@ -84,7 +86,11 @@ export default function ResponsesSection() {
   } else {
     body = (
       <>
-        <ResponsesTable rows={table.rows} startIndex={table.startIndex} />
+        <ResponsesTable
+          rows={table.rows}
+          startIndex={table.startIndex}
+          onView={response => router.push(`/dashboard/responses/${response.id}/preview`)}
+        />
         <ResponsesPagination
           page={table.page}
           pageCount={table.pageCount}

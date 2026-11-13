@@ -525,7 +525,10 @@
       "updated": "Updated",
       "preview": "Preview",
       "edit": "Edit",
-      "share": "Share"
+      "details": "Details",
+      "copySuccess": "Survey link copied successfully!",
+      "publish": "Publish",
+      "copyLink": "Copy Link"
     },
     "toolbar": {
       "tabs": {
@@ -664,7 +667,8 @@
         "answers": {
           "title": "Survey Answers",
           "placeholder": "Write the answer here...",
-          "noQuestions": "No questions found for this survey."
+          "noQuestions": "No questions found for this survey.",
+          "noAnswer": "No answer"
         },
         "cancel": "Cancel",
         "reset": "Reset",

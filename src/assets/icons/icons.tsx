@@ -82,6 +82,7 @@ import {
   Heart,
   LockKeyhole,
   Clock,
+  ImageOff,
 } from "lucide-react";
 import { IconLayoutSidebarLeftCollapse } from "@tabler/icons-react";
 
@@ -170,4 +171,5 @@ export {
   Heart,
   LockKeyhole,
   Clock,
+  ImageOff,
 };

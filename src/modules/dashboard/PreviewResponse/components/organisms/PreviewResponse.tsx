@@ -21,16 +21,11 @@ const PreviewResponse = ({ id }: IdProps) => {
     refetch,
     notFound,
   } = useGetPreviewResponse({ id });
+
   const surveyId = previewInfo?.data?.surveyId;
+  const { data: surveyInfo, isLoading: isSurveyLoading } = useGetSurvey({ id: surveyId ?? "" });
 
-  const {
-    data: surveyInfo,
-    isError: surveyIsError,
-    isLoading: surveyIsLoading,
-    refetch: refetchSurvey,
-  } = useGetSurvey({ id: surveyId ?? "" });
-
-  if (isLoading || surveyIsLoading) {
+  if (isLoading || isSurveyLoading) {
     return <PreviewResponseSkelton />;
   }
 
@@ -45,15 +40,8 @@ const PreviewResponse = ({ id }: IdProps) => {
     );
   }
 
-  if (isError || surveyIsError || !previewInfo || !surveyInfo) {
-    return (
-      <ErrorState
-        onRetry={() => {
-          refetch();
-          refetchSurvey();
-        }}
-      />
-    );
+  if (isError || !previewInfo) {
+    return <ErrorState onRetry={() => refetch()} />;
   }
 
   return (
@@ -61,7 +49,10 @@ const PreviewResponse = ({ id }: IdProps) => {
       <SurveyHeader subtitle={t("subtitle")} title={t("title")} />
       <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
         <ResponseInfoCard data={previewInfo.data} />
-        <ResponseAnswer questions={surveyInfo.questions ?? []} answers={previewInfo.data.answers} />
+        <ResponseAnswer
+          questions={surveyInfo?.questions ?? []}
+          answers={previewInfo.data.answers}
+        />
       </div>
     </div>
   );
