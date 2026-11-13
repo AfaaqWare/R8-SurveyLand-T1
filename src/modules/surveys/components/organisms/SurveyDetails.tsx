@@ -12,6 +12,7 @@ import {
   Copy,
   Eye,
   FileText,
+  ImageOff,
   Link2,
   Pencil,
   Send,
@@ -141,15 +142,21 @@ export default function SurveyDetails({ id }: IdProps) {
       </div>
 
       <Card className="ds-border-card ds-bg-card grid gap-5 p-4 shadow-none md:grid-cols-[minmax(220px,0.8fr)_minmax(0,1.2fr)] md:items-center md:gap-8 md:p-5">
-        <div className="relative min-h-52 overflow-hidden rounded-lg bg-[var(--color-primary-100)] md:h-52">
-          <Image
-            src={survey.cover || graduationSurveyCover}
-            alt={survey.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 40vw"
-            className="object-cover"
-            priority
-          />
+        <div className="relative min-h-52 overflow-hidden rounded-lg bg-(--color-primary-100) md:h-52">
+          {survey.cover ? (
+            <Image
+              src={survey.cover}
+              alt={survey.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover"
+              priority
+            />
+          ) : (
+            <div className="flex h-full min-h-52 w-full items-center justify-center bg-gray-100 text-gray-400">
+              <ImageOff size={48} />
+            </div>
+          )}
         </div>
 
         <div className="flex min-w-0 flex-col gap-3">
@@ -244,7 +251,10 @@ export default function SurveyDetails({ id }: IdProps) {
             <h2 className="ds-text-primary text-base font-bold">
               {t("questions.title", { count: questions.length })}
             </h2>
-            <Link href={previewHref} className="ds-text-primary text-xs font-semibold hover:underline">
+            <Link
+              href={previewHref}
+              className="ds-text-primary text-xs font-semibold hover:underline"
+            >
               {t("questions.viewAll")}
             </Link>
           </div>

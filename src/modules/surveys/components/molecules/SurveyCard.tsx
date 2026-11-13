@@ -14,6 +14,7 @@ import {
   Eye,
   Pencil,
   Share2,
+  ImageOff,
 } from "@/assets/icons/icons";
 import Title from "@/shared/components/atoms/Title";
 import Text from "@/shared/components/atoms/Text";
@@ -22,7 +23,7 @@ import StatusBadge, { type StatusBadgeVariant } from "@/shared/components/atoms/
 import SurveyMenu from "./SurveyMenu";
 
 export interface SurveyCardProps {
-  image: string | StaticImageData;
+  image: string | null;
   imageAlt?: string;
   status: StatusBadgeVariant;
   title: string;
@@ -34,7 +35,7 @@ export interface SurveyCardProps {
   surveyId: string;
   onPreview?: () => void;
   onEdit?: () => void;
-  onShare?: () => void;
+  onDetails?: () => void;
 }
 
 export default function SurveyCard({
@@ -50,7 +51,7 @@ export default function SurveyCard({
   surveyId,
   onPreview,
   onEdit,
-  onShare,
+  onDetails,
 }: SurveyCardProps) {
   const t = useTranslations("mySurveys.card");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,16 +76,25 @@ export default function SurveyCard({
   return (
     <article className="ds-bg-card ds-shadow-card ds-rounded-lg flex flex-col">
       <div className="relative">
-        <div className="relative h-40 w-full overflow-hidden rounded-t-[var(--radius-lg)]">
-          {image ? (
-            <Link
-              href={`/dashboard/surveys/${surveyId}`}
-              aria-label={t("viewDetails", { title })}
-              className="block h-full w-full"
-            >
-              <AppImage src={image} alt={imageAlt || t("coverAlt")} fill className="relative h-full" />
-            </Link>
-          ) : null}
+        <div className="relative h-40 w-full overflow-hidden rounded-t-lg">
+          <Link
+            href={`/dashboard/surveys/${surveyId}`}
+            aria-label={t("viewDetails", { title })}
+            className="block h-full w-full"
+          >
+            {image ? (
+              <AppImage
+                src={image}
+                alt={imageAlt || t("coverAlt")}
+                fill
+                className="relative h-full"
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-gray-100 text-gray-400">
+                <ImageOff size={40} />
+              </div>
+            )}
+          </Link>
         </div>
 
         <div ref={menuRef} className="absolute top-3 right-3">
@@ -96,12 +106,11 @@ export default function SurveyCard({
             aria-haspopup="menu"
             className="inline-flex size-8 cursor-pointer items-center justify-center rounded-full bg-white shadow-md"
           >
-            <MoreVertical size={18} className="ds-text-primary" />
+            <MoreVertical size={18} className="ds-text-black" />
           </button>
 
           {isMenuOpen && <SurveyMenu surveyId={surveyId} />}
         </div>
-
       </div>
 
       <div className="flex flex-1 flex-col gap-3 px-4 pt-3 pb-4">
@@ -158,9 +167,9 @@ export default function SurveyCard({
             <Pencil size={16} />
             {t("edit")}
           </Button>
-          <Button variant="primary" size="sm" onClick={onShare} className="h-10 flex-1 font-bold">
+          <Button variant="primary" size="sm" onClick={onDetails} className="h-10 flex-1 font-bold">
             <Share2 size={16} />
-            {t("share")}
+            {t("details")}
           </Button>
         </div>
       </div>

@@ -9,7 +9,7 @@ import { ResponseInfoProps } from "@/modules/dashboard/types/PreviewResponse";
 
 const ResponseInfoCard = ({ data }: ResponseInfoProps) => {
   const values: Record<string, string> = {
-    surveyId: data.surveyId || "",
+    surveyId: data.id || "",
     submittedAt: new Date(data.submittedAt).toLocaleDateString() || "",
     respondentName: data.respondentName || "",
   };
