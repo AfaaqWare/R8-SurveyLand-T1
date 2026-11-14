@@ -1167,6 +1167,10 @@
     "countryPlaceholder": "Select a country",
     "passwordRequired": "Password is required"
   },
+  "createNewPassword": {
+    "title": "Create New Password",
+    "description": "Please enter your new password below. Make sure it's strong and secure."
+  },
   "createSurvey": {
     "title": "Create Survey",
     "subtitle": "Create a new survey and start collecting responses.",

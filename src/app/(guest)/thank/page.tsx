@@ -8,6 +8,10 @@ import Text from "@/shared/components/atoms/Text";
 
 import { Check, Heart } from "@/assets/icons/icons";
 import surveyDone from "@/assets/images/SyrveyDone.png"
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { resolvePageSeoMetadata, type LocaleParamsProps } from "@/core/seo/pageSeo";
+
 
 type ContactUsThankYouProps = {
   title?: string;
@@ -19,6 +23,14 @@ type ContactUsThankYouProps = {
   actionHref?: string;
 };
 
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  return resolvePageSeoMetadata({
+    params,
+    namespace: "ThankYou",
+    titleKey: "title",
+    descriptionKey: "subtitle",
+  });
+}
 export default function ContactUsThankYou({
   title,
   subtitle,
