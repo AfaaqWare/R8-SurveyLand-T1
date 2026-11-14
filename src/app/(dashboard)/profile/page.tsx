@@ -1,18 +1,12 @@
-import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
 import ProfileContent from "@/modules/dashboard/profile/components/organisms/ProfileContent";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { resolvePageSeoMetadata, type LocaleParamsProps } from "@/core/seo/pageSeo";
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "DashboardProfile" });
-
-  return getSeoMetadata({
-    title: `${t("title")} | Survey Land`, 
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  return resolvePageSeoMetadata({
+    params,
+    namespace: "DashboardProfile",
+    titleKey: "title",
     noIndex: true,
   });
 }

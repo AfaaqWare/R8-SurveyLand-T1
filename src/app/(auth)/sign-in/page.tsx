@@ -1,21 +1,12 @@
-import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
 import SignInSection from "@/modules/auth/components/organisms/SignInSection";
-import { getTranslations } from "next-intl/server";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { resolvePageSeoMetadata, type LocaleParamsProps } from "@/core/seo/pageSeo";
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  
-  const t = await getTranslations({ locale, namespace: "publicPages.sign-in" });
- 
-
-  return getSeoMetadata({
-    title: `${t("title")} | Survey Land`,
-    description: t("subtitle"),
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  return resolvePageSeoMetadata({
+    params,
+    namespace: "publicPages.sign-in",
+    titleKey: "title",
     noIndex: true,
   });
 }

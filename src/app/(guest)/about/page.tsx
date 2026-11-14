@@ -3,18 +3,18 @@ import HowItWorks from "@/modules/guest/about/components/organisms/HowItWorks";
 import OurMission from "@/modules/guest/about/components/organisms/OurMission";
 import TeamLeader from "@/modules/guest/about/components/organisms/TeamLeader";
 import TreadingAction from "@/modules/guest/about/components/organisms/TreadingAction";
-import { getTranslations } from "next-intl/server";
-import { Metadata } from "next";
-import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
+import type { Metadata } from "next";
+import { resolvePageSeoMetadata, type LocaleParamsProps } from "@/core/seo/pageSeo";
 
-
-// SEO Metadata
-export async function generateMetadata(): Promise<Metadata> {
-  const tNav = await getTranslations("publicPages.navbar");
-  const tAbout = await getTranslations("about");
-  return getSeoMetadata({ title: `${tNav("about")} | Survey Land`, description: tAbout("subtitle") });
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  return resolvePageSeoMetadata({
+    params,
+    namespace: "publicPages.about",
+    titleNamespace: "publicPages.navbar",
+    titleKey: "about",
+    descriptionKey: "hero.description",
+  });
 }
-
 export default function AboutPage() {
   return (
     <>

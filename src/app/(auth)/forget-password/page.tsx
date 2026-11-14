@@ -1,19 +1,14 @@
-import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
 import ForgetPassword from "@/modules/auth/forget-password/components/organisms/ForgetPassword";
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-type Props = {
-  params: Promise<{ locale: string }>;
-};
+import type { Metadata } from "next";
+import { resolvePageSeoMetadata, type LocaleParamsProps } from "@/core/seo/pageSeo";
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "forgotPassword" });
-
-  return getSeoMetadata({
-    title: `${t("title")} | Survey Land`,
-    description: t("subtitle"),
-    noIndex: true, 
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  return resolvePageSeoMetadata({
+    params,
+    namespace: "forgotPassword",
+    titleKey: "title",
+    descriptionKey: "subtitle",
+    noIndex: true,
   });
 }
 const page = () => {

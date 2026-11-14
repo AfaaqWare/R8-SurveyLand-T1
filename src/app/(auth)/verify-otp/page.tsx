@@ -1,22 +1,16 @@
 import React from "react";
 import VerifyOtp from "@/modules/auth/verify-otp/components/organisms/VerifyForm";
 
-import { Metadata } from "next";
-import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
-import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { resolvePageSeoMetadata, type LocaleParamsProps } from "@/core/seo/pageSeo";
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "verifyOtp" });
-
-  return getSeoMetadata({
-    title: `${t("title")} | Survey Land`,
-    description: t("subtitle"),
-    noIndex: true, 
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  return resolvePageSeoMetadata({
+    params,
+    namespace: "otp",
+    titleKey: "title",
+    descriptionKey: "description",
+    noIndex: true,
   });
 }
 export default function VerifyOtpPage() {

@@ -1,13 +1,14 @@
-import { getSeoMetadata } from "@/core/seo/getSeoMetadata";
-import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import PricingContent from "@/modules/guest/pricing/pricingContent";
+import { resolvePageSeoMetadata, type LocaleParamsProps } from "@/core/seo/pageSeo";
 
-
-export async function generateMetadata(): Promise<Metadata> {
-  const tNav = await getTranslations("publicPages.navbar");
-  const tPricing = await getTranslations("pricing");
-  return getSeoMetadata({ title: `${tNav("pricing")} | Survey Land`, description: tPricing("subtitle") });
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  return resolvePageSeoMetadata({
+    params,
+    namespace: "pricing",
+    titleKey: "headingAccent",
+    descriptionKey: "subtitle",
+  });
 }
 
 export default function PricingPage() {
