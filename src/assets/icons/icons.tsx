@@ -83,6 +83,8 @@ import {
   LockKeyhole,
   Clock,
   ImageOff,
+  ChevronUp,
+ 
 } from "lucide-react";
 import { IconLayoutSidebarLeftCollapse } from "@tabler/icons-react";
 
@@ -172,4 +174,6 @@ export {
   LockKeyhole,
   Clock,
   ImageOff,
+  ChevronUp,
+
 };
